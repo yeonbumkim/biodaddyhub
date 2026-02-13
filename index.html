@@ -200,6 +200,21 @@
     .list-item:hover { background: #f9f9fb; }
     .item-title { font-size: 0.9rem; font-weight: 500; }
     .item-date { margin-left: auto; font-size: 0.78rem; color: #86868b; white-space: nowrap; padding-left: 1rem; }
+    .hidden-item { display: none; }
+    .expand-btn {
+      width: 100%;
+      padding: 0.7rem;
+      background: #f9f9fb;
+      border: none;
+      border-top: 1px solid #f5f5f7;
+      color: #0066cc;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+      border-radius: 0 0 12px 12px;
+    }
+    .expand-btn:hover { background: #eef0f5; }
 
 
 
@@ -269,7 +284,7 @@
     <!-- 통계 -->
     <div class="stats">
       <div class="stat-card">
-        <div class="num blue">51</div>
+        <div class="num blue">50</div>
         <div class="lbl">전체 게시물</div>
       </div>
       <div class="stat-card">
@@ -395,27 +410,28 @@
           <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
           <span class='item-date'>2026년 02월 13일 14:28</span>
         </a>
-        <a href="blog/blog_20260213_130156.html" class="list-item">
+        <a href="blog/blog_20260213_130156.html" class="list-item hidden-item">
           <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
           <span class='item-date'>2026년 02월 13일 13:01</span>
         </a>
-        <a href="blog/blog_20260213_125350.html" class="list-item">
+        <a href="blog/blog_20260213_125350.html" class="list-item hidden-item">
           <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
           <span class='item-date'>2026년 02월 13일 12:53</span>
         </a>
-        <a href="blog/blog_20260213_122306.html" class="list-item">
+        <a href="blog/blog_20260213_122306.html" class="list-item hidden-item">
           <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
           <span class='item-date'>2026년 02월 13일 12:23</span>
         </a>
-        <a href="blog/blog_20260213_121029.html" class="list-item">
+        <a href="blog/blog_20260213_121029.html" class="list-item hidden-item">
           <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
           <span class='item-date'>2026년 02월 13일 12:10</span>
         </a>
-        <a href="blog/blog_20260213_120503.html" class="list-item">
+        <a href="blog/blog_20260213_120503.html" class="list-item hidden-item">
           <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
           <span class='item-date'>2026년 02월 13일 12:05</span>
         </a>
       </div>
+      <button class="expand-btn" onclick="toggleList(this)">+5개 더보기</button>
     </section>
 
     <section class="section" id="business">
@@ -437,11 +453,12 @@
           <span class="item-title">글로벌 경제 브리핑 - 2026년 02월 13일</span>
           <span class='item-date'>2026년 02월 13일 12:56</span>
         </a>
-        <a href="business/biz_20260213_121753.html" class="list-item">
+        <a href="business/biz_20260213_121753.html" class="list-item hidden-item">
           <span class="item-title">글로벌 경제 브리핑 - 2026년 02월 13일</span>
           <span class='item-date'>2026년 02월 13일 12:17</span>
         </a>
       </div>
+      <button class="expand-btn" onclick="toggleList(this)">+1개 더보기</button>
     </section>
 
     <section class="section" id="economy">
@@ -787,13 +804,9 @@
       <div class="section-header">
         <span class="section-icon">&#x1F4DA;</span>
         <h2>참고 자료</h2>
-        <span class="section-count">2개</span>
+        <span class="section-count">1개</span>
       </div>
       <div class="list">
-        <a href="docs/news_sources.html" class="list-item">
-          <span class="item-title">뉴스 소스 레퍼런스 - 30개국</span>
-          
-        </a>
         <a href="data_collection_policy.html" class="list-item">
           <span class="item-title">데이터 수집 방법 안내 - BioDaddy Writing Idea</span>
           
@@ -802,6 +815,16 @@
     </section>
     </div>
   </div>
+
+  <script>
+  function toggleList(btn) {
+    var list = btn.previousElementSibling;
+    var items = list.querySelectorAll('.hidden-item');
+    var expanded = btn.classList.toggle('expanded');
+    items.forEach(function(item) { item.style.display = expanded ? 'flex' : 'none'; });
+    btn.textContent = expanded ? '접기' : '+' + items.length + '개 더보기';
+  }
+  </script>
 
   <footer>
     <p>&copy; 2026 바이오대디. All rights reserved.</p>
