@@ -1,0 +1,36 @@
+# Python
+*.py
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+.env.*
+.venv/
+venv/
+
+# Dependencies
+requirements.txt
+
+# Logs & Output
+log/
+output/
+
+# Shell scripts
+run.sh
+
+# Documentation (non-web)
+USAGE.md
+docs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
