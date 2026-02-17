@@ -5,6 +5,10 @@ __pycache__/
 *.pyo
 *.pyd
 
+# Credentials (절대 커밋 금지)
+client_secret*.json
+service_account*.json
+
 # Environment
 .env
 .env.*
