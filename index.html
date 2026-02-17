@@ -225,6 +225,60 @@
     }
     .expand-btn:hover { background: #eef0f5; }
 
+    /* 뉴스레터 CTA */
+    .newsletter {
+      background: linear-gradient(135deg, #1d1d1f 0%, #2d3748 100%);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .newsletter::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0,102,204,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .newsletter .nl-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+    .newsletter h3 {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .newsletter p {
+      color: #a1a1aa;
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
+    }
+    .newsletter .nl-btn {
+      display: inline-block;
+      background: #0066cc;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 10px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .newsletter .nl-btn:hover {
+      background: #0055aa;
+      transform: translateY(-1px);
+    }
+    .newsletter .nl-sub {
+      color: #71717a;
+      font-size: 0.75rem;
+      margin-top: 0.8rem;
+    }
+
 
 
     footer {
@@ -305,6 +359,15 @@
         <div class="num orange">32</div>
         <div class="lbl">전체 카테고리</div>
       </div>
+    </div>
+
+    <!-- 뉴스레터 구독 -->
+    <div class="newsletter">
+      <div class="nl-icon">&#x1F4EC;</div>
+      <h3>매일 아침, AI가 요약한 뉴스를 받아보세요</h3>
+      <p>경제·IT·정책·핫딜 등 30개 카테고리 뉴스를 이메일로 보내드립니다</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSevef6vyZIWVChDVowAzcnmn-BqQTJQZYV--UIbRB8rIlGE4g/viewform" target="_blank" class="nl-btn">무료 구독하기</a>
+      <div class="nl-sub">매일 1회 발송 &middot; 언제든 구독 취소 가능</div>
     </div>
 
     <!-- 최근 글 -->
