@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+set -e
+
+cd "$(dirname "$0")"
+
+# 로그 디렉토리 생성
+mkdir -p log
+
+# 로그 파일 설정 (날짜_시간 형식)
+LOG_FILE="log/run_$(date '+%Y%m%d_%H%M%S').txt"
+
+# 시작 시간 기록
+START_TIME=$(date '+%Y-%m-%d %H:%M:%S')
+START_SEC=$(date +%s)
+
+echo "=== BioDaddy 전체 스크립트 실행 ===" | tee "$LOG_FILE"
+echo "시작 시간: $START_TIME" | tee -a "$LOG_FILE"
+echo "========================================" | tee -a "$LOG_FILE"
+
+python writeblog.py 2>&1 | tee -a "$LOG_FILE"
+python business.py 2>&1 | tee -a "$LOG_FILE"
+python it.py 2>&1 | tee -a "$LOG_FILE"
+python health.py 2>&1 | tee -a "$LOG_FILE"
+python economy.py 2>&1 | tee -a "$LOG_FILE"
+python travel.py 2>&1 | tee -a "$LOG_FILE"
+python welfare.py 2>&1 | tee -a "$LOG_FILE"
+python interior.py 2>&1 | tee -a "$LOG_FILE"
+python reddit.py 2>&1 | tee -a "$LOG_FILE"
+python art.py 2>&1 | tee -a "$LOG_FILE"
+python travel_tip.py 2>&1 | tee -a "$LOG_FILE"
+python saving.py 2>&1 | tee -a "$LOG_FILE"
+python hotdeal.py 2>&1 | tee -a "$LOG_FILE"
+python book.py 2>&1 | tee -a "$LOG_FILE"
+python blind.py 2>&1 | tee -a "$LOG_FILE"
+python it_comparison.py 2>&1 | tee -a "$LOG_FILE"
+python science.py 2>&1 | tee -a "$LOG_FILE"
+python tax_policy.py 2>&1 | tee -a "$LOG_FILE"
+python korea_policy.py 2>&1 | tee -a "$LOG_FILE"
+
+echo "========================================" | tee -a "$LOG_FILE"
+echo "=== index.html 빌드 ===" | tee -a "$LOG_FILE"
+python build_index.py 2>&1 | tee -a "$LOG_FILE"
+
+echo "=== footer 수정 ===" | tee -a "$LOG_FILE"
+python fix_footer.py 2>&1 | tee -a "$LOG_FILE"
+
+echo "=== google ad ===" | tee -a "$LOG_FILE"
+python ad_inserter.py 2>&1 | tee -a "$LOG_FILE"
+
+# 종료 시간 기록
+END_TIME=$(date '+%Y-%m-%d %H:%M:%S')
+END_SEC=$(date +%s)
+ELAPSED=$((END_SEC - START_SEC))
+ELAPSED_MIN=$((ELAPSED / 60))
+ELAPSED_REMAIN_SEC=$((ELAPSED % 60))
+
+echo "========================================" | tee -a "$LOG_FILE"
+echo "시작 시간: $START_TIME" | tee -a "$LOG_FILE"
+echo "종료 시간: $END_TIME" | tee -a "$LOG_FILE"
+echo "소요 시간: ${ELAPSED_MIN}분 ${ELAPSED_REMAIN_SEC}초 (총 ${ELAPSED}초)" | tee -a "$LOG_FILE"
+echo "=== 완료 ===" | tee -a "$LOG_FILE"
