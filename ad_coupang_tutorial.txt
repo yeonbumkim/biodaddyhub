@@ -1,0 +1,89 @@
+================================================================
+  ad_coupang.py 사용법 튜토리얼
+================================================================
+
+1. 개요
+-------
+쿠팡 파트너스에서 생성한 상품 HTML 코드를
+K-뷰티 페이지 테마(핑크/로즈)에 맞게 자동 변환하여 삽입하는 스크립트.
+
+변환 항목:
+  - 레이아웃: inline-block 250px → flexbox 180~220px (가로 정렬)
+  - 카드 배경: #f8f9fa → #fdf2f8
+  - 카드 테두리: #dee2e6 → #f9a8d4
+  - 가격 색상: #333 → #9d174d
+  - 배송 뱃지: #0d6efd(파랑) → #ec4899(핑크)
+  - 버튼: #dc3545(빨강) → #be185d(로즈)
+
+
+2. 준비: 쿠팡 파트너스 HTML 저장
+---------------------------------
+쿠팡 파트너스에서 복사한 HTML 코드를 텍스트 파일로 저장한다.
+
+  예) coupang_ad.html 파일에 아래 형식의 코드 붙여넣기:
+
+  <div style="text-align:center;">
+  <div style="display:inline-block;width:250px;...">
+    <a href="https://link.coupang.com/...">
+      <img src="https://ads-partners.coupang.com/..." alt="상품명" ...>
+    </a>
+    <div style="padding:12px;">
+      <div>상품명</div>
+      <div>가격</div>
+      <span style="...background:#0d6efd;">로켓배송</span>
+      <a href="...">쿠팡에서 보기</a>
+    </div>
+  </div>
+  ...반복...
+  </div>
+
+
+3. 기본 사용법
+--------------
+
+# k_beauty/ 폴더의 모든 HTML 파일에 삽입 (3번째 기사 뒤)
+python ad_coupang.py coupang_ad.html
+
+# 특정 파일에만 삽입
+python ad_coupang.py coupang_ad.html --target k_beauty_20260219_071549.html
+
+# 삽입 위치 변경 (5번째 기사 뒤)
+python ad_coupang.py coupang_ad.html --position 5
+
+# stdin으로 입력
+cat coupang_ad.html | python ad_coupang.py -
+
+# 미리보기 (파일 수정 없이 변환 결과만 출력)
+python ad_coupang.py coupang_ad.html --dry-run
+
+
+4. 옵션 정리
+-------------
+  input           쿠팡 HTML 파일 경로 (필수, - 입력 시 stdin)
+  --target FILE   특정 HTML 파일만 대상 (파일명만 입력)
+  --position N    N번째 기사 뒤에 삽입 (기본: 3)
+  --dry-run       파일 수정 없이 변환 결과만 출력
+
+
+5. 실전 예시
+-------------
+
+예시 1) 새 브리핑 페이지에 광고 삽입
+  $ python ad_coupang.py coupang_ad.html --target k_beauty_20260220_071234.html
+  2개 상품 카드 파싱 완료
+    1. 부쉬맨 워터프루프 프로 선크림... (57,770원)
+    2. 헤라 NEW 블랙 쿠션 파운데이션... (39,780원)
+  쿠팡 광고 삽입: k_beauty_20260220_071234.html
+  완료: 1개 파일에 쿠팡 광고 삽입 (위치: 3번째 기사 뒤)
+
+예시 2) 먼저 미리보기 후 삽입
+  $ python ad_coupang.py coupang_ad.html --dry-run
+  (변환 결과 확인)
+  $ python ad_coupang.py coupang_ad.html --target k_beauty_20260220_071234.html
+
+
+6. 참고 사항
+-------------
+- 이미 삽입된 파일은 자동으로 건너뜀 (마커: <!-- coupang-inserted -->)
+- article 수가 --position보다 적으면 마지막 기사 뒤에 삽입됨
+- 쿠팡 HTML에서 display:inline-block;width:250px 패턴의 카드를 자동 감지함
