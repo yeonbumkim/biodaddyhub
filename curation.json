@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-02-19T11:37:43.570672+09:00",
+  "basis_date": "2026-02-19",
+  "items": [
+    {
+      "rank": 1,
+      "category": "tax_policy",
+      "title": "세금 브리핑 - 2026년 02월 19일",
+      "url": "tax_policy/tax_20260219_071108.html",
+      "published_at": "2026-02-19T07:11:08+09:00",
+      "score": 65,
+      "tags": [
+        "세금"
+      ],
+      "snippet": "세금·세정 뉴스를 매일 AI가 요약합니다. 소득세, 부동산세, 절세 전략, 세법 개정 동향 브리핑."
+    },
+    {
+      "rank": 2,
+      "category": "ipo",
+      "title": "공모주·IPO 브리핑 - 2026년 02월 19일",
+      "url": "ipo/ipo_20260219_071812.html",
+      "published_at": "2026-02-19T07:18:12+09:00",
+      "score": 55,
+      "tags": [
+        "공모주"
+      ],
+      "snippet": "대한민국 공모주·IPO 청약 일정, 수요예측 결과, 상장일 시초가를 매일 AI가 요약합니다."
+    },
+    {
+      "rank": 3,
+      "category": "kospi_etf",
+      "title": "코스피 ETF 브리핑 - 2026년 02월 19일",
+      "url": "kospi_etf/kospi_etf_20260219_071946.html",
+      "published_at": "2026-02-19T07:19:46+09:00",
+      "score": 45,
+      "tags": [
+        "코스피"
+      ],
+      "snippet": "대한민국 코스피 ETF 시장 뉴스, KODEX·TIGER·KBSTAR 수익률, 자금흐름을 매일 AI가 요약합니다."
+    },
+    {
+      "rank": 4,
+      "category": "kosdaq",
+      "title": "코스닥 종목 브리핑 - 2026년 02월 19일",
+      "url": "kosdaq/kosdaq_20260219_071917.html",
+      "published_at": "2026-02-19T07:19:17+09:00",
+      "score": 45,
+      "tags": [
+        "코스닥"
+      ],
+      "snippet": "대한민국 코스닥(KOSDAQ) 시장 종목 뉴스를 매일 AI가 요약합니다. 바이오·IT·게임 등 성장주 실적과 동향."
+    },
+    {
+      "rank": 5,
+      "category": "kospi",
+      "title": "코스피 종목 브리핑 - 2026년 02월 19일",
+      "url": "kospi/kospi_20260219_071841.html",
+      "published_at": "2026-02-19T07:18:41+09:00",
+      "score": 45,
+      "tags": [
+        "코스피"
+      ],
+      "snippet": "대한민국 코스피(KOSPI) 시장 종목 뉴스, 실적, 목표가, 수급 동향을 매일 AI가 요약합니다."
+    }
+  ]
+}
