@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="컴퓨터를 이용한 약물 재배치(Drug Repurposing)의 최신 동향과 AI 기법. 2025년 Nature Reviews 연구를 바탕으로 한 in silico 방법론과 성공 사례를 소개합니다." name="description"/>
+<meta content="약물재배치, 약물재창출, drug repurposing, AI 신약개발, 컴퓨터 약물설계, 머신러닝, 분자도킹, 네트워크기반 약물발견" name="keywords"/>
+<meta content="farmingdollar.com" name="author"/>
+<meta content="index, follow" name="robots"/>
+<title>컴퓨터를 이용한 약물 재배치: AI 시대의 신약 개발 혁신 | 2025년 최신 동향</title>
+<link href="https://farmingdollar.com/health/computational_drug_repurposing.html" rel="canonical"/>
+<!-- Open Graph -->
+<meta content="article" property="og:type"/>
+<meta content="컴퓨터를 이용한 약물 재배치: AI 시대의 신약 개발 혁신 | 2025년 최신 동향" property="og:title"/>
+<meta content="컴퓨터를 이용한 약물 재배치(Drug Repurposing)의 최신 동향과 AI 기법. 2025년 Nature Reviews 연구를 바탕으로 한 in silico 방법론과 성공 사례를 소개합니다." property="og:description"/>
+<meta content="https://farmingdollar.com/health/computational_drug_repurposing.html" property="og:url"/>
+<meta content="Farming Dollar" property="og:site_name"/>
+<meta content="ko_KR" property="og:locale"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="컴퓨터를 이용한 약물 재배치: AI 시대의 신약 개발 혁신" name="twitter:title"/>
+<meta content="컴퓨터를 이용한 약물 재배치(Drug Repurposing)의 최신 동향과 AI 기법. 2025년 Nature Reviews 연구를 바탕으로 한 in silico 방법론과 성공 사례를 소개합니다." name="twitter:description"/>
+<!-- 구조화 데이터 (JSON-LD) -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "컴퓨터를 이용한 약물 재배치: AI 시대의 신약 개발 혁신",
+      "description": "컴퓨터를 이용한 약물 재배치(Drug Repurposing)의 최신 동향과 AI 기법. 2025년 Nature Reviews 연구를 바탕으로 한 in silico 방법론과 성공 사례를 소개합니다.",
+      "author": {
+        "@type": "Organization",
+        "name": "Farming Dollar",
+        "url": "https://farmingdollar.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Farming Dollar",
+        "url": "https://farmingdollar.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://farmingdollar.com/health/computational_drug_repurposing.html"
+      }
+    }
+    </script>
+<style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        article {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #e3f2fd;
+        }
+        h1 {
+            color: #1565c0;
+            font-size: 2.4em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        h2 {
+            color: #2d3748;
+            border-left: 5px solid #42a5f5;
+            padding-left: 18px;
+            margin-top: 35px;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #424242;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        em {
+            color: #666;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 10px 0;
+            line-height: 1.7;
+        }
+        strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 20px;
+            border-left: 5px solid #2196f3;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .success-case {
+            background: #e8f5e8;
+            padding: 18px;
+            border-left: 4px solid #4caf50;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .failure-case {
+            background: #fff3e0;
+            padding: 18px;
+            border-left: 4px solid #ff9800;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .method-card {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-item {
+            background: #f1f8ff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid #e3f2fd;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #1976d2;
+            display: block;
+        }
+        footer {
+            background: #f5f7fa;
+            padding: 25px;
+            margin-top: 35px;
+            border-radius: 10px;
+            border-left: 5px solid #42a5f5;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 25px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #42a5f5 0%, #1e88e5 100%);
+        }
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            background: #42a5f5;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #42a5f5;
+        }
+        .tech-badge {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 4px 12px;
+            margin: 4px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+    
+    .top-nav {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid #d2d2d7;
+      padding: 0.6rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 100%;
+    }
+    .top-nav a {
+      text-decoration: none;
+      color: #0066cc;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .top-nav .site-name {
+      color: #1d1d1f;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #86868b;
+      font-size: 0.78rem;
+      border-top: 1px solid #e5e5e5;
+      margin-top: 1rem;
+      line-height: 1.8;
+    }
+    footer a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    footer .disclaimer {
+      font-size: 0.72rem;
+      color: #aaa;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="top-nav">
+<a class="site-name" href="../index.html">BioDaddy Hub</a>
+<a href="../index.html">← 홈으로</a>
+</div>
+<main>
+<article>
+<header>
+<h1>컴퓨터를 이용한 약물 재창출</h1>
+<p><em>AI 시대의 신약 개발 혁신: 기존 약물에서 새로운 치료법을 찾다</em></p>
+</header>
+<section id="intro">
+<h2>서론: 약물 재창출의 혁신적 가능성</h2>
+<p>
+<strong>약물 재창출(Drug Repurposing)</strong> <strong></strong>은 기존에 승인된 약물이나 임상시험에서 실패한 약물을 
+                새로운 치료 목적으로 사용하는 혁신적인 신약 개발 전략입니다. 
+                전통적인 신약 개발이 12-15년의 긴 기간과 10억 달러 이상의 막대한 비용이 소요되는 반면, 
+                약물 재창출는 20-30%의 비용 절감과 대폭 단축된 개발 기간을 제공합니다.
+            </p>
+<div class="stats-grid">
+<div class="stat-item">
+<span class="stat-number">35%</span>
+<small>FDA 승인 의약품 중 재배치 약물 비율</small>
+</div>
+<div class="stat-item">
+<span class="stat-number">20-30%</span>
+<small>전통적 신약 개발 대비 비용 절감 효과</small>
+</div>
+<div class="stat-item">
+<span class="stat-number">5,000:1</span>
+<small>전임상에서 최종 승인받는 신약 비율</small>
+</div>
+</div>
+<div class="highlight-box">
+<strong>2025년 3월 Nature Reviews Drug Discovery 논문</strong>에 따르면, 
+                수백 개의 컴퓨터 기반 데이터베이스와 예측 플랫폼이 약물 재창출에 활용되고 있으며, 
+                유럽 연합의 <strong>Horizon Europe REMEDi4ALL 프로젝트</strong>를 통해 
+                체계적인 분류 체계와 전문가 평가가 이루어지고 있습니다.
+            </div>
+</section>
+<section id="concept">
+<h2>1. 약물 재창출의 개념과 분류</h2>
+<h3>정의와 접근 방식</h3>
+<p>약물 재창출는 크게 두 가지 접근 방식으로 분류됩니다:</p>
+<div class="method-card">
+<h4>🎯 약물 중심 접근법 (Drug-centric)</h4>
+<p>기존 약물에서 새로운 적응증을 발견하는 방식</p>
+<ul>
+<li>약물의 숨겨진 메커니즘 탐구</li>
+<li>기존 안전성 데이터 활용 가능</li>
+<li>예시: 비아그라의 발기부전 치료 용도 발견</li>
+</ul>
+</div>
+<div class="method-card">
+<h4>🏥 질병 중심 접근법 (Disease-centric)</h4>
+<p>특정 질병에 효과적인 기존 약물을 식별하는 방식</p>
+<ul>
+<li>질병 메커니즘 분석 우선</li>
+<li>다양한 약물 후보 스크리닝</li>
+<li>예시: COVID-19 치료를 위한 기존 약물 탐색</li>
+</ul>
+</div>
+<h3>핵심 전략: 유사성 평가</h3>
+<p>
+                두 접근법 모두 <strong>약물 간 유사성</strong>과 <strong>질병 간 유사성</strong>을 평가하는 공통 전략을 사용합니다. 
+                이는 "유사한 약물은 유사한 효과를 가질 것"이라는 가정에 기반합니다.
+            </p>
+</section>
+<section id="computational-methods">
+<h2>2. 컴퓨터 기반 약물 재창출 방법론</h2>
+<h3>주요 계산 방법들</h3>
+<div class="method-card">
+<h4>🎯 표적 기반 접근법 (Target-based Approaches)</h4>
+<p><strong>원리:</strong> 약물의 분자 표적과 질병 메커니즘을 직접 연결</p>
+<ul>
+<li><span class="tech-badge">고처리량 스크리닝</span> 약물 화합물 대량 검색</li>
+<li><span class="tech-badge">리간드 기반 스크리닝</span> 화학 구조 유사성 분석</li>
+<li><span class="tech-badge">분자 도킹</span> 3D 단백질 구조 활용한 결합 예측</li>
+<li><span class="tech-badge">약물 라이브러리 활용</span> 기존 승인 약물 데이터베이스</li>
+</ul>
+<p><strong>장점:</strong> 명확한 메커니즘, 높은 성공 가능성</p>
+</div>
+<div class="method-card">
+<h4>🕸️ 경로 기반 접근법 (Pathway-based Approaches)</h4>
+<p><strong>원리:</strong> 대사 경로, 신호 전달 경로, 단백질 상호작용 네트워크 분석</p>
+<ul>
+<li><span class="tech-badge">대사 경로 분석</span> 생화학적 반응 네트워크</li>
+<li><span class="tech-badge">신호전달 경로</span> 세포 내 정보 전달 시스템</li>
+<li><span class="tech-badge">PPI 네트워크</span> 단백질-단백질 상호작용</li>
+<li><span class="tech-badge">네트워크 토폴로지</span> 그래프 이론 기반 분석</li>
+</ul>
+<p><strong>장점:</strong> 시스템적 관점, 복합적 메커니즘 이해</p>
+</div>
+<div class="method-card">
+<h4>🔬 표현형 기반 접근법 (Phenotype-based Approaches)</h4>
+<p><strong>원리:</strong> 질병 모델과 환자군에서의 약물 효과 관찰</p>
+<ul>
+<li><span class="tech-badge">질병 모델 연구</span> 동물 모델, 세포 모델</li>
+<li><span class="tech-badge">임상 데이터 분석</span> 실제 환자 치료 결과</li>
+<li><span class="tech-badge">부작용 프로파일</span> 이상반응 패턴 분석</li>
+<li><span class="tech-badge">약물 조합</span> 복합 치료법 효과</li>
+</ul>
+<p><strong>장점:</strong> 실제 치료 효과 반영, 예상치 못한 발견 가능</p>
+</div>
+</section>
+<section id="ai-revolution">
+<h2>3. AI 혁명: 2024-2025년 최신 기술</h2>
+<h3>머신러닝과 딥러닝의 통합</h3>
+<p>
+                AI 기술은 약물 발견의 전 과정을 혁신하고 있습니다. 
+                2019-2024년 사이 AI/ML 방법론의 발전은 표적 식별부터 임상 개발까지 
+                전체 약물 발견 파이프라인에 적용되고 있습니다.
+            </p>
+<div class="timeline">
+<div class="timeline-item">
+<h4>🧠 대규모 언어 모델 (LLM)</h4>
+<p><strong>DrugReAlign:</strong> 대규모 언어 모델 기반 다중 소스 프롬프트 프레임워크</p>
+<ul>
+<li>자연어 처리로 문헌 데이터 분석</li>
+<li>약물-질병 관계 자동 추출</li>
+<li>전문가 지식 통합</li>
+</ul>
+</div>
+<div class="timeline-item">
+<h4>🔬 심층 분자 도킹 (Deep Docking)</h4>
+<p><strong>Deep Docking (DD):</strong> 수십억 개 분자 구조를 빠르고 정확하게 도킹</p>
+<ul>
+<li>QSAR 딥 모델 활용</li>
+<li>화학 라이브러리 서브셋 학습</li>
+<li>미처리 분자의 도킹 결과 근사</li>
+</ul>
+</div>
+<div class="timeline-item">
+<h4>🌐 그래프 신경망 (Graph Networks)</h4>
+<p><strong>컨볼루션 그래프 네트워크:</strong> 분자 구조와 생물학적 네트워크 분석</p>
+<ul>
+<li>화학 구조 직접 학습</li>
+<li>약물-표적 상호작용 예측</li>
+<li>네트워크 토폴로지 활용</li>
+</ul>
+</div>
+</div>
+<h3>2025년 주요 플랫폼</h3>
+<table class="comparison-table">
+<thead>
+<tr>
+<th>플랫폼</th>
+<th>개발사/기관</th>
+<th>주요 기능</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MolPhenix</strong></td>
+<td>NeurIPS 2024 수상</td>
+<td>분자-표현형 효과 예측</td>
+<td>베이스라인 대비 상당한 성능 향상</td>
+</tr>
+<tr>
+<td><strong>MolGPS</strong></td>
+<td>-</td>
+<td>분자 특성 예측</td>
+<td>30억 매개변수, 22개 ADMET 작업 중 12개에서 우수</td>
+</tr>
+<tr>
+<td><strong>MolE</strong></td>
+<td>-</td>
+<td>분자 그래프 분석</td>
+<td>8억 4200만 분자 그래프 학습, 22개 작업 중 10개 선도</td>
+</tr>
+<tr>
+<td><strong>NeuralPLexer</strong></td>
+<td>Iambic Therapeutics</td>
+<td>단백질-리간드 복합체</td>
+<td>다중 스케일 확산 기반 생성 모델</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="success-cases">
+<h2>4. 성공 사례와 실패 교훈</h2>
+<h3>역사적 성공 사례</h3>
+<div class="success-case">
+<h4>💙 실데나필 (비아그라)</h4>
+<p><strong>원래 목적:</strong> 협심증과 고혈압 치료</p>
+<p><strong>새로운 용도:</strong> 발기부전 치료</p>
+<p><strong>성과:</strong> 새로운 "블루오션" 치료 시장 창출, 폐고혈압 치료에도 성공</p>
+</div>
+<div class="success-case">
+<h4>💊 기타 성공 사례들</h4>
+<ul>
+<li><strong>미녹시딜:</strong> 심혈관 약물 → 탈모 치료제</li>
+<li><strong>둘록세틴:</strong> 항우울제 → 요실금 치료</li>
+<li><strong>젬시타빈:</strong> 항바이러스제 → 항암제</li>
+<li><strong>랄록시펜:</strong> 유방암 치료 → 골다공증 치료</li>
+<li><strong>부프로피온:</strong> 항우울제 → 금연 보조제</li>
+<li><strong>탈리도마이드:</strong> 나병과 다발성 골수종 치료</li>
+</ul>
+</div>
+<h3>COVID-19 사례: 명암이 엇갈린 결과</h3>
+<p>
+                코로나19 팬데믹은 약물 재창출의 잠재력과 한계를 동시에 보여준 대표적 사례입니다. 
+                긴급한 의료적 필요 상황에서 여러 약물의 재배치가 시도되었지만, 결과는 다양했습니다.
+            </p>
+<div class="success-case">
+<h4>✅ 성공 사례</h4>
+<ul>
+<li>
+<strong>렘데시비르:</strong> FDA 승인 유일한 COVID-19 재배치 약물
+                        <small>광범위 항바이러스제로서 중증 환자 치료에 효과</small>
+</li>
+<li>
+<strong>토실리주맙:</strong> IL-6 수용체 차단제
+                        <small>중환자실 환자의 사망 위험 24% 감소, 사이토카인 폭풍 억제</small>
+</li>
+<li>
+<strong>바리시티닙:</strong> JAK 억제제
+                        <small>렘데시비르와 병용 시 단독 요법보다 우수한 결과</small>
+</li>
+</ul>
+</div>
+<div class="failure-case">
+<h4>⚠️ 실패 사례</h4>
+<ul>
+<li>
+<strong>하이드록시클로로퀸:</strong> 초기 기대와 달리 무효
+                        <small>심각한 심장 부작용 위험, FDA 긴급사용승인 철회</small>
+</li>
+<li>
+<strong>클로로퀸:</strong> 항말라리아제
+                        <small>QT 간격 연장 등 부작용으로 사용 중단</small>
+</li>
+<li>
+<strong>로피나비르-리토나비르:</strong> HIV 치료제
+                        <small>COVID-19에 대한 효과 없음 확인</small>
+</li>
+</ul>
+</div>
+<h3>REMEDi4ALL 프로젝트 사례 연구</h3>
+<p>
+                2025년 유럽의 REMEDi4ALL 컨소시움은 세 가지 실제 약물 재창출 사례를 통해 
+                컴퓨터 도구의 적용 가능성을 입증했습니다:
+            </p>
+<ul>
+<li><strong>SARS-CoV-2:</strong> 팬데믹 대응 긴급 약물 탐색</li>
+<li><strong>췌장암:</strong> 치료가 어려운 고형암 치료법 개발</li>
+<li><strong>다발성 황산가수분해효소 결핍증:</strong> 희귀질환 치료 옵션 확장</li>
+</ul>
+</section>
+<section id="resources-evaluation">
+<h2>5. 2025년 리소스 평가와 추천</h2>
+<h3>REMEDi4ALL 전문가 평가</h3>
+<p>
+                27명의 전문가가 기존 리소스를 평가하고 순위를 매긴 결과, 
+                <strong>15개의 최고 등급 리소스</strong>가 선정되었습니다. 
+                모두 오픈소스이며, 대부분 접근 가능하고 다양한 약물 재창출 적응증에 적용 가능합니다.
+            </p>
+<div class="highlight-box">
+<h4>추가 발견된 3개 카테고리</h4>
+<ul>
+<li><strong>오픈 액세스 AI 도구</strong>: 접근성 높은 인공지능 플랫폼</li>
+<li><strong>데이터 마이닝 도구</strong>: 대규모 생물의학 데이터 분석</li>
+<li><strong>통합 분석 플랫폼</strong>: 다중 모달리티 접근법</li>
+</ul>
+</div>
+<h3>목적별 리소스 분류 체계</h3>
+<div class="method-card">
+<h4>🎯 약물 재창출 온톨로지</h4>
+<p>리소스를 계층적 카테고리로 분류하고 응용별 정보를 제공하는 체계적 분류법</p>
+<ul>
+<li>목표 기반 분류 (표적, 경로, 표현형)</li>
+<li>데이터 타입별 분류 (화학, 생물학, 임상)</li>
+<li>방법론별 분류 (ML, 네트워크, 통계)</li>
+<li>적용 범위별 분류 (단일질환, 범용, 희귀질환)</li>
+</ul>
+</div>
+</section>
+<section id="challenges-future">
+<h2>6. 도전과제와 미래 전망</h2>
+<h3>현재 도전과제</h3>
+<div class="method-card">
+<h4>🔍 리소스 선택의 복잡성</h4>
+<p>수백 개의 계산 리소스 중 특정 프로젝트에 적합한 도구 선택의 어려움</p>
+<ul>
+<li>리소스 품질과 신뢰성 평가</li>
+<li>프로젝트 요구사항과의 적합성</li>
+<li>통합과 상호 운용성 문제</li>
+</ul>
+</div>
+<div class="method-card">
+<h4>⚠️ 거짓 양성 문제</h4>
+<p>COVID-19 사례에서 나타난 조기 긍정적 결과의 함정</p>
+<ul>
+<li>기저율 오류 (Base-rate fallacy)</li>
+<li>메커니즘 증거 부족</li>
+<li>표준 증거 통합 도구 미활용</li>
+</ul>
+</div>
+<h3>미래 발전 방향</h3>
+<div class="timeline">
+<div class="timeline-item">
+<h4>🧬 정밀 의학 통합</h4>
+<p>개인의 유전체 정보와 약물 반응 예측 결합</p>
+<ul>
+<li>약물유전체학 데이터 통합</li>
+<li>개인 맞춤형 약물 재창출</li>
+<li>바이오마커 기반 환자 층화</li>
+</ul>
+</div>
+<div class="timeline-item">
+<h4>🤖 AI 해석가능성 향상</h4>
+<p>블랙박스 AI에서 설명 가능한 AI로의 전환</p>
+<ul>
+<li>분자 기전 해석 도구</li>
+<li>인과관계 추론 모델</li>
+<li>전문가 지식과 AI 통합</li>
+</ul>
+</div>
+<div class="timeline-item">
+<h4>🌐 통합 플랫폼 구축</h4>
+<p>지속가능하고 확장 가능한 웹 카탈로그</p>
+<ul>
+<li>표준화된 데이터 형식</li>
+<li>실시간 업데이트 시스템</li>
+<li>글로벌 협력 네트워크</li>
+</ul>
+</div>
+</div>
+<h3>향후 10년 전망</h3>
+<div class="stats-grid">
+<div class="stat-item">
+<span class="stat-number">50%</span>
+<small>2030년까지 AI 기반 신약 개발 비율 예상</small>
+</div>
+<div class="stat-item">
+<span class="stat-number">5-7년</span>
+<small>AI 활용 시 평균 약물 개발 기간</small>
+</div>
+<div class="stat-item">
+<span class="stat-number">70%</span>
+<small>컴퓨터 예측 정확도 목표 수준</small>
+</div>
+</div>
+</section>
+<footer>
+<p class="disclaimer">위 아티클은 AI 모델을 활용하여 요약되어 사실과 다를 수 있습니다. 원문을 확인하시기 바랍니다.</p>
+<p>© 2026 바이오대디. All rights reserved.</p>
+<p><a href="https://blog.naver.com/biodad" target="_blank">blog.naver.com/biodad</a> · kybmy0522@naver.com</p>
+</footer>
+</article>
+</main>
+</body>
+</html>

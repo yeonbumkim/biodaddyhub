@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블로그 - BioDaddy Hub</title>
+  <meta name="description" content="BioDaddy Hub 블로그. 건강, 과학, IT 등 다양한 주제의 심층 분석 글을 제공합니다.">
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="블로그 - BioDaddy Hub">
+  <meta property="og:description" content="BioDaddy Hub 블로그. 건강, 과학, IT 등 다양한 주제의 심층 분석 글을 제공합니다.">
+  <meta property="og:url" content="https://farmingdollar.com/blog.html">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://farmingdollar.com/blog.html">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F47Y9KCBV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2F47Y9KCBV');
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, 'Pretendard', 'Noto Sans KR', sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.7;
+    }
+    nav {
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid #d2d2d7;
+      padding: 0.8rem 1.5rem;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(20px);
+    }
+    nav .nav-inner {
+      max-width: 1060px; margin: 0 auto;
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    nav .logo { font-size: 1.1rem; font-weight: 700; text-decoration: none; color: #1d1d1f; }
+    nav .breadcrumb { font-size: 0.85rem; color: #86868b; }
+    nav .breadcrumb a { color: #0066cc; text-decoration: none; }
+    nav .breadcrumb a:hover { text-decoration: underline; }
+    .container { max-width: 1060px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    .page-header { margin-bottom: 2rem; }
+    .page-header h1 { font-size: 1.8rem; font-weight: 800; color: #0891b2; margin-bottom: 0.3rem; }
+    .page-header .page-desc { color: #86868b; font-size: 0.9rem; }
+
+    /* 카드 */
+    .blog-featured { margin-bottom: 2.5rem; }
+    .section-heading {
+      font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem;
+      padding-bottom: 0.5rem; border-bottom: 2px solid #0891b2; color: #1d1d1f;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .blog-card {
+      display: flex; flex-direction: column; gap: 0.5rem;
+      background: #fff; border-radius: 14px; padding: 1.4rem;
+      text-decoration: none; color: #1d1d1f;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border: 1px solid #e0f2fe; border-left: 4px solid #0891b2;
+    }
+    .blog-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); transform: translateY(-2px); }
+    .blog-meta { display: flex; align-items: center; gap: 0.4rem; }
+    .blog-cat {
+      display: inline-block; color: #fff; font-size: 0.68rem;
+      font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 6px;
+    }
+    .blog-badge {
+      display: inline-block; background: #0891b2; color: #fff;
+      font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.45rem;
+      border-radius: 4px; letter-spacing: 0.03em;
+    }
+    .blog-title { font-size: 1rem; font-weight: 700; line-height: 1.4; margin: 0; }
+    .blog-desc {
+      font-size: 0.85rem; color: #6b7280; line-height: 1.5;
+      display: -webkit-box; -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .blog-date { font-size: 0.75rem; color: #9ca3af; margin-top: auto; }
+
+    /* 리스트 */
+    .blog-list-section { margin-bottom: 2rem; }
+    .section { margin-bottom: 2rem; }
+    .section-header {
+      display: flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 0.8rem; padding-bottom: 0.4rem;
+      border-bottom: 1px solid #d2d2d7;
+    }
+    .section-icon { font-size: 1.2rem; }
+    .section-header h3 { font-size: 1.1rem; font-weight: 700; margin: 0; }
+    .section-count {
+      margin-left: auto; font-size: 0.8rem; color: #86868b;
+      background: #f0f0f0; padding: 0.15rem 0.6rem; border-radius: 10px;
+    }
+    .list {
+      background: #fff; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .list-item {
+      display: flex; align-items: center; padding: 0.9rem 1.2rem;
+      text-decoration: none; color: #1d1d1f; transition: background 0.15s;
+    }
+    .list-item + .list-item { border-top: 1px solid #f5f5f7; }
+    .list-item:hover { background: #f9f9fb; }
+    .item-title { font-size: 0.9rem; font-weight: 500; }
+    .item-date {
+      margin-left: auto; font-size: 0.78rem; color: #86868b;
+      white-space: nowrap; padding-left: 1rem;
+    }
+    .item-cat {
+      display: inline-block; color: #fff; font-size: 0.65rem;
+      font-weight: 600; padding: 0.1rem 0.45rem; border-radius: 5px;
+      margin-right: 0.6rem; white-space: nowrap; flex-shrink: 0;
+    }
+    .hidden-item { display: none; }
+    .expand-btn {
+      width: 100%; padding: 0.7rem; background: #f9f9fb;
+      border: none; border-top: 1px solid #f5f5f7; color: #0066cc;
+      font-size: 0.85rem; font-weight: 500; cursor: pointer;
+      transition: background 0.15s; border-radius: 0 0 12px 12px;
+    }
+    .expand-btn:hover { background: #eef0f5; }
+
+    /* 페이지네이션 */
+    .pagination {
+      display: flex; justify-content: center; align-items: center;
+      gap: 0.4rem; margin-top: 2rem; flex-wrap: wrap;
+    }
+    .page-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 36px; height: 36px; padding: 0 0.6rem;
+      border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #424245; background: #fff;
+      border: 1px solid #d2d2d7; transition: background 0.15s, border-color 0.15s;
+    }
+    .page-link:hover { background: #f0f0f5; border-color: #0891b2; color: #0891b2; }
+    .page-link.current { background: #0891b2; color: #fff; border-color: #0891b2; font-weight: 700; }
+
+    footer {
+      text-align: center; padding: 2rem 1rem; color: #86868b;
+      font-size: 0.78rem; border-top: 1px solid #e5e5e5; margin-top: 1rem; line-height: 1.8;
+    }
+    footer a { color: #0066cc; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 1.5rem; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .container { padding: 1.5rem 1rem; }
+    }
+    @media (max-width: 600px) {
+      .list-item { padding: 0.75rem 1rem; }
+      .item-title { font-size: 0.85rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "블로그 - BioDaddy Hub",
+    "url": "https://farmingdollar.com/blog.html",
+    "isPartOf": { "@type": "WebSite", "name": "BioDaddy Hub", "url": "https://farmingdollar.com/" },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"url":"https://farmingdollar.com/health/computational_drug_repurposing.html","name":"컴퓨터를 이용한 약물 재배치: AI 시대의 신약 개발 혁신 | 2025년 최신 동향"}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">BioDaddy Hub</a>
+      <span class="breadcrumb"><a href="/">홈</a> &rsaquo; <a href="/blog.html">블로그</a></span>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>블로그</h1>
+      <p class="page-desc">총 1개 글</p>
+    </div>
+
+    <div class="blog-featured">
+      <h2 class="section-heading">최신 글</h2>
+      <div class="blog-grid">
+      <a href="/health/computational_drug_repurposing.html" class="blog-card">
+        <div class="blog-meta">
+          <span class="blog-cat" style="background:#dc2626">건강/의료 뉴스</span>
+          <span class="blog-badge">Blog</span>
+        </div>
+        <h3 class="blog-title">컴퓨터를 이용한 약물 재배치: AI 시대의 신약 개발 혁신 | 2025년 최신 동향</h3>
+        <p class="blog-desc">컴퓨터를 이용한 약물 재배치(Drug Repurposing)의 최신 동향과 AI 기법. 2025년 Nature Reviews 연구를 바탕으로 한 in silico 방법론과 성공 사례를 소개합니다.</p>
+        <time class="blog-date">2026.02.20</time>
+      </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+  function toggleList(btn) {
+    var list = document.getElementById(btn.getAttribute('aria-controls'));
+    var items = list.querySelectorAll('.hidden-item');
+    var expanded = btn.classList.toggle('expanded');
+    btn.setAttribute('aria-expanded', String(expanded));
+    items.forEach(function(item) { item.style.display = expanded ? 'flex' : 'none'; });
+    btn.textContent = expanded ? '접기' : '+' + btn.dataset.count + '개 더보기';
+  }
+  </script>
+
+  <footer>
+    <p>&copy; 2026 바이오대디. All rights reserved.</p>
+    <p><a href="https://blog.naver.com/biodad" target="_blank" rel="noopener noreferrer">blog.naver.com/biodad</a> &middot; kybmy0522@naver.com</p>
+  </footer>
+</body>
+</html>
