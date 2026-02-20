@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="google46841b2b09e9134e">
+  <title>BioDaddy Hub - 글로벌 뉴스 브리핑 & 생활 정보 큐레이션</title>
+  <meta name="description" content="30개국 경제·IT·과학 뉴스, 복지·세금 정책, 핫딜·절약 꿀팁, 여행 정보까지. 매일 AI가 요약하는 글로벌 뉴스 브리핑 서비스.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BioDaddy Hub - 글로벌 뉴스 브리핑">
+  <meta property="og:description" content="30개국 경제·IT·과학 뉴스, 복지·세금 정책, 핫딜·절약 꿀팁까지. 매일 AI가 요약하는 글로벌 뉴스 브리핑.">
+  <meta property="og:url" content="https://farmingdollar.com/">
+  <meta property="og:image" content="https://farmingdollar.com/landing.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BioDaddy Hub - 글로벌 뉴스 브리핑">
+  <meta name="twitter:description" content="30개국 경제·IT·과학 뉴스, 복지·세금 정책, 핫딜·절약 꿀팁까지. 매일 AI가 요약하는 글로벌 뉴스 브리핑.">
+  <meta name="twitter:image" content="https://farmingdollar.com/landing.webp">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://farmingdollar.com/">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F47Y9KCBV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2F47Y9KCBV');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7890314542345467"
+     crossorigin="anonymous"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .skip-link {
+      position: absolute;
+      top: -50px;
+      left: 0;
+      background: #0066cc;
+      color: #fff;
+      padding: 0.5rem 1.2rem;
+      z-index: 200;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 0 0 8px 0;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #0066cc;
+      outline-offset: 2px;
+    }
+    body {
+      font-family: -apple-system, 'Pretendard', 'Noto Sans KR', sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.7;
+    }
+
+    /* 네비게이션 */
+    nav {
+      background: #fff;
+      border-bottom: 1px solid #d2d2d7;
+      padding: 0.8rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.85);
+    }
+    nav .nav-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav .logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #1d1d1f;
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      white-space: nowrap;
+    }
+    nav .nav-links::-webkit-scrollbar { display: none; }
+    nav .nav-links a {
+      text-decoration: none;
+      color: #424245;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      flex-shrink: 0;
+    }
+    nav .nav-links a:hover { color: #0066cc; }
+    nav .nav-links a.active { color: #0066cc; font-weight: 700; }
+
+    .container { max-width: 1060px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* 히어로 */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 2.5rem;
+    }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .hero p { color: #86868b; font-size: 1rem; max-width: 600px; margin: 0 auto; }
+    .hero-img {
+      display: block;
+      max-width: 100%;
+      width: 720px;
+      margin: 1.5rem auto 0;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      background: linear-gradient(135deg, #e0e7ff 0%, #f0f0f5 100%);
+      cursor: default;
+      -webkit-user-drag: none;
+    }
+
+    /* 통계 */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .stat-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.3rem;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .stat-card .num { font-size: 2rem; font-weight: 700; }
+    .stat-card .num.blue { color: #0066cc; }
+    .stat-card .num.green { color: #2d6a4f; }
+    .stat-card .num.orange { color: #ea580c; }
+    .stat-card .lbl { font-size: 0.8rem; color: #86868b; margin-top: 0.15rem; }
+
+    /* 오늘의 TOP 5 */
+    .top5-section {
+      margin-bottom: 2.5rem;
+    }
+    .top5-heading {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 0.3rem;
+    }
+    .top5-sub {
+      color: #86868b;
+      font-size: 0.88rem;
+      margin-bottom: 1.2rem;
+    }
+    .top5-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .top5-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.2rem;
+      text-decoration: none;
+      color: #1d1d1f;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border: 1px solid #f0f0f0;
+    }
+    .top5-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .top5-cat {
+      display: inline-block;
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      align-self: flex-start;
+    }
+    .top5-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .top5-subtitle {
+      font-weight: 400;
+      font-size: 0.82rem;
+      color: #6b7280;
+    }
+    .top5-snippet {
+      font-size: 0.82rem;
+      color: #6b7280;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .top5-time {
+      font-size: 0.75rem;
+      color: #86868b;
+      margin-top: auto;
+    }
+    .top5-grid .top5-card:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+
+    /* New 뱃지 */
+    .new-badge {
+      display: inline-block;
+      background: #ef4444;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+      letter-spacing: 0.02em;
+    }
+
+    /* 그룹 */
+    .group {
+      margin-bottom: 3rem;
+    }
+    .group-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 3px solid var(--group-color, #1d1d1f);
+      color: var(--group-color, #1d1d1f);
+    }
+
+    /* 섹션 */
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #d2d2d7;
+    }
+    .section-icon { font-size: 1.2rem; }
+    .section-header h3 { font-size: 1.1rem; font-weight: 700; margin: 0; }
+    .section-count {
+      margin-left: auto;
+      font-size: 0.8rem;
+      color: #86868b;
+      background: #f0f0f0;
+      padding: 0.15rem 0.6rem;
+      border-radius: 10px;
+    }
+    .list {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .list-item {
+      display: flex;
+      align-items: center;
+      padding: 0.9rem 1.2rem;
+      text-decoration: none;
+      color: #1d1d1f;
+      transition: background 0.15s;
+    }
+    .list-item + .list-item { border-top: 1px solid #f5f5f7; }
+    .list-item:hover { background: #f9f9fb; }
+    .item-title { font-size: 0.9rem; font-weight: 500; }
+    .item-date { margin-left: auto; font-size: 0.78rem; color: #86868b; white-space: nowrap; padding-left: 1rem; }
+    .hidden-item { display: none; }
+    .expand-btn {
+      width: 100%;
+      padding: 0.7rem;
+      background: #f9f9fb;
+      border: none;
+      border-top: 1px solid #f5f5f7;
+      color: #0066cc;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+      border-radius: 0 0 12px 12px;
+    }
+    .expand-btn:hover { background: #eef0f5; }
+
+    /* 뉴스레터 CTA */
+    .newsletter {
+      background: linear-gradient(135deg, #1d1d1f 0%, #2d3748 100%);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .newsletter::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0,102,204,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .newsletter .nl-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+    .newsletter h3 {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .newsletter p {
+      color: #a1a1aa;
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
+    }
+    .newsletter .nl-btn {
+      display: inline-block;
+      background: #0066cc;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 10px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .newsletter .nl-btn:hover {
+      background: #0055aa;
+      transform: translateY(-1px);
+    }
+    .newsletter .nl-sub {
+      color: #71717a;
+      font-size: 0.75rem;
+      margin-top: 0.8rem;
+    }
+
+    /* 인라인 CTA */
+    .inline-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      background: linear-gradient(135deg, #f0f4ff 0%, #e8ecf8 100%);
+      border: 1px solid #c7d2fe;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .inline-cta-icon { font-size: 1.3rem; }
+    .inline-cta-text { font-size: 0.9rem; font-weight: 500; color: #1d1d1f; }
+    .inline-cta-btn {
+      background: #0066cc;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .inline-cta-btn:hover { background: #0055aa; }
+
+    /* 맨 위로 버튼 */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #d2d2d7;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 90;
+      transition: opacity 0.3s, transform 0.2s;
+    }
+    .back-to-top:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    .back-to-top.visible { display: flex; }
+
+
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #86868b;
+      font-size: 0.78rem;
+      border-top: 1px solid #e5e5e5;
+      margin-top: 1rem;
+      line-height: 1.8;
+    }
+    footer a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.8rem; }
+      .stats { grid-template-columns: repeat(3, 1fr); }
+      .group-title { font-size: 1.3rem; }
+      .container { padding: 1.5rem 1rem; }
+      .newsletter { padding: 2rem 1.5rem; }
+      .inline-cta { flex-direction: column; text-align: center; }
+      .top5-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.5rem; }
+      .hero p { font-size: 0.88rem; }
+      nav .nav-links { gap: 0.6rem; }
+      nav .nav-links a { font-size: 0.72rem; }
+      .stats { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+      .stat-card { padding: 0.9rem 0.5rem; }
+      .stat-card .num { font-size: 1.5rem; }
+      .list-item { padding: 0.75rem 1rem; }
+      .item-title { font-size: 0.85rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "BioDaddy Hub",
+    "url": "https://farmingdollar.com/",
+    "description": "30개국 경제·IT·과학 뉴스, 복지·세금 정책, 핫딜·절약 꿀팁, 여행 정보까지. 매일 AI가 요약하는 글로벌 뉴스 브리핑 서비스.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "바이오대디"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"url":"https://farmingdollar.com/kospi_etf/kospi_etf_20260220_070952.html","name":"코스피 ETF 브리핑 - 2026년 02월 20일"},
+      {"@type":"ListItem","position":2,"url":"https://farmingdollar.com/kosdaq/kosdaq_20260220_070924.html","name":"코스닥 종목 브리핑 - 2026년 02월 20일"},
+      {"@type":"ListItem","position":3,"url":"https://farmingdollar.com/kospi/kospi_20260220_070847.html","name":"코스피 종목 브리핑 - 2026년 02월 20일"},
+      {"@type":"ListItem","position":4,"url":"https://farmingdollar.com/ipo/ipo_20260220_070805.html","name":"공모주·IPO 브리핑 - 2026년 02월 20일"},
+      {"@type":"ListItem","position":5,"url":"https://farmingdollar.com/education/education_20260220_070735.html","name":"대입·교육 브리핑 - 2026년 02월 20일"},
+      {"@type":"ListItem","position":6,"url":"https://farmingdollar.com/trend/trend_20260220_070703.html","name":"SNS 트렌드 브리핑 - 2026년 02월 20일"},
+      {"@type":"ListItem","position":7,"url":"https://farmingdollar.com/ai/ai_20260220_070628.html","name":"AI 브리핑 - 2026년 02월 20일"},
+      {"@type":"ListItem","position":8,"url":"https://farmingdollar.com/luxury/luxury_20260220_070533.html","name":"명품·럭셔리 브리핑 - 2026년 02월 20일"},
+      {"@type":"ListItem","position":9,"url":"https://farmingdollar.com/k_beauty/k_beauty_20260220_070506.html","name":"K-뷰티 브리핑 - 2026년 02월 20일"},
+      {"@type":"ListItem","position":10,"url":"https://farmingdollar.com/car/car_20260220_070430.html","name":"자동차 브리핑 - 2026년 02월 20일"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">본문 바로가기</a>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">BioDaddy Hub</a>
+      <div class="nav-links">
+        <a href="#group-global">글로벌 뉴스</a>
+        <a href="#group-korea">대한민국 뉴스·정책</a>
+        <a href="#group-life">생활·소비</a>
+        <a href="#group-travel">여행</a>
+        <a href="#group-tech">IT·기기·AI</a>
+        <a href="#group-sports">스포츠</a>
+        <a href="#group-culture">문화·예술</a>
+        <a href="#group-community">커뮤니티</a>
+        <a href="#group-etc">기타</a>
+        <a href="#group-invest">투자·증권</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>BioDaddy Hub</h1>
+    <p>글로벌 뉴스, 경제, IT, 여행, 생활, 커뮤니티 등 다양한 정보를 수집하고 분석하여 요약합니다</p>
+    <img src="landing.webp" alt="BioDaddy Hub" class="hero-img" decoding="async" fetchpriority="high">
+  </div>
+
+  <div class="container" id="main">
+    <!-- 통계 -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="num blue">198</div>
+        <div class="lbl">전체 게시물</div>
+      </div>
+      <div class="stat-card">
+        <div class="num green">32</div>
+        <div class="lbl">오늘 새 글</div>
+      </div>
+      <div class="stat-card">
+        <div class="num orange">34</div>
+        <div class="lbl">활성 카테고리</div>
+      </div>
+    </div>
+
+    <!-- 오늘의 TOP 5 -->
+    <section class="top5-section" id="top5">
+      <h2 class="top5-heading">오늘의 TOP 5</h2>
+      <p class="top5-sub">국내 투자자를 위한 오늘의 핵심 브리핑</p>
+      <div class="top5-grid">
+      <a href="tax_policy/tax_20260220_065934.html" class="top5-card">
+        <span class="top5-cat" style="background:#475569">세금·세정 뉴스</span>
+        <span class="top5-title">세금 브리핑 - 2026년 02월 20일 <span class="top5-subtitle">| 직장인 소득·부동산 논쟁·세법 개정</span></span>
+        <span class="top5-snippet">세금·세정 뉴스를 매일 AI가 요약합니다. 소득세, 부동산세, 절세 전략, 세법 개정 동향 브리핑.</span>
+        <time class="top5-time" datetime="2026-02-20T06:59:34+09:00">오늘 06:59</time>
+      </a>
+      <a href="ipo/ipo_20260220_070805.html" class="top5-card">
+        <span class="top5-cat" style="background:#1e40af">공모주·IPO</span>
+        <span class="top5-title">공모주·IPO 브리핑 - 2026년 02월 20일 <span class="top5-subtitle">| 케이뱅크·상장 청약·IPO 전망</span></span>
+        <span class="top5-snippet">대한민국 공모주·IPO 청약 일정, 수요예측 결과, 상장일 시초가를 매일 AI가 요약합니다.</span>
+        <time class="top5-time" datetime="2026-02-20T07:08:05+09:00">오늘 07:08</time>
+      </a>
+      <a href="kospi_etf/kospi_etf_20260220_070952.html" class="top5-card">
+        <span class="top5-cat" style="background:#0d9488">코스피 ETF 브리핑</span>
+        <span class="top5-title">코스피 ETF 브리핑 - 2026년 02월 20일 <span class="top5-subtitle">| 레버리지·인버스 고민·ETF 추천</span></span>
+        <span class="top5-snippet">대한민국 코스피 ETF 시장 뉴스, KODEX·TIGER·KBSTAR 수익률, 자금흐름을 매일 AI가 요약합니다.</span>
+        <time class="top5-time" datetime="2026-02-20T07:09:52+09:00">오늘 07:09</time>
+      </a>
+      <a href="kosdaq/kosdaq_20260220_070924.html" class="top5-card">
+        <span class="top5-cat" style="background:#7c3aed">코스닥 종목 브리핑</span>
+        <span class="top5-title">코스닥 종목 브리핑 - 2026년 02월 20일 <span class="top5-subtitle">| 코스닥 상승세·바이오·2차전지</span></span>
+        <span class="top5-snippet">대한민국 코스닥(KOSDAQ) 시장 종목 뉴스를 매일 AI가 요약합니다. 바이오·IT·게임 등 성장주 실적과 동향.</span>
+        <time class="top5-time" datetime="2026-02-20T07:09:24+09:00">오늘 07:09</time>
+      </a>
+      <a href="kospi/kospi_20260220_070847.html" class="top5-card">
+        <span class="top5-cat" style="background:#b91c1c">코스피 종목 브리핑</span>
+        <span class="top5-title">코스피 종목 브리핑 - 2026년 02월 20일 <span class="top5-subtitle">| 삼성전자·주가 전망·반도체</span></span>
+        <span class="top5-snippet">대한민국 코스피(KOSPI) 시장 종목 뉴스, 실적, 목표가, 수급 동향을 매일 AI가 요약합니다.</span>
+        <time class="top5-time" datetime="2026-02-20T07:08:47+09:00">오늘 07:08</time>
+      </a>
+      </div>
+    </section>
+
+    <!-- 그룹별 섹션 -->
+    <div class="group" id="group-global" style="--group-color: #0066cc">
+      <h2 class="group-title">글로벌 뉴스</h2>
+    <section class="section" id="section-blog">
+      <div class="section-header">
+        <span class="section-icon">&#x1F30D;</span>
+        <h3>글로벌 뉴스 브리핑</h3>
+        <span class="section-count">15개</span>
+      </div>
+      <div class="list" id="list-blog">
+        <a href="blog/blog_20260220_064704.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>글로벌 뉴스 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:47:04+09:00'>02/20 06:47</time>
+        </a>
+        <a href="blog/blog_20260219_065905.html" class="list-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T06:59:05+09:00'>02/19 06:59</time>
+        </a>
+        <a href="blog/blog_20260218_093242.html" class="list-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:32:42+09:00'>02/18 09:32</time>
+        </a>
+        <a href="blog/blog_20260217_185917.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T18:59:17+09:00'>02/17 18:59</time>
+        </a>
+        <a href="blog/blog_20260217_182453.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T18:24:53+09:00'>02/17 18:24</time>
+        </a>
+        <a href="blog/blog_20260214_061342.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:13:42+09:00'>02/14 06:13</time>
+        </a>
+        <a href="blog/blog_20260214_001540.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T00:15:40+09:00'>02/14 00:15</time>
+        </a>
+        <a href="blog/blog_20260213_210943.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:09:43+09:00'>02/13 21:09</time>
+        </a>
+        <a href="blog/blog_20260213_152134.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T15:21:34+09:00'>02/13 15:21</time>
+        </a>
+        <a href="blog/blog_20260213_142805.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T14:28:05+09:00'>02/13 14:28</time>
+        </a>
+        <a href="blog/blog_20260213_130156.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T13:01:56+09:00'>02/13 13:01</time>
+        </a>
+        <a href="blog/blog_20260213_125350.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T12:53:50+09:00'>02/13 12:53</time>
+        </a>
+        <a href="blog/blog_20260213_122306.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T12:23:06+09:00'>02/13 12:23</time>
+        </a>
+        <a href="blog/blog_20260213_121029.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T12:10:29+09:00'>02/13 12:10</time>
+        </a>
+        <a href="blog/blog_20260213_120503.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 뉴스 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T12:05:03+09:00'>02/13 12:05</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-blog" data-count="12">+12개 더보기</button>
+    </section>
+
+    <section class="section" id="section-business">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4C8;</span>
+        <h3>경제/비즈니스 브리핑</h3>
+        <span class="section-count">9개</span>
+      </div>
+      <div class="list" id="list-business">
+        <a href="business/biz_20260220_064838.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>글로벌 경제 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:48:38+09:00'>02/20 06:48</time>
+        </a>
+        <a href="business/biz_20260219_070050.html" class="list-item">
+          <span class="item-title">글로벌 경제 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:00:50+09:00'>02/19 07:00</time>
+        </a>
+        <a href="business/biz_20260218_093354.html" class="list-item">
+          <span class="item-title">글로벌 경제 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:33:54+09:00'>02/18 09:33</time>
+        </a>
+        <a href="business/biz_20260217_190042.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 경제 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:00:42+09:00'>02/17 19:00</time>
+        </a>
+        <a href="business/biz_20260214_061516.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 경제 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:15:16+09:00'>02/14 06:15</time>
+        </a>
+        <a href="business/biz_20260213_211111.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 경제 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:11:11+09:00'>02/13 21:11</time>
+        </a>
+        <a href="business/biz_20260213_130345.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 경제 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T13:03:45+09:00'>02/13 13:03</time>
+        </a>
+        <a href="business/biz_20260213_125655.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 경제 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T12:56:55+09:00'>02/13 12:56</time>
+        </a>
+        <a href="business/biz_20260213_121753.html" class="list-item hidden-item">
+          <span class="item-title">글로벌 경제 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T12:17:53+09:00'>02/13 12:17</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-business" data-count="6">+6개 더보기</button>
+    </section>
+
+    <section class="section" id="section-economy">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4B5;</span>
+        <h3>미국 경제/금융</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-economy">
+        <a href="economy/economy_20260220_065048.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>미국 경제 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:50:48+09:00'>02/20 06:50</time>
+        </a>
+        <a href="economy/economy_20260219_070255.html" class="list-item">
+          <span class="item-title">미국 경제 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:02:55+09:00'>02/19 07:02</time>
+        </a>
+        <a href="economy/economy_20260218_093540.html" class="list-item">
+          <span class="item-title">미국 경제 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:35:40+09:00'>02/18 09:35</time>
+        </a>
+        <a href="economy/economy_20260217_190313.html" class="list-item hidden-item">
+          <span class="item-title">미국 경제 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:03:13+09:00'>02/17 19:03</time>
+        </a>
+        <a href="economy/economy_20260214_061717.html" class="list-item hidden-item">
+          <span class="item-title">미국 경제 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:17:17+09:00'>02/14 06:17</time>
+        </a>
+        <a href="economy/economy_20260213_211321.html" class="list-item hidden-item">
+          <span class="item-title">미국 경제 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:13:21+09:00'>02/13 21:13</time>
+        </a>
+        <a href="economy/economy_20260213_170538.html" class="list-item hidden-item">
+          <span class="item-title">미국 경제 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:05:38+09:00'>02/13 17:05</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-economy" data-count="4">+4개 더보기</button>
+    </section>
+
+    <section class="section" id="section-it">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4BB;</span>
+        <h3>미국 IT/테크 뉴스</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-it">
+        <a href="it/it_20260220_064921.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>미국 IT 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:49:21+09:00'>02/20 06:49</time>
+        </a>
+        <a href="it/it_20260219_070134.html" class="list-item">
+          <span class="item-title">미국 IT 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:01:34+09:00'>02/19 07:01</time>
+        </a>
+        <a href="it/it_20260218_093432.html" class="list-item">
+          <span class="item-title">미국 IT 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:34:32+09:00'>02/18 09:34</time>
+        </a>
+        <a href="it/it_20260217_190133.html" class="list-item hidden-item">
+          <span class="item-title">미국 IT 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:01:33+09:00'>02/17 19:01</time>
+        </a>
+        <a href="it/it_20260214_061559.html" class="list-item hidden-item">
+          <span class="item-title">미국 IT 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:15:59+09:00'>02/14 06:15</time>
+        </a>
+        <a href="it/it_20260213_211156.html" class="list-item hidden-item">
+          <span class="item-title">미국 IT 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:11:56+09:00'>02/13 21:11</time>
+        </a>
+        <a href="it/it_20260213_165259.html" class="list-item hidden-item">
+          <span class="item-title">미국 IT 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T16:52:59+09:00'>02/13 16:52</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-it" data-count="4">+4개 더보기</button>
+    </section>
+
+    <section class="section" id="section-science">
+      <div class="section-header">
+        <span class="section-icon">&#x1F52C;</span>
+        <h3>과학 뉴스</h3>
+        <span class="section-count">8개</span>
+      </div>
+      <div class="list" id="list-science">
+        <a href="science/science_20260220_065855.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>과학 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:58:55+09:00'>02/20 06:58</time>
+        </a>
+        <a href="science/science_20260219_071033.html" class="list-item">
+          <span class="item-title">과학 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:10:33+09:00'>02/19 07:10</time>
+        </a>
+        <a href="science/science_20260218_094254.html" class="list-item">
+          <span class="item-title">과학 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:42:54+09:00'>02/18 09:42</time>
+        </a>
+        <a href="science/science_20260217_191204.html" class="list-item hidden-item">
+          <span class="item-title">과학 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:12:04+09:00'>02/17 19:12</time>
+        </a>
+        <a href="science/science_20260214_062533.html" class="list-item hidden-item">
+          <span class="item-title">과학 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:25:33+09:00'>02/14 06:25</time>
+        </a>
+        <a href="science/science_20260213_212335.html" class="list-item hidden-item">
+          <span class="item-title">과학 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:23:35+09:00'>02/13 21:23</time>
+        </a>
+        <a href="science/science_20260213_173301.html" class="list-item hidden-item">
+          <span class="item-title">과학 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:33:01+09:00'>02/13 17:33</time>
+        </a>
+        <a href="science/science_20260213_173015.html" class="list-item hidden-item">
+          <span class="item-title">과학 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:30:15+09:00'>02/13 17:30</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-science" data-count="5">+5개 더보기</button>
+    </section>
+    </div>
+
+    <div class="group" id="group-korea" style="--group-color: #dc2626">
+      <h2 class="group-title">대한민국 뉴스·정책</h2>
+    <section class="section" id="section-welfare">
+      <div class="section-header">
+        <span class="section-icon">&#x1F3E0;</span>
+        <h3>지역별 복지·정책</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-welfare">
+        <a href="welfare/welfare_20260220_065233.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>대한민국 복지 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:52:33+09:00'>02/20 06:52</time>
+        </a>
+        <a href="welfare/welfare_20260219_070427.html" class="list-item">
+          <span class="item-title">대한민국 복지 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:04:27+09:00'>02/19 07:04</time>
+        </a>
+        <a href="welfare/welfare_20260218_093703.html" class="list-item">
+          <span class="item-title">대한민국 복지 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:37:03+09:00'>02/18 09:37</time>
+        </a>
+        <a href="welfare/welfare_20260217_190507.html" class="list-item hidden-item">
+          <span class="item-title">대한민국 복지 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:05:07+09:00'>02/17 19:05</time>
+        </a>
+        <a href="welfare/welfare_20260214_061857.html" class="list-item hidden-item">
+          <span class="item-title">대한민국 복지 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:18:57+09:00'>02/14 06:18</time>
+        </a>
+        <a href="welfare/welfare_20260213_211525.html" class="list-item hidden-item">
+          <span class="item-title">대한민국 복지 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:15:25+09:00'>02/13 21:15</time>
+        </a>
+        <a href="welfare/welfare_20260213_170800.html" class="list-item hidden-item">
+          <span class="item-title">대한민국 복지 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:08:00+09:00'>02/13 17:08</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-welfare" data-count="4">+4개 더보기</button>
+    </section>
+
+    <section class="section" id="section-korea_policy">
+      <div class="section-header">
+        <span class="section-icon">&#x1F3DB;</span>
+        <h3>정책자금·지원사업</h3>
+        <span class="section-count">8개</span>
+      </div>
+      <div class="list" id="list-korea_policy">
+        <a href="korea_policy/policy_20260220_070008.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>정책자금 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:00:08+09:00'>02/20 07:00</time>
+        </a>
+        <a href="korea_policy/policy_20260219_071143.html" class="list-item">
+          <span class="item-title">정책자금 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:11:43+09:00'>02/19 07:11</time>
+        </a>
+        <a href="korea_policy/policy_20260218_094353.html" class="list-item">
+          <span class="item-title">정책자금 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:43:53+09:00'>02/18 09:43</time>
+        </a>
+        <a href="korea_policy/policy_20260217_191317.html" class="list-item hidden-item">
+          <span class="item-title">정책자금 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:13:17+09:00'>02/17 19:13</time>
+        </a>
+        <a href="korea_policy/policy_20260214_062640.html" class="list-item hidden-item">
+          <span class="item-title">정책자금 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:26:40+09:00'>02/14 06:26</time>
+        </a>
+        <a href="korea_policy/policy_20260213_212456.html" class="list-item hidden-item">
+          <span class="item-title">정책자금 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:24:56+09:00'>02/13 21:24</time>
+        </a>
+        <a href="korea_policy/policy_20260213_174819.html" class="list-item hidden-item">
+          <span class="item-title">정책자금 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:48:19+09:00'>02/13 17:48</time>
+        </a>
+        <a href="korea_policy/policy_20260213_174245.html" class="list-item hidden-item">
+          <span class="item-title">정책자금 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:42:45+09:00'>02/13 17:42</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-korea_policy" data-count="5">+5개 더보기</button>
+    </section>
+
+    <section class="section" id="section-tax_policy">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4CB;</span>
+        <h3>세금·세정 뉴스</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-tax_policy">
+        <a href="tax_policy/tax_20260220_065934.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>세금 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:59:34+09:00'>02/20 06:59</time>
+        </a>
+        <a href="tax_policy/tax_20260219_071108.html" class="list-item">
+          <span class="item-title">세금 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:11:08+09:00'>02/19 07:11</time>
+        </a>
+        <a href="tax_policy/tax_20260218_094323.html" class="list-item">
+          <span class="item-title">세금 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:43:23+09:00'>02/18 09:43</time>
+        </a>
+        <a href="tax_policy/tax_20260217_191240.html" class="list-item hidden-item">
+          <span class="item-title">세금 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:12:40+09:00'>02/17 19:12</time>
+        </a>
+        <a href="tax_policy/tax_20260214_062604.html" class="list-item hidden-item">
+          <span class="item-title">세금 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:26:04+09:00'>02/14 06:26</time>
+        </a>
+        <a href="tax_policy/tax_20260213_212412.html" class="list-item hidden-item">
+          <span class="item-title">세금 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:24:12+09:00'>02/13 21:24</time>
+        </a>
+        <a href="tax_policy/tax_20260213_173623.html" class="list-item hidden-item">
+          <span class="item-title">세금 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:36:23+09:00'>02/13 17:36</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-tax_policy" data-count="4">+4개 더보기</button>
+    </section>
+
+    <section class="section" id="section-realestate">
+      <div class="section-header">
+        <span class="section-icon">&#x1F3E0;</span>
+        <h3>청약·부동산</h3>
+        <span class="section-count">4개</span>
+      </div>
+      <div class="list" id="list-realestate">
+        <a href="realestate/realestate_20260220_070348.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>청약·부동산 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:03:48+09:00'>02/20 07:03</time>
+        </a>
+        <a href="realestate/realestate_20260219_071446.html" class="list-item">
+          <span class="item-title">청약·부동산 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:14:46+09:00'>02/19 07:14</time>
+        </a>
+        <a href="realestate/realestate_20260218_094648.html" class="list-item">
+          <span class="item-title">청약·부동산 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:46:48+09:00'>02/18 09:46</time>
+        </a>
+        <a href="realestate/realestate_20260217_231154.html" class="list-item hidden-item">
+          <span class="item-title">청약·부동산 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T23:11:54+09:00'>02/17 23:11</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-realestate" data-count="1">+1개 더보기</button>
+    </section>
+
+    <section class="section" id="section-education">
+      <div class="section-header">
+        <span class="section-icon">&#x1F393;</span>
+        <h3>대입·교육·입시</h3>
+        <span class="section-count">4개</span>
+      </div>
+      <div class="list" id="list-education">
+        <a href="education/education_20260220_070735.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>대입·교육 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:07:35+09:00'>02/20 07:07</time>
+        </a>
+        <a href="education/education_20260219_071745.html" class="list-item">
+          <span class="item-title">대입·교육 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:17:45+09:00'>02/19 07:17</time>
+        </a>
+        <a href="education/education_20260218_094945.html" class="list-item">
+          <span class="item-title">대입·교육 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:49:45+09:00'>02/18 09:49</time>
+        </a>
+        <a href="education/education_20260218_004937.html" class="list-item hidden-item">
+          <span class="item-title">대입·교육 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T00:49:37+09:00'>02/18 00:49</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-education" data-count="1">+1개 더보기</button>
+    </section>
+
+    <section class="section" id="section-ipo">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4C8;</span>
+        <h3>공모주·IPO</h3>
+        <span class="section-count">4개</span>
+      </div>
+      <div class="list" id="list-ipo">
+        <a href="ipo/ipo_20260220_070805.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>공모주·IPO 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:08:05+09:00'>02/20 07:08</time>
+        </a>
+        <a href="ipo/ipo_20260219_071812.html" class="list-item">
+          <span class="item-title">공모주·IPO 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:18:12+09:00'>02/19 07:18</time>
+        </a>
+        <a href="ipo/ipo_20260218_095018.html" class="list-item">
+          <span class="item-title">공모주·IPO 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:50:18+09:00'>02/18 09:50</time>
+        </a>
+        <a href="ipo/ipo_20260218_012421.html" class="list-item hidden-item">
+          <span class="item-title">공모주·IPO 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T01:24:21+09:00'>02/18 01:24</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-ipo" data-count="1">+1개 더보기</button>
+    </section>
+    </div>
+
+    <div class="group" id="group-life" style="--group-color: #ea580c">
+      <h2 class="group-title">생활·소비</h2>
+    <section class="section" id="section-health">
+      <div class="section-header">
+        <span class="section-icon">&#x1F3E5;</span>
+        <h3>건강/의료 뉴스</h3>
+        <span class="section-count">8개</span>
+      </div>
+      <div class="list" id="list-health">
+        <a href="health/health_20260220_065000.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>미국 건강 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:50:00+09:00'>02/20 06:50</time>
+        </a>
+        <a href="health/health_20260219_070210.html" class="list-item">
+          <span class="item-title">미국 건강 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:02:10+09:00'>02/19 07:02</time>
+        </a>
+        <a href="health/health_20260218_093500.html" class="list-item">
+          <span class="item-title">미국 건강 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:35:00+09:00'>02/18 09:35</time>
+        </a>
+        <a href="health/health_20260217_190219.html" class="list-item hidden-item">
+          <span class="item-title">미국 건강 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:02:19+09:00'>02/17 19:02</time>
+        </a>
+        <a href="health/health_20260214_061634.html" class="list-item hidden-item">
+          <span class="item-title">미국 건강 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:16:34+09:00'>02/14 06:16</time>
+        </a>
+        <a href="health/health_20260213_211233.html" class="list-item hidden-item">
+          <span class="item-title">미국 건강 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:12:33+09:00'>02/13 21:12</time>
+        </a>
+        <a href="health/health_20260213_165335.html" class="list-item hidden-item">
+          <span class="item-title">미국 건강 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T16:53:35+09:00'>02/13 16:53</time>
+        </a>
+        <a href="health/health_20260213_164756.html" class="list-item hidden-item">
+          <span class="item-title">미국 건강 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T16:47:56+09:00'>02/13 16:47</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-health" data-count="5">+5개 더보기</button>
+    </section>
+
+    <section class="section" id="section-saving">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4B0;</span>
+        <h3>절약 꿀팁</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-saving">
+        <a href="saving/saving_20260220_065540.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>절약 꿀팁 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:55:40+09:00'>02/20 06:55</time>
+        </a>
+        <a href="saving/saving_20260219_070733.html" class="list-item">
+          <span class="item-title">절약 꿀팁 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:07:33+09:00'>02/19 07:07</time>
+        </a>
+        <a href="saving/saving_20260218_094014.html" class="list-item">
+          <span class="item-title">절약 꿀팁 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:40:14+09:00'>02/18 09:40</time>
+        </a>
+        <a href="saving/saving_20260217_190853.html" class="list-item hidden-item">
+          <span class="item-title">절약 꿀팁 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:08:53+09:00'>02/17 19:08</time>
+        </a>
+        <a href="saving/saving_20260214_062234.html" class="list-item hidden-item">
+          <span class="item-title">절약 꿀팁 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:22:34+09:00'>02/14 06:22</time>
+        </a>
+        <a href="saving/saving_20260213_211955.html" class="list-item hidden-item">
+          <span class="item-title">절약 꿀팁 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:19:55+09:00'>02/13 21:19</time>
+        </a>
+        <a href="saving/saving_20260213_171906.html" class="list-item hidden-item">
+          <span class="item-title">절약 꿀팁 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:19:06+09:00'>02/13 17:19</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-saving" data-count="4">+4개 더보기</button>
+    </section>
+
+    <section class="section" id="section-hotdeal">
+      <div class="section-header">
+        <span class="section-icon">&#x1F525;</span>
+        <h3>핫딜·프로모션</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-hotdeal">
+        <a href="hotdeal/hotdeal_20260220_065621.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>대한민국 핫딜 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:56:21+09:00'>02/20 06:56</time>
+        </a>
+        <a href="hotdeal/hotdeal_20260219_070805.html" class="list-item">
+          <span class="item-title">대한민국 핫딜 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:08:05+09:00'>02/19 07:08</time>
+        </a>
+        <a href="hotdeal/hotdeal_20260218_094059.html" class="list-item">
+          <span class="item-title">대한민국 핫딜 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:40:59+09:00'>02/18 09:40</time>
+        </a>
+        <a href="hotdeal/hotdeal_20260217_190935.html" class="list-item hidden-item">
+          <span class="item-title">대한민국 핫딜 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:09:35+09:00'>02/17 19:09</time>
+        </a>
+        <a href="hotdeal/hotdeal_20260214_062318.html" class="list-item hidden-item">
+          <span class="item-title">대한민국 핫딜 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:23:18+09:00'>02/14 06:23</time>
+        </a>
+        <a href="hotdeal/hotdeal_20260213_212040.html" class="list-item hidden-item">
+          <span class="item-title">대한민국 핫딜 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:20:40+09:00'>02/13 21:20</time>
+        </a>
+        <a href="hotdeal/hotdeal_20260213_172218.html" class="list-item hidden-item">
+          <span class="item-title">대한민국 핫딜 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:22:18+09:00'>02/13 17:22</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-hotdeal" data-count="4">+4개 더보기</button>
+    </section>
+
+    <section class="section" id="section-book">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4D6;</span>
+        <h3>도서·서평·신간</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-book">
+        <a href="book/book_20260220_065654.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>도서 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:56:54+09:00'>02/20 06:56</time>
+        </a>
+        <a href="book/book_20260219_070851.html" class="list-item">
+          <span class="item-title">도서 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:08:51+09:00'>02/19 07:08</time>
+        </a>
+        <a href="book/book_20260218_094122.html" class="list-item">
+          <span class="item-title">도서 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:41:22+09:00'>02/18 09:41</time>
+        </a>
+        <a href="book/book_20260217_191015.html" class="list-item hidden-item">
+          <span class="item-title">도서 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:10:15+09:00'>02/17 19:10</time>
+        </a>
+        <a href="book/book_20260214_062349.html" class="list-item hidden-item">
+          <span class="item-title">도서 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:23:49+09:00'>02/14 06:23</time>
+        </a>
+        <a href="book/book_20260213_212126.html" class="list-item hidden-item">
+          <span class="item-title">도서 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:21:26+09:00'>02/13 21:21</time>
+        </a>
+        <a href="book/book_20260213_172225.html" class="list-item hidden-item">
+          <span class="item-title">도서 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:22:25+09:00'>02/13 17:22</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-book" data-count="4">+4개 더보기</button>
+    </section>
+
+    <section class="section" id="section-interior">
+      <div class="section-header">
+        <span class="section-icon">&#x1F6CB;</span>
+        <h3>인테리어/리빙</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-interior">
+        <a href="interior/interior_20260220_065323.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>인테리어 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:53:23+09:00'>02/20 06:53</time>
+        </a>
+        <a href="interior/interior_20260219_070503.html" class="list-item">
+          <span class="item-title">인테리어 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:05:03+09:00'>02/19 07:05</time>
+        </a>
+        <a href="interior/interior_20260218_093738.html" class="list-item">
+          <span class="item-title">인테리어 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:37:38+09:00'>02/18 09:37</time>
+        </a>
+        <a href="interior/interior_20260217_190547.html" class="list-item hidden-item">
+          <span class="item-title">인테리어 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:05:47+09:00'>02/17 19:05</time>
+        </a>
+        <a href="interior/interior_20260214_061943.html" class="list-item hidden-item">
+          <span class="item-title">인테리어 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:19:43+09:00'>02/14 06:19</time>
+        </a>
+        <a href="interior/interior_20260213_211610.html" class="list-item hidden-item">
+          <span class="item-title">인테리어 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:16:10+09:00'>02/13 21:16</time>
+        </a>
+        <a href="interior/interior_20260213_170728.html" class="list-item hidden-item">
+          <span class="item-title">인테리어 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:07:28+09:00'>02/13 17:07</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-interior" data-count="4">+4개 더보기</button>
+    </section>
+
+    <section class="section" id="section-car">
+      <div class="section-header">
+        <span class="section-icon">&#x1F697;</span>
+        <h3>자동차·모빌리티</h3>
+        <span class="section-count">4개</span>
+      </div>
+      <div class="list" id="list-car">
+        <a href="car/car_20260220_070430.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>자동차 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:04:30+09:00'>02/20 07:04</time>
+        </a>
+        <a href="car/car_20260219_071521.html" class="list-item">
+          <span class="item-title">자동차 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:15:21+09:00'>02/19 07:15</time>
+        </a>
+        <a href="car/car_20260218_094715.html" class="list-item">
+          <span class="item-title">자동차 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:47:15+09:00'>02/18 09:47</time>
+        </a>
+        <a href="car/car_20260217_232018.html" class="list-item hidden-item">
+          <span class="item-title">자동차 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T23:20:18+09:00'>02/17 23:20</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-car" data-count="1">+1개 더보기</button>
+    </section>
+
+    <section class="section" id="section-k_beauty">
+      <div class="section-header">
+        <span class="section-icon">&#x1F484;</span>
+        <h3>K-뷰티·화장품</h3>
+        <span class="section-count">4개</span>
+      </div>
+      <div class="list" id="list-k_beauty">
+        <a href="k_beauty/k_beauty_20260220_070506.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>K-뷰티 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:05:06+09:00'>02/20 07:05</time>
+        </a>
+        <a href="k_beauty/k_beauty_20260219_071549.html" class="list-item">
+          <span class="item-title">K-뷰티 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:15:49+09:00'>02/19 07:15</time>
+        </a>
+        <a href="k_beauty/k_beauty_20260218_094743.html" class="list-item">
+          <span class="item-title">K-뷰티 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:47:43+09:00'>02/18 09:47</time>
+        </a>
+        <a href="k_beauty/k_beauty_20260217_232927.html" class="list-item hidden-item">
+          <span class="item-title">K-뷰티 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T23:29:27+09:00'>02/17 23:29</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-k_beauty" data-count="1">+1개 더보기</button>
+    </section>
+
+    <section class="section" id="section-luxury">
+      <div class="section-header">
+        <span class="section-icon">&#x1F48E;</span>
+        <h3>명품·럭셔리</h3>
+        <span class="section-count">4개</span>
+      </div>
+      <div class="list" id="list-luxury">
+        <a href="luxury/luxury_20260220_070533.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>명품·럭셔리 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:05:33+09:00'>02/20 07:05</time>
+        </a>
+        <a href="luxury/luxury_20260219_071605.html" class="list-item">
+          <span class="item-title">명품·럭셔리 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:16:05+09:00'>02/19 07:16</time>
+        </a>
+        <a href="luxury/luxury_20260218_094807.html" class="list-item">
+          <span class="item-title">명품·럭셔리 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:48:07+09:00'>02/18 09:48</time>
+        </a>
+        <a href="luxury/luxury_20260217_233340.html" class="list-item hidden-item">
+          <span class="item-title">명품·럭셔리 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T23:33:40+09:00'>02/17 23:33</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-luxury" data-count="1">+1개 더보기</button>
+    </section>
+    </div>
+
+    <div class="group" id="group-travel" style="--group-color: #2563eb">
+      <h2 class="group-title">여행</h2>
+    <section class="section" id="section-travel">
+      <div class="section-header">
+        <span class="section-icon">&#x2708;</span>
+        <h3>세계 여행 뉴스</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-travel">
+        <a href="travel/travel_20260220_065130.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>세계 여행 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:51:30+09:00'>02/20 06:51</time>
+        </a>
+        <a href="travel/travel_20260219_070333.html" class="list-item">
+          <span class="item-title">세계 여행 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:03:33+09:00'>02/19 07:03</time>
+        </a>
+        <a href="travel/travel_20260218_093618.html" class="list-item">
+          <span class="item-title">세계 여행 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:36:18+09:00'>02/18 09:36</time>
+        </a>
+        <a href="travel/travel_20260217_190358.html" class="list-item hidden-item">
+          <span class="item-title">세계 여행 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:03:58+09:00'>02/17 19:03</time>
+        </a>
+        <a href="travel/travel_20260214_061758.html" class="list-item hidden-item">
+          <span class="item-title">세계 여행 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:17:58+09:00'>02/14 06:17</time>
+        </a>
+        <a href="travel/travel_20260213_211408.html" class="list-item hidden-item">
+          <span class="item-title">세계 여행 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:14:08+09:00'>02/13 21:14</time>
+        </a>
+        <a href="travel/travel_20260213_170711.html" class="list-item hidden-item">
+          <span class="item-title">세계 여행 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:07:11+09:00'>02/13 17:07</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-travel" data-count="4">+4개 더보기</button>
+    </section>
+
+    <section class="section" id="section-travel_tip">
+      <div class="section-header">
+        <span class="section-icon">&#x1F9F3;</span>
+        <h3>여행 꿀팁</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-travel_tip">
+        <a href="travel_tip/tip_20260220_065502.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>여행 꿀팁 모음 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:55:02+09:00'>02/20 06:55</time>
+        </a>
+        <a href="travel_tip/tip_20260219_070700.html" class="list-item">
+          <span class="item-title">여행 꿀팁 모음 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:07:00+09:00'>02/19 07:07</time>
+        </a>
+        <a href="travel_tip/tip_20260218_093951.html" class="list-item">
+          <span class="item-title">여행 꿀팁 모음 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:39:51+09:00'>02/18 09:39</time>
+        </a>
+        <a href="travel_tip/tip_20260217_190812.html" class="list-item hidden-item">
+          <span class="item-title">여행 꿀팁 모음 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:08:12+09:00'>02/17 19:08</time>
+        </a>
+        <a href="travel_tip/tip_20260214_062159.html" class="list-item hidden-item">
+          <span class="item-title">여행 꿀팁 모음 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:21:59+09:00'>02/14 06:21</time>
+        </a>
+        <a href="travel_tip/tip_20260213_211908.html" class="list-item hidden-item">
+          <span class="item-title">여행 꿀팁 모음 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:19:08+09:00'>02/13 21:19</time>
+        </a>
+        <a href="travel_tip/tip_20260213_171841.html" class="list-item hidden-item">
+          <span class="item-title">여행 꿀팁 모음 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:18:41+09:00'>02/13 17:18</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-travel_tip" data-count="4">+4개 더보기</button>
+    </section>
+    </div>
+
+    <div class="group" id="group-tech" style="--group-color: #6d28d9">
+      <h2 class="group-title">IT·기기·AI</h2>
+    <section class="section" id="section-it_comparison">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4F1;</span>
+        <h3>IT 기기 가격비교</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-it_comparison">
+        <a href="it_comparison/it_comparison_20260220_065759.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>IT 기기 가격비교 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:57:59+09:00'>02/20 06:57</time>
+        </a>
+        <a href="it_comparison/it_comparison_20260219_070952.html" class="list-item">
+          <span class="item-title">IT 기기 가격비교 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:09:52+09:00'>02/19 07:09</time>
+        </a>
+        <a href="it_comparison/it_comparison_20260218_094213.html" class="list-item">
+          <span class="item-title">IT 기기 가격비교 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:42:13+09:00'>02/18 09:42</time>
+        </a>
+        <a href="it_comparison/it_comparison_20260217_191120.html" class="list-item hidden-item">
+          <span class="item-title">IT 기기 가격비교 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:11:20+09:00'>02/17 19:11</time>
+        </a>
+        <a href="it_comparison/it_comparison_20260214_062452.html" class="list-item hidden-item">
+          <span class="item-title">IT 기기 가격비교 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:24:52+09:00'>02/14 06:24</time>
+        </a>
+        <a href="it_comparison/it_comparison_20260213_212235.html" class="list-item hidden-item">
+          <span class="item-title">IT 기기 가격비교 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:22:35+09:00'>02/13 21:22</time>
+        </a>
+        <a href="it_comparison/it_comparison_20260213_172847.html" class="list-item hidden-item">
+          <span class="item-title">IT 기기 가격비교 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:28:47+09:00'>02/13 17:28</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-it_comparison" data-count="4">+4개 더보기</button>
+    </section>
+
+    <section class="section" id="section-ai">
+      <div class="section-header">
+        <span class="section-icon">&#x1F916;</span>
+        <h3>AI·인공지능</h3>
+        <span class="section-count">4개</span>
+      </div>
+      <div class="list" id="list-ai">
+        <a href="ai/ai_20260220_070628.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>AI 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:06:28+09:00'>02/20 07:06</time>
+        </a>
+        <a href="ai/ai_20260219_071642.html" class="list-item">
+          <span class="item-title">AI 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:16:42+09:00'>02/19 07:16</time>
+        </a>
+        <a href="ai/ai_20260218_094838.html" class="list-item">
+          <span class="item-title">AI 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:48:38+09:00'>02/18 09:48</time>
+        </a>
+        <a href="ai/ai_20260217_234417.html" class="list-item hidden-item">
+          <span class="item-title">AI 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T23:44:17+09:00'>02/17 23:44</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-ai" data-count="1">+1개 더보기</button>
+    </section>
+    </div>
+
+    <div class="inline-cta">
+      <span class="inline-cta-icon">&#x1F4EC;</span>
+      <span class="inline-cta-text">매일 AI가 요약한 뉴스를 받아보세요</span>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSevef6vyZIWVChDVowAzcnmn-BqQTJQZYV--UIbRB8rIlGE4g/viewform" target="_blank" rel="noopener noreferrer" class="inline-cta-btn">무료 구독</a>
+    </div>
+
+    <div class="group" id="group-sports" style="--group-color: #16a34a">
+      <h2 class="group-title">스포츠</h2>
+    <section class="section" id="section-football">
+      <div class="section-header">
+        <span class="section-icon">&#x26BD;</span>
+        <h3>유럽 축구 4대 리그</h3>
+        <span class="section-count">4개</span>
+      </div>
+      <div class="list" id="list-football">
+        <a href="football/football_20260220_070139.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>유럽 축구 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:01:39+09:00'>02/20 07:01</time>
+        </a>
+        <a href="football/football_20260219_071309.html" class="list-item">
+          <span class="item-title">유럽 축구 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:13:09+09:00'>02/19 07:13</time>
+        </a>
+        <a href="football/football_20260218_094507.html" class="list-item">
+          <span class="item-title">유럽 축구 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:45:07+09:00'>02/18 09:45</time>
+        </a>
+        <a href="football/football_20260217_225822.html" class="list-item hidden-item">
+          <span class="item-title">유럽 축구 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T22:58:22+09:00'>02/17 22:58</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-football" data-count="1">+1개 더보기</button>
+    </section>
+
+    <section class="section" id="section-baseball">
+      <div class="section-header">
+        <span class="section-icon">&#x26BE;</span>
+        <h3>MLB·KBO 프로야구</h3>
+        <span class="section-count">4개</span>
+      </div>
+      <div class="list" id="list-baseball">
+        <a href="baseball/baseball_20260220_070223.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>프로야구 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:02:23+09:00'>02/20 07:02</time>
+        </a>
+        <a href="baseball/baseball_20260219_071345.html" class="list-item">
+          <span class="item-title">프로야구 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:13:45+09:00'>02/19 07:13</time>
+        </a>
+        <a href="baseball/baseball_20260218_094544.html" class="list-item">
+          <span class="item-title">프로야구 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:45:44+09:00'>02/18 09:45</time>
+        </a>
+        <a href="baseball/baseball_20260217_225858.html" class="list-item hidden-item">
+          <span class="item-title">프로야구 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T22:58:58+09:00'>02/17 22:58</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-baseball" data-count="1">+1개 더보기</button>
+    </section>
+
+    <section class="section" id="section-basketball">
+      <div class="section-header">
+        <span class="section-icon">&#x1F3C0;</span>
+        <h3>NBA·KBL 프로농구</h3>
+        <span class="section-count">4개</span>
+      </div>
+      <div class="list" id="list-basketball">
+        <a href="basketball/basketball_20260220_070308.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>프로농구 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:03:08+09:00'>02/20 07:03</time>
+        </a>
+        <a href="basketball/basketball_20260219_071416.html" class="list-item">
+          <span class="item-title">프로농구 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:14:16+09:00'>02/19 07:14</time>
+        </a>
+        <a href="basketball/basketball_20260218_094619.html" class="list-item">
+          <span class="item-title">프로농구 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:46:19+09:00'>02/18 09:46</time>
+        </a>
+        <a href="basketball/basketball_20260217_225934.html" class="list-item hidden-item">
+          <span class="item-title">프로농구 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T22:59:34+09:00'>02/17 22:59</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-basketball" data-count="1">+1개 더보기</button>
+    </section>
+    </div>
+
+    <div class="group" id="group-culture" style="--group-color: #be185d">
+      <h2 class="group-title">문화·예술</h2>
+    <section class="section" id="section-art">
+      <div class="section-header">
+        <span class="section-icon">&#x1F3AD;</span>
+        <h3>공연·전시·문화예술</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-art">
+        <a href="art/art_20260220_065424.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>대한민국 공연·전시 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:54:24+09:00'>02/20 06:54</time>
+        </a>
+        <a href="art/art_20260219_070623.html" class="list-item">
+          <span class="item-title">대한민국 공연·전시 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:06:23+09:00'>02/19 07:06</time>
+        </a>
+        <a href="art/art_20260218_093921.html" class="list-item">
+          <span class="item-title">대한민국 공연·전시 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:39:21+09:00'>02/18 09:39</time>
+        </a>
+        <a href="art/art_20260217_190736.html" class="list-item hidden-item">
+          <span class="item-title">대한민국 공연·전시 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:07:36+09:00'>02/17 19:07</time>
+        </a>
+        <a href="art/art_20260214_062123.html" class="list-item hidden-item">
+          <span class="item-title">대한민국 공연·전시 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:21:23+09:00'>02/14 06:21</time>
+        </a>
+        <a href="art/art_20260213_211824.html" class="list-item hidden-item">
+          <span class="item-title">대한민국 공연·전시 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:18:24+09:00'>02/13 21:18</time>
+        </a>
+        <a href="art/art_20260213_171820.html" class="list-item hidden-item">
+          <span class="item-title">대한민국 공연·전시 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:18:20+09:00'>02/13 17:18</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-art" data-count="4">+4개 더보기</button>
+    </section>
+    </div>
+
+    <div class="group" id="group-community" style="--group-color: #ff4500">
+      <h2 class="group-title">커뮤니티</h2>
+    <section class="section" id="section-reddit">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4E2;</span>
+        <h3>Reddit 인기글</h3>
+        <span class="section-count">5개</span>
+      </div>
+      <div class="list" id="list-reddit">
+        <a href="reddit/reddit_20260218_093845.html" class="list-item">
+          <span class="item-title">Reddit 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:38:45+09:00'>02/18 09:38</time>
+        </a>
+        <a href="reddit/reddit_20260217_190654.html" class="list-item">
+          <span class="item-title">Reddit 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:06:54+09:00'>02/17 19:06</time>
+        </a>
+        <a href="reddit/reddit_20260214_062045.html" class="list-item">
+          <span class="item-title">Reddit 브리핑 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:20:45+09:00'>02/14 06:20</time>
+        </a>
+        <a href="reddit/reddit_20260213_211712.html" class="list-item hidden-item">
+          <span class="item-title">Reddit 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:17:12+09:00'>02/13 21:17</time>
+        </a>
+        <a href="reddit/reddit_20260213_170632.html" class="list-item hidden-item">
+          <span class="item-title">Reddit 브리핑 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:06:32+09:00'>02/13 17:06</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-reddit" data-count="2">+2개 더보기</button>
+    </section>
+
+    <section class="section" id="section-blind">
+      <div class="section-header">
+        <span class="section-icon">&#x1F453;</span>
+        <h3>블라인드 토픽베스트</h3>
+        <span class="section-count">7개</span>
+      </div>
+      <div class="list" id="list-blind">
+        <a href="blind/blind_20260220_065730.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>블라인드 인기글 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T06:57:30+09:00'>02/20 06:57</time>
+        </a>
+        <a href="blind/blind_20260219_070929.html" class="list-item">
+          <span class="item-title">블라인드 인기글 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:09:29+09:00'>02/19 07:09</time>
+        </a>
+        <a href="blind/blind_20260218_094151.html" class="list-item">
+          <span class="item-title">블라인드 인기글 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:41:51+09:00'>02/18 09:41</time>
+        </a>
+        <a href="blind/blind_20260217_191052.html" class="list-item hidden-item">
+          <span class="item-title">블라인드 인기글 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T19:10:52+09:00'>02/17 19:10</time>
+        </a>
+        <a href="blind/blind_20260214_062420.html" class="list-item hidden-item">
+          <span class="item-title">블라인드 인기글 - 2026년 02월 14일</span>
+          <time class='item-date' datetime='2026-02-14T06:24:20+09:00'>02/14 06:24</time>
+        </a>
+        <a href="blind/blind_20260213_212203.html" class="list-item hidden-item">
+          <span class="item-title">블라인드 인기글 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T21:22:03+09:00'>02/13 21:22</time>
+        </a>
+        <a href="blind/blind_20260213_172648.html" class="list-item hidden-item">
+          <span class="item-title">블라인드 인기글 - 2026년 02월 13일</span>
+          <time class='item-date' datetime='2026-02-13T17:26:48+09:00'>02/13 17:26</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-blind" data-count="4">+4개 더보기</button>
+    </section>
+
+    <section class="section" id="section-trend">
+      <div class="section-header">
+        <span class="section-icon">&#x1F525;</span>
+        <h3>SNS 트렌드·바이럴</h3>
+        <span class="section-count">4개</span>
+      </div>
+      <div class="list" id="list-trend">
+        <a href="trend/trend_20260220_070703.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>SNS 트렌드 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:07:03+09:00'>02/20 07:07</time>
+        </a>
+        <a href="trend/trend_20260219_071714.html" class="list-item">
+          <span class="item-title">SNS 트렌드 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:17:14+09:00'>02/19 07:17</time>
+        </a>
+        <a href="trend/trend_20260218_094911.html" class="list-item">
+          <span class="item-title">SNS 트렌드 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T09:49:11+09:00'>02/18 09:49</time>
+        </a>
+        <a href="trend/trend_20260217_235448.html" class="list-item hidden-item">
+          <span class="item-title">SNS 트렌드 브리핑 - 2026년 02월 17일</span>
+          <time class='item-date' datetime='2026-02-17T23:54:48+09:00'>02/17 23:54</time>
+        </a>
+      </div>
+      <button class="expand-btn" onclick="toggleList(this)" aria-expanded="false" aria-controls="list-trend" data-count="1">+1개 더보기</button>
+    </section>
+    </div>
+
+    <div class="group" id="group-etc" style="--group-color: #6b21a8">
+      <h2 class="group-title">기타</h2>
+    <section class="section" id="section-reference">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4DA;</span>
+        <h3>참고 자료</h3>
+        <span class="section-count">1개</span>
+      </div>
+      <div class="list" id="list-reference">
+        <a href="data_collection_policy.html" class="list-item">
+          <span class="item-title">데이터 수집 방법 안내 - BioDaddy Writing Idea</span>
+          
+        </a>
+      </div>
+    </section>
+    </div>
+
+    <div class="group" id="group-invest" style="--group-color: #b91c1c">
+      <h2 class="group-title">투자·증권</h2>
+    <section class="section" id="section-kospi">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4C8;</span>
+        <h3>코스피 종목 브리핑</h3>
+        <span class="section-count">3개</span>
+      </div>
+      <div class="list" id="list-kospi">
+        <a href="kospi/kospi_20260220_070847.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>코스피 종목 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:08:47+09:00'>02/20 07:08</time>
+        </a>
+        <a href="kospi/kospi_20260219_071841.html" class="list-item">
+          <span class="item-title">코스피 종목 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:18:41+09:00'>02/19 07:18</time>
+        </a>
+        <a href="kospi/kospi_20260218_222739.html" class="list-item">
+          <span class="item-title">코스피 종목 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T22:27:39+09:00'>02/18 22:27</time>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="section-kosdaq">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4CA;</span>
+        <h3>코스닥 종목 브리핑</h3>
+        <span class="section-count">3개</span>
+      </div>
+      <div class="list" id="list-kosdaq">
+        <a href="kosdaq/kosdaq_20260220_070924.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>코스닥 종목 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:09:24+09:00'>02/20 07:09</time>
+        </a>
+        <a href="kosdaq/kosdaq_20260219_071917.html" class="list-item">
+          <span class="item-title">코스닥 종목 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:19:17+09:00'>02/19 07:19</time>
+        </a>
+        <a href="kosdaq/kosdaq_20260218_222811.html" class="list-item">
+          <span class="item-title">코스닥 종목 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T22:28:11+09:00'>02/18 22:28</time>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="section-kospi_etf">
+      <div class="section-header">
+        <span class="section-icon">&#x1F4E6;</span>
+        <h3>코스피 ETF 브리핑</h3>
+        <span class="section-count">3개</span>
+      </div>
+      <div class="list" id="list-kospi_etf">
+        <a href="kospi_etf/kospi_etf_20260220_070952.html" class="list-item">
+          <span class="item-title"><span class="new-badge">New</span>코스피 ETF 브리핑 - 2026년 02월 20일</span>
+          <time class='item-date' datetime='2026-02-20T07:09:52+09:00'>02/20 07:09</time>
+        </a>
+        <a href="kospi_etf/kospi_etf_20260219_071946.html" class="list-item">
+          <span class="item-title">코스피 ETF 브리핑 - 2026년 02월 19일</span>
+          <time class='item-date' datetime='2026-02-19T07:19:46+09:00'>02/19 07:19</time>
+        </a>
+        <a href="kospi_etf/kospi_etf_20260218_222839.html" class="list-item">
+          <span class="item-title">코스피 ETF 브리핑 - 2026년 02월 18일</span>
+          <time class='item-date' datetime='2026-02-18T22:28:39+09:00'>02/18 22:28</time>
+        </a>
+      </div>
+    </section>
+    </div>
+
+    <!-- 뉴스레터 구독 -->
+    <div class="newsletter">
+      <div class="nl-icon">&#x1F4EC;</div>
+      <h3>매일 아침, AI가 요약한 뉴스를 받아보세요</h3>
+      <p>경제·IT·정책·핫딜 등 30개 카테고리 뉴스를 이메일로 보내드립니다</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSevef6vyZIWVChDVowAzcnmn-BqQTJQZYV--UIbRB8rIlGE4g/viewform" target="_blank" rel="noopener noreferrer" class="nl-btn">무료 구독하기</a>
+      <div class="nl-sub">매일 1회 발송 &middot; 언제든 구독 취소 가능</div>
+    </div>
+  </div>
+
+  <script>
+  function toggleList(btn) {
+    var list = document.getElementById(btn.getAttribute('aria-controls'));
+    var items = list.querySelectorAll('.hidden-item');
+    var expanded = btn.classList.toggle('expanded');
+    btn.setAttribute('aria-expanded', String(expanded));
+    items.forEach(function(item) { item.style.display = expanded ? 'flex' : 'none'; });
+    btn.textContent = expanded ? '접기' : '+' + btn.dataset.count + '개 더보기';
+  }
+
+  // Back to top
+  (function() {
+    var btn = document.getElementById('backToTop');
+    if (!btn) return;
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('visible', window.scrollY > 600);
+    });
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  // Nav scroll spy
+  (function() {
+    var links = document.querySelectorAll('.nav-links a[href^="#group-"]');
+    if (!links.length) return;
+    var groups = [];
+    links.forEach(function(a) {
+      var id = a.getAttribute('href').substring(1);
+      var el = document.getElementById(id);
+      if (el) groups.push({ link: a, el: el });
+    });
+    var active = null;
+    window.addEventListener('scroll', function() {
+      var scrollY = window.scrollY + 120;
+      var current = null;
+      for (var i = groups.length - 1; i >= 0; i--) {
+        if (groups[i].el.offsetTop <= scrollY) { current = groups[i]; break; }
+      }
+      if (current && current.link !== active) {
+        if (active) { active.classList.remove('active'); active.removeAttribute('aria-current'); }
+        current.link.classList.add('active');
+        current.link.setAttribute('aria-current', 'true');
+        active = current.link;
+      } else if (!current && active) {
+        active.classList.remove('active');
+        active.removeAttribute('aria-current');
+        active = null;
+      }
+    });
+  })();
+  </script>
+
+  <button class="back-to-top" id="backToTop" aria-label="맨 위로 가기">&#x2191;</button>
+
+  <footer>
+    <p>&copy; 2026 바이오대디. All rights reserved.</p>
+    <p><a href="https://blog.naver.com/biodad" target="_blank" rel="noopener noreferrer">blog.naver.com/biodad</a> &middot; kybmy0522@naver.com</p>
+  </footer>
+</body>
+</html>
