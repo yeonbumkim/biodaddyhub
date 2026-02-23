@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-02-23T07:04:12.158786+09:00",
-  "basis_date": "2026-02-23",
+  "generated_at": "2026-02-24T07:49:08.170773+09:00",
+  "basis_date": "2026-02-24",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 02월 23일",
-      "subtitle": "취업난·아르바이트·세무조사",
-      "url": "tax_policy/tax_20260223_065359.html",
-      "published_at": "2026-02-23T06:53:59+09:00",
+      "title": "세금 브리핑 - 2026년 02월 24일",
+      "subtitle": "월급 차이·아파트값 상승·세금 환급",
+      "url": "tax_policy/tax_20260224_073929.html",
+      "published_at": "2026-02-24T07:39:29+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 02월 23일",
-      "subtitle": "케이뱅크 청약·상장 일정",
-      "url": "ipo/ipo_20260223_070227.html",
-      "published_at": "2026-02-23T07:02:27+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 02월 24일",
+      "subtitle": "케이뱅크·청약 경쟁률·상장 확정",
+      "url": "ipo/ipo_20260224_074713.html",
+      "published_at": "2026-02-24T07:47:13+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 02월 23일",
-      "subtitle": "레버리지·인버스 ETF 매매·개미 투",
-      "url": "kospi_etf/kospi_etf_20260223_070411.html",
-      "published_at": "2026-02-23T07:04:11+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 02월 24일",
+      "subtitle": "레버리지 ETF·해외 투자 증가",
+      "url": "kospi_etf/kospi_etf_20260224_074907.html",
+      "published_at": "2026-02-24T07:49:07+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 02월 23일",
-      "subtitle": "삼일제약·게임주·반도체 순환매",
-      "url": "kosdaq/kosdaq_20260223_070343.html",
-      "published_at": "2026-02-23T07:03:43+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 02월 24일",
+      "subtitle": "삼일제약·코스닥 상승·반도체 순환매",
+      "url": "kosdaq/kosdaq_20260224_074823.html",
+      "published_at": "2026-02-24T07:48:23+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 02월 23일",
-      "subtitle": "카카오·삼성 파운드리·유가 급등",
-      "url": "kospi/kospi_20260223_070307.html",
-      "published_at": "2026-02-23T07:03:07+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 02월 24일",
+      "subtitle": "삼성전자·코스피 상승세·반도체 전망",
+      "url": "kospi/kospi_20260224_074750.html",
+      "published_at": "2026-02-24T07:47:50+09:00",
       "score": 45,
       "tags": [
         "코스피"
