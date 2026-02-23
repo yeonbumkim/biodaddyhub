@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1e3a5f">
+    <title>주택담보대출 계산기 | 바이오대디</title>
+    <meta name="description" content="주택담보대출 원리금균등·원금균등·거치식 상환 방식별 월 납부액과 총 이자를 비교 계산하세요.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="주택담보대출 계산기 | 바이오대디">
+    <meta property="og:description" content="주택담보대출 원리금균등·원금균등·거치식 상환 방식별 월 납부액과 총 이자를 비교 계산하세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://farmingdollar.com/calculator/mortgage/mortgage.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="주택담보대출 계산기 | 바이오대디">
+    <meta name="twitter:description" content="주택담보대출 원리금균등·원금균등·거치식 상환 방식별 월 납부액과 총 이자를 비교 계산하세요.">
+    <style>
+        :root {
+            --primary-color: #1e3a5f;
+            --primary-light: #2d5a87;
+            --secondary-color: #3498db;
+            --accent-color: #27ae60;
+            --warning-color: #e74c3c;
+            --background-color: #f5f7fa;
+            --card-background: #ffffff;
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --border-color: #e1e8ed;
+            --safe-area-top: env(safe-area-inset-top);
+            --safe-area-bottom: env(safe-area-inset-bottom);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard', 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            min-height: 100vh;
+            padding-bottom: var(--safe-area-bottom);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        header {
+            text-align: center;
+            padding: 24px 20px;
+            padding-top: calc(24px + var(--safe-area-top));
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        header p {
+            opacity: 0.85;
+            font-size: 0.85rem;
+        }
+
+        /* Input Section */
+        .input-section {
+            background: var(--card-background);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+        }
+
+        .input-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .input-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+        }
+
+        .input-group label .tooltip {
+            display: none;
+        }
+
+        .input-group input,
+        .input-group select {
+            padding: 14px 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 16px; /* Prevents zoom on iOS */
+            transition: border-color 0.2s;
+            background: white;
+            min-height: 48px; /* Touch-friendly */
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .input-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237f8c8d' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 36px;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .input-suffix {
+            position: relative;
+        }
+
+        .input-suffix input {
+            width: 100%;
+            padding-right: 40px;
+        }
+
+        .input-suffix span {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Buttons */
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        button {
+            padding: 14px 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            min-height: 48px;
+            -webkit-appearance: none;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-light));
+            color: white;
+        }
+
+        .btn-secondary {
+            background: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 16px;
+            padding: 20px;
+            color: white;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .summary-section.visible {
+            display: block;
+        }
+
+        .summary-section h2 {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .summary-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .summary-card h3 {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .summary-card .value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: right;
+        }
+
+        .summary-card .value.warning {
+            color: #ffd93d;
+        }
+
+        /* Results Section */
+        .results-section {
+            display: none;
+        }
+
+        .results-section.visible {
+            display: block;
+        }
+
+        /* Loan Type Cards */
+        .loan-types-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .loan-type-card {
+            background: var(--card-background);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .loan-type-header {
+            padding: 16px;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .loan-type-header h3 {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .loan-type-header p {
+            font-size: 0.75rem;
+            opacity: 0.85;
+        }
+
+        .loan-type-header.interest-only {
+            background: #7f8c8d;
+        }
+
+        .loan-type-header.equal-principal {
+            background: var(--accent-color);
+        }
+
+        .loan-type-body {
+            padding: 16px;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .result-value {
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: right;
+        }
+
+        .result-value.highlight {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .comparison-box {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 14px;
+            margin-top: 12px;
+        }
+
+        .comparison-box h4 {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .comparison-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .comparison-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .comparison-label {
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .dot.deferment {
+            background: var(--warning-color);
+        }
+
+        .dot.normal {
+            background: var(--accent-color);
+        }
+
+        .comparison-value {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .comparison-value.deferment {
+            color: var(--warning-color);
+        }
+
+        .comparison-value.normal {
+            color: var(--accent-color);
+        }
+
+        .diff-badge {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Chart Section */
+        .chart-section {
+            background: var(--card-background);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+        }
+
+        .chart-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .chart-item {
+            margin-bottom: 16px;
+        }
+
+        .chart-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .chart-label-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+        }
+
+        .chart-label-row span:first-child {
+            font-weight: 600;
+        }
+
+        .chart-bar-container {
+            height: 16px;
+            background: #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chart-bar {
+            height: 100%;
+            border-radius: 8px;
+            transition: width 0.5s ease;
+        }
+
+        .chart-bar.normal {
+            background: linear-gradient(90deg, var(--accent-color), #2ecc71);
+        }
+
+        .chart-bar.deferment {
+            background: linear-gradient(90deg, var(--warning-color), #e67e22);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .chart-legend {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+            justify-content: center;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 4px;
+        }
+
+        .legend-color.normal {
+            background: var(--accent-color);
+        }
+
+        .legend-color.deferment {
+            background: var(--warning-color);
+        }
+
+        /* Info Section */
+        .info-section {
+            background: var(--card-background);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 14px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .info-item {
+            background: var(--background-color);
+            border-radius: 10px;
+            padding: 14px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .info-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .info-item p {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .bd-nav {
+            background: rgba(26, 26, 46, 0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 0.6rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+        }
+        .bd-nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .bd-nav a {
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #e2e8f0;
+            transition: color 0.2s;
+        }
+        .bd-nav a:hover { color: #3498db; }
+
+        .bd-disclaimer {
+            background: var(--card-background);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .bd-disclaimer p { margin-bottom: 8px; color: var(--text-primary); }
+        .bd-disclaimer-list { list-style: none; padding: 0; }
+        .bd-disclaimer-list li { padding: 2px 0; }
+        .bd-disclaimer-list li::before { content: "· "; }
+
+        .bd-footer {
+            text-align: center;
+            padding: 20px 16px;
+            padding-bottom: calc(20px + var(--safe-area-bottom));
+        }
+        .bd-footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .bd-footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .bd-footer-links a:hover { color: var(--secondary-color); }
+        .bd-footer-dot { color: var(--border-color); font-size: 0.8rem; }
+        .bd-copyright {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
+
+        .copy-notification {
+            position: fixed;
+            bottom: calc(20px + var(--safe-area-bottom));
+            left: 16px;
+            right: 16px;
+            background: var(--accent-color);
+            color: white;
+            padding: 14px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            transform: translateY(120%);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .copy-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Tablet and Desktop */
+        @media (min-width: 600px) {
+            .container {
+                padding: 24px;
+            }
+
+            header {
+                border-radius: 0 0 24px 24px;
+                margin-bottom: 24px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .input-section,
+            .summary-section,
+            .chart-section,
+            .info-section {
+                padding: 24px;
+                margin-bottom: 24px;
+            }
+
+            .input-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+            }
+
+            .input-group.full-width {
+                grid-column: span 2;
+            }
+
+            .input-group label .tooltip {
+                display: inline;
+                font-weight: 400;
+                color: var(--text-secondary);
+                font-size: 0.75rem;
+            }
+
+            .button-group {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+
+            .btn-primary {
+                grid-column: auto;
+            }
+
+            .summary-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .summary-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .summary-card .value {
+                text-align: left;
+            }
+
+            .loan-types-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .info-grid {
+                flex-direction: row;
+            }
+
+            .info-item {
+                flex: 1;
+            }
+
+            .copy-notification {
+                left: auto;
+                right: 24px;
+                max-width: 300px;
+            }
+        }
+
+        @media print {
+            body { background: white; }
+            .input-section, .button-group { display: none; }
+            .results-section, .summary-section { display: block !important; }
+            .loan-types-grid { display: block; }
+            .loan-type-card { margin-bottom: 20px; page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="bd-nav">
+      <div class="bd-nav-inner">
+        <a href="https://farmingdollar.com">&#x2190; BioDaddy Hub</a>
+      </div>
+    </nav>
+
+    <header>
+        <h1>주택담보대출 계산기</h1>
+        <p>Parental Leave Mortgage Deferment Calculator</p>
+    </header>
+
+    <div class="container">
+        <section class="input-section">
+            <h2>대출 정보 입력</h2>
+
+            <div class="input-grid">
+                <div class="input-group full-width">
+                    <label>대출금액 <span class="tooltip">(Loan Amount)</span></label>
+                    <div class="input-suffix">
+                        <input type="text" id="loanAmount" value="300,000,000" inputmode="numeric" placeholder="300,000,000">
+                        <span>원</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>이자율 <span class="tooltip">(Rate)</span></label>
+                    <div class="input-suffix">
+                        <input type="text" id="interestRate" value="4.0" inputmode="decimal" placeholder="4.0">
+                        <span>%</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>상환기간</label>
+                    <select id="loanTerm">
+                        <option value="5">5년</option>
+                        <option value="10">10년</option>
+                        <option value="15">15년</option>
+                        <option value="20">20년</option>
+                        <option value="25">25년</option>
+                        <option value="30" selected>30년</option>
+                        <option value="35">35년</option>
+                        <option value="40">40년</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>유예기간</label>
+                    <select id="defermentPeriod">
+                        <option value="0">없음</option>
+                        <option value="1" selected>1년</option>
+                        <option value="2">2년</option>
+                        <option value="3">3년</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn-primary" onclick="calculate()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="4" y="2" width="16" height="20" rx="2"/>
+                        <line x1="8" y1="6" x2="16" y2="6"/>
+                        <line x1="8" y1="10" x2="16" y2="10"/>
+                        <line x1="8" y1="14" x2="12" y2="14"/>
+                    </svg>
+                    계산하기
+                </button>
+                <button class="btn-secondary" onclick="resetForm()">초기화</button>
+                <button class="btn-secondary" onclick="copyResults()">복사</button>
+            </div>
+        </section>
+
+        <section class="summary-section" id="summarySection">
+            <h2>요약</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h3>유예기간 월 납부액</h3>
+                    <div class="value" id="summaryDefermentPayment">₩0</div>
+                </div>
+                <div class="summary-card">
+                    <h3>유예기간 총 납부액</h3>
+                    <div class="value" id="summaryTotalDeferment">₩0</div>
+                </div>
+                <div class="summary-card">
+                    <h3>추가 이자 비용</h3>
+                    <div class="value warning" id="summaryAdditionalInterest">₩0</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section" id="resultsSection">
+            <div class="loan-types-grid">
+                <!-- 원리금균등상환 -->
+                <div class="loan-type-card">
+                    <div class="loan-type-header">
+                        <div>
+                            <h3>원리금균등상환</h3>
+                            <p>Equal Principal & Interest</p>
+                        </div>
+                    </div>
+                    <div class="loan-type-body">
+                        <div class="result-row">
+                            <span class="result-label">월 납부액</span>
+                            <span class="result-value highlight" id="epi-monthly">₩0</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">총 이자</span>
+                            <span class="result-value" id="epi-interest">₩0</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">총 상환액</span>
+                            <span class="result-value" id="epi-total">₩0</span>
+                        </div>
+                        <div class="comparison-box" id="epi-comparison">
+                            <h4>총 이자 비교</h4>
+                            <div class="comparison-row">
+                                <span class="comparison-label"><span class="dot deferment"></span>유예 적용</span>
+                                <span class="comparison-value deferment" id="epi-defer-interest">₩0</span>
+                            </div>
+                            <div class="comparison-row">
+                                <span class="comparison-label"><span class="dot normal"></span>일반 상환</span>
+                                <span class="comparison-value normal" id="epi-normal-interest">₩0</span>
+                            </div>
+                            <div class="diff-badge" id="epi-diff">+₩0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 원금균등상환 -->
+                <div class="loan-type-card">
+                    <div class="loan-type-header equal-principal">
+                        <div>
+                            <h3>원금균등상환</h3>
+                            <p>Equal Principal</p>
+                        </div>
+                    </div>
+                    <div class="loan-type-body">
+                        <div class="result-row">
+                            <span class="result-label">첫달 납부액</span>
+                            <span class="result-value highlight" id="ep-first">₩0</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">마지막달</span>
+                            <span class="result-value" id="ep-last">₩0</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">총 이자</span>
+                            <span class="result-value" id="ep-interest">₩0</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">총 상환액</span>
+                            <span class="result-value" id="ep-total">₩0</span>
+                        </div>
+                        <div class="comparison-box" id="ep-comparison">
+                            <h4>총 이자 비교</h4>
+                            <div class="comparison-row">
+                                <span class="comparison-label"><span class="dot deferment"></span>유예 적용</span>
+                                <span class="comparison-value deferment" id="ep-defer-interest">₩0</span>
+                            </div>
+                            <div class="comparison-row">
+                                <span class="comparison-label"><span class="dot normal"></span>일반 상환</span>
+                                <span class="comparison-value normal" id="ep-normal-interest">₩0</span>
+                            </div>
+                            <div class="diff-badge" id="ep-diff">+₩0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 거치식 -->
+                <div class="loan-type-card">
+                    <div class="loan-type-header interest-only">
+                        <div>
+                            <h3>거치식</h3>
+                            <p>Interest-Only</p>
+                        </div>
+                    </div>
+                    <div class="loan-type-body">
+                        <div class="result-row">
+                            <span class="result-label">월 이자</span>
+                            <span class="result-value highlight" id="io-monthly">₩0</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">총 이자</span>
+                            <span class="result-value" id="io-interest">₩0</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">만기 원금</span>
+                            <span class="result-value" id="io-principal">₩0</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">총 상환액</span>
+                            <span class="result-value" id="io-total">₩0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart -->
+            <div class="chart-section">
+                <h3>총 이자 비교</h3>
+                <div id="chartContainer">
+                    <div class="chart-item">
+                        <div class="chart-label-row">
+                            <span>원리금균등</span>
+                            <span id="chart-epi-value">₩0</span>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar normal" id="chart-epi-normal"></div>
+                            <div class="chart-bar deferment" id="chart-epi-defer"></div>
+                        </div>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart-label-row">
+                            <span>원금균등</span>
+                            <span id="chart-ep-value">₩0</span>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar normal" id="chart-ep-normal"></div>
+                            <div class="chart-bar deferment" id="chart-ep-defer"></div>
+                        </div>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart-label-row">
+                            <span>거치식</span>
+                            <span id="chart-io-value">₩0</span>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar normal" id="chart-io"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <div class="legend-color normal"></div>
+                        <span>일반</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color deferment"></div>
+                        <span>유예</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h3>대출 유형 안내</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h4>원리금균등상환</h4>
+                    <p>매월 동일한 금액 납부. 가장 일반적인 방식.</p>
+                </div>
+                <div class="info-item" style="border-left-color: var(--accent-color);">
+                    <h4>원금균등상환</h4>
+                    <p>초기 부담 크지만 총 이자 가장 적음.</p>
+                </div>
+                <div class="info-item" style="border-left-color: #7f8c8d;">
+                    <h4>거치식</h4>
+                    <p>이자만 납부, 만기에 원금 상환.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="bd-disclaimer">
+          <p><strong>면책 조항 (Disclaimer)</strong></p>
+          <ul class="bd-disclaimer-list">
+            <li>본 계산기는 <strong>단순 참고용</strong>이며, 금융 상품 권유·추천·자문이 아닙니다.</li>
+            <li>계산 결과에는 <strong>오류가 포함될 수 있으며</strong>, 실제 대출 금리·수수료·유예 조건 등은 반드시 해당 금융기관을 통해 직접 확인하시기 바랍니다.</li>
+            <li>본 페이지에 기재된 수치·비율은 일반적인 상환 방식 기준 <strong>추정치</strong>로, 실제 대출 조건과 상이할 수 있습니다.</li>
+            <li>본 계산기 이용으로 발생하는 <strong>직·간접적 손실에 대해 운영자는 일체의 법적 책임을 지지 않습니다.</strong></li>
+            <li>모든 금융 판단과 그에 따른 결과의 책임은 <strong>전적으로 이용자 본인</strong>에게 있습니다.</li>
+            <li>정확한 대출 조건은 <strong>해당 은행 및 금융감독원 공식 채널</strong>을 통해 직접 확인하시기 바랍니다.</li>
+          </ul>
+        </div>
+    </div>
+
+    <footer class="bd-footer">
+      <div class="bd-footer-links">
+        <a href="https://blog.naver.com/biodad" target="_blank" rel="noopener">블로그</a>
+        <span class="bd-footer-dot">·</span>
+        <a href="https://farmingdollar.com" target="_blank" rel="noopener">farmingdollar.com</a>
+      </div>
+      <p class="bd-copyright">&copy; 2026 바이오대디. All rights reserved.</p>
+    </footer>
+
+    <div class="copy-notification" id="copyNotification">결과가 복사되었습니다</div>
+
+    <script>
+        function formatNumber(num) {
+            return Math.round(num).toLocaleString('ko-KR');
+        }
+
+        function formatCurrency(num) {
+            return '₩' + formatNumber(num);
+        }
+
+        function parseNumber(str) {
+            return parseFloat(str.replace(/,/g, '')) || 0;
+        }
+
+        document.getElementById('loanAmount').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/[^0-9]/g, '');
+            if (value) {
+                e.target.value = parseInt(value).toLocaleString('ko-KR');
+            }
+        });
+
+        function calculateEqualPrincipalInterest(principal, annualRate, termYears, defermentYears) {
+            const monthlyRate = annualRate / 100 / 12;
+            const defermentMonths = defermentYears * 12;
+            const repaymentMonths = termYears * 12 - defermentMonths;
+
+            const monthlyInterestDuringDeferment = principal * monthlyRate;
+            const totalInterestDuringDeferment = monthlyInterestDuringDeferment * defermentMonths;
+
+            let monthlyPaymentAfter = 0;
+            let totalInterestAfterDeferment = 0;
+
+            if (repaymentMonths > 0 && monthlyRate > 0) {
+                monthlyPaymentAfter = principal * (monthlyRate * Math.pow(1 + monthlyRate, repaymentMonths)) /
+                                      (Math.pow(1 + monthlyRate, repaymentMonths) - 1);
+                totalInterestAfterDeferment = (monthlyPaymentAfter * repaymentMonths) - principal;
+            } else if (repaymentMonths > 0) {
+                monthlyPaymentAfter = principal / repaymentMonths;
+            }
+
+            return {
+                monthlyDuringDeferment: monthlyInterestDuringDeferment,
+                monthlyAfterDeferment: monthlyPaymentAfter,
+                totalInterest: totalInterestDuringDeferment + totalInterestAfterDeferment,
+                totalPayment: principal + totalInterestDuringDeferment + totalInterestAfterDeferment
+            };
+        }
+
+        function calculateEqualPrincipalInterestNormal(principal, annualRate, termYears) {
+            const monthlyRate = annualRate / 100 / 12;
+            const totalMonths = termYears * 12;
+
+            let monthlyPayment = 0;
+            let totalInterest = 0;
+
+            if (totalMonths > 0 && monthlyRate > 0) {
+                monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
+                                 (Math.pow(1 + monthlyRate, totalMonths) - 1);
+                totalInterest = (monthlyPayment * totalMonths) - principal;
+            }
+
+            return {
+                monthlyPayment: monthlyPayment,
+                totalInterest: totalInterest,
+                totalPayment: principal + totalInterest
+            };
+        }
+
+        function calculateEqualPrincipal(principal, annualRate, termYears, defermentYears) {
+            const monthlyRate = annualRate / 100 / 12;
+            const defermentMonths = defermentYears * 12;
+            const repaymentMonths = termYears * 12 - defermentMonths;
+
+            const monthlyInterestDuringDeferment = principal * monthlyRate;
+            const totalInterestDuringDeferment = monthlyInterestDuringDeferment * defermentMonths;
+
+            const monthlyPrincipal = repaymentMonths > 0 ? principal / repaymentMonths : 0;
+            const firstMonthPayment = monthlyPrincipal + (principal * monthlyRate);
+            const lastMonthPayment = monthlyPrincipal + (monthlyPrincipal * monthlyRate);
+
+            let totalInterestAfterDeferment = 0;
+            for (let i = 0; i < repaymentMonths; i++) {
+                totalInterestAfterDeferment += (principal - (monthlyPrincipal * i)) * monthlyRate;
+            }
+
+            return {
+                monthlyDuringDeferment: monthlyInterestDuringDeferment,
+                firstMonthAfterDeferment: firstMonthPayment,
+                lastMonthAfterDeferment: lastMonthPayment,
+                totalInterest: totalInterestDuringDeferment + totalInterestAfterDeferment,
+                totalPayment: principal + totalInterestDuringDeferment + totalInterestAfterDeferment
+            };
+        }
+
+        function calculateEqualPrincipalNormal(principal, annualRate, termYears) {
+            const monthlyRate = annualRate / 100 / 12;
+            const totalMonths = termYears * 12;
+
+            const monthlyPrincipal = totalMonths > 0 ? principal / totalMonths : 0;
+            const firstMonthPayment = monthlyPrincipal + (principal * monthlyRate);
+            const lastMonthPayment = monthlyPrincipal + (monthlyPrincipal * monthlyRate);
+
+            let totalInterest = 0;
+            for (let i = 0; i < totalMonths; i++) {
+                totalInterest += (principal - (monthlyPrincipal * i)) * monthlyRate;
+            }
+
+            return {
+                firstMonthPayment: firstMonthPayment,
+                lastMonthPayment: lastMonthPayment,
+                totalInterest: totalInterest,
+                totalPayment: principal + totalInterest
+            };
+        }
+
+        function calculateInterestOnly(principal, annualRate, termYears) {
+            const monthlyRate = annualRate / 100 / 12;
+            const totalMonths = termYears * 12;
+            const monthlyInterest = principal * monthlyRate;
+
+            return {
+                monthlyPayment: monthlyInterest,
+                totalInterest: monthlyInterest * totalMonths,
+                totalPayment: principal + (monthlyInterest * totalMonths),
+                principal: principal
+            };
+        }
+
+        function calculate() {
+            const loanAmount = parseNumber(document.getElementById('loanAmount').value);
+            const interestRate = parseFloat(document.getElementById('interestRate').value) || 0;
+            const loanTerm = parseInt(document.getElementById('loanTerm').value);
+            const defermentPeriod = parseInt(document.getElementById('defermentPeriod').value);
+
+            if (loanAmount <= 0 || interestRate <= 0) {
+                alert('대출금액과 이자율을 입력해주세요.');
+                return;
+            }
+
+            if (defermentPeriod >= loanTerm) {
+                alert('유예기간은 상환기간보다 짧아야 합니다.');
+                return;
+            }
+
+            const epiDefer = calculateEqualPrincipalInterest(loanAmount, interestRate, loanTerm, defermentPeriod);
+            const epiNormal = calculateEqualPrincipalInterestNormal(loanAmount, interestRate, loanTerm);
+            const epDefer = calculateEqualPrincipal(loanAmount, interestRate, loanTerm, defermentPeriod);
+            const epNormal = calculateEqualPrincipalNormal(loanAmount, interestRate, loanTerm);
+            const io = calculateInterestOnly(loanAmount, interestRate, loanTerm);
+
+            const monthlyDeferment = loanAmount * (interestRate / 100 / 12);
+            document.getElementById('summaryDefermentPayment').textContent = formatCurrency(monthlyDeferment);
+            document.getElementById('summaryTotalDeferment').textContent = formatCurrency(monthlyDeferment * defermentPeriod * 12);
+
+            const additionalInterest = epiDefer.totalInterest - epiNormal.totalInterest;
+            document.getElementById('summaryAdditionalInterest').textContent =
+                defermentPeriod > 0 ? '+' + formatCurrency(additionalInterest) : '₩0';
+
+            document.getElementById('epi-monthly').textContent = formatCurrency(
+                defermentPeriod > 0 ? epiDefer.monthlyAfterDeferment : epiNormal.monthlyPayment
+            );
+            document.getElementById('epi-interest').textContent = formatCurrency(
+                defermentPeriod > 0 ? epiDefer.totalInterest : epiNormal.totalInterest
+            );
+            document.getElementById('epi-total').textContent = formatCurrency(
+                defermentPeriod > 0 ? epiDefer.totalPayment : epiNormal.totalPayment
+            );
+            document.getElementById('epi-defer-interest').textContent = formatCurrency(epiDefer.totalInterest);
+            document.getElementById('epi-normal-interest').textContent = formatCurrency(epiNormal.totalInterest);
+            document.getElementById('epi-diff').textContent = '+' + formatCurrency(additionalInterest);
+            document.getElementById('epi-comparison').style.display = defermentPeriod > 0 ? 'block' : 'none';
+
+            document.getElementById('ep-first').textContent = formatCurrency(
+                defermentPeriod > 0 ? epDefer.firstMonthAfterDeferment : epNormal.firstMonthPayment
+            );
+            document.getElementById('ep-last').textContent = formatCurrency(
+                defermentPeriod > 0 ? epDefer.lastMonthAfterDeferment : epNormal.lastMonthPayment
+            );
+            document.getElementById('ep-interest').textContent = formatCurrency(
+                defermentPeriod > 0 ? epDefer.totalInterest : epNormal.totalInterest
+            );
+            document.getElementById('ep-total').textContent = formatCurrency(
+                defermentPeriod > 0 ? epDefer.totalPayment : epNormal.totalPayment
+            );
+            document.getElementById('ep-defer-interest').textContent = formatCurrency(epDefer.totalInterest);
+            document.getElementById('ep-normal-interest').textContent = formatCurrency(epNormal.totalInterest);
+            const epDiff = epDefer.totalInterest - epNormal.totalInterest;
+            document.getElementById('ep-diff').textContent = '+' + formatCurrency(epDiff);
+            document.getElementById('ep-comparison').style.display = defermentPeriod > 0 ? 'block' : 'none';
+
+            document.getElementById('io-monthly').textContent = formatCurrency(io.monthlyPayment);
+            document.getElementById('io-interest').textContent = formatCurrency(io.totalInterest);
+            document.getElementById('io-principal').textContent = formatCurrency(io.principal);
+            document.getElementById('io-total').textContent = formatCurrency(io.totalPayment);
+
+            const maxInterest = Math.max(epiDefer.totalInterest, epDefer.totalInterest, io.totalInterest);
+
+            document.getElementById('chart-epi-value').textContent = formatCurrency(
+                defermentPeriod > 0 ? epiDefer.totalInterest : epiNormal.totalInterest
+            );
+            document.getElementById('chart-epi-normal').style.width = (epiNormal.totalInterest / maxInterest * 100) + '%';
+            document.getElementById('chart-epi-defer').style.width = defermentPeriod > 0 ?
+                (epiDefer.totalInterest / maxInterest * 100) + '%' : '0%';
+
+            document.getElementById('chart-ep-value').textContent = formatCurrency(
+                defermentPeriod > 0 ? epDefer.totalInterest : epNormal.totalInterest
+            );
+            document.getElementById('chart-ep-normal').style.width = (epNormal.totalInterest / maxInterest * 100) + '%';
+            document.getElementById('chart-ep-defer').style.width = defermentPeriod > 0 ?
+                (epDefer.totalInterest / maxInterest * 100) + '%' : '0%';
+
+            document.getElementById('chart-io-value').textContent = formatCurrency(io.totalInterest);
+            document.getElementById('chart-io').style.width = (io.totalInterest / maxInterest * 100) + '%';
+
+            document.getElementById('summarySection').classList.add('visible');
+            document.getElementById('resultsSection').classList.add('visible');
+            document.getElementById('summarySection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function resetForm() {
+            document.getElementById('loanAmount').value = '300,000,000';
+            document.getElementById('interestRate').value = '4.0';
+            document.getElementById('loanTerm').value = '30';
+            document.getElementById('defermentPeriod').value = '1';
+            document.getElementById('summarySection').classList.remove('visible');
+            document.getElementById('resultsSection').classList.remove('visible');
+        }
+
+        function copyResults() {
+            const loanAmount = document.getElementById('loanAmount').value;
+            const interestRate = document.getElementById('interestRate').value;
+            const loanTerm = document.getElementById('loanTerm').value;
+            const defermentPeriod = document.getElementById('defermentPeriod').value;
+            const summaryPayment = document.getElementById('summaryDefermentPayment').textContent;
+            const additionalInterest = document.getElementById('summaryAdditionalInterest').textContent;
+
+            const text = `육아휴직 대출 유예 계산 결과
+대출금액: ${loanAmount}원
+이자율: ${interestRate}%
+상환기간: ${loanTerm}년
+유예기간: ${defermentPeriod}년
+
+유예기간 월 납부액: ${summaryPayment}
+추가 이자 비용: ${additionalInterest}`;
+
+            navigator.clipboard.writeText(text).then(() => {
+                const notification = document.getElementById('copyNotification');
+                notification.classList.add('show');
+                setTimeout(() => notification.classList.remove('show'), 2500);
+            });
+        }
+
+        ['loanAmount', 'interestRate', 'loanTerm', 'defermentPeriod'].forEach(id => {
+            document.getElementById(id).addEventListener('change', calculate);
+        });
+
+        document.addEventListener('DOMContentLoaded', calculate);
+    </script>
+</body>
+</html>

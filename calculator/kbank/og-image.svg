@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e1a"/>
+      <stop offset="100%" style="stop-color:#111827"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f87171"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.03">
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#fff" stroke-width="1" transform="translate(60,0)" />
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#fff" stroke-width="1" transform="translate(120,0)" />
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#fff" stroke-width="1" transform="translate(180,0)" />
+    <line x1="0" y1="0" x2="0" y2="630" stroke="#fff" stroke-width="1" transform="translate(240,0)" />
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#fff" stroke-width="1" transform="translate(0,60)" />
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#fff" stroke-width="1" transform="translate(0,120)" />
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#fff" stroke-width="1" transform="translate(0,180)" />
+  </g>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+
+  <!-- Badge: 2026 IPO -->
+  <rect x="80" y="60" width="110" height="32" rx="16" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="135" y="82" text-anchor="middle" fill="#3b82f6" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" letter-spacing="1">2026 IPO</text>
+
+  <!-- Main Title -->
+  <text x="80" y="148" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="800">
+    <tspan>케이뱅크 상장</tspan>
+  </text>
+  <text x="80" y="210" fill="url(#accent)" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="800">
+    <tspan>수익 계산기</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="80" y="258" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="20">
+    배정 주식수 입력 → 시나리오별 수익 · 리스크 분석
+  </text>
+
+  <!-- Divider line -->
+  <line x1="80" y1="290" x2="580" y2="290" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Stat Cards -->
+  <!-- 공모가 -->
+  <rect x="80" y="320" width="220" height="90" rx="12" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="100" y="352" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="14">공모가</text>
+  <text x="100" y="390" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="800">8,300원</text>
+
+  <!-- 기관확약 (RED warning) -->
+  <rect x="320" y="320" width="220" height="90" rx="12" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="340" y="352" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="14">기관 확약</text>
+  <text x="340" y="390" fill="#ef4444" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="800">12.4%</text>
+
+  <!-- 유통물량 (YELLOW warning) -->
+  <rect x="80" y="430" width="220" height="90" rx="12" fill="#eab308" fill-opacity="0.08" stroke="#eab308" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="100" y="462" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="14">유통물량</text>
+  <text x="100" y="500" fill="#eab308" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="800">36.35%</text>
+
+  <!-- 밴드위치 -->
+  <rect x="320" y="430" width="220" height="90" rx="12" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="340" y="462" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="14">밴드 위치</text>
+  <text x="340" y="500" fill="#eab308" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="800">하단 확정</text>
+
+  <!-- Right side: Scenario Preview -->
+  <rect x="620" y="60" width="500" height="460" rx="16" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Scenario Header -->
+  <text x="660" y="100" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600">시나리오별 시초가 예상</text>
+
+  <!-- Scenario rows -->
+  <!-- Conservative +5% -->
+  <rect x="650" y="120" width="440" height="52" rx="8" fill="#0d1321"/>
+  <circle cx="678" cy="146" r="8" fill="#3b82f6"/>
+  <text x="700" y="142" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="13">보수적</text>
+  <text x="700" y="162" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">+5%</text>
+  <text x="1060" y="152" text-anchor="end" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700">8,715원</text>
+
+  <!-- Base +15% -->
+  <rect x="650" y="182" width="440" height="52" rx="8" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-opacity="0.3" stroke-width="1"/>
+  <circle cx="678" cy="208" r="8" fill="#22c55e"/>
+  <text x="700" y="204" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="13">기본</text>
+  <text x="700" y="224" fill="#22c55e" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">+15%</text>
+  <text x="1060" y="214" text-anchor="end" fill="#22c55e" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700">9,545원</text>
+
+  <!-- Strong +25% -->
+  <rect x="650" y="244" width="440" height="52" rx="8" fill="#0d1321"/>
+  <circle cx="678" cy="270" r="8" fill="#eab308"/>
+  <text x="700" y="266" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="13">강한 수급</text>
+  <text x="700" y="286" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">+25%</text>
+  <text x="1060" y="276" text-anchor="end" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700">10,375원</text>
+
+  <!-- Overheat +35% -->
+  <rect x="650" y="306" width="440" height="52" rx="8" fill="#0d1321"/>
+  <circle cx="678" cy="332" r="8" fill="#ef4444"/>
+  <text x="700" y="328" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="13">과열</text>
+  <text x="700" y="348" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">+35%</text>
+  <text x="1060" y="338" text-anchor="end" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700">11,205원</text>
+
+  <!-- Realistic range highlight -->
+  <rect x="650" y="380" width="440" height="70" rx="10" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="670" y="408" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="13">현실적 예상 범위</text>
+  <text x="670" y="438" fill="#3b82f6" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="800">8,700원 ~ 10,300원</text>
+
+  <!-- Risk warning bar at bottom of card -->
+  <rect x="650" y="468" width="440" height="36" rx="8" fill="#ef4444" fill-opacity="0.1"/>
+  <text x="870" y="492" text-anchor="middle" fill="#ef4444" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">기관 확약 12.4% — 상장일 매물 압력 주의</text>
+
+  <!-- Footer bar -->
+  <rect x="0" y="555" width="1200" height="75" fill="#0a0e1a" fill-opacity="0.8"/>
+  <line x1="0" y1="555" x2="1200" y2="555" stroke="#1e293b" stroke-width="1"/>
+  <text x="80" y="600" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="16">farmingdollar.com</text>
+  <text x="1120" y="600" text-anchor="end" fill="#475569" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500">© 바이오대디</text>
+</svg>

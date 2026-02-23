@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백테스트 투자 시뮬레이터 | 바이오대디</title>
+    <meta name="description" content="과거 미국 주식에 투자했다면? 타임머신 백테스트로 AAPL, MSFT, NVDA 등 주요 종목의 수익률을 확인해보세요.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="백테스트 투자 시뮬레이터 | 바이오대디">
+    <meta property="og:description" content="과거 미국 주식에 투자했다면? 타임머신 백테스트로 주요 종목의 수익률을 확인해보세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://backtest.farmingdollar.com">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="백테스트 투자 시뮬레이터 | 바이오대디">
+    <meta name="twitter:description" content="과거 미국 주식에 투자했다면? 타임머신 백테스트로 주요 종목의 수익률을 확인해보세요.">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7890314542345467" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    max-width: 100%;
+}
+
+/* Mobile mode: strict width limits */
+body:not(.desktop-mode) {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+}
+
+body:not(.desktop-mode) .container {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+}
+
+/* Desktop mode: allow wider layout */
+body.desktop-mode, body.desktop-mode * {
+    max-width: none;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    overflow-x: hidden;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    width: 100%;
+    max-width: 100vw;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* View Mode Toggle */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    position: sticky;
+    top: 41px;
+    z-index: 100;
+}
+
+.view-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4c51bf;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.view-btn.active {
+    background: #4c51bf;
+    color: white;
+    border-color: #4c51bf;
+}
+
+.view-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+}
+
+/* Desktop Mode - forced wide layout */
+body.desktop-mode {
+    overflow-x: auto;
+    max-width: none;
+}
+
+body.desktop-mode .container {
+    min-width: 1000px;
+    max-width: 1200px;
+    overflow-x: visible;
+}
+
+body.desktop-mode .input-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+body.desktop-mode .results-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+body.desktop-mode .stock-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+body.desktop-mode .card {
+    padding: 2rem;
+}
+
+body.desktop-mode .data-tabs {
+    flex-direction: row;
+}
+
+body.desktop-mode .header-content h1 {
+    font-size: 3rem;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    padding: 3rem 0;
+    color: white;
+}
+
+.header-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInDown 1s ease-out;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Card Styles */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+    color: #4c51bf;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Input Styles */
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 600px) {
+    body:not(.desktop-mode) .input-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    body:not(.desktop-mode) .input-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.select-input, .number-input {
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    transition: all 0.3s ease;
+    background: white;
+    min-height: 48px; /* Touch target */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0 !important;
+}
+
+.select-input:focus, .number-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.number-input:hover, .select-input:hover {
+    border-color: #cbd5e0;
+}
+
+.currency-toggle {
+    margin-top: 0.5rem;
+}
+
+.currency-toggle label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.calculate-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    min-height: 48px; /* Touch target */
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.calculate-btn:active {
+    transform: translateY(0);
+}
+
+/* Results Styles */
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+@media (min-width: 500px) {
+    body:not(.desktop-mode) .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    body:not(.desktop-mode) .results-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.result-card {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.result-card:hover {
+    transform: scale(1.05);
+}
+
+.profit-card { border-left: 5px solid #48bb78; }
+.return-card { border-left: 5px solid #667eea; }
+.gain-card { border-left: 5px solid #ed8936; }
+.annual-card { border-left: 5px solid #9f7aea; }
+
+.result-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.result-content h3 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.result-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d3748;
+    animation: countUp 1s ease-out;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 400px;
+    margin: 1rem 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.chart-container canvas {
+    max-width: 100% !important;
+}
+
+/* Exchange Rate Info */
+.exchange-info {
+    display: grid;
+    gap: 1rem;
+}
+
+.exchange-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.exchange-item .label {
+    font-weight: 600;
+    color: #555;
+}
+
+.exchange-item .value {
+    font-weight: 700;
+    color: #2d3748;
+    font-size: 1.1rem;
+}
+
+/* Fun Facts */
+.fun-facts {
+    background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
+    border: none;
+}
+
+.facts-container {
+    display: grid;
+    gap: 1rem;
+}
+
+.fact-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid #f56565;
+    font-style: italic;
+}
+
+/* Stock Information */
+.stock-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    body:not(.desktop-mode) .stock-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1000px) {
+    body:not(.desktop-mode) .stock-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.stock-card {
+    background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 2px solid rgba(56, 178, 172, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.stock-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(56, 178, 172, 0.2);
+}
+
+.stock-symbol {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #285e61;
+    margin-bottom: 0.5rem;
+}
+
+.stock-name {
+    color: #2c7a7b;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.stock-info {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.stock-metric {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.stock-metric .label {
+    color: #4a5568;
+}
+
+.stock-metric .value {
+    font-weight: 600;
+    color: #285e61;
+}
+
+/* Data Tables */
+.data-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 2px solid #e2e8f0;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 48px;
+    touch-action: manipulation;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.data-table-container {
+    overflow-x: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    table-layout: auto;
+    min-width: 0;
+}
+
+.data-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+.data-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background-color 0.2s ease;
+    word-break: break-word;
+}
+
+.data-table tr:hover td {
+    background-color: #f7fafc;
+}
+
+.positive {
+    color: #48bb78;
+    font-weight: 600;
+}
+
+.negative {
+    color: #f56565;
+    font-weight: 600;
+}
+
+.stock-selector {
+    margin-bottom: 1.5rem;
+}
+
+.stock-selector select {
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: white;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: white;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer .site-link a {
+    color: #4fc3f7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer .site-link a:hover {
+    color: #81d4fa;
+    text-decoration: underline;
+}
+
+.footer .copyright {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.loading-content {
+    text-align: center;
+    color: white;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
+        border-radius: 16px;
+    }
+
+    .card:hover {
+        transform: none; /* Disable hover effects on touch */
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .result-card:hover {
+        transform: none;
+    }
+
+    .stock-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stock-card:hover {
+        transform: none;
+    }
+
+    .chart-container {
+        height: 280px;
+    }
+
+    .data-tabs {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        text-align: center;
+        width: 100%;
+    }
+
+    .calculate-btn {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .data-table {
+        font-size: 0.9rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 2rem 0;
+    }
+
+    .header-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        padding: 0.875rem;
+        border-radius: 12px;
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+    }
+
+    .result-value {
+        font-size: 1.2rem;
+    }
+
+    .result-icon {
+        font-size: 1.8rem;
+    }
+
+    .chart-container {
+        height: 240px;
+    }
+
+    .stock-symbol {
+        font-size: 1.1rem;
+    }
+
+    .stock-metric {
+        font-size: 0.85rem;
+    }
+
+    .exchange-item {
+        padding: 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+        padding: 1.5rem 0;
+    }
+
+    .data-table {
+        font-size: 0.75rem;
+    }
+
+    .data-table th {
+        padding: 8px 6px;
+        font-size: 0.75rem;
+    }
+
+    .data-table td {
+        padding: 8px 6px;
+    }
+
+    .result-card {
+        padding: 1rem;
+    }
+
+    .result-content h3 {
+        font-size: 0.85rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .card:hover,
+    .result-card:hover,
+    .stock-card:hover {
+        transform: none;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .calculate-btn:hover {
+        transform: none;
+    }
+
+    .calculate-btn:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+
+    .tab-btn:active {
+        background: #667eea;
+        color: white;
+    }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 1rem; }
+
+/* Success/Error States */
+.success {
+    background-color: #f0fff4;
+    border-color: #9ae6b4;
+    color: #276749;
+}
+
+.error {
+    background-color: #fed7d7;
+    border-color: #feb2b2;
+    color: #c53030;
+}
+
+.warning {
+    background-color: #fefcbf;
+    border-color: #faf089;
+    color: #744210;
+}
+
+/* Glassmorphism effect for cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Hover effects for interactive elements */
+.interactive:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.7);
+}
+    </style>
+</head>
+<body>
+    <!-- BioDaddy Hub Header -->
+    <nav style="background:rgba(10,14,26,0.9);border-bottom:1px solid rgba(255,255,255,0.2);padding:0.6rem 1.5rem;position:sticky;top:0;z-index:200;backdrop-filter:blur(20px);">
+      <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:1rem;">
+        <a href="https://farmingdollar.com" style="font-size:0.95rem;font-weight:700;text-decoration:none;color:#e2e8f0;transition:color 0.2s;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#e2e8f0'">&#x2190; BioDaddy Hub</a>
+      </div>
+    </nav>
+
+    <div class="container">
+        <!-- View Mode Toggle -->
+        <div class="view-toggle">
+            <button id="mobileViewBtn" class="view-btn active">📱 모바일</button>
+            <button id="desktopViewBtn" class="view-btn">💻 데스크탑</button>
+        </div>
+
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🚀 백테스트 투자 시뮬레이터</h1>
+                <p class="subtitle">타임머신으로 과거 투자의 결과를 확인해보세요!</p>
+            </div>
+        </header>
+
+        <!-- Investment Input Section -->
+        <section class="investment-input">
+            <div class="card">
+                <h2>💰 투자 설정</h2>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="stockSelect">투자할 주식</label>
+                        <select id="stockSelect" class="select-input">
+                            <option value="">주식을 선택하세요</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="investmentYear">투자 연도</label>
+                        <select id="investmentYear" class="select-input" disabled>
+                            <option value="">먼저 주식을 선택하세요</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="investmentAmount">투자 금액 (KRW)</label>
+                        <input type="number" id="investmentAmount" class="number-input" placeholder="1,000,000" min="1" step="1000">
+                        <div class="currency-toggle">
+                            <label>
+                                <input type="checkbox" id="currencyToggle">
+                                USD로 투자하기
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <button id="calculateBtn" class="calculate-btn">🎯 수익률 계산하기</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results" id="resultsSection" style="display: none;">
+            <div class="card">
+                <h2>📊 투자 결과</h2>
+                <div class="results-grid">
+                    <div class="result-card profit-card">
+                        <div class="result-icon">💎</div>
+                        <div class="result-content">
+                            <h3>현재 보유 가치</h3>
+                            <p class="result-value" id="currentValue">-</p>
+                        </div>
+                    </div>
+
+                    <div class="result-card return-card">
+                        <div class="result-icon">📈</div>
+                        <div class="result-content">
+                            <h3>총 수익률</h3>
+                            <p class="result-value" id="totalReturn">-</p>
+                        </div>
+                    </div>
+
+                    <div class="result-card gain-card">
+                        <div class="result-icon">💰</div>
+                        <div class="result-content">
+                            <h3>순수익</h3>
+                            <p class="result-value" id="totalGain">-</p>
+                        </div>
+                    </div>
+
+                    <div class="result-card annual-card">
+                        <div class="result-icon">📅</div>
+                        <div class="result-content">
+                            <h3>연평균 수익률</h3>
+                            <p class="result-value" id="annualReturn">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investment Timeline Chart -->
+            <div class="card">
+                <h2>📈 투자 성장 그래프</h2>
+                <div class="chart-container">
+                    <canvas id="investmentChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Exchange Rate Impact -->
+            <div class="card">
+                <h2>💱 환율 영향</h2>
+                <div class="exchange-info">
+                    <div class="exchange-item">
+                        <span class="label">투자 당시 환율:</span>
+                        <span class="value" id="initialExchange">-</span>
+                    </div>
+                    <div class="exchange-item">
+                        <span class="label">현재 환율:</span>
+                        <span class="value" id="currentExchange">-</span>
+                    </div>
+                    <div class="exchange-item">
+                        <span class="label">환율 변동률:</span>
+                        <span class="value" id="exchangeChange">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fun Facts Section -->
+            <div class="card fun-facts">
+                <h2>🎉 재미있는 사실들</h2>
+                <div id="funFacts" class="facts-container">
+                    <!-- Dynamic fun facts will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Stock Information Section -->
+        <section class="stock-info">
+            <div class="card">
+                <h2>📋 주요 미국 주식 정보</h2>
+                <div class="stock-grid" id="stockGrid">
+                    <!-- Stock cards will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Data Section -->
+        <section class="historical-data">
+            <div class="card">
+                <h2>📚 역사적 데이터</h2>
+                <div class="data-tabs">
+                    <button class="tab-btn active" data-tab="exchange">환율 데이터</button>
+                    <button class="tab-btn" data-tab="stocks">주식 데이터</button>
+                </div>
+
+                <div id="exchangeTab" class="tab-content active">
+                    <div class="data-table-container">
+                        <table class="data-table" id="exchangeTable">
+                            <thead>
+                                <tr>
+                                    <th>연도</th>
+                                    <th>평균 환율 (KRW/USD)</th>
+                                    <th>전년 대비 변동률</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Exchange rate data will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="stocksTab" class="tab-content">
+                    <div class="stock-selector">
+                        <select id="stockDataSelect">
+                            <option value="">주식을 선택하여 데이터 보기</option>
+                        </select>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table" id="stockTable">
+                            <thead>
+                                <tr>
+                                    <th>연도</th>
+                                    <th>주가 (USD)</th>
+                                    <th>전년 대비 변동률</th>
+                                    <th>분할 조정</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Stock data will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <div class="card" style="background:rgba(255,255,255,0.85);font-size:0.82rem;color:#64748b;">
+            <p style="margin-bottom:0.75rem;"><strong style="color:#4a5568;">면책 조항 (Disclaimer)</strong></p>
+            <ul style="list-style:none;padding:0;display:grid;gap:0.5rem;">
+                <li>· 본 계산기는 <strong>단순 참고용</strong>이며, 투자 권유·추천·자문이 아닙니다.</li>
+                <li>· 계산 결과에는 <strong>오류가 포함될 수 있으며</strong>, 실제 배정 주식수·공모가·수수료·세금 등은 반드시 해당 증권사 및 공식 공시자료를 통해 직접 확인하시기 바랍니다.</li>
+                <li>· 본 페이지에 기재된 수치·비율·시나리오는 과거 데이터 및 가정에 기반한 <strong>추정치</strong>로, 실제 시장 상황과 상이할 수 있습니다.</li>
+                <li>· 본 계산기 이용으로 발생하는 <strong>직·간접적 손실에 대해 운영자는 일체의 법적 책임을 지지 않습니다.</strong></li>
+                <li>· 모든 투자 판단과 그에 따른 결과의 책임은 <strong>전적으로 투자자 본인</strong>에게 있습니다.</li>
+                <li>· 투자 전 반드시 금융투자협회 전자공시시스템(DART), 증권사 HTS/MTS 등 <strong>공식 채널의 정보를 직접 확인</strong>하시기 바랍니다.</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links" style="display:flex;justify-content:center;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+                <a href="https://blog.naver.com/biodad" target="_blank" rel="noopener" style="color:#e2e8f0;text-decoration:none;font-weight:500;transition:color 0.2s;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#e2e8f0'">블로그</a>
+                <span style="color:rgba(255,255,255,0.5);">·</span>
+                <a href="https://farmingdollar.com" target="_blank" rel="noopener" style="color:#e2e8f0;text-decoration:none;font-weight:500;transition:color 0.2s;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#e2e8f0'">farmingdollar.com</a>
+            </div>
+            <p class="copyright">&copy; 2026 바이오대디. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>계산 중...</p>
+        </div>
+    </div>
+
+    <script>
+// Investment Backtesting Simulator
+// Historical data and calculation logic
+
+class InvestmentSimulator {
+    constructor() {
+        this.initializeData();
+        this.setupEventListeners();
+        this.populateSelectors();
+        this.displayStockInfo();
+        this.populateHistoricalData();
+        this.currentChart = null;
+    }
+
+    // Historical KRW-USD exchange rates (annual averages)
+    initializeData() {
+        this.exchangeRates = {
+            1994: 803.45,
+            1995: 771.27,
+            1996: 804.45,
+            1997: 951.29,
+            1998: 1401.44, // Asian Financial Crisis
+            1999: 1188.82,
+            2000: 1130.96,
+            2001: 1290.99,
+            2002: 1251.09,
+            2003: 1191.61,
+            2004: 1145.32,
+            2005: 1024.12,
+            2006: 954.79,
+            2007: 929.26,
+            2008: 1102.62, // Global Financial Crisis
+            2009: 1276.93,
+            2010: 1156.06,
+            2011: 1108.29,
+            2012: 1126.47,
+            2013: 1095.04,
+            2014: 1052.96,
+            2015: 1131.49,
+            2016: 1160.50,
+            2017: 1130.84,
+            2018: 1100.19,
+            2019: 1165.65,
+            2020: 1180.27, // COVID-19
+            2021: 1144.36,
+            2022: 1291.95,
+            2023: 1305.41,
+            2024: 1420.76,
+            2025: 1439.01 // Dec 30, 2025
+        };
+
+        // Top 10 US stocks with historical prices (split-adjusted annual averages)
+        this.stockData = {
+            'AAPL': {
+                name: 'Apple Inc.',
+                description: 'Consumer electronics and software company',
+                sector: 'Technology',
+                prices: {
+                    1994: 0.89, 1995: 1.19, 1996: 1.14, 1997: 0.91, 1998: 1.41,
+                    1999: 2.94, 2000: 3.71, 2001: 1.11, 2002: 1.16, 2003: 1.16,
+                    2004: 2.30, 2005: 5.39, 2006: 7.55, 2007: 14.54, 2008: 12.37,
+                    2009: 15.95, 2010: 27.44, 2011: 35.31, 2012: 72.80, 2013: 71.04,
+                    2014: 93.99, 2015: 105.26, 2016: 104.19, 2017: 140.22, 2018: 169.23,
+                    2019: 187.44, 2020: 108.77, 2021: 142.92, 2022: 159.69, 2023: 189.69,
+                    2024: 225.00, 2025: 254.27
+                }
+            },
+            'MSFT': {
+                name: 'Microsoft Corporation',
+                description: 'Software and cloud computing giant',
+                sector: 'Technology',
+                prices: {
+                    1994: 1.69, 1995: 2.16, 1996: 4.24, 1997: 8.78, 1998: 15.06,
+                    1999: 42.75, 2000: 53.19, 2001: 33.00, 2002: 26.75, 2003: 27.85,
+                    2004: 27.85, 2005: 26.75, 2006: 28.18, 2007: 32.60, 2008: 19.44,
+                    2009: 24.99, 2010: 28.05, 2011: 25.96, 2012: 28.18, 2013: 32.39,
+                    2014: 41.99, 2015: 51.78, 2016: 59.20, 2017: 74.42, 2018: 101.57,
+                    2019: 108.36, 2020: 201.12, 2021: 284.91, 2022: 309.42, 2023: 344.73,
+                    2024: 415.00, 2025: 430.53
+                }
+            },
+            'AMZN': {
+                name: 'Amazon.com Inc.',
+                description: 'E-commerce and cloud services leader',
+                sector: 'Consumer Discretionary',
+                prices: {
+                    // Split-adjusted for 20:1 split (June 2022)
+                    1997: 0.10, 1998: 0.37, 1999: 3.81, 2000: 2.04, 2001: 0.54,
+                    2002: 0.94, 2003: 2.00, 2004: 2.16, 2005: 1.97, 2006: 1.90,
+                    2007: 3.89, 2008: 2.56, 2009: 5.94, 2010: 6.27, 2011: 9.72,
+                    2012: 12.22, 2013: 18.23, 2014: 15.49, 2015: 33.79, 2016: 42.22,
+                    2017: 58.47, 2018: 89.23, 2019: 92.44, 2020: 160.06, 2021: 168.61,
+                    2022: 84.00, 2023: 151.94, 2024: 230.00, 2025: 232.53
+                }
+            },
+            'GOOGL': {
+                name: 'Alphabet Inc. (Google)',
+                description: 'Internet search and advertising giant',
+                sector: 'Technology',
+                prices: {
+                    // Split-adjusted for 20:1 split (July 2022)
+                    2004: 2.51, 2005: 10.32, 2006: 11.64, 2007: 13.50, 2008: 7.73,
+                    2009: 15.38, 2010: 14.25, 2011: 15.09, 2012: 17.91, 2013: 28.00,
+                    2014: 28.95, 2015: 38.69, 2016: 40.40, 2017: 48.63, 2018: 54.31,
+                    2019: 66.85, 2020: 87.59, 2021: 144.59, 2022: 88.00, 2023: 140.93,
+                    2024: 192.00, 2025: 191.41
+                }
+            },
+            'TSLA': {
+                name: 'Tesla Inc.',
+                description: 'Electric vehicle and clean energy company',
+                sector: 'Consumer Discretionary',
+                prices: {
+                    2010: 4.06, 2011: 5.74, 2012: 7.25, 2013: 30.52, 2014: 44.81,
+                    2015: 44.65, 2016: 41.59, 2017: 66.36, 2018: 66.56, 2019: 55.27,
+                    2020: 149.01, 2021: 352.76, 2022: 302.61, 2023: 248.48,
+                    2024: 250.00, 2025: 454.24
+                }
+            },
+            'NVDA': {
+                name: 'NVIDIA Corporation',
+                description: 'Semiconductor and AI computing leader',
+                sector: 'Technology',
+                prices: {
+                    // Split-adjusted for 10:1 split (June 2024)
+                    1999: 0.13, 2000: 0.35, 2001: 0.22, 2002: 0.10, 2003: 0.13,
+                    2004: 0.19, 2005: 0.31, 2006: 0.37, 2007: 0.32, 2008: 0.10,
+                    2009: 0.15, 2010: 0.16, 2011: 0.16, 2012: 0.13, 2013: 0.16,
+                    2014: 0.19, 2015: 0.32, 2016: 0.54, 2017: 1.95, 2018: 1.38,
+                    2019: 3.65, 2020: 12.62, 2021: 24.68, 2022: 16.03, 2023: 44.02,
+                    2024: 135.00, 2025: 137.49
+                }
+            },
+            'BRK.A': {
+                name: 'Berkshire Hathaway Inc.',
+                description: 'Warren Buffett\'s investment conglomerate',
+                sector: 'Financial Services',
+                prices: {
+                    1994: 20000, 1995: 23000, 1996: 34100, 1997: 46000, 1998: 70900,
+                    1999: 56100, 2000: 71000, 2001: 71005, 2002: 71900, 2003: 84500,
+                    2004: 87300, 2005: 88400, 2006: 109990, 2007: 141600, 2008: 84250,
+                    2009: 99200, 2010: 120150, 2011: 116050, 2012: 131775, 2013: 174190,
+                    2014: 218346, 2015: 213750, 2016: 247998, 2017: 296915, 2018: 312290,
+                    2019: 340690, 2020: 347275, 2021: 421690, 2022: 451345, 2023: 538135,
+                    2024: 650000, 2025: 749096
+                }
+            },
+            'JNJ': {
+                name: 'Johnson & Johnson',
+                description: 'Healthcare and pharmaceutical company',
+                sector: 'Healthcare',
+                prices: {
+                    1994: 14.67, 1995: 18.38, 1996: 22.50, 1997: 29.44, 1998: 37.69,
+                    1999: 45.06, 2000: 52.31, 2001: 59.94, 2002: 53.08, 2003: 51.66,
+                    2004: 59.77, 2005: 59.86, 2006: 66.02, 2007: 67.38, 2008: 58.56,
+                    2009: 62.16, 2010: 61.85, 2011: 65.58, 2012: 72.73, 2013: 95.80,
+                    2014: 101.00, 2015: 102.72, 2016: 115.48, 2017: 139.72, 2018: 140.48,
+                    2019: 145.87, 2020: 148.31, 2021: 161.91, 2022: 177.49, 2023: 160.13,
+                    2024: 152.00, 2025: 144.21
+                }
+            },
+            'V': {
+                name: 'Visa Inc.',
+                description: 'Payment processing and financial services',
+                sector: 'Financial Services',
+                prices: {
+                    2008: 44.57, 2009: 24.68, 2010: 28.42, 2011: 29.25, 2012: 32.53,
+                    2013: 49.23, 2014: 54.18, 2015: 75.16, 2016: 78.02, 2017: 99.36,
+                    2018: 138.07, 2019: 177.21, 2020: 210.16, 2021: 236.47, 2022: 208.01,
+                    2023: 244.36, 2024: 285.00, 2025: 316.84
+                }
+            },
+            'WMT': {
+                name: 'Walmart Inc.',
+                description: 'Retail and e-commerce giant',
+                sector: 'Consumer Staples',
+                prices: {
+                    // Split-adjusted for 3:1 split (February 2024)
+                    1994: 3.61, 1995: 3.75, 1996: 3.83, 1997: 5.81, 1998: 9.23,
+                    1999: 11.58, 2000: 17.71, 2001: 19.00, 2002: 18.02, 2003: 19.75,
+                    2004: 18.00, 2005: 15.72, 2006: 15.27, 2007: 16.96, 2008: 18.88,
+                    2009: 17.12, 2010: 17.83, 2011: 19.08, 2012: 23.17, 2013: 27.12,
+                    2014: 28.42, 2015: 22.72, 2016: 23.68, 2017: 32.53, 2018: 36.42,
+                    2019: 37.42, 2020: 48.23, 2021: 46.62, 2022: 46.11, 2023: 53.04,
+                    2024: 92.00, 2025: 93.15
+                }
+            },
+            'SPY': {
+                name: 'SPDR S&P 500 ETF',
+                description: 'Tracks the S&P 500 index',
+                sector: 'ETF',
+                prices: {
+                    1993: 44.30, 1994: 45.50, 1995: 61.10, 1996: 70.40, 1997: 94.40,
+                    1998: 103.00, 1999: 140.50, 2000: 132.00, 2001: 102.10, 2002: 87.90,
+                    2003: 111.20, 2004: 121.50, 2005: 125.40, 2006: 142.30, 2007: 147.90,
+                    2008: 90.30, 2009: 113.30, 2010: 125.75, 2011: 125.50, 2012: 142.40,
+                    2013: 184.70, 2014: 205.50, 2015: 203.87, 2016: 223.53, 2017: 267.83,
+                    2018: 249.92, 2019: 321.86, 2020: 373.88, 2021: 466.48, 2022: 377.91,
+                    2023: 446.65, 2024: 565.00, 2025: 593.52
+                }
+            },
+            'QQQ': {
+                name: 'Invesco QQQ ETF',
+                description: 'Tracks the Nasdaq-100 index',
+                sector: 'ETF',
+                prices: {
+                    1999: 103.87, 2000: 85.19, 2001: 38.01, 2002: 24.60, 2003: 36.11,
+                    2004: 39.05, 2005: 42.10, 2006: 46.10, 2007: 52.30, 2008: 27.51,
+                    2009: 43.78, 2010: 54.15, 2011: 57.86, 2012: 66.59, 2013: 88.35,
+                    2014: 107.41, 2015: 108.32, 2016: 119.72, 2017: 151.10, 2018: 165.84,
+                    2019: 208.51, 2020: 313.74, 2021: 408.71, 2022: 263.07, 2023: 391.84,
+                    2024: 495.00, 2025: 527.56
+                }
+            },
+            'SCHD': {
+                name: 'Schwab US Dividend Equity ETF',
+                description: 'High dividend yield US stocks',
+                sector: 'ETF',
+                prices: {
+                    // Note: 3:1 split in October 2024, prices shown pre-split equivalent
+                    2011: 26.82, 2012: 32.45, 2013: 41.25, 2014: 46.85, 2015: 47.20,
+                    2016: 53.45, 2017: 58.90, 2018: 53.25, 2019: 63.45, 2020: 62.30,
+                    2021: 79.56, 2022: 74.25, 2023: 77.45, 2024: 81.50, 2025: 84.06
+                }
+            },
+            'VTI': {
+                name: 'Vanguard Total Stock Market ETF',
+                description: 'Total US stock market index',
+                sector: 'ETF',
+                prices: {
+                    2001: 57.48, 2002: 49.47, 2003: 62.50, 2004: 68.54, 2005: 71.89,
+                    2006: 80.92, 2007: 82.80, 2008: 50.45, 2009: 63.82, 2010: 70.45,
+                    2011: 70.12, 2012: 78.45, 2013: 102.87, 2014: 114.56, 2015: 113.89,
+                    2016: 124.78, 2017: 149.34, 2018: 139.12, 2019: 179.45, 2020: 207.12,
+                    2021: 244.06, 2022: 198.87, 2023: 234.67, 2024: 292.00, 2025: 284.25
+                }
+            },
+            'VEA': {
+                name: 'Vanguard FTSE Developed Markets ETF',
+                description: 'International developed markets',
+                sector: 'ETF',
+                prices: {
+                    2007: 52.30, 2008: 29.45, 2009: 34.78, 2010: 37.90, 2011: 34.67,
+                    2012: 37.45, 2013: 42.30, 2014: 40.56, 2015: 36.78, 2016: 38.90,
+                    2017: 45.23, 2018: 41.67, 2019: 46.78, 2020: 44.56, 2021: 51.89,
+                    2022: 43.45, 2023: 47.89, 2024: 50.25, 2025: 48.50
+                }
+            }
+        };
+
+        this.currentExchangeRate = 1439.01; // Dec 30, 2025 KRW/USD rate
+        this.currentYear = 2025;
+    }
+
+    setupEventListeners() {
+        const calculateBtn = document.getElementById('calculateBtn');
+        const currencyToggle = document.getElementById('currencyToggle');
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const stockDataSelect = document.getElementById('stockDataSelect');
+        const stockSelect = document.getElementById('stockSelect');
+
+        calculateBtn.addEventListener('click', () => this.calculateInvestment());
+        currencyToggle.addEventListener('change', () => this.toggleCurrency());
+        stockSelect.addEventListener('change', (e) => this.updateYearOptions(e.target.value));
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => this.switchTab(e.target.dataset.tab));
+        });
+
+        stockDataSelect.addEventListener('change', (e) => this.displayStockData(e.target.value));
+
+        // View mode toggle
+        const mobileViewBtn = document.getElementById('mobileViewBtn');
+        const desktopViewBtn = document.getElementById('desktopViewBtn');
+
+        mobileViewBtn.addEventListener('click', () => {
+            document.body.classList.remove('desktop-mode');
+            mobileViewBtn.classList.add('active');
+            desktopViewBtn.classList.remove('active');
+        });
+
+        desktopViewBtn.addEventListener('click', () => {
+            document.body.classList.add('desktop-mode');
+            desktopViewBtn.classList.add('active');
+            mobileViewBtn.classList.remove('active');
+        });
+    }
+
+    updateYearOptions(stockSymbol) {
+        const yearSelect = document.getElementById('investmentYear');
+        yearSelect.innerHTML = '';
+
+        if (!stockSymbol) {
+            yearSelect.disabled = true;
+            const option = document.createElement('option');
+            option.value = '';
+            option.textContent = '먼저 주식을 선택하세요';
+            yearSelect.appendChild(option);
+            return;
+        }
+
+        yearSelect.disabled = false;
+        const stock = this.stockData[stockSymbol];
+        const availableYears = Object.keys(stock.prices)
+            .map(y => parseInt(y))
+            .filter(y => y < this.currentYear && this.exchangeRates[y]) // 현재 연도 제외 + 환율 데이터 있는 연도만
+            .sort((a, b) => b - a); // 최신순 정렬
+
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = '연도를 선택하세요';
+        yearSelect.appendChild(defaultOption);
+
+        availableYears.forEach(year => {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = year + '년';
+            yearSelect.appendChild(option);
+        });
+    }
+
+    populateSelectors() {
+        const stockSelect = document.getElementById('stockSelect');
+        const stockDataSelect = document.getElementById('stockDataSelect');
+
+        // Populate stock options (연도는 주식 선택 후 updateYearOptions에서 채움)
+        Object.keys(this.stockData).forEach(symbol => {
+            const stock = this.stockData[symbol];
+            const option1 = document.createElement('option');
+            option1.value = symbol;
+            option1.textContent = `${symbol} - ${stock.name}`;
+            stockSelect.appendChild(option1);
+
+            const option2 = document.createElement('option');
+            option2.value = symbol;
+            option2.textContent = `${symbol} - ${stock.name}`;
+            stockDataSelect.appendChild(option2);
+        });
+    }
+
+    toggleCurrency() {
+        const currencyToggle = document.getElementById('currencyToggle');
+        const amountInput = document.getElementById('investmentAmount');
+
+        if (currencyToggle.checked) {
+            amountInput.placeholder = "1,000 USD";
+        } else {
+            amountInput.placeholder = "1,000,000 KRW";
+        }
+    }
+
+    calculateInvestment() {
+        const year = parseInt(document.getElementById('investmentYear').value);
+        const amount = parseFloat(document.getElementById('investmentAmount').value);
+        const stockSymbol = document.getElementById('stockSelect').value;
+        const isUSD = document.getElementById('currencyToggle').checked;
+
+        if (!year || !amount || !stockSymbol) {
+            alert('모든 필드를 입력해주세요!');
+            return;
+        }
+
+        const stock = this.stockData[stockSymbol];
+        if (!stock || !stock.prices[year]) {
+            alert('선택한 연도에 해당하는 데이터가 없습니다.');
+            return;
+        }
+
+        this.showLoading();
+
+        setTimeout(() => {
+            const results = this.performCalculation(year, amount, stockSymbol, isUSD);
+            this.displayResults(results);
+            this.createChart(results.chartData);
+            this.generateFunFacts(results);
+            this.hideLoading();
+        }, 1500);
+    }
+
+    performCalculation(year, amount, stockSymbol, isUSD) {
+        const stock = this.stockData[stockSymbol];
+        const initialExchangeRate = this.exchangeRates[year];
+        const currentExchangeRate = this.currentExchangeRate;
+        const initialStockPrice = stock.prices[year];
+        const currentStockPrice = stock.prices[this.currentYear] || stock.prices[2024];
+
+        // Convert investment amount to USD
+        let investmentUSD;
+        let investmentKRW;
+
+        if (isUSD) {
+            investmentUSD = amount;
+            investmentKRW = amount * initialExchangeRate;
+        } else {
+            investmentKRW = amount;
+            investmentUSD = amount / initialExchangeRate;
+        }
+
+        // Calculate number of shares
+        const shares = investmentUSD / initialStockPrice;
+
+        // Calculate current value
+        const currentValueUSD = shares * currentStockPrice;
+        const currentValueKRW = currentValueUSD * currentExchangeRate;
+
+        // Calculate returns
+        const totalReturnPercent = ((currentValueKRW - investmentKRW) / investmentKRW) * 100;
+        const totalGainKRW = currentValueKRW - investmentKRW;
+        const yearsInvested = this.currentYear - year;
+        const annualReturnPercent = Math.pow(currentValueKRW / investmentKRW, 1 / yearsInvested) - 1;
+
+        // Generate chart data
+        const chartData = this.generateChartData(year, investmentKRW, stockSymbol, shares);
+
+        return {
+            initialInvestmentKRW: investmentKRW,
+            initialInvestmentUSD: investmentUSD,
+            currentValueKRW: currentValueKRW,
+            currentValueUSD: currentValueUSD,
+            totalReturnPercent: totalReturnPercent,
+            totalGainKRW: totalGainKRW,
+            annualReturnPercent: annualReturnPercent * 100,
+            shares: shares,
+            initialExchangeRate: initialExchangeRate,
+            currentExchangeRate: currentExchangeRate,
+            exchangeChangePercent: ((currentExchangeRate - initialExchangeRate) / initialExchangeRate) * 100,
+            stockSymbol: stockSymbol,
+            stockName: stock.name,
+            yearsInvested: yearsInvested,
+            chartData: chartData
+        };
+    }
+
+    generateChartData(startYear, initialInvestmentKRW, stockSymbol, shares) {
+        const stock = this.stockData[stockSymbol];
+        const labels = [];
+        const data = [];
+
+        for (let year = startYear; year <= this.currentYear; year++) {
+            if (stock.prices[year] && this.exchangeRates[year]) {
+                labels.push(year);
+                const stockPriceUSD = stock.prices[year];
+                const exchangeRate = this.exchangeRates[year];
+                const valueKRW = shares * stockPriceUSD * exchangeRate;
+                data.push(Math.round(valueKRW));
+            }
+        }
+
+        return { labels, data };
+    }
+
+    displayResults(results) {
+        document.getElementById('resultsSection').style.display = 'block';
+
+        // Format numbers with commas and currency symbols
+        document.getElementById('currentValue').textContent =
+            `₩${this.formatNumber(Math.round(results.currentValueKRW))}`;
+
+        document.getElementById('totalReturn').textContent =
+            `${results.totalReturnPercent >= 0 ? '+' : ''}${results.totalReturnPercent.toFixed(2)}%`;
+
+        document.getElementById('totalGain').textContent =
+            `₩${this.formatNumber(Math.round(results.totalGainKRW))}`;
+
+        document.getElementById('annualReturn').textContent =
+            `${results.annualReturnPercent >= 0 ? '+' : ''}${results.annualReturnPercent.toFixed(2)}%`;
+
+        // Exchange rate information
+        document.getElementById('initialExchange').textContent =
+            `₩${this.formatNumber(results.initialExchangeRate)}`;
+
+        document.getElementById('currentExchange').textContent =
+            `₩${this.formatNumber(results.currentExchangeRate)}`;
+
+        document.getElementById('exchangeChange').textContent =
+            `${results.exchangeChangePercent >= 0 ? '+' : ''}${results.exchangeChangePercent.toFixed(2)}%`;
+
+        // Add color coding for positive/negative values
+        this.applyColorCoding('totalReturn', results.totalReturnPercent);
+        this.applyColorCoding('totalGain', results.totalGainKRW);
+        this.applyColorCoding('annualReturn', results.annualReturnPercent);
+        this.applyColorCoding('exchangeChange', results.exchangeChangePercent);
+
+        // Scroll to results
+        document.getElementById('resultsSection').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
+    applyColorCoding(elementId, value) {
+        const element = document.getElementById(elementId);
+        element.classList.remove('positive', 'negative');
+
+        if (value > 0) {
+            element.classList.add('positive');
+        } else if (value < 0) {
+            element.classList.add('negative');
+        }
+    }
+
+    createChart(chartData) {
+        const ctx = document.getElementById('investmentChart').getContext('2d');
+
+        if (this.currentChart) {
+            this.currentChart.destroy();
+        }
+
+        this.currentChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: chartData.labels,
+                datasets: [{
+                    label: '투자 가치 (KRW)',
+                    data: chartData.data,
+                    borderColor: 'rgb(102, 126, 234)',
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: 'rgb(102, 126, 234)',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 5,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            label: function(context) {
+                                return `투자 가치: ₩${context.parsed.y.toLocaleString()}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: '연도'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: '가치 (KRW)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return '₩' + value.toLocaleString();
+                            }
+                        }
+                    }
+                },
+                interaction: {
+                    mode: 'nearest',
+                    axis: 'x',
+                    intersect: false
+                }
+            }
+        });
+    }
+
+    generateFunFacts(results) {
+        const factsContainer = document.getElementById('funFacts');
+        factsContainer.innerHTML = '';
+
+        const facts = [
+            `🎯 ${results.yearsInvested}년 동안 보유한 ${results.stockSymbol} 주식은 총 ${results.shares.toFixed(2)}주입니다.`,
+            `💰 초기 투자금 ₩${this.formatNumber(Math.round(results.initialInvestmentKRW))}가 현재 ₩${this.formatNumber(Math.round(results.currentValueKRW))}가 되었습니다.`,
+            `📈 이는 ${results.totalReturnPercent > 0 ? '무려 ' : ''}${Math.abs(results.totalReturnPercent).toFixed(1)}%의 ${results.totalReturnPercent > 0 ? '수익' : '손실'}을 의미합니다.`,
+            `🌟 연평균 수익률이 ${Math.abs(results.annualReturnPercent).toFixed(1)}%였습니다.`,
+            `💱 환율은 ${results.exchangeChangePercent.toFixed(1)}% 변동했습니다.`
+        ];
+
+        if (results.totalReturnPercent > 1000) {
+            facts.push(`🚀 놀라운 결과입니다! 1000% 이상의 수익을 달성했네요!`);
+        } else if (results.totalReturnPercent > 500) {
+            facts.push(`🎉 대단한 투자였습니다! 5배 이상의 수익을 올렸네요!`);
+        } else if (results.totalReturnPercent > 100) {
+            facts.push(`👏 훌륭한 투자 선택이었습니다!`);
+        }
+
+        facts.forEach(fact => {
+            const factElement = document.createElement('div');
+            factElement.className = 'fact-item';
+            factElement.textContent = fact;
+            factsContainer.appendChild(factElement);
+        });
+    }
+
+    displayStockInfo() {
+        const stockGrid = document.getElementById('stockGrid');
+        stockGrid.innerHTML = '';
+
+        Object.keys(this.stockData).forEach(symbol => {
+            const stock = this.stockData[symbol];
+            const currentPrice = stock.prices[this.currentYear] || stock.prices[2024];
+            const oldPrice = stock.prices[2000] || stock.prices[1999] || stock.prices[1998];
+            const change = ((currentPrice - oldPrice) / oldPrice) * 100;
+
+            const stockCard = document.createElement('div');
+            stockCard.className = 'stock-card';
+            stockCard.innerHTML = `
+                <div class="stock-symbol">${symbol}</div>
+                <div class="stock-name">${stock.name}</div>
+                <div class="stock-info">
+                    <div class="stock-metric">
+                        <span class="label">현재 주가:</span>
+                        <span class="value">$${currentPrice.toFixed(2)}</span>
+                    </div>
+                    <div class="stock-metric">
+                        <span class="label">섹터:</span>
+                        <span class="value">${stock.sector}</span>
+                    </div>
+                    <div class="stock-metric">
+                        <span class="label">20년+ 수익률:</span>
+                        <span class="value ${change > 0 ? 'positive' : 'negative'}">
+                            ${change > 0 ? '+' : ''}${change.toFixed(1)}%
+                        </span>
+                    </div>
+                </div>
+            `;
+            stockGrid.appendChild(stockCard);
+        });
+    }
+
+    populateHistoricalData() {
+        // Populate exchange rate table
+        const exchangeTableBody = document.querySelector('#exchangeTable tbody');
+        exchangeTableBody.innerHTML = '';
+
+        Object.keys(this.exchangeRates).reverse().forEach((year, index) => {
+            const rate = this.exchangeRates[year];
+            const prevYear = parseInt(year) - 1;
+            const prevRate = this.exchangeRates[prevYear];
+            const change = prevRate ? ((rate - prevRate) / prevRate) * 100 : 0;
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${year}</td>
+                <td>₩${this.formatNumber(rate)}</td>
+                <td class="${change > 0 ? 'negative' : 'positive'}">
+                    ${prevRate ? (change > 0 ? '+' : '') + change.toFixed(2) + '%' : '-'}
+                </td>
+            `;
+            exchangeTableBody.appendChild(row);
+        });
+    }
+
+    displayStockData(symbol) {
+        if (!symbol) {
+            document.querySelector('#stockTable tbody').innerHTML = '';
+            return;
+        }
+
+        const stock = this.stockData[symbol];
+        const stockTableBody = document.querySelector('#stockTable tbody');
+        stockTableBody.innerHTML = '';
+
+        Object.keys(stock.prices).reverse().forEach(year => {
+            const price = stock.prices[year];
+            const prevYear = parseInt(year) - 1;
+            const prevPrice = stock.prices[prevYear];
+            const change = prevPrice ? ((price - prevPrice) / prevPrice) * 100 : 0;
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${year}</td>
+                <td>$${price.toFixed(2)}</td>
+                <td class="${change > 0 ? 'positive' : 'negative'}">
+                    ${prevPrice ? (change > 0 ? '+' : '') + change.toFixed(2) + '%' : '-'}
+                </td>
+                <td>조정됨</td>
+            `;
+            stockTableBody.appendChild(row);
+        });
+    }
+
+    switchTab(tabName) {
+        // Update tab buttons
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+
+        // Update tab content
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        document.getElementById(`${tabName}Tab`).classList.add('active');
+    }
+
+    showLoading() {
+        document.getElementById('loadingOverlay').style.display = 'flex';
+    }
+
+    hideLoading() {
+        document.getElementById('loadingOverlay').style.display = 'none';
+    }
+
+    formatNumber(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+}
+
+// Initialize the application when the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new InvestmentSimulator();
+});
+
+// Add some fun animations and interactions
+document.addEventListener('DOMContentLoaded', () => {
+    // Add smooth scrolling to all internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add click effect to buttons
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+    });
+
+    // Add entrance animations to cards
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all cards for animation
+    document.querySelectorAll('.card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+});
+
+// Add easter eggs and fun interactions
+document.addEventListener('keydown', (e) => {
+    // Konami code easter egg
+    const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    if (!window.konamiIndex) window.konamiIndex = 0;
+
+    if (e.keyCode === konamiCode[window.konamiIndex]) {
+        window.konamiIndex++;
+        if (window.konamiIndex === konamiCode.length) {
+            // Easter egg activated!
+            document.body.style.animation = 'rainbow 2s infinite';
+            setTimeout(() => {
+                document.body.style.animation = '';
+                alert('🎉 축하합니다! 히든 이스터에그를 발견했습니다! 🚀💰');
+            }, 2000);
+            window.konamiIndex = 0;
+        }
+    } else {
+        window.konamiIndex = 0;
+    }
+});
+
+// Add rainbow animation for easter egg
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes rainbow {
+        0% { filter: hue-rotate(0deg); }
+        100% { filter: hue-rotate(360deg); }
+    }
+`;
+document.head.appendChild(style);
+    </script>
+</body>
+</html>

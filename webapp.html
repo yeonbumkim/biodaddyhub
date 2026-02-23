@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹어플리케이션 - BioDaddy Hub</title>
+  <meta name="description" content="BioDaddy Hub 웹어플리케이션 모음. 투자 계산기, 분석 도구 등 유용한 웹앱을 제공합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="웹어플리케이션 - BioDaddy Hub">
+  <meta property="og:description" content="BioDaddy Hub 웹어플리케이션 모음. 투자 계산기, 분석 도구 등 유용한 웹앱을 제공합니다.">
+  <meta property="og:url" content="https://farmingdollar.com/webapp.html">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://farmingdollar.com/webapp.html">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F47Y9KCBV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2F47Y9KCBV');
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, 'Pretendard', 'Noto Sans KR', sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.7;
+    }
+    nav {
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid #d2d2d7;
+      padding: 0.8rem 1.5rem;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(20px);
+    }
+    nav .nav-inner {
+      max-width: 1060px; margin: 0 auto;
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    nav .logo { font-size: 1.1rem; font-weight: 700; text-decoration: none; color: #1d1d1f; }
+    nav .breadcrumb { font-size: 0.85rem; color: #86868b; }
+    nav .breadcrumb a { color: #0066cc; text-decoration: none; }
+    nav .breadcrumb a:hover { text-decoration: underline; }
+    .container { max-width: 1060px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    .page-header { margin-bottom: 2rem; }
+    .page-header h1 { font-size: 1.8rem; font-weight: 800; color: #6d28d9; margin-bottom: 0.3rem; }
+    .page-header .page-desc { color: #86868b; font-size: 0.9rem; }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .app-card {
+      display: flex; flex-direction: column; gap: 0.5rem;
+      background: #fff; border-radius: 14px; padding: 1.4rem;
+      text-decoration: none; color: #1d1d1f;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border: 1px solid #ede9fe; border-left: 4px solid #6d28d9;
+    }
+    .app-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); transform: translateY(-2px); }
+    .app-title { font-size: 1rem; font-weight: 700; line-height: 1.4; }
+    .app-desc { font-size: 0.85rem; color: #6b7280; line-height: 1.5; }
+    .app-tag {
+      display: inline-block; background: #6d28d9; color: #fff;
+      font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.45rem;
+      border-radius: 4px; letter-spacing: 0.03em; align-self: flex-start;
+    }
+
+    footer {
+      text-align: center; padding: 2rem 1rem; color: #86868b;
+      font-size: 0.78rem; border-top: 1px solid #e5e5e5; margin-top: 1rem; line-height: 1.8;
+    }
+    footer a { color: #0066cc; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 1.5rem; }
+      .app-grid { grid-template-columns: 1fr; }
+      .container { padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="https://farmingdollar.com" class="logo">BioDaddy Hub</a>
+      <span class="breadcrumb"><a href="https://farmingdollar.com">홈</a> &rsaquo; 웹어플리케이션</span>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>&#x1F4BB; 웹어플리케이션</h1>
+      <p class="page-desc">유용한 계산기와 분석 도구 모음 &middot; 7개</p>
+    </div>
+
+    <div class="app-grid">
+      <a href="./calculator/backtest/backtest.html" class="app-card">
+        <span class="app-tag">계산기</span>
+        <span class="app-title">백테스트 투자 시뮬레이터</span>
+        <span class="app-desc">과거 미국 주식에 투자했다면? 타임머신 백테스트로 AAPL, MSFT, NVDA 등 주요 종목의 수익률을 확인해보세요.</span>
+      </a>
+      <a href="./calculator/bankinterest/bankinterest.html" class="app-card">
+        <span class="app-tag">계산기</span>
+        <span class="app-title">예적금 수익률 계산기</span>
+        <span class="app-desc">예금·적금 세후 실수령액을 간편하게 계산하세요. 이자소득세 15.4% 자동 반영.</span>
+      </a>
+      <a href="./calculator/debt/debt.html" class="app-card">
+        <span class="app-tag">계산기</span>
+        <span class="app-title">원리금균등상환 계산기</span>
+        <span class="app-desc">대출 원리금균등상환 월 상환금·총 이자를 간편하게 계산하세요. 연도별 상환 스케줄 차트 제공.</span>
+      </a>
+      <a href="./calculator/kbank/kbank.html" class="app-card">
+        <span class="app-tag">계산기</span>
+        <span class="app-title">케이뱅크 IPO 수익 계산기</span>
+        <span class="app-desc">케이뱅크 상장 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.</span>
+      </a>
+      <a href="./calculator/medianincome/medianincome.html" class="app-card">
+        <span class="app-tag">계산기</span>
+        <span class="app-title">2026년 중위소득 계산기</span>
+        
+      </a>
+      <a href="./calculator/mortgage/mortgage.html" class="app-card">
+        <span class="app-tag">계산기</span>
+        <span class="app-title">주택담보대출 계산기</span>
+        <span class="app-desc">주택담보대출 원리금균등·원금균등·거치식 상환 방식별 월 납부액과 총 이자를 비교 계산하세요.</span>
+      </a>
+      <a href="./calculator/retireplan/retire_plan.html" class="app-card">
+        <span class="app-tag">계산기</span>
+        <span class="app-title">은퇴 자산 시뮬레이터</span>
+        <span class="app-desc">연금저축·IRP·ISA·일반계좌별 세금과 수령액을 시뮬레이션하세요. 55세·60세·65세 은퇴 시나리오 비교.</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 바이오대디. All rights reserved.</p>
+    <p><a href="https://blog.naver.com/biodad" target="_blank" rel="noopener noreferrer">blog.naver.com/biodad</a> &middot; kybmy0522@naver.com</p>
+  </footer>
+</body>
+</html>

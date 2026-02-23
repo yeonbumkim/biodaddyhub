@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예적금 수익률 계산기 | 바이오대디</title>
+    <meta name="description" content="예금·적금 세후 실수령액을 간편하게 계산하세요. 이자소득세 15.4% 자동 반영.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="예적금 수익률 계산기 | 바이오대디">
+    <meta property="og:description" content="예금·적금 세후 실수령액을 간편하게 계산하세요. 이자소득세 15.4% 자동 반영.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://farmingdollar.com/calculator/bankinterest/bankinterest.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="예적금 수익률 계산기 | 바이오대디">
+    <meta name="twitter:description" content="예금·적금 세후 실수령액을 간편하게 계산하세요. 이자소득세 15.4% 자동 반영.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            margin: 30px auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .form-group.hidden {
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .radio-group label {
+            flex: 1;
+            min-width: 80px;
+            padding: 12px 16px;
+            background: #f5f5f5;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        .radio-group input[type="radio"] {
+            display: none;
+        }
+
+        .radio-group input[type="radio"]:checked + label {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        .radio-group label:hover {
+            border-color: #667eea;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .input-suffix {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-weight: 500;
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-item .label {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .result-item .value {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .result-item.highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 15px -25px -25px -25px;
+            padding: 20px 25px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .result-item.highlight .label,
+        .result-item.highlight .value {
+            color: white;
+        }
+
+        .result-item.highlight .value {
+            font-size: 1.4rem;
+        }
+
+        .tax-info {
+            text-align: center;
+            margin-top: 15px;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .tax-info::before {
+            content: "* ";
+        }
+
+        .bd-nav {
+            background: rgba(26, 26, 46, 0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 0.6rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+        }
+        .bd-nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .bd-nav a {
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #e2e8f0;
+            transition: color 0.2s;
+        }
+        .bd-nav a:hover { color: #667eea; }
+
+        .bd-disclaimer {
+            margin-top: 30px;
+            padding: 20px 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: #888;
+            line-height: 1.7;
+        }
+        .bd-disclaimer p { margin-bottom: 8px; color: #666; }
+        .bd-disclaimer-list { list-style: none; padding: 0; }
+        .bd-disclaimer-list li { padding: 2px 0; }
+        .bd-disclaimer-list li::before { content: "· "; }
+
+        .bd-footer {
+            text-align: center;
+            padding: 20px 16px 30px;
+        }
+        .bd-footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .bd-footer-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .bd-footer-links a:hover { color: white; text-decoration: underline; }
+        .bd-footer-dot { color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+        .bd-copyright {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="bd-nav">
+      <div class="bd-nav-inner">
+        <a href="https://farmingdollar.com">&#x2190; BioDaddy Hub</a>
+      </div>
+    </nav>
+
+    <div class="container">
+        <h1>예적금 수익률 계산기</h1>
+
+        <div class="form-group">
+            <label>상품 유형</label>
+            <div class="radio-group">
+                <input type="radio" name="type" id="typeDeposit" value="deposit" onchange="toggleType()">
+                <label for="typeDeposit">예금</label>
+                <input type="radio" name="type" id="typeSaving" value="saving" checked onchange="toggleType()">
+                <label for="typeSaving">적금</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>가입 기간</label>
+            <div class="radio-group">
+                <input type="radio" name="period" id="period6" value="6">
+                <label for="period6">6개월</label>
+                <input type="radio" name="period" id="period12" value="12" checked>
+                <label for="period12">1년</label>
+            </div>
+        </div>
+
+        <div class="form-group" id="depositAmountGroup">
+            <label for="depositAmount">예치금</label>
+            <div class="input-wrapper">
+                <input type="number" id="depositAmount" placeholder="예: 1000000" step="100000" min="0" value="1000000">
+                <span class="input-suffix">원</span>
+            </div>
+        </div>
+
+        <div class="form-group" id="monthlyAmountGroup">
+            <label>월 불입금</label>
+            <div class="radio-group">
+                <input type="radio" name="amount" id="amount10" value="100000" checked>
+                <label for="amount10">10만원</label>
+                <input type="radio" name="amount" id="amount20" value="200000">
+                <label for="amount20">20만원</label>
+                <input type="radio" name="amount" id="amount30" value="300000">
+                <label for="amount30">30만원</label>
+                <input type="radio" name="amount" id="amount40" value="400000">
+                <label for="amount40">40만원</label>
+                <input type="radio" name="amount" id="amount50" value="500000">
+                <label for="amount50">50만원</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="rate">연이율</label>
+            <div class="input-wrapper">
+                <input type="number" id="rate" placeholder="예: 5.0" step="0.1" min="0" max="20" value="5.0">
+                <span class="input-suffix">%</span>
+            </div>
+        </div>
+
+        <button onclick="calculate()">계산하기</button>
+
+        <div class="result" id="result">
+            <h2>계산 결과</h2>
+            <div class="result-item">
+                <span class="label">총 불입액</span>
+                <span class="value" id="totalDeposit">-</span>
+            </div>
+            <div class="result-item">
+                <span class="label">세전 이자</span>
+                <span class="value" id="totalInterest">-</span>
+            </div>
+            <div class="result-item">
+                <span class="label">이자 과세 (15.4%)</span>
+                <span class="value" id="tax">-</span>
+            </div>
+            <div class="result-item highlight">
+                <span class="label">세후 실수령액</span>
+                <span class="value" id="netReturn">-</span>
+            </div>
+        </div>
+        <p class="tax-info">이자소득세 14% + 지방소득세 1.4% 적용</p>
+
+        <div class="bd-disclaimer">
+          <p><strong>면책 조항 (Disclaimer)</strong></p>
+          <ul class="bd-disclaimer-list">
+            <li>본 계산기는 <strong>단순 참고용</strong>이며, 금융 상품 권유·추천·자문이 아닙니다.</li>
+            <li>계산 결과에는 <strong>오류가 포함될 수 있으며</strong>, 실제 이자·세금·우대금리 등은 반드시 해당 금융기관을 통해 직접 확인하시기 바랍니다.</li>
+            <li>본 페이지에 기재된 수치·비율은 일반적인 과세 기준에 따른 <strong>추정치</strong>로, 실제 금융 상품 조건과 상이할 수 있습니다.</li>
+            <li>본 계산기 이용으로 발생하는 <strong>직·간접적 손실에 대해 운영자는 일체의 법적 책임을 지지 않습니다.</strong></li>
+            <li>모든 금융 판단과 그에 따른 결과의 책임은 <strong>전적으로 이용자 본인</strong>에게 있습니다.</li>
+            <li>정확한 금리·이자 정보는 <strong>해당 은행 및 금융감독원 공식 채널</strong>을 통해 직접 확인하시기 바랍니다.</li>
+          </ul>
+        </div>
+    </div>
+
+    <footer class="bd-footer">
+      <div class="bd-footer-links">
+        <a href="https://blog.naver.com/biodad" target="_blank" rel="noopener">블로그</a>
+        <span class="bd-footer-dot">·</span>
+        <a href="https://farmingdollar.com" target="_blank" rel="noopener">farmingdollar.com</a>
+      </div>
+      <p class="bd-copyright">&copy; 2026 바이오대디. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 초기 상태 설정
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleType();
+        });
+
+        function toggleType() {
+            const isDeposit = document.getElementById('typeDeposit').checked;
+            const depositGroup = document.getElementById('depositAmountGroup');
+            const monthlyGroup = document.getElementById('monthlyAmountGroup');
+
+            if (isDeposit) {
+                depositGroup.classList.remove('hidden');
+                monthlyGroup.classList.add('hidden');
+            } else {
+                depositGroup.classList.add('hidden');
+                monthlyGroup.classList.remove('hidden');
+            }
+
+            // 결과 숨기기
+            document.getElementById('result').classList.remove('show');
+        }
+
+        function calculate() {
+            const isDeposit = document.getElementById('typeDeposit').checked;
+            const period = parseInt(document.querySelector('input[name="period"]:checked').value);
+            const annualRate = parseFloat(document.getElementById('rate').value) / 100;
+
+            if (isNaN(annualRate) || annualRate <= 0) {
+                alert('연이율을 올바르게 입력해주세요.');
+                return;
+            }
+
+            let totalDeposit, interest;
+
+            if (isDeposit) {
+                // 예금 계산
+                const principal = parseInt(document.getElementById('depositAmount').value);
+
+                if (isNaN(principal) || principal <= 0) {
+                    alert('예치금을 올바르게 입력해주세요.');
+                    return;
+                }
+
+                totalDeposit = principal;
+                // 예금 이자 = 원금 × 연이율 × (기간/12)
+                interest = principal * annualRate * (period / 12);
+            } else {
+                // 적금 계산
+                const monthlyAmount = parseInt(document.querySelector('input[name="amount"]:checked').value);
+                totalDeposit = monthlyAmount * period;
+
+                // 적금 이자 = 월납입액 × (연이율/12) × (n × (n+1) / 2)
+                const monthlyRate = annualRate / 12;
+                interest = monthlyAmount * monthlyRate * (period * (period + 1) / 2);
+            }
+
+            // 세금 (15.4%)
+            const taxRate = 0.154;
+            const tax = Math.floor(interest * taxRate);
+
+            // 세후 이자
+            const netInterest = interest - tax;
+
+            // 세후 실수령액
+            const netReturn = totalDeposit + netInterest;
+
+            // 결과 표시
+            document.getElementById('totalDeposit').textContent = formatNumber(totalDeposit) + '원';
+            document.getElementById('totalInterest').textContent = formatNumber(Math.floor(interest)) + '원';
+            document.getElementById('tax').textContent = '-' + formatNumber(tax) + '원';
+            document.getElementById('netReturn').textContent = formatNumber(Math.floor(netReturn)) + '원';
+
+            document.getElementById('result').classList.add('show');
+        }
+
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        // Enter 키로 계산
+        document.getElementById('rate').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculate();
+            }
+        });
+
+        document.getElementById('depositAmount').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculate();
+            }
+        });
+    </script>
+</body>
+</html>

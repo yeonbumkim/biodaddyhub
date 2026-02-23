@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026년 중위소득 계산기 | 바이오대디</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7890314542345467"
+     crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calculator-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .input-section {
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .input-group select,
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .input-group select:focus,
+        .input-group input:focus {
+            outline: none;
+            border-color: #e94560;
+        }
+
+        .input-group input {
+            text-align: right;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.4);
+        }
+
+        .result-section {
+            padding: 30px;
+            display: none;
+        }
+
+        .result-section.show {
+            display: block;
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .result-header h2 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .my-percent {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .income-info {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+            border: 1px solid #ffccd5;
+        }
+
+        .income-info p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .income-info strong {
+            color: #e94560;
+        }
+
+        .policy-section h3 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .policy-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 12px;
+            transition: all 0.3s;
+        }
+
+        .policy-card.eligible {
+            border-color: #10b981;
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+        }
+
+        .policy-card.ineligible {
+            opacity: 0.6;
+        }
+
+        .policy-card .policy-name {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .policy-card .policy-name .badge {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .policy-card.eligible .badge {
+            background: #10b981;
+            color: white;
+        }
+
+        .policy-card.ineligible .badge {
+            background: #9e9e9e;
+            color: white;
+        }
+
+        .policy-card .policy-desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .policy-card .policy-detail {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .percent-table {
+            margin-top: 25px;
+        }
+
+        .percent-table h3 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 12px 8px;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #555;
+        }
+
+        th:first-child,
+        td:first-child {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        tr.highlight {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+        }
+
+        tr.highlight td {
+            font-weight: 600;
+            color: #e94560;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .reference-section {
+            padding: 25px 30px;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .reference-section h3 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .reference-list {
+            list-style: none;
+        }
+
+        .reference-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9rem;
+        }
+
+        .reference-list li:last-child {
+            border-bottom: none;
+        }
+
+        .reference-list .ref-title {
+            font-weight: 600;
+            color: #333;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .reference-list .ref-source {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .reference-list a {
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        .reference-list a:hover {
+            text-decoration: underline;
+        }
+
+        .reference-source {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .reference-source a {
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        .reference-source a:hover {
+            text-decoration: underline;
+        }
+
+        .reference-table {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .reference-table th {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .reference-table td {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .reference-table td:first-child {
+            background: #fff5f5;
+            color: #e94560;
+        }
+
+        .reference-unit {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+
+        .policy-card .policy-ref {
+            font-size: 0.8rem;
+            color: #e94560;
+            margin-top: 6px;
+        }
+
+        .policy-card .policy-ref a {
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        .policy-card .policy-ref a:hover {
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #856404;
+        }
+
+        /* BioDaddy Hub Nav */
+        .bd-nav {
+            background: rgba(26, 26, 46, 0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 0.6rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+        }
+
+        .bd-nav-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bd-nav a {
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #e2e8f0;
+            transition: color 0.2s;
+        }
+
+        .bd-nav a:hover {
+            color: #e94560;
+        }
+
+        /* BioDaddy Hub Disclaimer */
+        .bd-disclaimer {
+            padding: 20px 30px;
+            border-top: 1px solid #eee;
+            background: #f8f9fa;
+        }
+
+        .bd-disclaimer p {
+            font-size: 0.9rem;
+            color: #555;
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .bd-disclaimer-list {
+            list-style: none;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .bd-disclaimer-list li {
+            font-size: 0.8rem;
+            color: #888;
+            line-height: 1.8;
+            padding: 2px 0 2px 16px;
+            position: relative;
+        }
+
+        .bd-disclaimer-list li::before {
+            content: '·';
+            position: absolute;
+            left: 4px;
+            color: #aaa;
+        }
+
+        /* BioDaddy Hub Footer */
+        .bd-footer {
+            padding: 28px 0;
+            text-align: center;
+            background: transparent;
+        }
+
+        .bd-footer-links {
+            margin-bottom: 10px;
+        }
+
+        .bd-footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .bd-footer-links a:hover {
+            color: #e94560;
+        }
+
+        .bd-footer-dot {
+            color: rgba(255,255,255,0.4);
+            margin: 0 8px;
+        }
+
+        .bd-footer .bd-copyright {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.4rem;
+            }
+
+            .my-percent {
+                font-size: 2.5rem;
+            }
+
+            table {
+                font-size: 0.8rem;
+            }
+
+            th, td {
+                padding: 8px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- BioDaddy Hub Nav -->
+    <nav class="bd-nav">
+        <div class="bd-nav-inner">
+            <a href="https://farmingdollar.com">&#x2190; BioDaddy Hub</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="calculator-card">
+            <div class="header">
+                <h1>2026년 중위소득 계산기</h1>
+                <p>내 소득이 중위소득의 몇 %인지 확인하고 정책 수혜 자격을 알아보세요</p>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="familySize">가구원 수</label>
+                    <select id="familySize">
+                        <option value="1">1인 가구</option>
+                        <option value="2">2인 가구</option>
+                        <option value="3">3인 가구</option>
+                        <option value="4" selected>4인 가구</option>
+                        <option value="5">5인 가구</option>
+                        <option value="6">6인 가구</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="income">월 소득 (원)</label>
+                    <input type="text" id="income" placeholder="예: 3,000,000" inputmode="numeric">
+                </div>
+
+                <button class="calculate-btn" onclick="calculate()">계산하기</button>
+            </div>
+
+            <div class="result-section" id="resultSection">
+                <div class="result-header">
+                    <h2>내 소득은 중위소득의</h2>
+                    <div class="my-percent" id="myPercent">0%</div>
+                </div>
+
+                <div class="income-info" id="incomeInfo"></div>
+
+                <div class="policy-section">
+                    <h3>정책별 수혜 자격</h3>
+                    <div id="policyList"></div>
+                </div>
+
+                <div class="percent-table">
+                    <h3>2026년 가구원수별 중위소득 기준표</h3>
+                    <div class="table-container">
+                        <table id="incomeTable"></table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reference-section">
+                <h3>2026년 기준 중위소득표</h3>
+                <p class="reference-source">출처: 보건복지부 고시 | <a href="https://www.mohw.go.kr" target="_blank">보건복지부</a></p>
+                <div class="table-container">
+                    <table class="reference-table">
+                        <thead>
+                            <tr>
+                                <th>가구원 수</th>
+                                <th>1인</th>
+                                <th>2인</th>
+                                <th>3인</th>
+                                <th>4인</th>
+                                <th>5인</th>
+                                <th>6인</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>기준 중위소득</td>
+                                <td>2,564,238</td>
+                                <td>4,199,292</td>
+                                <td>5,359,036</td>
+                                <td>6,494,738</td>
+                                <td>7,556,719</td>
+                                <td>8,555,952</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="reference-unit">단위: 원/월</p>
+            </div>
+
+            <div class="reference-section">
+                <h3>참고자료 (Reference)</h3>
+                <ul class="reference-list">
+                    <li>
+                        <span class="ref-title">2026년 기준 중위소득</span>
+                        <span class="ref-source">보건복지부 고시 제2025-135호 | <a href="https://www.mohw.go.kr" target="_blank">보건복지부</a></span>
+                    </li>
+                    <li>
+                        <span class="ref-title">기초생활보장제도 (생계·의료·주거·교육급여)</span>
+                        <span class="ref-source">국민기초생활보장법 | <a href="https://www.bokjiro.go.kr" target="_blank">복지로</a></span>
+                    </li>
+                    <li>
+                        <span class="ref-title">차상위계층 지원</span>
+                        <span class="ref-source">국민기초생활보장법 시행령 | <a href="https://www.bokjiro.go.kr" target="_blank">복지로</a></span>
+                    </li>
+                    <li>
+                        <span class="ref-title">한부모가족 지원</span>
+                        <span class="ref-source">한부모가족지원법 | <a href="https://www.mogef.go.kr" target="_blank">여성가족부</a></span>
+                    </li>
+                    <li>
+                        <span class="ref-title">긴급복지지원</span>
+                        <span class="ref-source">긴급복지지원법 | <a href="https://www.129.go.kr" target="_blank">보건복지콜센터 129</a></span>
+                    </li>
+                    <li>
+                        <span class="ref-title">청년내일저축계좌</span>
+                        <span class="ref-source">보건복지부 자산형성지원사업 | <a href="https://www.bokjiro.go.kr" target="_blank">복지로</a></span>
+                    </li>
+                    <li>
+                        <span class="ref-title">국가장학금</span>
+                        <span class="ref-source">한국장학재단 | <a href="https://www.kosaf.go.kr" target="_blank">한국장학재단</a></span>
+                    </li>
+                </ul>
+                <div class="disclaimer">
+                    ※ 본 계산기는 참고용이며, 실제 수급 자격은 소득·재산·부양의무자 등 추가 기준이 적용됩니다. 정확한 자격 확인은 주민센터 또는 해당 기관에 문의하세요.
+                </div>
+            </div>
+
+            <!-- BioDaddy Hub Disclaimer -->
+            <div class="bd-disclaimer">
+                <p><strong>면책 조항 (Disclaimer)</strong></p>
+                <ul class="bd-disclaimer-list">
+                    <li>본 계산기는 <strong>단순 참고용</strong>이며, 공식적인 수급 자격 판정이 아닙니다.</li>
+                    <li>실제 수급 자격은 소득·재산·부양의무자 등 <strong>추가 기준이 적용</strong>되며, 본 계산기의 결과와 상이할 수 있습니다.</li>
+                    <li>본 페이지에 기재된 수치·비율은 2026년 보건복지부 고시 기준 <strong>추정치</strong>로, 향후 변경될 수 있습니다.</li>
+                    <li>정책별 기준은 매년 변경될 수 있으며, 최신 정보는 <strong>보건복지부 및 해당 기관의 공식 공시</strong>를 확인하시기 바랍니다.</li>
+                    <li>본 계산기 이용으로 발생하는 <strong>직·간접적 불이익에 대해 운영자는 일체의 법적 책임을 지지 않습니다.</strong></li>
+                    <li>정확한 자격 확인은 <strong>주민센터 또는 해당 기관</strong>에 직접 문의하시기 바랍니다.</li>
+                </ul>
+            </div>
+
+            <div class="footer">
+                2026년 기준 중위소득 기준 | 보건복지부 고시<br>
+                <span style="font-size: 0.8rem; margin-top: 5px; display: inline-block;">최종 업데이트: 2026년</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- BioDaddy Hub Footer -->
+    <footer class="bd-footer">
+        <div class="bd-footer-links">
+            <a href="https://blog.naver.com/biodad" target="_blank" rel="noopener">블로그</a>
+            <span class="bd-footer-dot">·</span>
+            <a href="https://farmingdollar.com" target="_blank" rel="noopener">farmingdollar.com</a>
+        </div>
+        <p class="bd-copyright">&copy; 2026 바이오대디. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 2026년 중위소득 기준 (원)
+        const medianIncome = {
+            1: 2564238,
+            2: 4199292,
+            3: 5359036,
+            4: 6494738,
+            5: 7556719,
+            6: 8555952
+        };
+
+        // 주요 퍼센트 구간
+        const percentages = [32, 40, 48, 50, 60, 63, 72, 75, 100, 120, 150, 200, 250, 300];
+
+        // 정책 정보
+        const policies = [
+            {
+                name: '기초생활보장 (생계급여)',
+                threshold: 32,
+                desc: '생계급여 수급 기준',
+                detail: '중위소득 32% 이하 가구 대상',
+                ref: '복지로',
+                refUrl: 'https://www.bokjiro.go.kr'
+            },
+            {
+                name: '기초생활보장 (의료급여)',
+                threshold: 40,
+                desc: '의료급여 수급 기준',
+                detail: '중위소득 40% 이하 가구 대상',
+                ref: '복지로',
+                refUrl: 'https://www.bokjiro.go.kr'
+            },
+            {
+                name: '기초생활보장 (주거급여)',
+                threshold: 48,
+                desc: '주거급여 수급 기준',
+                detail: '중위소득 48% 이하 가구 대상',
+                ref: '마이홈포털',
+                refUrl: 'https://www.myhome.go.kr'
+            },
+            {
+                name: '차상위계층',
+                threshold: 50,
+                desc: '차상위계층 기준',
+                detail: '중위소득 50% 이하 (기초수급자 제외)',
+                ref: '복지로',
+                refUrl: 'https://www.bokjiro.go.kr'
+            },
+            {
+                name: '기초생활보장 (교육급여)',
+                threshold: 50,
+                desc: '교육급여 수급 기준',
+                detail: '중위소득 50% 이하 가구 대상',
+                ref: '교육부',
+                refUrl: 'https://www.moe.go.kr'
+            },
+            {
+                name: '한부모가족 (일반)',
+                threshold: 63,
+                desc: '일반 한부모가족 지원 기준',
+                detail: '중위소득 63% 이하',
+                ref: '여성가족부',
+                refUrl: 'https://www.mogef.go.kr'
+            },
+            {
+                name: '한부모가족 (청소년, 24세 이하)',
+                threshold: 72,
+                desc: '청소년 한부모가족 지원 기준',
+                detail: '중위소득 72% 이하 (24세 이하 부모)',
+                ref: '여성가족부',
+                refUrl: 'https://www.mogef.go.kr'
+            },
+            {
+                name: '긴급복지지원',
+                threshold: 75,
+                desc: '긴급복지 지원 기준',
+                detail: '중위소득 75% 이하',
+                ref: '보건복지콜센터 129',
+                refUrl: 'https://www.129.go.kr'
+            },
+            {
+                name: '청년내일저축계좌',
+                threshold: 100,
+                desc: '가입 자격 기준',
+                detail: '50% 이하: 월 30만원 매칭 / 50~100%: 월 10만원 매칭',
+                ref: '복지로',
+                refUrl: 'https://www.bokjiro.go.kr'
+            },
+            {
+                name: '국가장학금 5구간',
+                threshold: 100,
+                desc: '국가장학금 5구간 이하',
+                detail: '중위소득 100% 이하',
+                ref: '한국장학재단',
+                refUrl: 'https://www.kosaf.go.kr'
+            },
+            {
+                name: '국가장학금 8구간',
+                threshold: 200,
+                desc: '국가장학금 8구간 이하',
+                detail: '중위소득 200% 이하',
+                ref: '한국장학재단',
+                refUrl: 'https://www.kosaf.go.kr'
+            },
+            {
+                name: '국가장학금 9구간',
+                threshold: 300,
+                desc: '국가장학금 최대 지원 범위',
+                detail: '중위소득 300% 이하',
+                ref: '한국장학재단',
+                refUrl: 'https://www.kosaf.go.kr'
+            }
+        ];
+
+        // 숫자 포맷팅 (천단위 콤마)
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        // 입력값 포맷팅
+        document.getElementById('income').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/[^\d]/g, '');
+            if (value) {
+                e.target.value = formatNumber(value);
+            }
+        });
+
+        // 계산 함수
+        function calculate() {
+            const familySize = parseInt(document.getElementById('familySize').value);
+            const incomeStr = document.getElementById('income').value.replace(/[^\d]/g, '');
+            const income = parseInt(incomeStr) || 0;
+
+            if (income === 0) {
+                alert('월 소득을 입력해주세요.');
+                return;
+            }
+
+            const baseIncome = medianIncome[familySize];
+            const percent = (income / baseIncome) * 100;
+
+            // 결과 표시
+            document.getElementById('resultSection').classList.add('show');
+            document.getElementById('myPercent').textContent = percent.toFixed(1) + '%';
+
+            document.getElementById('incomeInfo').innerHTML = `
+                <p><strong>${familySize}인 가구</strong> 기준 중위소득: <strong>${formatNumber(baseIncome)}원</strong></p>
+                <p>입력하신 소득: <strong>${formatNumber(income)}원</strong></p>
+            `;
+
+            // 정책 목록 생성
+            let policyHtml = '';
+            policies.forEach(policy => {
+                const isEligible = percent <= policy.threshold;
+                policyHtml += `
+                    <div class="policy-card ${isEligible ? 'eligible' : 'ineligible'}">
+                        <div class="policy-name">
+                            ${policy.name}
+                            <span class="badge">${isEligible ? '해당' : '미해당'}</span>
+                        </div>
+                        <div class="policy-desc">${policy.desc} (${policy.threshold}% 이하)</div>
+                        <div class="policy-detail">${policy.detail}</div>
+                        <div class="policy-ref">출처: <a href="${policy.refUrl}" target="_blank">${policy.ref}</a></div>
+                    </div>
+                `;
+            });
+            document.getElementById('policyList').innerHTML = policyHtml;
+
+            // 테이블 생성
+            let tableHtml = '<thead><tr><th>구간</th>';
+            for (let i = 1; i <= 6; i++) {
+                tableHtml += `<th>${i}인</th>`;
+            }
+            tableHtml += '</tr></thead><tbody>';
+
+            percentages.forEach(pct => {
+                const isMyRange = percent <= pct && (percentages.indexOf(pct) === 0 || percent > percentages[percentages.indexOf(pct) - 1]);
+                tableHtml += `<tr class="${isMyRange ? 'highlight' : ''}">`;
+                tableHtml += `<td>${pct}%</td>`;
+                for (let i = 1; i <= 6; i++) {
+                    const amount = Math.round(medianIncome[i] * pct / 100);
+                    tableHtml += `<td>${formatNumber(amount)}</td>`;
+                }
+                tableHtml += '</tr>';
+            });
+
+            tableHtml += '</tbody>';
+            document.getElementById('incomeTable').innerHTML = tableHtml;
+
+            // 스크롤 이동
+            document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 엔터 키로 계산
+        document.getElementById('income').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculate();
+            }
+        });
+    </script>
+</body>
+</html>
