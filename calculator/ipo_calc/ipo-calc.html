@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공모주 IPO 수익 계산기 | 바이오대디</title>
+  <meta name="description" content="케이뱅크·에스팀·액스비스 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="공모주 IPO 수익 계산기">
+  <meta property="og:description" content="케이뱅크·에스팀·액스비스 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="공모주 IPO 수익 계산기">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e1a;
+  --bg-card: #111827;
+  --bg-card-hover: #1a2332;
+  --bg-input: #0d1321;
+  --border: #1e293b;
+  --border-hover: #334155;
+  --text: #e2e8f0;
+  --text-dim: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #3b82f6;
+  --accent-glow: rgba(59, 130, 246, 0.3);
+  --green: #22c55e;
+  --green-dim: rgba(34, 197, 94, 0.15);
+  --red: #ef4444;
+  --red-dim: rgba(239, 68, 68, 0.15);
+  --yellow: #eab308;
+  --yellow-dim: rgba(234, 179, 8, 0.15);
+  --blue: #3b82f6;
+  --blue-dim: rgba(59, 130, 246, 0.15);
+  --purple: #a855f7;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* ---- Hero ---- */
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  background: linear-gradient(180deg, #0f172a 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--blue-dim);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--accent), var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-sub { font-size: 17px; color: var(--text-dim); margin-bottom: 32px; }
+
+/* IPO Selector */
+.ipo-selector {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.ipo-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 32px;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.25s;
+  color: var(--text);
+  font-family: inherit;
+  min-width: 200px;
+}
+
+.ipo-btn:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
+
+.ipo-btn.active {
+  border-color: var(--accent);
+  background: var(--blue-dim);
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.ipo-btn-name { font-size: 20px; font-weight: 800; }
+.ipo-btn-desc { font-size: 12px; color: var(--text-muted); }
+.ipo-btn.active .ipo-btn-desc { color: var(--text-dim); }
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  font-size: 14px;
+}
+
+.stat-label { color: var(--text-muted); }
+.stat-value { font-weight: 700; }
+.stat-value.accent { color: var(--yellow); }
+.stat-value.danger { color: var(--red); font-weight: 800; }
+.stat-value.good { color: var(--green); font-weight: 800; }
+.stat-pill.warning { border-color: rgba(239, 68, 68, 0.4); background: var(--red-dim); }
+.stat-pill.caution { border-color: rgba(234, 179, 8, 0.4); background: var(--yellow-dim); }
+.stat-pill.positive { border-color: rgba(34, 197, 94, 0.4); background: var(--green-dim); }
+.stat-value.warn { color: var(--yellow); font-weight: 800; }
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: linear-gradient(135deg, var(--accent), #2563eb);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
+
+/* ---- Sections ---- */
+.section { padding: 72px 0; }
+
+.section-title {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.section-desc {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+/* ---- Risk Section ---- */
+.risk-section { background: linear-gradient(180deg, var(--bg) 0%, #0d1220 100%); }
+
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.risk-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+
+.risk-card:hover { border-color: var(--border-hover); }
+
+.risk-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.risk-icon { font-size: 24px; }
+.risk-header h3 { font-size: 16px; font-weight: 700; }
+
+.risk-meter { margin-bottom: 12px; position: relative; }
+
+.meter-bar {
+  display: flex;
+  height: 28px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.meter-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.meter-zone.red { background: var(--red); }
+.meter-zone.yellow { background: var(--yellow); color: #000; }
+.meter-zone.green { background: var(--green); }
+
+.meter-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.risk-note {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.risk-card.risk-alert {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.06) 0%, var(--bg-card) 40%);
+}
+
+.risk-card.risk-good {
+  border-color: rgba(34, 197, 94, 0.4);
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.06) 0%, var(--bg-card) 40%);
+}
+
+.risk-badge-warn {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: var(--red-dim);
+  color: var(--red);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.risk-badge-good {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: var(--green-dim);
+  color: var(--green);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.lockup-actual {
+  text-align: center;
+  padding: 16px 0;
+  margin-bottom: 12px;
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.lockup-actual.lockup-good { border-color: rgba(34, 197, 94, 0.15); }
+
+.lockup-number { font-size: 42px; font-weight: 900; color: var(--red); line-height: 1; }
+.lockup-number.good-num { color: var(--green); }
+.lockup-unit { font-size: 20px; font-weight: 600; }
+.lockup-verdict { font-size: 13px; color: var(--red); font-weight: 600; margin-top: 4px; }
+.lockup-verdict.good-verdict { color: var(--green); }
+
+.meter-pointer { position: absolute; top: 0; transform: translateX(-50%); z-index: 2; }
+
+.pointer-line {
+  width: 2px;
+  height: 28px;
+  background: #fff;
+  margin: 0 auto;
+  box-shadow: 0 0 4px rgba(255,255,255,0.5);
+}
+
+.pointer-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--red);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.pointer-label.pointer-label-green { background: var(--green); }
+
+.risk-card.risk-alert-yellow {
+  border-color: rgba(234, 179, 8, 0.4);
+  background: linear-gradient(180deg, rgba(234, 179, 8, 0.06) 0%, var(--bg-card) 40%);
+}
+
+.risk-badge-caution {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: var(--yellow-dim);
+  color: var(--yellow);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.float-actual { border-color: rgba(234, 179, 8, 0.15); }
+.float-number { color: var(--yellow) !important; }
+.float-verdict { color: var(--yellow) !important; }
+.pointer-line-yellow { background: var(--yellow) !important; box-shadow: 0 0 4px rgba(234, 179, 8, 0.5) !important; }
+.pointer-label-yellow { background: var(--yellow) !important; color: #000 !important; }
+
+.risk-input-group { margin-top: 14px; }
+.risk-input-group label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+
+.risk-input-group input {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.risk-input-group input:focus { border-color: var(--accent); }
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.info-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.info-row:last-child { border-bottom: none; }
+.info-row-label { color: var(--text-muted); }
+.info-row-value { font-weight: 600; }
+
+/* ---- Calculator ---- */
+.calc-section { background: var(--bg); }
+
+.calc-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .calc-wrapper { grid-template-columns: 1fr; }
+}
+
+.calc-input-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.input-group { margin-bottom: 16px; }
+.input-group label { display: block; font-size: 13px; font-weight: 500; color: var(--text-dim); margin-bottom: 6px; }
+.input-with-unit { position: relative; }
+
+.input-with-unit input {
+  width: 100%;
+  padding: 12px 50px 12px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 600;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-with-unit input:focus { border-color: var(--accent); }
+
+.input-with-unit .unit {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.main-input .input-with-unit input {
+  font-size: 24px;
+  padding: 16px 50px 16px 16px;
+  border-color: var(--accent);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.divider { height: 1px; background: var(--border); margin: 20px 0; }
+.invest-summary { padding: 4px 0; }
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+.summary-value { font-weight: 700; font-size: 18px; color: var(--accent); }
+.subsection-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: var(--text-dim); }
+
+.scenario-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.scenario-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 8px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text);
+  font-family: inherit;
+}
+
+.scenario-btn:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
+.scenario-btn.active { border-color: var(--accent); background: var(--blue-dim); }
+.sc-label { font-size: 12px; }
+.sc-rate { font-size: 16px; font-weight: 700; }
+
+.calc-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--accent), #2563eb);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.15s, box-shadow 0.15s;
+  margin-top: 8px;
+}
+
+.calc-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px var(--accent-glow); }
+.calc-btn:active { transform: translateY(0); }
+
+/* Result Panel */
+.calc-result-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  min-height: 400px;
+  position: sticky;
+  top: 20px;
+}
+
+.result-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 340px;
+  color: var(--text-muted);
+  text-align: center;
+  gap: 12px;
+}
+
+.placeholder-icon { font-size: 48px; opacity: 0.4; }
+
+.result-content { animation: fadeIn 0.3s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.result-tag.positive { background: var(--green-dim); color: var(--green); }
+.result-tag.negative { background: var(--red-dim); color: var(--red); }
+
+.result-big-number {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 800;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.result-big-number.positive { color: var(--green); }
+.result-big-number.negative { color: var(--red); }
+.result-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+.result-details { display: flex; flex-direction: column; gap: 12px; }
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+}
+
+.result-row-label { color: var(--text-dim); }
+.result-row-value { font-weight: 600; }
+.result-divider { height: 1px; background: var(--border); margin: 8px 0; }
+
+.roi-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.roi-badge.positive { background: var(--green-dim); color: var(--green); border: 1px solid rgba(34, 197, 94, 0.3); }
+.roi-badge.negative { background: var(--red-dim); color: var(--red); border: 1px solid rgba(239, 68, 68, 0.3); }
+
+/* ---- Scenario Table ---- */
+.scenario-section { background: linear-gradient(180deg, var(--bg) 0%, #0d1220 100%); }
+.scenario-table-wrap { overflow-x: auto; }
+.scenario-empty { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 14px; }
+
+.sc-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.sc-table th { padding: 12px 16px; background: var(--bg-card); border: 1px solid var(--border); font-weight: 600; text-align: center; color: var(--text-dim); font-size: 13px; }
+.sc-table td { padding: 14px 16px; border: 1px solid var(--border); text-align: center; background: var(--bg); }
+.sc-table tr.active-row td { background: var(--blue-dim); border-color: rgba(59, 130, 246, 0.3); }
+.sc-table .profit-cell.positive { color: var(--green); font-weight: 700; }
+.sc-table .profit-cell.negative { color: var(--red); font-weight: 700; }
+
+/* ---- Strategy ---- */
+.strategy-section { background: var(--bg); }
+
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.strategy-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  position: relative;
+}
+
+.strategy-card.recommended { border-color: var(--accent); box-shadow: 0 0 24px var(--accent-glow); }
+
+.strat-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--bg-input);
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.recommended .strat-badge { background: var(--blue-dim); color: var(--accent); }
+.strategy-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 12px; }
+.strat-condition { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+.strategy-card ul { list-style: none; margin-bottom: 16px; }
+.strategy-card li { font-size: 13px; padding: 4px 0; color: var(--text-dim); }
+.strategy-card li::before { content: '· '; color: var(--text-muted); }
+
+.strat-verdict {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 14px;
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  color: var(--text-dim);
+  border-left: 3px solid var(--text-muted);
+}
+
+.recommended .strat-verdict { border-left-color: var(--accent); color: var(--accent); background: var(--blue-dim); }
+
+/* Split Calculator */
+.split-calc {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 32px;
+}
+
+.split-calc h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+.split-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+
+.split-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.split-group label { display: block; font-size: 13px; color: var(--text-dim); margin-bottom: 6px; }
+.split-group .input-with-unit input { font-size: 15px; padding: 10px 50px 10px 14px; }
+.range-wrap { padding: 0 4px; }
+
+.range-wrap input[type="range"] {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--border);
+  border-radius: 3px;
+  outline: none;
+  margin: 8px 0;
+}
+
+.range-wrap input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+.range-labels { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-dim); }
+.split-btn { background: linear-gradient(135deg, var(--green), #16a34a); margin-top: 4px; }
+.split-btn:hover { box-shadow: 0 6px 24px rgba(34, 197, 94, 0.3); }
+.split-result { margin-top: 16px; }
+
+.split-result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.split-box { background: var(--bg-input); border-radius: var(--radius-sm); padding: 14px; text-align: center; }
+.split-box-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+.split-box-value { font-size: 18px; font-weight: 700; }
+
+.split-total {
+  background: var(--blue-dim);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  text-align: center;
+}
+
+.split-total-label { font-size: 13px; color: var(--text-dim); margin-bottom: 2px; }
+.split-total-value { font-size: 22px; font-weight: 800; }
+.split-total-value.positive { color: var(--green); }
+.split-total-value.negative { color: var(--red); }
+
+/* ---- Summary ---- */
+.summary-section { background: linear-gradient(180deg, #0d1220 0%, var(--bg) 100%); padding-bottom: 40px; }
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.sum-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+}
+
+.sum-icon { font-size: 32px; margin-bottom: 12px; }
+.sum-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.sum-range { font-size: 24px; font-weight: 800; color: var(--accent); margin-bottom: 8px; }
+.sum-card p { font-size: 13px; color: var(--text-dim); }
+.sum-list { list-style: none; text-align: left; display: inline-block; }
+.sum-list li { font-size: 13px; color: var(--text-dim); padding: 3px 0; }
+
+/* ---- Disclaimer ---- */
+.disclaimer { padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.disclaimer p { font-size: 13px; color: var(--text-dim); text-align: center; line-height: 1.8; margin-bottom: 12px; font-weight: 600; }
+.disclaimer-list { list-style: none; max-width: 760px; margin: 0 auto; text-align: left; }
+.disclaimer-list li { font-size: 12px; color: var(--text-muted); line-height: 1.8; padding: 2px 0; padding-left: 16px; position: relative; }
+.disclaimer-list li::before { content: '·'; position: absolute; left: 4px; color: var(--text-muted); }
+
+/* ---- Footer ---- */
+.footer { padding: 32px 0; text-align: center; }
+.footer-links { margin-bottom: 12px; }
+.footer-links a { color: var(--text-dim); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--accent); }
+.footer-dot { color: var(--text-muted); margin: 0 8px; }
+.copyright { font-size: 13px; color: var(--text-muted); }
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .hero { padding: 56px 0 40px; }
+  .hero-stats { flex-direction: column; align-items: center; }
+  .ipo-selector { flex-direction: column; align-items: center; }
+  .ipo-btn { min-width: 80%; }
+  .risk-grid { grid-template-columns: 1fr; }
+  .info-grid { grid-template-columns: 1fr; }
+  .scenario-selector { grid-template-columns: 1fr 1fr; }
+  .strategy-grid { grid-template-columns: 1fr; }
+  .split-inputs { grid-template-columns: 1fr; }
+  .split-result-grid { grid-template-columns: 1fr; }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
+::selection { background: var(--accent); color: #fff; }
+</style>
+</head>
+<body>
+  <!-- Top Nav -->
+  <nav style="background:rgba(10,14,26,0.9);border-bottom:1px solid #1e293b;padding:0.6rem 1.5rem;position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);">
+    <div style="max-width:1060px;margin:0 auto;display:flex;align-items:center;gap:1rem;">
+      <a href="https://farmingdollar.com" style="font-size:0.95rem;font-weight:700;text-decoration:none;color:#e2e8f0;transition:color 0.2s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#e2e8f0'">&#x2190; BioDaddy Hub</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badge">2026 IPO</div>
+      <h1>공모주 <span class="highlight">수익 계산기</span></h1>
+      <p class="hero-sub">공모주를 선택하면 데이터가 자동으로 채워집니다.<br>배정 주식수만 입력하세요.</p>
+
+      <!-- IPO Selector -->
+      <div class="ipo-selector">
+        <button class="ipo-btn active" data-ipo="kbank">
+          <span class="ipo-btn-name">케이뱅크</span>
+          <span class="ipo-btn-desc">인터넷전문은행 · 3/3 상장</span>
+        </button>
+        <button class="ipo-btn" data-ipo="esteem">
+          <span class="ipo-btn-name">에스팀</span>
+          <span class="ipo-btn-desc">브랜드 마케팅 콘텐츠 · 3/6 상장</span>
+        </button>
+        <button class="ipo-btn" data-ipo="axbis">
+          <span class="ipo-btn-name">액스비스</span>
+          <span class="ipo-btn-desc">AI 레이저 솔루션 · 3/9 상장</span>
+        </button>
+      </div>
+
+      <div class="hero-stats" id="heroStats">
+        <!-- Dynamically filled -->
+      </div>
+      <a href="#calculator" class="cta-btn">지금 계산하기 ↓</a>
+    </div>
+  </header>
+
+  <!-- Risk Dashboard -->
+  <section class="section risk-section" id="risk">
+    <div class="container">
+      <h2 class="section-title">상장 전 리스크 체크포인트</h2>
+      <p class="section-desc">"얼마 오를까?" 보다 "어디서 리스크가 터질 수 있나?"가 더 중요합니다.</p>
+
+      <div class="risk-grid">
+        <!-- 기관 의무보유 확약 -->
+        <div id="lockupCard" class="risk-card">
+          <div class="risk-header">
+            <div class="risk-icon">🏛️</div>
+            <h3>기관 의무보유 확약</h3>
+            <span id="lockupBadge"></span>
+          </div>
+          <div id="lockupDisplay" class="lockup-actual">
+            <div id="lockupNumber" class="lockup-number"></div>
+            <div id="lockupVerdict" class="lockup-verdict"></div>
+          </div>
+          <div class="risk-meter">
+            <div class="meter-bar">
+              <div class="meter-zone red" style="width:33%"><span>~10%</span></div>
+              <div class="meter-zone yellow" style="width:34%"><span>20~30%</span></div>
+              <div class="meter-zone green" style="width:33%"><span>40%+</span></div>
+            </div>
+            <div class="meter-pointer" id="lockupPointer" style="left:0%">
+              <div class="pointer-line" id="lockupPointerLine"></div>
+              <div class="pointer-label" id="lockupPointerLabel"></div>
+            </div>
+            <div class="meter-labels">
+              <span>⚠️ 매물 압력</span>
+              <span>중립</span>
+              <span>👍 수급 안정</span>
+            </div>
+          </div>
+          <p class="risk-note" id="lockupNote"></p>
+          <div class="risk-input-group">
+            <label>직접 수정 (%)</label>
+            <input type="number" id="lockupRate" value="42.45" min="0" max="100" step="0.1">
+          </div>
+        </div>
+
+        <!-- 유통가능 물량 -->
+        <div id="floatCard" class="risk-card risk-alert-yellow">
+          <div class="risk-header">
+            <div class="risk-icon">📊</div>
+            <h3>유통가능 물량</h3>
+            <span id="floatBadge" class="risk-badge-caution">주의</span>
+          </div>
+          <div class="lockup-actual float-actual" id="floatDisplay">
+            <div class="lockup-number float-number" id="floatNumber"></div>
+            <div class="lockup-verdict float-verdict" id="floatVerdict"></div>
+          </div>
+          <div class="risk-meter">
+            <div class="meter-bar">
+              <div class="meter-zone green" style="width:33%"><span>~20%</span></div>
+              <div class="meter-zone yellow" style="width:34%"><span>20~30%</span></div>
+              <div class="meter-zone red" style="width:33%"><span>40%+</span></div>
+            </div>
+            <div class="meter-pointer" id="floatPointer" style="left:0%">
+              <div class="pointer-line pointer-line-yellow"></div>
+              <div class="pointer-label pointer-label-yellow" id="floatPointerLabel"></div>
+            </div>
+            <div class="meter-labels">
+              <span>👍 수급 유리</span>
+              <span>매물 부담</span>
+              <span>⚠️ 변동성 큼</span>
+            </div>
+          </div>
+          <p class="risk-note" id="floatNote"></p>
+          <div class="risk-input-group">
+            <label>직접 수정 (%)</label>
+            <input type="number" id="floatRate" value="34.69" min="0" max="100" step="0.01">
+          </div>
+        </div>
+      </div>
+
+      <!-- IPO Info Cards -->
+      <div class="info-grid" id="infoGrid">
+        <!-- Dynamically filled -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Section -->
+  <section class="section calc-section" id="calculator">
+    <div class="container">
+      <h2 class="section-title">수익 계산기</h2>
+      <p class="section-desc">배정받은 주식수를 입력하고, 시나리오별 수익을 확인하세요.</p>
+
+      <div class="calc-wrapper">
+        <!-- Input Panel -->
+        <div class="calc-input-panel">
+          <div class="input-group main-input">
+            <label for="shares">배정받은 주식수</label>
+            <div class="input-with-unit">
+              <input type="number" id="shares" placeholder="0" min="0" step="1">
+              <span class="unit">주</span>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="ipoPrice">공모가</label>
+            <div class="input-with-unit">
+              <input type="number" id="ipoPrice" value="8500" min="0" step="100">
+              <span class="unit">원</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="invest-summary">
+            <div class="summary-row">
+              <span>총 투자금</span>
+              <span id="totalInvest" class="summary-value">0원</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3 class="subsection-title">시초가 시나리오 선택</h3>
+          <div class="scenario-selector">
+            <button class="scenario-btn" data-rate="5" data-color="blue">
+              <span class="sc-label">🔵 보수적</span>
+              <span class="sc-rate">+5%</span>
+            </button>
+            <button class="scenario-btn active" data-rate="15" data-color="green">
+              <span class="sc-label">🟢 기본</span>
+              <span class="sc-rate">+15%</span>
+            </button>
+            <button class="scenario-btn" data-rate="30" data-color="yellow">
+              <span class="sc-label">🟡 강한 수급</span>
+              <span class="sc-rate">+30%</span>
+            </button>
+            <button class="scenario-btn" data-rate="50" data-color="red">
+              <span class="sc-label">🔴 과열</span>
+              <span class="sc-rate">+50%</span>
+            </button>
+          </div>
+
+          <div class="input-group">
+            <label for="customRate">직접 입력 (%)</label>
+            <div class="input-with-unit">
+              <input type="number" id="customRate" placeholder="15" min="-30" max="100" step="1">
+              <span class="unit">%</span>
+            </div>
+          </div>
+
+          <button class="calc-btn" id="calcBtn">계산하기</button>
+        </div>
+
+        <!-- Result Panel -->
+        <div class="calc-result-panel" id="resultPanel">
+          <div class="result-placeholder">
+            <div class="placeholder-icon">📱</div>
+            <p>배정받은 주식수를 입력하고<br><strong>계산하기</strong>를 눌러주세요</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scenario Comparison -->
+  <section class="section scenario-section" id="scenarios">
+    <div class="container">
+      <h2 class="section-title">시나리오별 전체 비교</h2>
+      <p class="section-desc">4가지 시나리오를 한눈에 비교합니다.</p>
+
+      <div class="scenario-table-wrap" id="scenarioTable">
+        <div class="scenario-empty">위 계산기에서 주식수를 입력하면 비교표가 생성됩니다.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategy Section -->
+  <section class="section strategy-section" id="strategy">
+    <div class="container">
+      <h2 class="section-title">상장일 매도 전략</h2>
+      <p class="section-desc">시초가 구간별 전략과 분할 매도 시뮬레이터를 활용하세요.</p>
+
+      <div class="strategy-grid" id="strategyGrid">
+        <!-- Dynamically filled -->
+      </div>
+
+      <!-- 분할매도 계산기 -->
+      <div class="split-calc" id="splitCalc">
+        <h3>분할 매도 시뮬레이터</h3>
+        <p class="split-desc">보유 주식을 나눠 팔 때 예상 수익을 계산합니다.</p>
+
+        <div class="split-inputs">
+          <div class="split-group">
+            <label>1차 매도 비율</label>
+            <div class="range-wrap">
+              <input type="range" id="splitRatio" min="0" max="100" value="50" step="10">
+              <div class="range-labels">
+                <span id="splitLabel1">50%</span>
+                <span id="splitLabel2">50%</span>
+              </div>
+            </div>
+          </div>
+          <div class="split-group">
+            <label>1차 매도가</label>
+            <div class="input-with-unit">
+              <input type="number" id="sellPrice1" placeholder="0" min="0" step="100">
+              <span class="unit">원</span>
+            </div>
+          </div>
+          <div class="split-group">
+            <label>2차 매도가</label>
+            <div class="input-with-unit">
+              <input type="number" id="sellPrice2" placeholder="0" min="0" step="100">
+              <span class="unit">원</span>
+            </div>
+          </div>
+        </div>
+        <button class="calc-btn split-btn" id="splitCalcBtn">분할 매도 계산</button>
+        <div id="splitResult" class="split-result"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section class="section summary-section">
+    <div class="container">
+      <h2 class="section-title">정리</h2>
+      <div class="summary-cards" id="summaryCards">
+        <!-- Dynamically filled -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer">
+    <div class="container">
+      <p><strong>면책 조항 (Disclaimer)</strong></p>
+      <ul class="disclaimer-list">
+        <li>본 계산기는 <strong>단순 참고용</strong>이며, 투자 권유·추천·자문이 아닙니다.</li>
+        <li>계산 결과에는 <strong>오류가 포함될 수 있으며</strong>, 실제 배정 주식수·공모가·수수료·세금 등은 반드시 해당 증권사 및 공식 공시자료를 통해 직접 확인하시기 바랍니다.</li>
+        <li>본 페이지에 기재된 수치·비율·시나리오는 과거 데이터 및 가정에 기반한 <strong>추정치</strong>로, 실제 시장 상황과 상이할 수 있습니다.</li>
+        <li>본 계산기 이용으로 발생하는 <strong>직·간접적 손실에 대해 운영자는 일체의 법적 책임을 지지 않습니다.</strong></li>
+        <li>모든 투자 판단과 그에 따른 결과의 책임은 <strong>전적으로 투자자 본인</strong>에게 있습니다.</li>
+        <li>투자 전 반드시 금융투자협회 전자공시시스템(DART), 증권사 HTS/MTS 등 <strong>공식 채널의 정보를 직접 확인</strong>하시기 바랍니다.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="https://blog.naver.com/biodad" target="_blank" rel="noopener">블로그</a>
+        <span class="footer-dot">·</span>
+        <a href="https://farmingdollar.com" target="_blank" rel="noopener">farmingdollar.com</a>
+      </div>
+      <p class="copyright">&copy; 2026 바이오대디. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // =============================================
+  // IPO 데이터 정의
+  // =============================================
+  const IPO_DATA = {
+    kbank: {
+      name: '케이뱅크',
+      nameEn: 'K bank',
+      sector: '인터넷전문은행',
+      listingDate: '2026.03.03 (월)',
+      listingMarket: '코스피',
+      ipoPrice: 8300,
+      priceBand: '8,300원 ~ 10,000원',
+      bandPosition: '하단 확정',
+      bandPositionType: 'caution',
+      marketCap: '약 3.37조원',
+      lockupRate: 12.4,
+      lockupLabel: '매물 압력 구간',
+      lockupSeverity: 'danger',
+      floatRate: 36.35,
+      floatLabel: '매물 부담 ~ 변동성 큰 구간',
+      competitionRatio: '약 35 : 1',
+      institutions: '-',
+      totalShares: '82,192,000주',
+      publicShares: '약 20,548,000주 (25%)',
+      totalAmount: '약 6,822억원',
+      underwriter: 'NH투자증권·KB증권',
+      minShares: '10주',
+      minDeposit: '41,500원',
+      lockupNote: '기관들이 장기 투자로 베팅할 만큼의 <strong>확신을 갖지 못한 것</strong>으로 해석됩니다. 상장일 기관 매물 출회 압력이 크며, IPO 초반 가격은 실적보다 <strong>수급</strong>이 더 중요합니다.',
+      floatNote: '상장 당일 유통가능 비율 <strong>36.35%</strong>로, 30~40% 구간에 해당합니다. 매물 부담이 상당하며 장중 변동성이 클 수 있습니다.',
+      summaryRange: '+10% ~ +20%',
+      summaryPriceRange: '8,700원 ~ 10,300원',
+      summaryRisks: [
+        '기관 확약 12.4% (매물 압력)',
+        '유통물량 36.35%',
+        '플랫폼 프리미엄 약함',
+        '금융주 섹터 영향 큼',
+      ],
+      strategyNote: '기관 확약 12.4%로 취약',
+    },
+    esteem: {
+      name: '에스팀',
+      nameEn: 'ESTEEM',
+      sector: '브랜드 마케팅 콘텐츠',
+      listingDate: '2026.03.06 (금)',
+      listingMarket: '코스닥',
+      ipoPrice: 8500,
+      priceBand: '7,000원 ~ 8,500원',
+      bandPosition: '상단 확정',
+      bandPositionType: 'good',   // good | caution | warning
+      marketCap: '약 738억원',
+      lockupRate: 42.45,
+      lockupLabel: '수급 안정 구간',
+      lockupSeverity: 'good',     // good | caution | danger
+      floatRate: 34.69,
+      floatLabel: '매물 부담 구간',
+      competitionRatio: '1,334.91 : 1',
+      institutions: '2,263개',
+      totalShares: '1,800,000주',
+      publicShares: '450,000주 (25%)',
+      totalAmount: '약 153억원',
+      underwriter: '한국투자증권',
+      minShares: '20주',
+      minDeposit: '85,000원',
+      lockupNote: '기관 확약 <strong>42.45%</strong>로 양호한 수준입니다. 의무보유 확약 비율이 높아 상장 초기 매물 부담이 적고, 수급 안정을 기대할 수 있습니다.',
+      floatNote: '상장 당일 유통가능 비율 <strong>34.69%</strong>로, 30~40% 구간에 해당합니다. 유통물량이 다소 있어 장중 변동성이 있을 수 있습니다.',
+      summaryRange: '+15% ~ +40%',
+      summaryPriceRange: '9,800원 ~ 11,900원',
+      summaryRisks: [
+        '소형 IPO (공모금액 153억)',
+        '유통물량 34.69%',
+        '콘텐츠/마케팅 업종 변동성',
+      ],
+      strategyNote: '기관 확약 42.45%로 양호',
+    },
+    axbis: {
+      name: '액스비스',
+      nameEn: 'AXBIS',
+      sector: 'AI 레이저 솔루션 (2차전지)',
+      listingDate: '2026.03.09 (월)',
+      listingMarket: '코스닥',
+      ipoPrice: 11500,
+      priceBand: '10,100원 ~ 11,500원',
+      bandPosition: '상단 확정',
+      bandPositionType: 'good',
+      marketCap: '약 1,073억원',
+      lockupRate: 78.1,
+      lockupLabel: '수급 매우 안정',
+      lockupSeverity: 'good',
+      floatRate: 33.05,
+      floatLabel: '매물 부담 구간',
+      competitionRatio: '1,124.21 : 1',
+      institutions: '2,411개',
+      totalShares: '2,300,000주',
+      publicShares: '575,000주 (25%)',
+      totalAmount: '약 265억원',
+      underwriter: '미래에셋증권',
+      minShares: '20주',
+      minDeposit: '115,000원',
+      lockupNote: '기관 확약 <strong>78.1%</strong>로 매우 높은 수준입니다. 2026년 최고 수준의 기관 확약률로, 상장 후 매물 압력이 적고 수급이 매우 안정적입니다. 3개월 이상 장기 확약 기관이 41.68%에 달합니다.',
+      floatNote: '상장 당일 유통가능 비율 <strong>33.05%</strong>로, 30~40% 구간에 해당합니다. 다만 높은 기관 확약률(78.1%)이 실질 유통물량을 줄여주는 효과가 있습니다.',
+      summaryRange: '+20% ~ +50%',
+      summaryPriceRange: '13,800원 ~ 17,250원',
+      summaryRisks: [
+        '2차전지 섹터 의존도',
+        '유통물량 33.05%',
+        'AI/로봇 테마 변동성',
+      ],
+      strategyNote: '기관 확약 78.1%로 매우 우수',
+    },
+  };
+
+  // =============================================
+  // DOM 요소
+  // =============================================
+  const $shares = document.getElementById('shares');
+  const $ipoPrice = document.getElementById('ipoPrice');
+  const $customRate = document.getElementById('customRate');
+  const $totalInvest = document.getElementById('totalInvest');
+  const $resultPanel = document.getElementById('resultPanel');
+  const $scenarioTable = document.getElementById('scenarioTable');
+  const $calcBtn = document.getElementById('calcBtn');
+  const $splitRatio = document.getElementById('splitRatio');
+  const $splitLabel1 = document.getElementById('splitLabel1');
+  const $splitLabel2 = document.getElementById('splitLabel2');
+  const $splitCalcBtn = document.getElementById('splitCalcBtn');
+  const $splitResult = document.getElementById('splitResult');
+  const $sellPrice1 = document.getElementById('sellPrice1');
+  const $sellPrice2 = document.getElementById('sellPrice2');
+  const $lockupRate = document.getElementById('lockupRate');
+  const $floatRate = document.getElementById('floatRate');
+  const $heroStats = document.getElementById('heroStats');
+  const $infoGrid = document.getElementById('infoGrid');
+  const $strategyGrid = document.getElementById('strategyGrid');
+  const $summaryCards = document.getElementById('summaryCards');
+
+  const ipoBtns = document.querySelectorAll('.ipo-btn');
+  const scenarioBtns = document.querySelectorAll('.scenario-btn');
+  let selectedRate = 15;
+  let currentIPO = 'esteem';
+
+  // =============================================
+  // 유틸
+  // =============================================
+  function fmt(n) { return n.toLocaleString('ko-KR'); }
+
+  function fmtWon(n) {
+    if (Math.abs(n) >= 100000000) return (n / 100000000).toFixed(2) + '억원';
+    if (Math.abs(n) >= 10000) return fmt(Math.round(n / 10000)) + '만원';
+    return fmt(Math.round(n)) + '원';
+  }
+
+  // =============================================
+  // IPO 선택 & UI 갱신
+  // =============================================
+  function selectIPO(key) {
+    currentIPO = key;
+    const data = IPO_DATA[key];
+
+    // Toggle buttons
+    ipoBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.ipo === key));
+
+    // Update IPO price
+    $ipoPrice.value = data.ipoPrice;
+
+    // Update lockup & float inputs
+    $lockupRate.value = data.lockupRate;
+    $floatRate.value = data.floatRate;
+
+    // Hero stats
+    renderHeroStats(data);
+
+    // Risk cards
+    renderLockupCard(data);
+    renderFloatCard(data);
+
+    // Info grid
+    renderInfoGrid(data);
+
+    // Strategy
+    renderStrategy(data);
+
+    // Summary
+    renderSummary(data);
+
+    // Reset result
+    $resultPanel.innerHTML = '<div class="result-placeholder"><div class="placeholder-icon">📱</div><p>배정받은 주식수를 입력하고<br><strong>계산하기</strong>를 눌러주세요</p></div>';
+    $scenarioTable.innerHTML = '<div class="scenario-empty">위 계산기에서 주식수를 입력하면 비교표가 생성됩니다.</div>';
+    $splitResult.innerHTML = '';
+
+    // Update invest display
+    updateInvest();
+
+    // Update split placeholders
+    const openEst = Math.round(data.ipoPrice * 1.15);
+    $sellPrice1.placeholder = fmt(openEst);
+    $sellPrice2.placeholder = fmt(Math.round(data.ipoPrice * 1.05));
+  }
+
+  function renderHeroStats(data) {
+    const lockupPillClass = data.lockupSeverity === 'good' ? 'positive' : (data.lockupSeverity === 'danger' ? 'warning' : 'caution');
+    const lockupValueClass = data.lockupSeverity === 'good' ? 'good' : (data.lockupSeverity === 'danger' ? 'danger' : 'warn');
+    const bandClass = data.bandPositionType === 'good' ? 'accent' : 'warn';
+
+    $heroStats.innerHTML = `
+      <div class="stat-pill">
+        <span class="stat-label">공모가</span>
+        <span class="stat-value">${fmt(data.ipoPrice)}원</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-label">밴드 위치</span>
+        <span class="stat-value ${bandClass}">${data.bandPosition}</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-label">예상 시총</span>
+        <span class="stat-value">${data.marketCap}</span>
+      </div>
+      <div class="stat-pill ${lockupPillClass}">
+        <span class="stat-label">기관 확약</span>
+        <span class="stat-value ${lockupValueClass}">${data.lockupRate}%</span>
+      </div>
+      <div class="stat-pill caution">
+        <span class="stat-label">유통물량</span>
+        <span class="stat-value warn">${data.floatRate}%</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-label">경쟁률</span>
+        <span class="stat-value">${data.competitionRatio}</span>
+      </div>
+    `;
+  }
+
+  function renderLockupCard(data) {
+    const card = document.getElementById('lockupCard');
+    const badge = document.getElementById('lockupBadge');
+    const display = document.getElementById('lockupDisplay');
+    const number = document.getElementById('lockupNumber');
+    const verdict = document.getElementById('lockupVerdict');
+    const pointer = document.getElementById('lockupPointer');
+    const pointerLine = document.getElementById('lockupPointerLine');
+    const pointerLabel = document.getElementById('lockupPointerLabel');
+    const note = document.getElementById('lockupNote');
+
+    const rate = data.lockupRate;
+
+    if (data.lockupSeverity === 'good') {
+      card.className = 'risk-card risk-good';
+      badge.className = 'risk-badge-good';
+      badge.textContent = '양호';
+      display.className = 'lockup-actual lockup-good';
+      number.className = 'lockup-number good-num';
+      verdict.className = 'lockup-verdict good-verdict';
+      pointerLine.className = 'pointer-line';
+      pointerLine.style.background = 'var(--green)';
+      pointerLine.style.boxShadow = '0 0 4px rgba(34,197,94,0.5)';
+      pointerLabel.className = 'pointer-label pointer-label-green';
+    } else if (data.lockupSeverity === 'danger') {
+      card.className = 'risk-card risk-alert';
+      badge.className = 'risk-badge-warn';
+      badge.textContent = '주의';
+      display.className = 'lockup-actual';
+      number.className = 'lockup-number';
+      verdict.className = 'lockup-verdict';
+      pointerLine.className = 'pointer-line';
+      pointerLine.style.background = '';
+      pointerLine.style.boxShadow = '';
+      pointerLabel.className = 'pointer-label';
+    } else {
+      card.className = 'risk-card risk-alert-yellow';
+      badge.className = 'risk-badge-caution';
+      badge.textContent = '보통';
+      display.className = 'lockup-actual float-actual';
+      number.className = 'lockup-number float-number';
+      verdict.className = 'lockup-verdict float-verdict';
+      pointerLine.className = 'pointer-line pointer-line-yellow';
+      pointerLabel.className = 'pointer-label pointer-label-yellow';
+    }
+
+    number.innerHTML = rate + '<span class="lockup-unit">%</span>';
+    verdict.textContent = data.lockupLabel;
+    pointer.style.left = Math.min(rate, 100) + '%';
+    pointerLabel.textContent = rate + '%';
+    note.innerHTML = data.lockupNote;
+  }
+
+  function renderFloatCard(data) {
+    const rate = data.floatRate;
+    document.getElementById('floatNumber').innerHTML = rate + '<span class="lockup-unit">%</span>';
+    document.getElementById('floatVerdict').textContent = data.floatLabel;
+    document.getElementById('floatPointer').style.left = Math.min(rate, 100) + '%';
+    document.getElementById('floatPointerLabel').textContent = rate + '%';
+    document.getElementById('floatNote').innerHTML = data.floatNote;
+  }
+
+  function renderInfoGrid(data) {
+    $infoGrid.innerHTML = `
+      <div class="info-card">
+        <h3>📋 공모 개요</h3>
+        <div class="info-row"><span class="info-row-label">종목명</span><span class="info-row-value">${data.name} (${data.nameEn})</span></div>
+        <div class="info-row"><span class="info-row-label">업종</span><span class="info-row-value">${data.sector}</span></div>
+        <div class="info-row"><span class="info-row-label">상장일</span><span class="info-row-value">${data.listingDate}</span></div>
+        <div class="info-row"><span class="info-row-label">시장</span><span class="info-row-value">${data.listingMarket}</span></div>
+        <div class="info-row"><span class="info-row-label">주관사</span><span class="info-row-value">${data.underwriter}</span></div>
+      </div>
+      <div class="info-card">
+        <h3>💰 공모 조건</h3>
+        <div class="info-row"><span class="info-row-label">공모가</span><span class="info-row-value">${fmt(data.ipoPrice)}원</span></div>
+        <div class="info-row"><span class="info-row-label">희망 밴드</span><span class="info-row-value">${data.priceBand}</span></div>
+        <div class="info-row"><span class="info-row-label">총 공모 주식수</span><span class="info-row-value">${data.totalShares}</span></div>
+        <div class="info-row"><span class="info-row-label">일반 배정</span><span class="info-row-value">${data.publicShares}</span></div>
+        <div class="info-row"><span class="info-row-label">총 공모금액</span><span class="info-row-value">${data.totalAmount}</span></div>
+      </div>
+      <div class="info-card">
+        <h3>📊 수요예측 결과</h3>
+        <div class="info-row"><span class="info-row-label">경쟁률</span><span class="info-row-value" style="color:var(--green);font-weight:800">${data.competitionRatio}</span></div>
+        <div class="info-row"><span class="info-row-label">참여 기관</span><span class="info-row-value">${data.institutions}</span></div>
+        <div class="info-row"><span class="info-row-label">기관 확약</span><span class="info-row-value" style="color:${data.lockupSeverity === 'good' ? 'var(--green)' : 'var(--red)'};font-weight:800">${data.lockupRate}%</span></div>
+        <div class="info-row"><span class="info-row-label">유통물량</span><span class="info-row-value" style="color:var(--yellow);font-weight:700">${data.floatRate}%</span></div>
+        <div class="info-row"><span class="info-row-label">예상 시총</span><span class="info-row-value">${data.marketCap}</span></div>
+      </div>
+    `;
+  }
+
+  function renderStrategy(data) {
+    const p = data.ipoPrice;
+    const watchPrice = fmt(Math.round(p * 1.05));
+    const sellPrice = fmt(Math.round(p * 1.15));
+    const dangerPrice = fmt(Math.round(p * 1.30));
+
+    $strategyGrid.innerHTML = `
+      <div class="strategy-card">
+        <div class="strat-badge">전략 A</div>
+        <h3>시초가 즉시 매도</h3>
+        <p class="strat-condition">이런 경우 적합:</p>
+        <ul>
+          <li>유통물량 부담 (${data.floatRate}%)</li>
+          <li>소형 IPO 변동성 우려</li>
+          <li>안전한 수익 확보 목적</li>
+          <li>상장일 리스크 회피</li>
+        </ul>
+        <div class="strat-verdict">빠른 익절로 확실한 수익 확보</div>
+      </div>
+
+      <div class="strategy-card">
+        <div class="strat-badge">전략 B</div>
+        <h3>장 초반 흐름 보고 매도</h3>
+        <p class="strat-condition">이런 경우 적합:</p>
+        <ul>
+          <li>시초가 공모가 대비 +15% 이상</li>
+          <li>거래량 폭발</li>
+          <li>${data.strategyNote}</li>
+          <li>섹터 강세 시</li>
+        </ul>
+        <div class="strat-verdict">오전 고점 형성 가능성 있음</div>
+      </div>
+
+      <div class="strategy-card recommended">
+        <div class="strat-badge">전략 C ★</div>
+        <h3>분할 매도 (추천)</h3>
+        <p class="strat-condition">가장 현실적인 전략:</p>
+        <ul>
+          <li>50% 시초가 매도</li>
+          <li>50% 보유 후 판단</li>
+          <li>리스크 줄이고 upside 열어두기</li>
+        </ul>
+        <div class="strat-verdict">리스크 관리 + 수익 기회 모두 확보</div>
+      </div>
+    `;
+  }
+
+  function renderSummary(data) {
+    let risksHTML = data.summaryRisks.map(r => '<li style="padding:3px 0;font-size:13px;color:var(--text-dim);">⚠ ' + r + '</li>').join('');
+
+    $summaryCards.innerHTML = `
+      <div class="sum-card">
+        <div class="sum-icon">🧊</div>
+        <h3>현실적 범위</h3>
+        <p class="sum-range">${data.summaryRange}</p>
+        <p>${data.name} (${data.nameEn})<br>공모가 ${fmt(data.ipoPrice)}원 기준</p>
+      </div>
+      <div class="sum-card">
+        <div class="sum-icon">📍</div>
+        <h3>시초가 예상</h3>
+        <p class="sum-range">${data.summaryPriceRange}</p>
+        <p>이 구간이 가장 확률 높음.<br>기관 확약 ${data.lockupRate}% · 경쟁률 ${data.competitionRatio}</p>
+      </div>
+      <div class="sum-card">
+        <div class="sum-icon">⚠️</div>
+        <h3>핵심 리스크</h3>
+        <ul style="list-style:none;text-align:left;display:inline-block;">${risksHTML}</ul>
+      </div>
+    `;
+  }
+
+  // =============================================
+  // 리스크 계산
+  // =============================================
+  function getRiskAdjustment() {
+    let adj = 0;
+    const lockup = parseFloat($lockupRate.value);
+    const float = parseFloat($floatRate.value);
+    if (!isNaN(lockup)) {
+      if (lockup >= 40) adj += 2;
+      else if (lockup >= 20) adj += 0;
+      else if (lockup >= 10) adj -= 2;
+      else adj -= 3;
+    }
+    if (!isNaN(float)) {
+      if (float <= 20) adj += 2;
+      else if (float <= 30) adj += 0;
+      else adj -= 2;
+    }
+    return adj;
+  }
+
+  function getRiskLabel() {
+    const lockup = parseFloat($lockupRate.value);
+    if (isNaN(lockup)) return '';
+    if (lockup >= 40) return '기관 확약 양호 (' + lockup + '%)';
+    if (lockup >= 20) return '';
+    if (lockup >= 10) return '기관 확약 취약 (' + lockup + '%)';
+    return '기관 확약 매우 취약 (' + lockup + '%)';
+  }
+
+  function getFloatLabel() {
+    const float = parseFloat($floatRate.value);
+    if (isNaN(float)) return '';
+    if (float <= 20) return '';
+    if (float <= 30) return '';
+    if (float <= 40) return '유통물량 부담 (' + float + '%)';
+    return '유통물량 매우 과다 (' + float + '%)';
+  }
+
+  // =============================================
+  // 투자금 업데이트
+  // =============================================
+  function updateInvest() {
+    const shares = parseInt($shares.value) || 0;
+    const price = parseInt($ipoPrice.value) || IPO_DATA[currentIPO].ipoPrice;
+    $totalInvest.textContent = fmtWon(shares * price);
+  }
+
+  // =============================================
+  // 이벤트 바인딩
+  // =============================================
+
+  // IPO 선택
+  ipoBtns.forEach(btn => {
+    btn.addEventListener('click', () => selectIPO(btn.dataset.ipo));
+  });
+
+  // 시나리오 버튼
+  scenarioBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      scenarioBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedRate = parseInt(btn.dataset.rate);
+      $customRate.value = selectedRate;
+    });
+  });
+
+  $customRate.addEventListener('input', () => {
+    const v = parseFloat($customRate.value);
+    if (!isNaN(v)) {
+      selectedRate = v;
+      scenarioBtns.forEach(b => {
+        b.classList.toggle('active', parseInt(b.dataset.rate) === Math.round(v));
+      });
+    }
+  });
+
+  $shares.addEventListener('input', updateInvest);
+  $ipoPrice.addEventListener('input', updateInvest);
+
+  $splitRatio.addEventListener('input', () => {
+    const v = parseInt($splitRatio.value);
+    $splitLabel1.textContent = v + '%';
+    $splitLabel2.textContent = (100 - v) + '%';
+  });
+
+  $calcBtn.addEventListener('click', calculate);
+  $shares.addEventListener('keydown', (e) => { if (e.key === 'Enter') calculate(); });
+
+  // =============================================
+  // 계산
+  // =============================================
+  function calculate() {
+    const shares = parseInt($shares.value) || 0;
+    const price = parseInt($ipoPrice.value) || IPO_DATA[currentIPO].ipoPrice;
+    const rate = parseFloat($customRate.value) || selectedRate;
+
+    if (shares <= 0) {
+      $resultPanel.innerHTML = '<div class="result-placeholder"><div class="placeholder-icon">⚠️</div><p>배정받은 주식수를<br>1주 이상 입력해주세요.</p></div>';
+      return;
+    }
+
+    const totalInvest = shares * price;
+    const openPrice = Math.round(price * (1 + rate / 100));
+    const profit = (openPrice - price) * shares;
+    const isPositive = profit >= 0;
+    const riskAdj = getRiskAdjustment();
+
+    let riskNote = '';
+    if (riskAdj >= 3) riskNote = '<span style="color:var(--green)">수급 조건 우호적 👍</span>';
+    else if (riskAdj <= -3) riskNote = '<span style="color:var(--red)">수급 리스크 높음 ⚠️</span>';
+    else if (riskAdj <= -1) riskNote = '<span style="color:var(--red)">수급 취약 ⚠️</span>';
+    else if (riskAdj >= 1) riskNote = '<span style="color:var(--green)">수급 양호</span>';
+    else if (riskAdj !== 0) riskNote = '<span style="color:var(--yellow)">수급 조건 혼재</span>';
+
+    const lockupLabel = getRiskLabel();
+    const floatLabel = getFloatLabel();
+    const ipoName = IPO_DATA[currentIPO].name;
+
+    $resultPanel.innerHTML = `
+      <div class="result-content">
+        <div class="result-tag ${isPositive ? 'positive' : 'negative'}">
+          ${ipoName} · ${isPositive ? '수익' : '손실'} 시나리오 (${rate >= 0 ? '+' : ''}${rate}%)
+        </div>
+        <div class="result-big-number ${isPositive ? 'positive' : 'negative'}">
+          ${isPositive ? '+' : ''}${fmtWon(profit)}
+        </div>
+        <div class="result-sub">시초가 ${fmt(openPrice)}원 기준</div>
+        <div class="result-details">
+          <div class="result-row">
+            <span class="result-row-label">배정 주식수</span>
+            <span class="result-row-value">${fmt(shares)}주</span>
+          </div>
+          <div class="result-row">
+            <span class="result-row-label">공모가</span>
+            <span class="result-row-value">${fmt(price)}원</span>
+          </div>
+          <div class="result-row">
+            <span class="result-row-label">총 투자금</span>
+            <span class="result-row-value">${fmtWon(totalInvest)}</span>
+          </div>
+          <div class="result-divider"></div>
+          <div class="result-row">
+            <span class="result-row-label">시초가</span>
+            <span class="result-row-value">${fmt(openPrice)}원</span>
+          </div>
+          <div class="result-row">
+            <span class="result-row-label">주당 ${isPositive ? '수익' : '손실'}</span>
+            <span class="result-row-value" style="color:${isPositive ? 'var(--green)' : 'var(--red)'}">
+              ${isPositive ? '+' : ''}${fmt(openPrice - price)}원
+            </span>
+          </div>
+        </div>
+        ${lockupLabel ? '<div class="result-row" style="margin-top:12px;background:' + (parseFloat($lockupRate.value) >= 40 ? 'var(--green-dim);border:1px solid rgba(34,197,94,0.2)' : 'var(--red-dim);border:1px solid rgba(239,68,68,0.2)') + '"><span class="result-row-label">🏛️ ' + lockupLabel + '</span><span class="result-row-value" style="color:' + (parseFloat($lockupRate.value) >= 40 ? 'var(--green)' : 'var(--red)') + '">' + (parseFloat($lockupRate.value) >= 40 ? '수급 안정' : '매물 압력') + '</span></div>' : ''}
+        ${floatLabel ? '<div class="result-row" style="background:var(--yellow-dim);border:1px solid rgba(234,179,8,0.2)"><span class="result-row-label">📊 ' + floatLabel + '</span><span class="result-row-value" style="color:var(--yellow)">변동성 주의</span></div>' : ''}
+        <div class="roi-badge ${isPositive ? 'positive' : 'negative'}">
+          수익률 ${rate >= 0 ? '+' : ''}${rate}%${riskNote ? ' · ' + riskNote : ''}
+        </div>
+      </div>`;
+
+    renderScenarioTable(shares, price);
+  }
+
+  function renderScenarioTable(shares, price) {
+    const scenarios = [
+      { label: '🔵 보수적', rate: 5 },
+      { label: '🟢 기본', rate: 15 },
+      { label: '🟡 강한 수급', rate: 30 },
+      { label: '🔴 과열', rate: 50 },
+    ];
+    const currentRate = parseFloat($customRate.value) || selectedRate;
+
+    let html = '<table class="sc-table"><thead><tr><th>시나리오</th><th>상승률</th><th>시초가</th><th>주당 수익</th><th>총 수익</th></tr></thead><tbody>';
+
+    scenarios.forEach(sc => {
+      const open = Math.round(price * (1 + sc.rate / 100));
+      const perShare = open - price;
+      const total = perShare * shares;
+      const isActive = Math.round(currentRate) === sc.rate;
+      const cls = isActive ? ' class="active-row"' : '';
+      const pCls = total >= 0 ? 'positive' : 'negative';
+      html += '<tr' + cls + '><td>' + sc.label + '</td><td>+' + sc.rate + '%</td><td>' + fmt(open) + '원</td><td class="profit-cell ' + pCls + '">+' + fmt(perShare) + '원</td><td class="profit-cell ' + pCls + '">+' + fmtWon(total) + '</td></tr>';
+    });
+
+    html += '</tbody></table>';
+    $scenarioTable.innerHTML = html;
+  }
+
+  // =============================================
+  // 분할 매도
+  // =============================================
+  $splitCalcBtn.addEventListener('click', () => {
+    const shares = parseInt($shares.value) || 0;
+    const price = parseInt($ipoPrice.value) || IPO_DATA[currentIPO].ipoPrice;
+    const ratio = parseInt($splitRatio.value) / 100;
+    const sell1 = parseInt($sellPrice1.value) || 0;
+    const sell2 = parseInt($sellPrice2.value) || 0;
+
+    if (shares <= 0) { $splitResult.innerHTML = '<p style="color:var(--text-muted);text-align:center;font-size:13px;">먼저 위 계산기에서 주식수를 입력해주세요.</p>'; return; }
+    if (sell1 <= 0 || sell2 <= 0) { $splitResult.innerHTML = '<p style="color:var(--text-muted);text-align:center;font-size:13px;">매도가를 입력해주세요.</p>'; return; }
+
+    const shares1 = Math.round(shares * ratio);
+    const shares2 = shares - shares1;
+    const profit1 = (sell1 - price) * shares1;
+    const profit2 = (sell2 - price) * shares2;
+    const totalProfit = profit1 + profit2;
+    const totalInvest = shares * price;
+    const roi = ((totalProfit / totalInvest) * 100).toFixed(1);
+    const isPositive = totalProfit >= 0;
+
+    $splitResult.innerHTML = `
+      <div class="split-result-grid">
+        <div class="split-box">
+          <div class="split-box-label">1차 매도 (${shares1}주 × ${fmt(sell1)}원)</div>
+          <div class="split-box-value" style="color:${profit1 >= 0 ? 'var(--green)' : 'var(--red)'}">
+            ${profit1 >= 0 ? '+' : ''}${fmtWon(profit1)}
+          </div>
+        </div>
+        <div class="split-box">
+          <div class="split-box-label">2차 매도 (${shares2}주 × ${fmt(sell2)}원)</div>
+          <div class="split-box-value" style="color:${profit2 >= 0 ? 'var(--green)' : 'var(--red)'}">
+            ${profit2 >= 0 ? '+' : ''}${fmtWon(profit2)}
+          </div>
+        </div>
+      </div>
+      <div class="split-total">
+        <div class="split-total-label">합산 수익 (수익률 ${roi}%)</div>
+        <div class="split-total-value ${isPositive ? 'positive' : 'negative'}">
+          ${isPositive ? '+' : ''}${fmtWon(totalProfit)}
+        </div>
+      </div>`;
+  });
+
+  // =============================================
+  // 초기화
+  // =============================================
+  selectIPO('kbank');
+  $customRate.value = selectedRate;
+})();
+</script>
+</body>
+</html>
