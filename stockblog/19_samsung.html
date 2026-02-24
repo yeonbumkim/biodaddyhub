@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<!-- ga-inserted by ga_inserter.py -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2F47Y9KCBV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2F47Y9KCBV');
+</script>
+<!-- gsc-inserted by gsc_inserter.py -->
+<meta name="google-site-verification" content="google46841b2b09e9134e">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="삼성전자 실제 재무제표에서 CAPEX, EPS, PER, PBR, ROE, EBITDA 6개 지표를 직접 찾는 방법을 단계별로 설명합니다. 네이버 증권과 DART에서 핵심 투자지표를 읽는 실전 가이드입니다." name="description"/>
+<meta content="삼성전자재무제표, 재무제표읽는법, CAPEX분석, EPS분석, PER분석, PBR분석, ROE분석, EBITDA분석, 기업분석실전, 경제용어해부학, 바이오대디" name="keywords"/>
+<meta content="farmingdollar.com" name="author"/>
+<meta content="index, follow" name="robots"/>
+<title>삼성전자 재무제표 실전 해부 — CAPEX부터 EBITDA까지 6개 지표 직접 찾기 | 경제용어 해부학 #19</title>
+<link href="https://farmingdollar.com/economy/samsung.html" rel="canonical"/>
+<!-- Open Graph -->
+<meta content="article" property="og:type"/>
+<meta content="삼성전자 재무제표 실전 해부 — CAPEX부터 EBITDA까지 6개 지표 직접 찾기 | 경제용어 해부학 #19" property="og:title"/>
+<meta content="삼성전자 실제 재무제표에서 CAPEX, EPS, PER, PBR, ROE, EBITDA 6개 지표를 직접 찾는 방법을 단계별로 설명합니다. 네이버 증권과 DART에서 핵심 투자지표를 읽는 실전 가이드입니다." property="og:description"/>
+<meta content="https://farmingdollar.com/economy/samsung.html" property="og:url"/>
+<meta content="Farming Dollar" property="og:site_name"/>
+<meta content="ko_KR" property="og:locale"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="삼성전자 재무제표 실전 해부 — CAPEX부터 EBITDA까지 6개 지표 직접 찾기" name="twitter:title"/>
+<meta content="삼성전자 실제 재무제표에서 CAPEX, EPS, PER, PBR, ROE, EBITDA 6개 지표를 직접 찾는 방법을 단계별로 설명합니다." name="twitter:description"/>
+<!-- 구조화 데이터 (JSON-LD) -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "삼성전자 재무제표 실전 해부 — CAPEX부터 EBITDA까지 6개 지표 직접 찾기",
+      "description": "삼성전자 실제 재무제표에서 CAPEX, EPS, PER, PBR, ROE, EBITDA 6개 지표를 직접 찾는 방법을 단계별로 설명합니다. 네이버 증권과 DART에서 핵심 투자지표를 읽는 실전 가이드입니다.",
+      "author": {
+        "@type": "Organization",
+        "name": "Farming Dollar",
+        "url": "https://farmingdollar.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Farming Dollar",
+        "url": "https://farmingdollar.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://farmingdollar.com/economy/samsung.html"
+      }
+    }
+    </script>
+<style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        article {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #e3f2fd;
+        }
+        h1 {
+            color: #1565c0;
+            font-size: 2.4em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        h2 {
+            color: #2d3748;
+            border-left: 5px solid #42a5f5;
+            padding-left: 18px;
+            margin-top: 35px;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #424242;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        em {
+            color: #666;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 10px 0;
+            line-height: 1.7;
+        }
+        strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 20px;
+            border-left: 5px solid #2196f3;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .success-case {
+            background: #e8f5e8;
+            padding: 18px;
+            border-left: 4px solid #4caf50;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .failure-case {
+            background: #fff3e0;
+            padding: 18px;
+            border-left: 4px solid #ff9800;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .method-card {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-item {
+            background: #f1f8ff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid #e3f2fd;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #1976d2;
+            display: block;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+    .top-nav {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid #d2d2d7;
+      padding: 0.6rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 100%;
+    }
+    .top-nav a {
+      text-decoration: none;
+      color: #0066cc;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .top-nav .site-name {
+      color: #1d1d1f;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #86868b;
+      font-size: 0.78rem;
+      border-top: 1px solid #e5e5e5;
+      margin-top: 1rem;
+      line-height: 1.8;
+    }
+    footer a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    footer .disclaimer {
+      font-size: 0.72rem;
+      color: #aaa;
+      margin-bottom: 0.5rem;
+    }
+    .related-articles {
+      background: #f0f4ff;
+      border: 1px solid #d0daf0;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin: 30px 0 10px;
+    }
+    .related-articles h3 {
+      color: #1565c0;
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.1em;
+    }
+    .related-articles ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .related-articles li {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+    .related-articles a {
+      color: #1565c0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .related-articles a:hover {
+      text-decoration: underline;
+    }
+    .related-articles .tag {
+      font-size: 0.75em;
+      color: #666;
+      margin-left: 6px;
+    }
+  </style>
+</head>
+<body>
+<div class="top-nav">
+<a class="site-name" href="../index.html">BioDaddy Hub</a>
+<a href="../index.html">&larr; 홈으로</a>
+</div>
+<main>
+<article>
+<header>
+<h1>삼성전자 재무제표 실전 해부</h1>
+<p><em>CAPEX부터 EBITDA까지 6개 지표를 직접 찾아보자 — 이론에서 실전으로</em></p>
+</header>
+
+<section id="intro">
+<h2>서론: 재무제표에서 직접 찾기</h2>
+<p>기초편 1~6편에서 <a href="1_capex_opex.html" style="color:#1565c0; text-decoration:none; font-weight:600;">CAPEX</a>, <a href="2_eps.html" style="color:#1565c0; text-decoration:none; font-weight:600;">EPS</a>, <a href="3_per.html" style="color:#1565c0; text-decoration:none; font-weight:600;">PER</a>, <a href="4_pbr.html" style="color:#1565c0; text-decoration:none; font-weight:600;">PBR</a>, <a href="5_roe.html" style="color:#1565c0; text-decoration:none; font-weight:600;">ROE</a>, <a href="6_ebitda.html" style="color:#1565c0; text-decoration:none; font-weight:600;">EBITDA</a>를 배웠습니다. 치킨집, 피자 가게, 원룸 비유로 개념은 이해했습니다.</p>
+<p>그런데 이제 진짜 질문이 남았습니다.</p>
+<div class="highlight-box">
+<strong>"실제 재무제표에서 이 숫자들을 어떻게 찾는 거야?"</strong>
+<p>오늘은 한국 투자자에게 가장 익숙한 기업, <strong>삼성전자</strong>의 실제 재무제표를 열어서 6개 지표를 하나씩 직접 찾아봅니다. 이 편을 따라하고 나면, 어떤 기업의 재무제표든 같은 방식으로 읽을 수 있게 됩니다.</p>
+</div>
+</section>
+
+<section id="where-to-find">
+<h2>0. 재무제표는 어디서 보는가?</h2>
+<div class="method-card">
+<h4>📱 방법 1: 네이버 증권 (가장 간편)</h4>
+<p>네이버에서 "삼성전자" 검색 → 네이버 증권 → <strong>종목분석</strong> 탭</p>
+<p><strong>장점:</strong> 빠르고 편리합니다. 10초면 확인 가능.</p>
+<p><strong>한계:</strong> 세부 항목을 직접 볼 수 없고, 가공된 숫자만 제공됩니다.</p>
+</div>
+<div class="method-card">
+<h4>📋 방법 2: DART 전자공시시스템 (원본 확인)</h4>
+<p>dart.fss.or.kr에서 "삼성전자" 검색 → <strong>사업보고서</strong> 또는 <strong>분기보고서</strong></p>
+<p><strong>장점:</strong> 가장 정확하고 상세합니다.</p>
+<p><strong>한계:</strong> 처음 보면 어디를 봐야 할지 막막합니다.</p>
+</div>
+<div class="method-card">
+<h4>📊 방법 3: 증권사 앱·HTS</h4>
+<p>각 증권사 앱에서 종목 검색 → 재무분석/기업분석 탭</p>
+<p>네이버 증권과 비슷하게 가공된 데이터를 제공합니다.</p>
+</div>
+<div class="highlight-box">
+<strong>오늘의 목표:</strong> 네이버 증권으로 빠르게 확인하는 법과, DART에서 원본을 찾는 법을 모두 다룹니다.
+</div>
+</section>
+
+<section id="capex">
+<h2>1. CAPEX 찾기 — 이 회사가 미래에 얼마를 투자하고 있는가</h2>
+<h3><a href="1_capex_opex.html" style="color:#1565c0; text-decoration:none; font-weight:600;">1편</a> 복습</h3>
+<p>CAPEX = 자본적 지출. 공장 건설, 설비 구매 등 미래를 위한 투자.</p>
+<div class="method-card">
+<h4>📍 재무제표에서 찾는 법</h4>
+<p><strong>위치:</strong> 현금흐름표 → 투자활동 현금흐름 → <strong>"유형자산의 취득"</strong></p>
+<p>DART에서 삼성전자 사업보고서를 열면 "재무제표" 섹션에 <strong>현금흐름표</strong>가 있습니다. 투자활동 현금흐름 항목 중 "유형자산의 취득"이 바로 CAPEX입니다.</p>
+</div>
+<h3>실전 읽기 포인트</h3>
+<div class="success-case">
+<h4>✅ CAPEX가 전년 대비 늘었다면</h4>
+<p>"삼성전자가 반도체 투자를 확대하고 있구나" → 미래 생산 능력 확대 → 장기적으로 긍정적. 단, 단기적으로는 현금이 빠져나가는 것.</p>
+</div>
+<div class="failure-case">
+<h4>⚠️ CAPEX가 전년 대비 줄었다면</h4>
+<p>"투자를 줄이고 있구나. 업황이 안 좋은가?" → 비용 절감 신호 또는 보수적 경영. 경쟁사 대비 투자가 줄면 장기적으로 불리할 수 있음.</p>
+</div>
+<p><strong>경쟁사와 비교:</strong> 삼성전자 CAPEX vs SK하이닉스 CAPEX vs TSMC CAPEX — 누가 더 공격적으로 투자하고 있는지가 반도체 업황의 핵심 지표입니다.</p>
+</section>
+
+<section id="eps">
+<h2>2. EPS 찾기 — 1주당 얼마를 벌고 있는가</h2>
+<h3><a href="2_eps.html" style="color:#1565c0; text-decoration:none; font-weight:600;">2편</a> 복습</h3>
+<p>EPS = 당기순이익 ÷ 발행주식수. 주식 1주가 벌어다 주는 이익.</p>
+<div class="method-card">
+<h4>📍 재무제표에서 찾는 법</h4>
+<p><strong>가장 빠른 방법:</strong> 네이버 증권 → 삼성전자 → 종목분석 → <strong>투자지표</strong> 탭</p>
+<p><strong>DART 원본:</strong> 손익계산서 최하단에 <strong>"기본주당이익"</strong>이라는 항목이 있습니다. 이것이 기본 EPS입니다.</p>
+</div>
+<h3>실전 읽기 포인트</h3>
+<p>삼성전자 EPS를 최근 5년간 나열해 봅시다.</p>
+<table class="comparison-table">
+<thead>
+<tr><th>연도</th><th>EPS</th><th>비고</th></tr>
+</thead>
+<tbody>
+<tr><td>2020년</td><td>3,166원</td><td>-</td></tr>
+<tr><td>2021년</td><td>5,777원</td><td>반도체 슈퍼 사이클로 급등</td></tr>
+<tr><td>2022년</td><td>4,132원</td><td>메모리 불황 시작</td></tr>
+<tr><td>2023년</td><td>1,101원</td><td>반도체 불황 본격화</td></tr>
+<tr><td>2024년</td><td>?</td><td>반등 여부 확인</td></tr>
+</tbody>
+</table>
+<p><strong>핵심 질문:</strong> "다음 해 EPS가 회복될 것인가?" — 이 질문에 대한 답이 삼성전자 투자 판단의 핵심입니다. EPS 추이가 반도체 사이클과 거의 일치한다는 점을 눈여겨보세요.</p>
+</section>
+
+<section id="per">
+<h2>3. PER 찾기 — 이익 대비 비싼가 싼가</h2>
+<h3><a href="3_per.html" style="color:#1565c0; text-decoration:none; font-weight:600;">3편</a> 복습</h3>
+<p>PER = 주가 ÷ EPS. 이익 대비 주가가 몇 배인지.</p>
+<div class="method-card">
+<h4>📍 재무제표에서 찾는 법</h4>
+<p><strong>가장 빠른 방법:</strong> 네이버 증권 → 투자지표 탭 → PER 확인</p>
+<p>PER은 재무제표 자체에는 없습니다. 주가 ÷ EPS로 계산하는 것이므로, 주가가 실시간으로 변하는 만큼 PER도 계속 바뀝니다.</p>
+</div>
+<h3>실전 읽기 포인트</h3>
+<p>삼성전자의 PER이 과거 5년 평균 12~15배인데 현재 25배라면?</p>
+<div class="highlight-box">
+<strong>시클리컬 주식의 PER 함정</strong>
+<p><strong>이유 1:</strong> EPS가 바닥이라서 — PER = 주가 ÷ EPS에서 EPS(분모)가 급락하면 PER이 급등합니다.</p>
+<p><strong>이유 2:</strong> 시장이 이익 회복을 기대하고 있어서 — 높은 PER은 미래 기대를 선반영한 것입니다.</p>
+<p>반도체 같은 경기순환주(시클리컬)는 <strong>PER이 높을 때가 오히려 매수 타이밍</strong>이고, PER이 낮을 때가 고점일 수 있습니다.</p>
+</div>
+</section>
+
+<section id="pbr">
+<h2>4. PBR 찾기 — 자산 대비 비싼가 싼가</h2>
+<h3><a href="4_pbr.html" style="color:#1565c0; text-decoration:none; font-weight:600;">4편</a> 복습</h3>
+<p>PBR = 주가 ÷ BPS(주당순자산). 순자산 대비 주가가 몇 배인지.</p>
+<div class="method-card">
+<h4>📍 재무제표에서 찾는 법</h4>
+<p><strong>가장 빠른 방법:</strong> 네이버 증권 → 투자지표 탭 → PBR 확인</p>
+<p><strong>BPS 직접 계산:</strong> 재무상태표에서 "자본총계"를 찾고, 이를 발행주식수로 나눕니다.</p>
+</div>
+<h3>실전 읽기 포인트</h3>
+<p>삼성전자 PBR이 1.1배이고 과거 5년 PBR이 1.0~2.0배 사이였다면, PBR 1.1배는 밴드 하단, 즉 <strong>역사적으로 싼 구간</strong>입니다.</p>
+<h3>경쟁사 비교</h3>
+<table class="comparison-table">
+<thead>
+<tr><th>기업</th><th>PBR</th><th>해석</th></tr>
+</thead>
+<tbody>
+<tr><td>삼성전자</td><td>1.1배</td><td>메모리 업황 불확실성 반영</td></tr>
+<tr><td>SK하이닉스</td><td>1.8배</td><td>HBM 기대감 반영</td></tr>
+<tr><td>TSMC</td><td>6.0배</td><td>파운드리 독점적 지위 + 높은 수익성</td></tr>
+</tbody>
+</table>
+<p><a href="4_pbr.html" style="color:#1565c0; text-decoration:none; font-weight:600;">4편</a>에서 배운 "PBR이 낮으면 무조건 싼 건 아니다"가 여기서 적용됩니다.</p>
+</section>
+
+<section id="roe">
+<h2>5. ROE 찾기 — 주주 자본을 얼마나 효율적으로 굴리는가</h2>
+<h3><a href="5_roe.html" style="color:#1565c0; text-decoration:none; font-weight:600;">5편</a> 복습</h3>
+<p>ROE = 당기순이익 ÷ 자기자본 × 100%. 주주 돈으로 얼마나 벌었는가.</p>
+<div class="method-card">
+<h4>📍 재무제표에서 찾는 법</h4>
+<p><strong>가장 빠른 방법:</strong> 네이버 증권 → 투자지표 탭 → ROE 확인</p>
+<p><strong>직접 계산:</strong> 손익계산서의 "당기순이익" ÷ 재무상태표의 "자본총계" × 100</p>
+</div>
+<h3>듀퐁 분석 적용 (5편 심화)</h3>
+<div class="highlight-box">
+<strong>ROE = 순이익률 × 자산회전율 × 재무레버리지</strong>
+<p>삼성전자의 ROE가 높을 때, 그 원인이 무엇인지 쪼개봅시다.</p>
+<ul>
+<li><strong>순이익률이 높아서:</strong> 반도체 호황으로 마진이 좋다 → 건강한 ROE</li>
+<li><strong>자산회전율이 높아서:</strong> 같은 자산으로 매출을 많이 올린다 → 효율적 경영</li>
+<li><strong>재무레버리지가 높아서:</strong> 빚을 많이 써서 → 위험한 ROE</li>
+</ul>
+<p>삼성전자는 부채비율이 낮은 편이므로, ROE 변동의 주 원인은 <strong>순이익률(마진)</strong>입니다.</p>
+</div>
+</section>
+
+<section id="ebitda">
+<h2>6. EBITDA 찾기 — 본업으로 현금을 얼마나 벌고 있는가</h2>
+<h3><a href="6_ebitda.html" style="color:#1565c0; text-decoration:none; font-weight:600;">6편</a> 복습</h3>
+<p>EBITDA = 영업이익 + 감가상각비 + 무형자산상각비. 현금 창출 능력.</p>
+<div class="method-card">
+<h4>📍 재무제표에서 찾는 법 (직접 계산)</h4>
+<p>EBITDA는 재무제표에 직접 표시되지 않습니다.</p>
+<ol>
+<li>손익계산서에서 <strong>영업이익</strong> 찾기</li>
+<li>현금흐름표에서 <strong>감가상각비</strong> 찾기 (영업활동 현금흐름의 조정 항목)</li>
+<li>영업이익 + 감가상각비 = EBITDA</li>
+</ol>
+</div>
+<h3>EV/EBITDA 계산해보기</h3>
+<p><strong>EV(기업가치) = 시가총액 + 순차입금</strong></p>
+<p>삼성전자는 차입금보다 현금이 더 많은 <strong>순현금 기업</strong>입니다. 이 경우 EV는 시가총액보다 작아질 수 있습니다.</p>
+<div class="success-case">
+<h4>✅ EV/EBITDA가 업종 평균보다 낮다면</h4>
+<p>현금 창출력 대비 기업 가격이 싸다는 의미. 순현금까지 가진 기업이 EV/EBITDA가 낮다면, 매력적인 투자 대상일 수 있습니다.</p>
+</div>
+</section>
+
+<section id="comprehensive">
+<h2>7. 6개 지표 종합 — 삼성전자 투자 판단 프레임</h2>
+<p>지표를 개별로 보는 것도 좋지만, <strong>종합적으로 읽어야</strong> 진짜 판단이 가능합니다.</p>
+
+<div class="stats-grid">
+<div class="stat-item">
+<span class="stat-number">CAPEX</span>
+<small>미래를 위해 투자하고 있는가?</small>
+</div>
+<div class="stat-item">
+<span class="stat-number">EPS</span>
+<small>돈을 벌고 있는가?</small>
+</div>
+<div class="stat-item">
+<span class="stat-number">PER·PBR</span>
+<small>비싼가 싼가?</small>
+</div>
+</div>
+<div class="stats-grid">
+<div class="stat-item">
+<span class="stat-number">ROE</span>
+<small>효율적으로 버는가?</small>
+</div>
+<div class="stat-item">
+<span class="stat-number">EBITDA</span>
+<small>현금을 실제로 벌고 있는가?</small>
+</div>
+</div>
+
+<div class="highlight-box">
+<strong>종합 판단 예시</strong>
+<p>"삼성전자의 CAPEX가 늘고 있고(미래 투자 확대), EPS는 바닥에서 반등 조짐이 보이며, PBR은 역사적 하단에 있다. ROE는 현재 낮지만 마진 회복 시 급등할 구조이고, EBITDA 대비 기업가치가 경쟁사보다 낮다."</p>
+<p>→ 이 조합이면 <strong>"업황 반등 시 상승 여력이 크다"</strong>는 판단이 가능합니다.</p>
+</div>
+<p>물론 이것만으로 투자를 결정하면 안 됩니다. 업황 전망, 경쟁 구도, 거시경제 환경 등을 종합적으로 고려해야 합니다. 하지만 이 6개 지표를 읽는 것이 <strong>기업 분석의 출발점</strong>입니다.</p>
+</section>
+
+<section id="practice">
+<h2>8. 직접 해보기 — 실전 연습 과제</h2>
+<div class="method-card">
+<h4>📝 실전 연습</h4>
+<ul>
+<li><strong>연습 1:</strong> 네이버 증권에서 삼성전자의 EPS, PER, PBR, ROE를 5년치 찾아 나열해보기</li>
+<li><strong>연습 2:</strong> DART에서 삼성전자 최근 사업보고서를 열고, 현금흐름표에서 "유형자산의 취득"(CAPEX) 찾기</li>
+<li><strong>연습 3:</strong> 같은 방법으로 관심 있는 다른 기업(SK하이닉스, 현대차, 카카오 등)도 분석해보기</li>
+<li><strong>연습 4:</strong> 삼성전자와 SK하이닉스의 6개 지표를 나란히 놓고, 어느 쪽이 더 매력적인지 나만의 판단 해보기</li>
+</ul>
+<p><strong>핵심은 "직접 해보는 것"입니다.</strong> 글을 읽는 것과 직접 숫자를 찾아보는 것은 완전히 다른 경험입니다.</p>
+</div>
+</section>
+
+<section id="summary">
+<h2>9. 한눈에 정리 — 재무제표 6개 지표 찾기 맵</h2>
+<table class="comparison-table">
+<thead>
+<tr>
+<th>지표</th>
+<th>위치</th>
+<th>찾는 곳</th>
+<th>핵심 질문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CAPEX</strong></td>
+<td>현금흐름표</td>
+<td>유형자산의 취득</td>
+<td>미래 투자를 하고 있는가?</td>
+</tr>
+<tr>
+<td><strong>EPS</strong></td>
+<td>손익계산서 하단</td>
+<td>기본주당이익</td>
+<td>1주당 얼마 벌었는가?</td>
+</tr>
+<tr>
+<td><strong>PER</strong></td>
+<td>네이버 증권</td>
+<td>투자지표 탭</td>
+<td>이익 대비 비싼가?</td>
+</tr>
+<tr>
+<td><strong>PBR</strong></td>
+<td>네이버 증권</td>
+<td>투자지표 탭</td>
+<td>자산 대비 비싼가?</td>
+</tr>
+<tr>
+<td><strong>ROE</strong></td>
+<td>네이버 증권</td>
+<td>투자지표 탭</td>
+<td>자본을 효율적으로 쓰는가?</td>
+</tr>
+<tr>
+<td><strong>EBITDA</strong></td>
+<td>직접 계산</td>
+<td>영업이익 + 감가상각비</td>
+<td>실제 현금을 벌고 있는가?</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section id="next">
+<h2>마무리</h2>
+<p>삼성전자로 6개 지표를 찾아봤습니다. <a href="20_per_advanced.html" style="color:#1565c0; text-decoration:none; font-weight:600;">다음 편</a>에서는 더 깊이 들어갑니다.</p>
+<p><strong>"PER 15배인 두 기업, 어느 쪽이 더 싸냐?"</strong></p>
+<p>같은 PER이라도 업종이 다르면, 성장률이 다르면, 의미가 완전히 달라집니다. 실제 기업을 나란히 놓고 PER과 PBR을 비교하는 실전 밸류에이션을 해봅니다.</p>
+<p>다음 편에서 만나겠습니다. 💪</p>
+<div class="related-articles">
+<h3>관련 글 더 보기</h3>
+<ul>
+<li><a href="18_cpi_news.html">이전 편: CPI 발표일 뉴스 읽기</a> <span class="tag">#18 실전 연결편</span></li>
+<li><a href="20_per_advanced.html">다음 편: PER 실전 밸류에이션 심화</a> <span class="tag">#20 심화편</span></li>
+<li><a href="1_capex_opex.html">CAPEX와 OPEX 기본 개념</a> <span class="tag">#1 재무제표 기초편</span></li>
+<li><a href="2_eps.html">EPS(주당순이익) 기본 개념</a> <span class="tag">#2 재무제표 기초편</span></li>
+<li><a href="3_per.html">PER(주가수익비율) 기본 개념</a> <span class="tag">#3 재무제표 기초편</span></li>
+<li><a href="4_pbr.html">PBR(주가순자산비율) 기본 개념</a> <span class="tag">#4 재무제표 기초편</span></li>
+<li><a href="5_roe.html">ROE(자기자본이익률) 기본 개념</a> <span class="tag">#5 재무제표 기초편</span></li>
+<li><a href="6_ebitda.html">EBITDA 기본 개념</a> <span class="tag">#6 재무제표 기초편</span></li>
+</ul>
+</div>
+</section>
+<footer>
+<p class="disclaimer">위 아티클은 AI 모델을 활용하여 요약되어 사실과 다를 수 있습니다. 원문을 확인하시기 바랍니다.</p>
+<p>&copy; 2026 바이오대디. All rights reserved.</p>
+<p><a href="https://blog.naver.com/biodad" target="_blank">blog.naver.com/biodad</a> · kybmy0522@naver.com</p>
+</footer>
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<!-- ga-inserted by ga_inserter.py -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2F47Y9KCBV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2F47Y9KCBV');
+</script>
+<!-- gsc-inserted by gsc_inserter.py -->
+<meta name="google-site-verification" content="google46841b2b09e9134e">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="EV/EBITDA를 카페 인수 비유로 쉽게 설명합니다. M&A 뉴스 해독법, PER과의 차이, 업종별 EV/EBITDA 기준, 실전 밸류에이션 체크리스트를 정리했습니다." name="description"/>
+<meta content="EBITDA활용, EV/EBITDA, 기업가치평가, MA인수합병, 밸류에이션, 기업분석실전, 투자전략, CAPEX, 잉여현금흐름, 경제용어해부학, 바이오대디" name="keywords"/>
+<meta content="farmingdollar.com" name="author"/>
+<meta content="index, follow" name="robots"/>
+<title>EBITDA로 기업 인수 가격 따져보기 — EV/EBITDA 실전 밸류에이션 | 경제용어 해부학 #22</title>
+<link href="https://farmingdollar.com/economy/ebitda_advanced.html" rel="canonical"/>
+<!-- Open Graph -->
+<meta content="article" property="og:type"/>
+<meta content="EBITDA로 기업 인수 가격 따져보기 — EV/EBITDA 실전 밸류에이션 | 경제용어 해부학 #22" property="og:title"/>
+<meta content="EV/EBITDA를 카페 인수 비유로 쉽게 설명합니다. M&A 뉴스 해독법, PER과의 차이, 업종별 EV/EBITDA 기준, 실전 밸류에이션 체크리스트를 정리했습니다." property="og:description"/>
+<meta content="https://farmingdollar.com/economy/ebitda_advanced.html" property="og:url"/>
+<meta content="Farming Dollar" property="og:site_name"/>
+<meta content="ko_KR" property="og:locale"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="EBITDA로 기업 인수 가격 따져보기 — EV/EBITDA 실전 밸류에이션" name="twitter:title"/>
+<meta content="EV/EBITDA를 카페 인수 비유로 쉽게 설명합니다. M&A 뉴스 해독법과 업종별 기준을 정리했습니다." name="twitter:description"/>
+<!-- 구조화 데이터 (JSON-LD) -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "EBITDA로 기업 인수 가격 따져보기 — EV/EBITDA 실전 밸류에이션",
+      "description": "EV/EBITDA를 카페 인수 비유로 쉽게 설명합니다. M&A 뉴스 해독법, PER과의 차이, 업종별 EV/EBITDA 기준, 실전 밸류에이션 체크리스트를 정리했습니다.",
+      "author": {
+        "@type": "Organization",
+        "name": "Farming Dollar",
+        "url": "https://farmingdollar.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Farming Dollar",
+        "url": "https://farmingdollar.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://farmingdollar.com/economy/ebitda_advanced.html"
+      }
+    }
+    </script>
+<style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        article {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #e3f2fd;
+        }
+        h1 {
+            color: #1565c0;
+            font-size: 2.4em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        h2 {
+            color: #2d3748;
+            border-left: 5px solid #42a5f5;
+            padding-left: 18px;
+            margin-top: 35px;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #424242;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        em {
+            color: #666;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 10px 0;
+            line-height: 1.7;
+        }
+        strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 20px;
+            border-left: 5px solid #2196f3;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .success-case {
+            background: #e8f5e8;
+            padding: 18px;
+            border-left: 4px solid #4caf50;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .failure-case {
+            background: #fff3e0;
+            padding: 18px;
+            border-left: 4px solid #ff9800;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .method-card {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-item {
+            background: #f1f8ff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid #e3f2fd;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #1976d2;
+            display: block;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+    .top-nav {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid #d2d2d7;
+      padding: 0.6rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 100%;
+    }
+    .top-nav a {
+      text-decoration: none;
+      color: #0066cc;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .top-nav .site-name {
+      color: #1d1d1f;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #86868b;
+      font-size: 0.78rem;
+      border-top: 1px solid #e5e5e5;
+      margin-top: 1rem;
+      line-height: 1.8;
+    }
+    footer a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    footer .disclaimer {
+      font-size: 0.72rem;
+      color: #aaa;
+      margin-bottom: 0.5rem;
+    }
+    .related-articles {
+      background: #f0f4ff;
+      border: 1px solid #d0daf0;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin: 30px 0 10px;
+    }
+    .related-articles h3 {
+      color: #1565c0;
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.1em;
+    }
+    .related-articles ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .related-articles li {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+    .related-articles a {
+      color: #1565c0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .related-articles a:hover {
+      text-decoration: underline;
+    }
+    .related-articles .tag {
+      font-size: 0.75em;
+      color: #666;
+      margin-left: 6px;
+    }
+  </style>
+</head>
+<body>
+<div class="top-nav">
+<a class="site-name" href="../index.html">BioDaddy Hub</a>
+<a href="../index.html">&larr; 홈으로</a>
+</div>
+<main>
+<article>
+<header>
+<h1>EBITDA로 기업 인수 가격 따져보기</h1>
+<p><em>"이 회사를 통째로 산다면 얼마?" — EV/EBITDA 실전 밸류에이션</em></p>
+</header>
+
+<section id="intro">
+<h2>서론: 기업의 적정 가격은?</h2>
+<p><a href="6_ebitda.html" style="color:#1565c0; text-decoration:none; font-weight:600;">6편</a>에서 EBITDA를 배웠습니다. "감가상각비를 더해서 실제 현금 창출 능력을 보는 지표"라고 했죠. 그리고 EV/EBITDA라는 밸류에이션 지표도 소개했습니다.</p>
+<div class="highlight-box">
+<strong>"카페를 통째로 인수한다면, 적정 가격은 얼마일까?"</strong>
+<p>이 질문을 기업에 적용하면 EV/EBITDA의 실전 활용이 됩니다. M&A 뉴스를 읽을 때, 기업 가치를 비교할 때, 내가 투자할 기업이 비싼지 싼지 판단할 때 쓰는 실전 도구입니다.</p>
+</div>
+</section>
+
+<section id="review">
+<h2>1. EV와 EBITDA 복습 — 30초 정리</h2>
+<div class="stats-grid">
+<div class="stat-item">
+<span class="stat-number">EBITDA</span>
+<small>영업이익 + 감가상각비 + 무형자산상각비<br/>본업의 현금 창출 능력</small>
+</div>
+<div class="stat-item">
+<span class="stat-number">EV</span>
+<small>시가총액 + 순차입금<br/>기업 전체의 가격</small>
+</div>
+<div class="stat-item">
+<span class="stat-number">EV/EBITDA</span>
+<small>기업 전체 가격 ÷ 연간 현금 창출<br/>투자금 회수 기간</small>
+</div>
+</div>
+<p>EV/EBITDA 8배 → 8년이면 투자금 회수. 15배 → 15년이 걸림. <strong>낮을수록 "싸게 사는 것"</strong>입니다.</p>
+</section>
+
+<section id="cafe-example">
+<h2>2. 카페 인수로 이해하기 ☕</h2>
+<p>동네에 잘 되는 카페 두 곳이 매물로 나왔습니다.</p>
+
+<h3>A카페</h3>
+<table class="comparison-table">
+<thead><tr><th>항목</th><th>금액</th></tr></thead>
+<tbody>
+<tr><td>매도 호가 (점포 + 영업권)</td><td>3억 원</td></tr>
+<tr><td>은행 빚</td><td>1억 원</td></tr>
+<tr><td>보유 현금</td><td>2천만 원</td></tr>
+<tr><td><strong>EV (인수 총비용)</strong></td><td><strong>3.8억 원</strong></td></tr>
+<tr><td>연간 EBITDA (현금 이익)</td><td>5천만 원</td></tr>
+<tr><td><strong>EV/EBITDA</strong></td><td><strong>7.6배</strong></td></tr>
+</tbody>
+</table>
+
+<h3>B카페</h3>
+<table class="comparison-table">
+<thead><tr><th>항목</th><th>금액</th></tr></thead>
+<tbody>
+<tr><td>매도 호가 (점포 + 영업권)</td><td>5억 원</td></tr>
+<tr><td>은행 빚</td><td>없음</td></tr>
+<tr><td>보유 현금</td><td>5천만 원</td></tr>
+<tr><td><strong>EV (인수 총비용)</strong></td><td><strong>4.5억 원</strong></td></tr>
+<tr><td>연간 EBITDA (현금 이익)</td><td>1억 원</td></tr>
+<tr><td><strong>EV/EBITDA</strong></td><td><strong>4.5배</strong></td></tr>
+</tbody>
+</table>
+
+<div class="highlight-box">
+<p><strong>단순히 가격만 보면</strong> A카페(3억)가 B카페(5억)보다 싸 보입니다.</p>
+<p><strong>하지만 EV/EBITDA로 보면</strong> B카페(4.5배)가 A카페(7.6배)보다 훨씬 매력적입니다. B카페는 빚이 없고, 현금 창출력이 강해서 4.5년이면 투자금을 회수할 수 있습니다.</p>
+<p><strong>이것이 PER이 아닌 EV/EBITDA를 쓰는 이유입니다.</strong> PER은 주주 관점이지만, EV/EBITDA는 <strong>인수자 관점</strong>입니다.</p>
+</div>
+</section>
+
+<section id="per-vs-evebitda">
+<h2>3. EV/EBITDA vs PER — 언제 어떤 걸 쓰는가</h2>
+<table class="comparison-table">
+<thead>
+<tr><th>비교</th><th>PER</th><th>EV/EBITDA</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>기준</strong></td><td>주주 관점 (시가총액)</td><td>인수자 관점 (기업 전체)</td></tr>
+<tr><td><strong>이익 기준</strong></td><td>순이익 (세금, 이자 차감 후)</td><td>EBITDA (세금, 이자, 감가상각 차감 전)</td></tr>
+<tr><td><strong>부채 반영</strong></td><td>반영 안 됨</td><td>반영됨 (EV에 순차입금 포함)</td></tr>
+<tr><td><strong>감가상각 영향</strong></td><td>영향 받음</td><td>영향 없음</td></tr>
+<tr><td><strong>적합한 상황</strong></td><td>같은 업종·비슷한 자본구조 비교</td><td>부채 수준이 다른 기업 비교, M&A</td></tr>
+</tbody>
+</table>
+
+<h3>EV/EBITDA가 더 유용한 상황</h3>
+<div class="method-card">
+<h4>① 부채 수준이 다른 기업을 비교할 때</h4>
+<p>빚이 많은 기업과 적은 기업을 PER로 비교하면 왜곡됩니다. EV/EBITDA는 이자 비용 이전의 현금 창출력을 보므로 더 공정합니다.</p>
+</div>
+<div class="method-card">
+<h4>② 감가상각비가 큰 업종을 비교할 때</h4>
+<p>통신, 반도체, 인프라, 항공 등 설비 투자가 큰 업종은 감가상각비가 거대합니다. EV/EBITDA는 감가상각을 빼기 전이므로 실제 현금 창출력을 더 정확히 봅니다.</p>
+</div>
+<div class="method-card">
+<h4>③ M&A 가격을 판단할 때</h4>
+<p>"EV/EBITDA 12배에 인수"라고 나오면, "기업의 연간 현금 이익의 12배를 주고 샀다"는 뜻입니다. 업종 평균과 비교하면 비싸게 산 건지 싸게 산 건지 판단할 수 있습니다.</p>
+</div>
+</section>
+
+<section id="industry-levels">
+<h2>4. 업종별 EV/EBITDA 수준 — 기준이 있어야 비교한다</h2>
+<table class="comparison-table">
+<thead>
+<tr><th>업종</th><th>EV/EBITDA 일반적 범위</th><th>왜 이 수준인가</th></tr>
+</thead>
+<tbody>
+<tr><td>IT/소프트웨어</td><td>15~30배</td><td>높은 성장성, 낮은 CAPEX</td></tr>
+<tr><td>반도체</td><td>8~15배</td><td>사이클에 따라 변동 큼</td></tr>
+<tr><td>통신</td><td>6~9배</td><td>안정적이지만 저성장</td></tr>
+<tr><td>유틸리티 (전기/가스)</td><td>7~10배</td><td>안정적 현금흐름, 규제 산업</td></tr>
+<tr><td>제조업</td><td>7~12배</td><td>업종에 따라 편차 큼</td></tr>
+<tr><td>유통/소매</td><td>8~14배</td><td>규모에 따라 차이</td></tr>
+<tr><td>은행/금융</td><td>적용 어려움</td><td>EBITDA 개념이 맞지 않는 업종</td></tr>
+</tbody>
+</table>
+<div class="failure-case">
+<h4>⚠️ 중요</h4>
+<p>은행, 보험, 증권 등 금융업은 EV/EBITDA를 쓰지 않습니다. 금융업의 이자 수익은 "영업 비용"이 아니라 "영업 수익"이기 때문에 EBITDA 계산 자체가 의미가 없습니다. 금융업은 PER이나 PBR로 평가합니다.</p>
+</div>
+</section>
+
+<section id="ma-news">
+<h2>5. 실전 M&A 뉴스 해부</h2>
+
+<div class="success-case">
+<h4>✅ 뉴스 1: "A사, B게임사를 EV/EBITDA 20배에 인수"</h4>
+<p>게임 업종 평균 EV/EBITDA가 12~15배라면, 20배는 프리미엄을 상당히 얹어준 것. B게임사의 신작 라인업이 강력하거나 이용자 기반이 전략적 가치가 있어서입니다. 인수 후 시너지로 EBITDA가 늘어나면 실제 배수는 낮아질 수 있습니다.</p>
+</div>
+
+<div class="failure-case">
+<h4>⚠️ 뉴스 2: "C제약사, D바이오를 EV/EBITDA 35배에 인수 추진"</h4>
+<p>35배는 일반적으로 매우 높은 수준. 바이오 기업은 현재 EBITDA가 작더라도 파이프라인(신약 후보)의 가치가 클 수 있습니다. "미래 EBITDA"를 기대하고 프리미엄을 지불하는 것. 하지만 신약 개발 실패 시 고가 인수의 부담이 됩니다.</p>
+</div>
+
+<div class="success-case">
+<h4>✅ 뉴스 3: "E통신사, F케이블업체를 EV/EBITDA 7배에 인수"</h4>
+<p>통신/케이블 업종 평균이 6~9배. 7배면 적정 수준 또는 소폭 할인. 안정적인 현금흐름을 가진 기업을 합리적 가격에 인수. 인수 기업에게 긍정적으로 평가될 가능성 높습니다.</p>
+</div>
+</section>
+
+<section id="limitations">
+<h2>6. EV/EBITDA의 한계 — 이것만 보면 안 되는 이유</h2>
+
+<div class="failure-case">
+<h4>⚠️ 한계 1: CAPEX를 무시한다</h4>
+<p>EBITDA가 1,000억이어도 <a href="1_capex_opex.html" style="color:#1565c0; text-decoration:none; font-weight:600;">CAPEX</a>가 800억이면, 실제로 쓸 수 있는 현금은 200억뿐입니다.</p>
+<p><strong>대안:</strong> EBITDA - CAPEX = <strong>Free Cash Flow(잉여현금흐름)</strong>를 함께 확인. EV/FCF가 더 보수적이고 정확한 지표입니다.</p>
+</div>
+
+<div class="failure-case">
+<h4>⚠️ 한계 2: 이자 비용을 무시한다</h4>
+<p>EBITDA는 이자 비용 차감 전입니다. 빚이 많은 기업은 EBITDA가 좋아도 이자를 내고 나면 실제 남는 돈이 적을 수 있습니다. EV/EBITDA로 비교할 때도 각 기업의 부채 수준을 반드시 확인해야 합니다.</p>
+</div>
+
+<div class="failure-case">
+<h4>⚠️ 한계 3: 일시적 비용/수익을 걸러내지 못할 수 있다</h4>
+<p>구조조정 비용, 일회성 소송 비용 등이 영업이익에 반영되면 EBITDA도 왜곡됩니다. <strong>조정 EBITDA(Adjusted EBITDA)</strong>라는 개념이 여기서 나옵니다. 기업이 자기에게 유리하게 조정하는 경우도 있으므로 비판적으로 봐야 합니다.</p>
+</div>
+</section>
+
+<section id="checklist">
+<h2>7. EV/EBITDA 실전 체크리스트</h2>
+<table class="comparison-table">
+<thead>
+<tr><th>Step</th><th>확인 항목</th><th>핵심</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>업종 평균 EV/EBITDA 확인</td><td>기준 없이 비교 불가</td></tr>
+<tr><td>2</td><td>대상 기업의 EV/EBITDA 계산</td><td>네이버 증권 또는 직접 계산</td></tr>
+<tr><td>3</td><td>과거 EV/EBITDA 밴드 확인</td><td>역사적 고점/저점 위치</td></tr>
+<tr><td>4</td><td>CAPEX 차감 후 확인</td><td>EBITDA - CAPEX = 실제 현금</td></tr>
+<tr><td>5</td><td>부채 수준 교차 확인</td><td>EV에 순차입금이 크면 주의</td></tr>
+<tr><td>6</td><td>경쟁사 대비 비교</td><td>같은 업종 내 상대 위치</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="summary">
+<h2>8. 한눈에 정리</h2>
+<table class="comparison-table">
+<thead>
+<tr><th>항목</th><th>내용</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>EV/EBITDA 의미</strong></td><td>기업 전체를 사서 현금으로 몇 년 만에 회수 가능한가</td></tr>
+<tr><td><strong>PER과의 차이</strong></td><td>PER = 주주 관점, EV/EBITDA = 인수자 관점 (부채 포함)</td></tr>
+<tr><td><strong>장점</strong></td><td>부채·감가상각 차이를 제거하고 기업 간 공정 비교 가능</td></tr>
+<tr><td><strong>한계</strong></td><td>CAPEX·이자비용 무시, 금융업에 부적합</td></tr>
+<tr><td><strong>보완 지표</strong></td><td>EV/FCF (잉여현금흐름 기준)</td></tr>
+<tr><td><strong>실전 활용</strong></td><td>M&A 뉴스 해독, 기업 비교 분석</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="next">
+<h2>마무리</h2>
+<p>재무제표 실전편(19~22편)을 마쳤습니다. <a href="23_dca_simulation.html" style="color:#1565c0; text-decoration:none; font-weight:600;">다음 편</a>에서는 투자 전략 실전으로 돌아갑니다.</p>
+<p><strong>"만약 10년 전에 매달 50만 원씩 S&P 500에 적립식 투자를 시작했다면, 지금 얼마가 되어있을까?"</strong></p>
+<p>7편 DCA의 실전 버전. 실제 데이터로 백테스트한 결과를 보여드립니다. 숫자가 말하는 <a href="23_dca_simulation.html" style="color:#1565c0; text-decoration:none; font-weight:600;">적립식 투자의 위력</a>, 함께 확인해 봅시다.</p>
+<p>다음 편에서 만나겠습니다. 💪</p>
+<div class="related-articles">
+<h3>관련 글 더 보기</h3>
+<ul>
+<li><a href="21_roe_advanced.html">이전 편: ROE 듀퐁 분석 실전</a> <span class="tag">#21 심화편</span></li>
+<li><a href="23_dca_simulation.html">다음 편: 10년 적립식 투자 시뮬레이션</a> <span class="tag">#23 심화편</span></li>
+<li><a href="6_ebitda.html">EBITDA 기본 개념 해부하기</a> <span class="tag">#6 재무제표 기초편</span></li>
+<li><a href="1_capex_opex.html">CAPEX와 OPEX — EBITDA-CAPEX 관계</a> <span class="tag">#1 재무제표 기초편</span></li>
+</ul>
+</div>
+</section>
+<footer>
+<p class="disclaimer">위 아티클은 AI 모델을 활용하여 요약되어 사실과 다를 수 있습니다. 원문을 확인하시기 바랍니다.</p>
+<p>&copy; 2026 바이오대디. All rights reserved.</p>
+<p><a href="https://blog.naver.com/biodad" target="_blank">blog.naver.com/biodad</a> · kybmy0522@naver.com</p>
+</footer>
+</article>
+</main>
+</body>
+</html>
