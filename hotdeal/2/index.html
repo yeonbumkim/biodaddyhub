@@ -38,27 +38,21 @@
       backdrop-filter: blur(20px);
     }
     nav .nav-inner {
-      max-width: 1060px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
+      max-width: 1060px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
     }
-    nav .logo {
-      font-size: 1.1rem;
-      font-weight: 700;
-      text-decoration: none;
-      color: #1d1d1f;
+    nav .logo { font-size: 1.1rem; font-weight: 700; text-decoration: none; color: #1d1d1f; }
+    nav .nav-links {
+      display: flex; gap: 1.2rem; overflow-x: auto;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none; white-space: nowrap;
     }
-    nav .breadcrumb {
-      font-size: 0.85rem;
-      color: #86868b;
+    nav .nav-links::-webkit-scrollbar { display: none; }
+    nav .nav-links a {
+      text-decoration: none; color: #424245; font-size: 0.8rem;
+      font-weight: 500; transition: color 0.2s; flex-shrink: 0;
     }
-    nav .breadcrumb a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    nav .breadcrumb a:hover { text-decoration: underline; }
+    nav .nav-links a:hover { color: #0066cc; }
+    nav .nav-links a.active { color: #0066cc; font-weight: 700; }
     .container { max-width: 1060px; margin: 0 auto; padding: 2rem 1.5rem; }
     .page-header {
       margin-bottom: 1.5rem;
@@ -133,6 +127,8 @@
     footer a { color: #0066cc; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
     @media (max-width: 600px) {
+      nav .nav-links { gap: 0.6rem; }
+      nav .nav-links a { font-size: 0.72rem; }
       .page-header h1 { font-size: 1.3rem; }
       .list-item { padding: 0.75rem 1rem; }
       .item-title { font-size: 0.85rem; }
@@ -160,7 +156,20 @@
   <nav>
     <div class="nav-inner">
       <a href="/" class="logo">BioDaddy Hub</a>
-      <span class="breadcrumb"><a href="/">홈</a> &rsaquo; &#x1F525; 핫딜·프로모션</span>
+      <div class="nav-links">
+        <a href="/blog.html">블로그</a>
+        <a href="/webapp.html">웹어플리케이션</a>
+        <a href="/#group-global">글로벌 뉴스</a>
+        <a href="/#group-korea">대한민국 뉴스·정책</a>
+        <a href="/#group-life">생활·소비</a>
+        <a href="/#group-travel">여행</a>
+        <a href="/#group-tech">IT·기기·AI</a>
+        <a href="/#group-sports">스포츠</a>
+        <a href="/#group-culture">문화·예술</a>
+        <a href="/#group-community">커뮤니티</a>
+        <a href="/#group-invest">투자·증권</a>
+        <a href="/#group-etc">기타</a>
+      </div>
     </div>
   </nav>
 
