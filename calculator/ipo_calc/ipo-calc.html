@@ -771,6 +771,81 @@ body {
 .footer-dot { color: var(--text-muted); margin: 0 8px; }
 .copyright { font-size: 13px; color: var(--text-muted); }
 
+/* ---- Blog Banner ---- */
+.blog-banner-wrap { padding: 0 20px 32px; max-width: 1100px; margin: 0 auto; }
+
+.blog-banner {
+  display: block;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.blog-banner:last-child { margin-bottom: 0; }
+
+.blog-banner:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.blog-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent), var(--purple));
+}
+
+.blog-banner-badge {
+  display: inline-block;
+  background: var(--blue-dim);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.blog-banner-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.blog-banner-desc {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.blog-banner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.blog-banner-cta svg { transition: transform 0.2s; }
+.blog-banner:hover .blog-banner-cta svg { transform: translateX(3px); }
+
 /* ---- Responsive ---- */
 @media (max-width: 640px) {
   .hero { padding: 56px 0 40px; }
@@ -783,6 +858,10 @@ body {
   .strategy-grid { grid-template-columns: 1fr; }
   .split-inputs { grid-template-columns: 1fr; }
   .split-result-grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 640px) {
+  .blog-banner-title { font-size: 1.1rem; }
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -1057,6 +1136,19 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
       </div>
     </div>
   </section>
+
+  <!-- Blog Banner -->
+  <div class="blog-banner-wrap">
+    <a href="https://blog.naver.com/biodad/224193182306" target="_blank" rel="noopener" class="blog-banner">
+      <span class="blog-banner-badge">BLOG</span>
+      <div class="blog-banner-title">케이뱅크 IPO 상장일 분석｜공모가 8,300원, 시초가 어디까지 갈까?</div>
+      <div class="blog-banner-desc">공모가·기관 확약·유통물량 분석과 시초가 시나리오, 이 계산기 활용법까지 한 번에 정리했습니다.</div>
+      <span class="blog-banner-cta">
+        자세히 보기
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </span>
+    </a>
+  </div>
 
   <!-- Disclaimer -->
   <div class="disclaimer">
