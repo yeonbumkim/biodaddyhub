@@ -223,6 +223,164 @@ card-bg: white;
 
 ---
 
+## 7. 블로그 배너 (외부 링크 연결)
+
+계산기/도구 페이지 내에서 관련 블로그 글이나 외부 콘텐츠를 자연스럽게 노출하는 카드형 배너.
+
+### 배치 위치
+
+- 결과 섹션과 정보/안내 섹션 사이 (콘텐츠 하단부)
+- 여러 개일 경우 순서대로 나열 (관련도 높은 글을 먼저)
+
+### CSS
+
+```css
+/* Blog Banner */
+.blog-banner {
+    display: block;
+    background: var(--card-background);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-banner:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
+    transform: translateY(-2px);
+}
+
+.blog-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--secondary-color), var(--primary-light));
+}
+
+.blog-banner-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-light));
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.blog-banner-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.blog-banner-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.blog-banner-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.blog-banner-cta svg {
+    transition: transform 0.2s;
+}
+
+.blog-banner:hover .blog-banner-cta svg {
+    transform: translateX(3px);
+}
+
+@media (min-width: 600px) {
+    .blog-banner {
+        padding: 24px;
+        margin-bottom: 24px;
+    }
+    .blog-banner-title {
+        font-size: 1.1rem;
+    }
+}
+```
+
+### HTML 템플릿
+
+```html
+<a href="[링크 URL]" target="_blank" rel="noopener" class="blog-banner">
+    <span class="blog-banner-badge">[뱃지 텍스트]</span>
+    <div class="blog-banner-title">[배너 제목]</div>
+    <div class="blog-banner-desc">[한 줄 설명]</div>
+    <span class="blog-banner-cta">
+        자세히 보기
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </span>
+</a>
+```
+
+### 뱃지 텍스트 가이드
+
+| 콘텐츠 유형 | 뱃지 | 예시 |
+|-------------|------|------|
+| 네이버 블로그 | `BLOG` | 계산기 활용법, 후기 |
+| 경제/재테크 | `ECONOMY` | 부의 추월차선, 투자 전략 |
+| 가이드/팁 | `GUIDE` | 신청 방법, 절차 안내 |
+| farmingdollar 콘텐츠 | `ARTICLE` | 자체 사이트 글 |
+
+### 작성 규칙
+
+- **제목**: 블로그 원문 제목을 그대로 사용하거나, 계산기 맥락에 맞게 살짝 변형
+- **설명**: 1줄, 해당 글이 사용자에게 주는 실질적 가치를 명시
+- **CTA**: "자세히 보기" 고정, 화살표 아이콘 포함
+- **왼쪽 액센트 바**: `::before`로 자동 적용 (페이지 accent 색상 연동)
+- **호버 효과**: 위로 2px 이동 + 테두리 색 변경 + 화살표 3px 슬라이드
+
+### 적용 예시 (mortgage 계산기)
+
+```html
+<!-- 네이버 블로그 글 -->
+<a href="https://blog.naver.com/biodad/224193705560" target="_blank" rel="noopener" class="blog-banner">
+    <span class="blog-banner-badge">BLOG</span>
+    <div class="blog-banner-title">3월 이사 시즌, 주택담보대출 '월 납부액'만 보면 큰일납니다</div>
+    <div class="blog-banner-desc">유예·상환방식별 총 이자 차이, 이 계산기 활용법까지 한 번에 정리했습니다.</div>
+    <span class="blog-banner-cta">
+        자세히 보기
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </span>
+</a>
+
+<!-- farmingdollar 경제 콘텐츠 -->
+<a href="https://www.farmingdollar.com/economy/TheMillionaireFastlane.html" target="_blank" rel="noopener" class="blog-banner">
+    <span class="blog-banner-badge">ECONOMY</span>
+    <div class="blog-banner-title">부의 추월차선 핵심 요약 — 대출 갚는 동안, 돈이 일하게 만드는 법</div>
+    <div class="blog-banner-desc">MJ 드마코의 경제적 자유 전략과 NEED 공식, 시스템으로 수동 소득을 만드는 핵심을 정리했습니다.</div>
+    <span class="blog-banner-cta">
+        자세히 보기
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </span>
+</a>
+```
+
+---
+
 ## 체크리스트 (새 페이지 추가 시)
 
 - [ ] `<title>` 에 `| 바이오대디` 포함
@@ -230,5 +388,6 @@ card-bg: white;
 - [ ] 면책 조항 (Disclaimer) - 도메인에 맞게 커스터마이즈
 - [ ] Footer (블로그 · farmingdollar.com · copyright)
 - [ ] Open Graph + Twitter Card 메타 태그
+- [ ] 블로그 배너 (관련 글 있을 경우 추가)
 - [ ] Google AdSense 스크립트 (필요 시)
 - [ ] 모바일 반응형 확인

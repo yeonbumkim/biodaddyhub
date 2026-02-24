@@ -501,6 +501,93 @@
             background: var(--warning-color);
         }
 
+        /* Blog Banner */
+        .blog-banner {
+            display: block;
+            background: var(--card-background);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-banner:hover {
+            border-color: var(--secondary-color);
+            box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .blog-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--secondary-color), var(--primary-light));
+        }
+
+        .blog-banner-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-light));
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-banner-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .blog-banner-desc {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .blog-banner-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .blog-banner-cta svg {
+            transition: transform 0.2s;
+        }
+
+        .blog-banner:hover .blog-banner-cta svg {
+            transform: translateX(3px);
+        }
+
+        @media (min-width: 600px) {
+            .blog-banner {
+                padding: 24px;
+                margin-bottom: 24px;
+            }
+
+            .blog-banner-title {
+                font-size: 1.1rem;
+            }
+        }
+
         /* Info Section */
         .info-section {
             background: var(--card-background);
@@ -966,6 +1053,26 @@
                 </div>
             </div>
         </section>
+
+        <a href="https://blog.naver.com/biodad/224193705560" target="_blank" rel="noopener" class="blog-banner">
+            <span class="blog-banner-badge">BLOG</span>
+            <div class="blog-banner-title">3월 이사 시즌, 주택담보대출 '월 납부액'만 보면 큰일납니다</div>
+            <div class="blog-banner-desc">유예·상환방식별 총 이자 차이, 이 계산기 활용법까지 한 번에 정리했습니다.</div>
+            <span class="blog-banner-cta">
+                자세히 보기
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+        </a>
+
+        <a href="https://www.farmingdollar.com/economy/TheMillionaireFastlane.html" target="_blank" rel="noopener" class="blog-banner">
+            <span class="blog-banner-badge">ECONOMY</span>
+            <div class="blog-banner-title">부의 추월차선 핵심 요약 — 대출 갚는 동안, 돈이 일하게 만드는 법</div>
+            <div class="blog-banner-desc">MJ 드마코의 경제적 자유 전략과 NEED 공식, 시스템으로 수동 소득을 만드는 핵심을 정리했습니다.</div>
+            <span class="blog-banner-cta">
+                자세히 보기
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+        </a>
 
         <section class="info-section">
             <h3>대출 유형 안내</h3>
