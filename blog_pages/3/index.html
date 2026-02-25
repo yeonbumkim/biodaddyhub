@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블로그 - 3페이지 - BioDaddy Hub</title>
+  <meta name="description" content="BioDaddy Hub 블로그. 건강, 과학, IT 등 다양한 주제의 심층 분석 글을 제공합니다.">
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="블로그 - 3페이지 - BioDaddy Hub">
+  <meta property="og:description" content="BioDaddy Hub 블로그. 건강, 과학, IT 등 다양한 주제의 심층 분석 글을 제공합니다.">
+  <meta property="og:url" content="https://farmingdollar.com/blog_pages/3/">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://farmingdollar.com/blog_pages/3/">
+  <link rel="prev" href="https://farmingdollar.com/blog_pages/2/">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F47Y9KCBV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2F47Y9KCBV');
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, 'Pretendard', 'Noto Sans KR', sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.7;
+    }
+    nav {
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid #d2d2d7;
+      padding: 0.8rem 1.5rem;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(20px);
+    }
+    nav .nav-inner {
+      max-width: 1060px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    nav .logo { font-size: 1.1rem; font-weight: 700; text-decoration: none; color: #1d1d1f; }
+    nav .nav-links {
+      display: flex; gap: 1.2rem; overflow-x: auto;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none; white-space: nowrap;
+    }
+    nav .nav-links::-webkit-scrollbar { display: none; }
+    nav .nav-links a {
+      text-decoration: none; color: #424245; font-size: 0.8rem;
+      font-weight: 500; transition: color 0.2s; flex-shrink: 0;
+    }
+    nav .nav-links a:hover { color: #0066cc; }
+    nav .nav-links a.active { color: #0066cc; font-weight: 700; }
+    .container { max-width: 1060px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    .page-header { margin-bottom: 2rem; }
+    .page-header h1 { font-size: 1.8rem; font-weight: 800; color: #0891b2; margin-bottom: 0.3rem; }
+    .page-header .page-desc { color: #86868b; font-size: 0.9rem; }
+
+    /* 카드 */
+    .blog-featured { margin-bottom: 2.5rem; }
+    .section-heading {
+      font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem;
+      padding-bottom: 0.5rem; border-bottom: 2px solid #0891b2; color: #1d1d1f;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .blog-card {
+      display: flex; flex-direction: column; gap: 0.5rem;
+      background: #fff; border-radius: 14px; padding: 1.4rem;
+      text-decoration: none; color: #1d1d1f;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border: 1px solid #e0f2fe; border-left: 4px solid #0891b2;
+    }
+    .blog-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); transform: translateY(-2px); }
+    .blog-meta { display: flex; align-items: center; gap: 0.4rem; }
+    .blog-cat {
+      display: inline-block; color: #fff; font-size: 0.68rem;
+      font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 6px;
+    }
+    .blog-badge {
+      display: inline-block; background: #0891b2; color: #fff;
+      font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.45rem;
+      border-radius: 4px; letter-spacing: 0.03em;
+    }
+    .blog-title { font-size: 1rem; font-weight: 700; line-height: 1.4; margin: 0; }
+    .blog-desc {
+      font-size: 0.85rem; color: #6b7280; line-height: 1.5;
+      display: -webkit-box; -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .blog-date { font-size: 0.75rem; color: #9ca3af; margin-top: auto; }
+
+    /* 리스트 */
+    .blog-list-section { margin-bottom: 2rem; }
+    .section { margin-bottom: 2rem; }
+    .section-header {
+      display: flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 0.8rem; padding-bottom: 0.4rem;
+      border-bottom: 1px solid #d2d2d7;
+    }
+    .section-icon { font-size: 1.2rem; }
+    .section-header h3 { font-size: 1.1rem; font-weight: 700; margin: 0; }
+    .section-count {
+      margin-left: auto; font-size: 0.8rem; color: #86868b;
+      background: #f0f0f0; padding: 0.15rem 0.6rem; border-radius: 10px;
+    }
+    .list {
+      background: #fff; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .list-item {
+      display: flex; align-items: center; padding: 0.9rem 1.2rem;
+      text-decoration: none; color: #1d1d1f; transition: background 0.15s;
+    }
+    .list-item + .list-item { border-top: 1px solid #f5f5f7; }
+    .list-item:hover { background: #f9f9fb; }
+    .item-title { font-size: 0.9rem; font-weight: 500; }
+    .item-date {
+      margin-left: auto; font-size: 0.78rem; color: #86868b;
+      white-space: nowrap; padding-left: 1rem;
+    }
+    .item-cat {
+      display: inline-block; color: #fff; font-size: 0.65rem;
+      font-weight: 600; padding: 0.1rem 0.45rem; border-radius: 5px;
+      margin-right: 0.6rem; white-space: nowrap; flex-shrink: 0;
+    }
+    .hidden-item { display: none; }
+    .expand-btn {
+      width: 100%; padding: 0.7rem; background: #f9f9fb;
+      border: none; border-top: 1px solid #f5f5f7; color: #0066cc;
+      font-size: 0.85rem; font-weight: 500; cursor: pointer;
+      transition: background 0.15s; border-radius: 0 0 12px 12px;
+    }
+    .expand-btn:hover { background: #eef0f5; }
+
+    /* 페이지네이션 */
+    .pagination {
+      display: flex; justify-content: center; align-items: center;
+      gap: 0.4rem; margin-top: 2rem; flex-wrap: wrap;
+    }
+    .page-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 36px; height: 36px; padding: 0 0.6rem;
+      border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #424245; background: #fff;
+      border: 1px solid #d2d2d7; transition: background 0.15s, border-color 0.15s;
+    }
+    .page-link:hover { background: #f0f0f5; border-color: #0891b2; color: #0891b2; }
+    .page-link.current { background: #0891b2; color: #fff; border-color: #0891b2; font-weight: 700; }
+
+    footer {
+      text-align: center; padding: 2rem 1rem; color: #86868b;
+      font-size: 0.78rem; border-top: 1px solid #e5e5e5; margin-top: 1rem; line-height: 1.8;
+    }
+    footer a { color: #0066cc; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 1.5rem; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .container { padding: 1.5rem 1rem; }
+    }
+    @media (max-width: 600px) {
+      nav .nav-links { gap: 0.6rem; }
+      nav .nav-links a { font-size: 0.72rem; }
+      .list-item { padding: 0.75rem 1rem; }
+      .item-title { font-size: 0.85rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "블로그 - 3페이지 - BioDaddy Hub",
+    "url": "https://farmingdollar.com/blog_pages/3/",
+    "isPartOf": { "@type": "WebSite", "name": "BioDaddy Hub", "url": "https://farmingdollar.com/" },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"url":"https://farmingdollar.com/stockblog/5_roe.html","name":"ROE 뜻, 자기자본이익률 쉽게 이해하기 — 내 돈을 얼마나 효율적으로 굴리는 회사인가 | 경제용어 해부학 #5"},
+      {"@type":"ListItem","position":2,"url":"https://farmingdollar.com/stockblog/6_ebitda.html","name":"EBITDA 뜻, 쉽게 이해하기 — 이 회사가 진짜 현금을 벌고 있는가? | 경제용어 해부학 #6"},
+      {"@type":"ListItem","position":3,"url":"https://farmingdollar.com/stockblog/7_dca.html","name":"DCA 뜻, 적립식 투자 쉽게 이해하기 — 타이밍을 모르는 사람이 이기는 방법 | 경제용어 해부학 #7"},
+      {"@type":"ListItem","position":4,"url":"https://farmingdollar.com/stockblog/8_rebalancing.html","name":"리밸런싱 뜻, 쉽게 이해하기 — 포트폴리오가 흐트러졌을 때 다시 맞추는 기술 | 경제용어 해부학 #8"},
+      {"@type":"ListItem","position":5,"url":"https://farmingdollar.com/stockblog/9_diversified_investment.html","name":"분산투자 뜻, 쉽게 이해하기 — \"달걀을 한 바구니에 담지 마라\"의 진짜 의미 | 경제용어 해부학 #9"},
+      {"@type":"ListItem","position":6,"url":"https://farmingdollar.com/book/everybody_lies.html","name":"빅데이터가 드러내는 진실: 세스 다비도위츠의 5가지 인간 본성 통찰"},
+      {"@type":"ListItem","position":7,"url":"https://farmingdollar.com/book/zerotoone.html","name":"제로 투 원 핵심 요약 | 피터 틸 독점과 혁신 5가지 통찰"},
+      {"@type":"ListItem","position":8,"url":"https://farmingdollar.com/book/Andrew_Carnegie.html","name":"앤드루 카네기 파트너십의 힘 | 철강왕이 보여준 5가지 협력의 지혜"},
+      {"@type":"ListItem","position":9,"url":"https://farmingdollar.com/book/Hidden_in_Plain_Sight_Jan_Chipchase.html","name":"관찰의 힘 핵심 요약 | 얀 칩체이스 디자인 리서치 5가지 통찰 기술"},
+      {"@type":"ListItem","position":10,"url":"https://farmingdollar.com/book/jabjabjabrighthook.html","name":"Jab Jab Jab Right Hook 핵심 요약 | 게리 바이너척 소셜미디어 전략"},
+      {"@type":"ListItem","position":11,"url":"https://farmingdollar.com/book/Building_a_StoryBrand.html","name":"무기가 되는 스토리 핵심 요약 | 도널드 밀러 7단계 스토리브랜드 프레임워크"},
+      {"@type":"ListItem","position":12,"url":"https://farmingdollar.com/book/Influence_The_Psychology_of_Persuasion.html","name":"설득의 심리학 핵심 요약 | 치알디니 6가지 영향력의 법칙과 마케팅 전략"},
+      {"@type":"ListItem","position":13,"url":"https://farmingdollar.com/book/Principles_of_Marketing_Philip_T_Kotler.html","name":"필립 코틀러 마케팅 관리 핵심 요약 | 4P, STP, 고객 가치 전략"},
+      {"@type":"ListItem","position":14,"url":"https://farmingdollar.com/health/lung_cancer_treatment_history.html","name":"폐암 치료의 역사와 최신 정밀 의료 트렌드 | 170년간의 혁신과 미래"},
+      {"@type":"ListItem","position":15,"url":"https://farmingdollar.com/economy/TheMillionaireFastlane.html","name":"부의 추월차선 핵심 요약 | MJ 드마코의 경제적 자유 전략과 NEED 공식"},
+      {"@type":"ListItem","position":16,"url":"https://farmingdollar.com/economy/nudge.html","name":"넛지 핵심 요약: 리처드 세일러의 5가지 선택 설계 원리 | 행동경제학"},
+      {"@type":"ListItem","position":17,"url":"https://farmingdollar.com/health/computational_drug_repurposing.html","name":"컴퓨터를 이용한 약물 재배치: AI 시대의 신약 개발 혁신 | 2025년 최신 동향"}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">BioDaddy Hub</a>
+      <div class="nav-links">
+        <a href="/blog.html" class="active">블로그</a>
+        <a href="/webapp.html">웹어플리케이션</a>
+        <a href="/#group-global">글로벌 뉴스</a>
+        <a href="/#group-korea">대한민국 뉴스·정책</a>
+        <a href="/#group-life">생활·소비</a>
+        <a href="/#group-travel">여행</a>
+        <a href="/#group-tech">IT·기기·AI</a>
+        <a href="/#group-sports">스포츠</a>
+        <a href="/#group-culture">문화·예술</a>
+        <a href="/#group-community">커뮤니티</a>
+        <a href="/#group-invest">투자·증권</a>
+        <a href="/#group-etc">기타</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>블로그</h1>
+      <p class="page-desc">총 60개 글 &middot; 3/3 페이지</p>
+    </div>
+
+    <div class="blog-list-section">
+      <div class="list">
+        <a href="/stockblog/5_roe.html" class="list-item">
+          <span class="item-cat" style="background:#0891b2">경제용어 해부학</span>
+          <span class="item-title">ROE 뜻, 자기자본이익률 쉽게 이해하기 — 내 돈을 얼마나 효율적으로 굴리는 회사인가 | 경제용어 해부학 #5</span>
+          <time class="item-date">2026.02.24</time>
+        </a>
+        <a href="/stockblog/6_ebitda.html" class="list-item">
+          <span class="item-cat" style="background:#0891b2">경제용어 해부학</span>
+          <span class="item-title">EBITDA 뜻, 쉽게 이해하기 — 이 회사가 진짜 현금을 벌고 있는가? | 경제용어 해부학 #6</span>
+          <time class="item-date">2026.02.24</time>
+        </a>
+        <a href="/stockblog/7_dca.html" class="list-item">
+          <span class="item-cat" style="background:#0891b2">경제용어 해부학</span>
+          <span class="item-title">DCA 뜻, 적립식 투자 쉽게 이해하기 — 타이밍을 모르는 사람이 이기는 방법 | 경제용어 해부학 #7</span>
+          <time class="item-date">2026.02.24</time>
+        </a>
+        <a href="/stockblog/8_rebalancing.html" class="list-item">
+          <span class="item-cat" style="background:#0891b2">경제용어 해부학</span>
+          <span class="item-title">리밸런싱 뜻, 쉽게 이해하기 — 포트폴리오가 흐트러졌을 때 다시 맞추는 기술 | 경제용어 해부학 #8</span>
+          <time class="item-date">2026.02.24</time>
+        </a>
+        <a href="/stockblog/9_diversified_investment.html" class="list-item">
+          <span class="item-cat" style="background:#0891b2">경제용어 해부학</span>
+          <span class="item-title">분산투자 뜻, 쉽게 이해하기 — "달걀을 한 바구니에 담지 마라"의 진짜 의미 | 경제용어 해부학 #9</span>
+          <time class="item-date">2026.02.24</time>
+        </a>
+        <a href="/book/everybody_lies.html" class="list-item">
+          <span class="item-cat" style="background:#7c3aed">도서·서평·신간</span>
+          <span class="item-title">빅데이터가 드러내는 진실: 세스 다비도위츠의 5가지 인간 본성 통찰</span>
+          <time class="item-date">2026.02.23</time>
+        </a>
+        <a href="/book/zerotoone.html" class="list-item">
+          <span class="item-cat" style="background:#7c3aed">도서·서평·신간</span>
+          <span class="item-title">제로 투 원 핵심 요약 | 피터 틸 독점과 혁신 5가지 통찰</span>
+          <time class="item-date">2026.02.23</time>
+        </a>
+        <a href="/book/Andrew_Carnegie.html" class="list-item">
+          <span class="item-cat" style="background:#7c3aed">도서·서평·신간</span>
+          <span class="item-title">앤드루 카네기 파트너십의 힘 | 철강왕이 보여준 5가지 협력의 지혜</span>
+          <time class="item-date">2026.02.22</time>
+        </a>
+        <a href="/book/Hidden_in_Plain_Sight_Jan_Chipchase.html" class="list-item">
+          <span class="item-cat" style="background:#7c3aed">도서·서평·신간</span>
+          <span class="item-title">관찰의 힘 핵심 요약 | 얀 칩체이스 디자인 리서치 5가지 통찰 기술</span>
+          <time class="item-date">2026.02.22</time>
+        </a>
+        <a href="/book/jabjabjabrighthook.html" class="list-item">
+          <span class="item-cat" style="background:#7c3aed">도서·서평·신간</span>
+          <span class="item-title">Jab Jab Jab Right Hook 핵심 요약 | 게리 바이너척 소셜미디어 전략</span>
+          <time class="item-date">2026.02.21</time>
+        </a>
+        <a href="/book/Building_a_StoryBrand.html" class="list-item">
+          <span class="item-cat" style="background:#7c3aed">도서·서평·신간</span>
+          <span class="item-title">무기가 되는 스토리 핵심 요약 | 도널드 밀러 7단계 스토리브랜드 프레임워크</span>
+          <time class="item-date">2026.02.21</time>
+        </a>
+        <a href="/book/Influence_The_Psychology_of_Persuasion.html" class="list-item">
+          <span class="item-cat" style="background:#7c3aed">도서·서평·신간</span>
+          <span class="item-title">설득의 심리학 핵심 요약 | 치알디니 6가지 영향력의 법칙과 마케팅 전략</span>
+          <time class="item-date">2026.02.21</time>
+        </a>
+        <a href="/book/Principles_of_Marketing_Philip_T_Kotler.html" class="list-item">
+          <span class="item-cat" style="background:#7c3aed">도서·서평·신간</span>
+          <span class="item-title">필립 코틀러 마케팅 관리 핵심 요약 | 4P, STP, 고객 가치 전략</span>
+          <time class="item-date">2026.02.21</time>
+        </a>
+        <a href="/health/lung_cancer_treatment_history.html" class="list-item">
+          <span class="item-cat" style="background:#dc2626">건강/의료 뉴스</span>
+          <span class="item-title">폐암 치료의 역사와 최신 정밀 의료 트렌드 | 170년간의 혁신과 미래</span>
+          <time class="item-date">2026.02.21</time>
+        </a>
+        <a href="/economy/TheMillionaireFastlane.html" class="list-item">
+          <span class="item-cat" style="background:#1a6b3c">미국 경제/금융</span>
+          <span class="item-title">부의 추월차선 핵심 요약 | MJ 드마코의 경제적 자유 전략과 NEED 공식</span>
+          <time class="item-date">2026.02.20</time>
+        </a>
+        <a href="/economy/nudge.html" class="list-item">
+          <span class="item-cat" style="background:#1a6b3c">미국 경제/금융</span>
+          <span class="item-title">넛지 핵심 요약: 리처드 세일러의 5가지 선택 설계 원리 | 행동경제학</span>
+          <time class="item-date">2026.02.20</time>
+        </a>
+        <a href="/health/computational_drug_repurposing.html" class="list-item">
+          <span class="item-cat" style="background:#dc2626">건강/의료 뉴스</span>
+          <span class="item-title">컴퓨터를 이용한 약물 재배치: AI 시대의 신약 개발 혁신 | 2025년 최신 동향</span>
+          <time class="item-date">2026.02.20</time>
+        </a>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <a href="/blog_pages/2/" class="page-link">&laquo; 이전</a>
+      <a href="/blog.html" class="page-link">1</a>
+      <a href="/blog_pages/2/" class="page-link">2</a>
+      <span class="page-link current">3</span>
+    </div>
+  </div>
+
+  <script>
+  function toggleList(btn) {
+    var list = document.getElementById(btn.getAttribute('aria-controls'));
+    var items = list.querySelectorAll('.hidden-item');
+    var expanded = btn.classList.toggle('expanded');
+    btn.setAttribute('aria-expanded', String(expanded));
+    items.forEach(function(item) { item.style.display = expanded ? 'flex' : 'none'; });
+    btn.textContent = expanded ? '접기' : '+' + btn.dataset.count + '개 더보기';
+  }
+  </script>
+
+  <footer>
+    <p>&copy; 2026 바이오대디. All rights reserved.</p>
+    <p><a href="https://blog.naver.com/biodad" target="_blank" rel="noopener noreferrer">blog.naver.com/biodad</a> &middot; kybmy0522@naver.com</p>
+  </footer>
+</body>
+</html>

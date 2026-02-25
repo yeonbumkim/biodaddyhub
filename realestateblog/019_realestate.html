@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<!-- ga-inserted by ga_inserter.py -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2F47Y9KCBV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2F47Y9KCBV');
+</script>
+<!-- gsc-inserted by gsc_inserter.py -->
+<meta name="google-site-verification" content="google46841b2b09e9134e">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="내 집 마련 자금을 한 푼도 빠짐없이 계산합니다. 5억 아파트 매수 시뮬레이션으로 자기 자본, 대출 한도, 취득세·중개보수 등 숨은 비용, 월 상환액까지 총정리했습니다." name="description"/>
+<meta content="내집마련, 내집마련자금, 자기자본계산, 주택구입비용, 취득부대비용, 하우스푸어, 부동산자금계획, LTV계산, DSR계산, 부동산해부학, 바이오대디" name="keywords"/>
+<meta content="farmingdollar.com" name="author"/>
+<meta content="index, follow" name="robots"/>
+<title>내 집 마련 자금 계산기 — 대체 얼마가 필요한 거야? 숨은 비용까지 전부 계산 | 부동산 해부학 #9</title>
+<link href="https://farmingdollar.com/realestate/019_realestate.html" rel="canonical"/>
+<!-- Open Graph -->
+<meta content="article" property="og:type"/>
+<meta content="내 집 마련 자금 계산기 — 대체 얼마가 필요한 거야? 숨은 비용까지 전부 계산 | 부동산 해부학 #9" property="og:title"/>
+<meta content="내 집 마련 자금을 한 푼도 빠짐없이 계산합니다. 5억 아파트 매수 시뮬레이션으로 자기 자본, 대출 한도, 취득세·중개보수 등 숨은 비용, 월 상환액까지 총정리했습니다." property="og:description"/>
+<meta content="https://farmingdollar.com/realestate/019_realestate.html" property="og:url"/>
+<meta content="Farming Dollar" property="og:site_name"/>
+<meta content="ko_KR" property="og:locale"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="내 집 마련 자금 계산기 — 대체 얼마가 필요한 거야? 숨은 비용까지 전부 계산" name="twitter:title"/>
+<meta content="내 집 마련 자금을 한 푼도 빠짐없이 계산합니다. 5억 아파트 매수 시뮬레이션으로 자기 자본, 대출 한도, 취득세·중개보수 등 숨은 비용, 월 상환액까지 총정리했습니다." name="twitter:description"/>
+<!-- 구조화 데이터 (JSON-LD) -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "내 집 마련 자금 계산기 — 대체 얼마가 필요한 거야? 숨은 비용까지 전부 계산",
+      "description": "내 집 마련 자금을 한 푼도 빠짐없이 계산합니다. 5억 아파트 매수 시뮬레이션으로 자기 자본, 대출 한도, 취득세·중개보수 등 숨은 비용, 월 상환액까지 총정리했습니다.",
+      "author": {
+        "@type": "Organization",
+        "name": "Farming Dollar",
+        "url": "https://farmingdollar.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Farming Dollar",
+        "url": "https://farmingdollar.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://farmingdollar.com/realestate/019_realestate.html"
+      }
+    }
+    </script>
+<style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        article {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #e3f2fd;
+        }
+        h1 {
+            color: #1565c0;
+            font-size: 2.4em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        h2 {
+            color: #2d3748;
+            border-left: 5px solid #42a5f5;
+            padding-left: 18px;
+            margin-top: 35px;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #424242;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        em {
+            color: #666;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 10px 0;
+            line-height: 1.7;
+        }
+        strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 20px;
+            border-left: 5px solid #2196f3;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .success-case {
+            background: #e8f5e8;
+            padding: 18px;
+            border-left: 4px solid #4caf50;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .failure-case {
+            background: #fff3e0;
+            padding: 18px;
+            border-left: 4px solid #ff9800;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .method-card {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-item {
+            background: #f1f8ff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid #e3f2fd;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #1976d2;
+            display: block;
+        }
+        footer {
+            background: #f5f7fa;
+            padding: 25px;
+            margin-top: 35px;
+            border-radius: 10px;
+            border-left: 5px solid #42a5f5;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 25px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #42a5f5 0%, #1e88e5 100%);
+        }
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            background: #42a5f5;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #42a5f5;
+        }
+        .tech-badge {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 4px 12px;
+            margin: 4px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+    .top-nav {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid #d2d2d7;
+      padding: 0.6rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 100%;
+    }
+    .top-nav a {
+      text-decoration: none;
+      color: #0066cc;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .top-nav .site-name {
+      color: #1d1d1f;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #86868b;
+      font-size: 0.78rem;
+      border-top: 1px solid #e5e5e5;
+      margin-top: 1rem;
+      line-height: 1.8;
+    }
+    footer a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    footer .disclaimer {
+      font-size: 0.72rem;
+      color: #aaa;
+      margin-bottom: 0.5rem;
+    }
+    .related-articles {
+      background: #f0f4ff;
+      border: 1px solid #d0daf0;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin: 30px 0 10px;
+    }
+    .related-articles h3 {
+      color: #1565c0;
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.1em;
+    }
+    .related-articles ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .related-articles li {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+    .related-articles a {
+      color: #1565c0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .related-articles a:hover {
+      text-decoration: underline;
+    }
+    .related-articles .tag {
+      font-size: 0.75em;
+      color: #666;
+      margin-left: 6px;
+    }
+  </style>
+</head>
+<body>
+<div class="top-nav">
+<a class="site-name" href="../index.html">BioDaddy Hub</a>
+<a href="../index.html">&larr; 홈으로</a>
+</div>
+<main>
+<article>
+<header>
+<h1>내 집 마련 자금 계산기</h1>
+<p><em>대체 얼마가 필요한 거야? 숨은 비용까지 전부 계산해보기</em></p>
+</header>
+<section id="intro">
+<h2>📌 부동산 해부학 #9 | 중급편 ① (내 집 마련 로드맵 시작)</h2>
+<p>
+                기초편에서 부동산 용어를 익혔습니다. 이제 가장 현실적인 질문을 마주할 시간입니다.
+            </p>
+<p>
+<strong>"내 집을 사려면, 돈이 대체 얼마나 있어야 해?"</strong>
+            </p>
+<p>
+                많은 사람들이 "집값 - 대출 = 내 돈"으로만 계산합니다.
+                하지만 실제로는 <strong>눈에 안 보이는 비용</strong>이 수천만 원 숨어있습니다.
+                오늘은 5억짜리 아파트를 사는 시나리오로, 처음부터 끝까지 필요한 돈을 <strong>한 푼도 빠짐없이</strong> 계산해봅니다.
+            </p>
+</section>
+<section id="structure">
+<h2>1. 내 집 마련 자금의 구조</h2>
+<p>내 집을 사기 위한 돈은 크게 세 덩어리입니다.</p>
+<div class="stats-grid">
+<div class="stat-item">
+<span class="stat-number">①</span>
+<small><strong>자기 자본</strong> — 내 통장에 있어야 하는 현금</small>
+</div>
+<div class="stat-item">
+<span class="stat-number">②</span>
+<small><strong>대출금</strong> — 은행에서 빌리는 돈</small>
+</div>
+<div class="stat-item">
+<span class="stat-number">③</span>
+<small><strong>숨은 비용</strong> — 취득세, 중개보수, 이사비 등</small>
+</div>
+</div>
+<div class="failure-case">
+<h4>⚠️ 대부분 ①과 ②만 계산하고 ③을 빠뜨립니다</h4>
+<p>그래서 잔금일에 돈이 모자라거나, 생활비가 바닥나는 사태가 벌어집니다.</p>
+</div>
+</section>
+<section id="simulation">
+<h2>2. 실전 시뮬레이션 — 5억 아파트 매수</h2>
+<h3>기본 조건</h3>
+<table class="comparison-table">
+<thead>
+<tr>
+<th>항목</th>
+<th>설정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매매가</td>
+<td>5억 원</td>
+</tr>
+<tr>
+<td>지역</td>
+<td>비규제지역</td>
+</tr>
+<tr>
+<td>주택 수</td>
+<td>무주택자 (1주택 취득)</td>
+</tr>
+<tr>
+<td>연봉</td>
+<td>5,000만 원 (부부 합산 8,000만 원)</td>
+</tr>
+<tr>
+<td>기존 대출</td>
+<td>신용대출 1,000만 원</td>
+</tr>
+<tr>
+<td>LTV / DSR</td>
+<td>70% / 40%</td>
+</tr>
+<tr>
+<td>대출 금리</td>
+<td>연 4% (30년 원리금균등)</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Step 1: 대출 한도 계산</h3>
+<div class="method-card">
+<h4>LTV 기준</h4>
+<p>5억 &times; 70% = <strong>3억 5,000만 원</strong></p>
+</div>
+<div class="method-card">
+<h4>DSR 기준</h4>
+<p>부부 합산 연봉 8,000만 원 &times; 40% = 연 3,200만 원 상환 가능</p>
+<p>기존 신용대출 상환액: 약 240만 원/년</p>
+<p>주담대에 쓸 수 있는 상환액: 3,200 - 240 = <strong>2,960만 원/년</strong> → 대출 가능액: 약 <strong>5억 1,700만 원</strong></p>
+</div>
+<div class="highlight-box">
+<strong>최종 대출 한도:</strong> LTV 3.5억 &lt; DSR 5.17억 → <strong>LTV에 걸려서 3억 5,000만 원</strong>
+            </div>
+
+<h3>Step 2: 자기 자본 필요액</h3>
+<p>매매가 - 대출금 = 최소 자기 자본: 5억 - 3.5억 = <strong>1억 5,000만 원</strong></p>
+<p>하지만 이건 <strong>집값만</strong> 계산한 것입니다. 여기에 숨은 비용을 더해야 합니다.</p>
+
+<h3>Step 3: 숨은 비용 계산 — 여기서 차이가 난다</h3>
+<table class="comparison-table">
+<thead>
+<tr>
+<th>항목</th>
+<th>금액</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>취득세</strong></td>
+<td>약 550만 원</td>
+<td>매매가 5억 &times; 1.1%</td>
+</tr>
+<tr>
+<td><strong>중개보수</strong></td>
+<td>약 200~400만 원</td>
+<td>매매가 &times; 0.4~0.8%</td>
+</tr>
+<tr>
+<td><strong>법무사 수수료</strong></td>
+<td>약 50~80만 원</td>
+<td>등기 이전 대행 비용</td>
+</tr>
+<tr>
+<td><strong>국민주택채권 매입</strong></td>
+<td>약 30~50만 원</td>
+<td>등기 시 의무 매입</td>
+</tr>
+<tr>
+<td><strong>인지세</strong></td>
+<td>약 15만 원</td>
+<td>대출 계약 시</td>
+</tr>
+<tr>
+<td><strong>이사비</strong></td>
+<td>약 50~150만 원</td>
+<td>포장이사 기준</td>
+</tr>
+<tr>
+<td><strong>수리/인테리어</strong></td>
+<td>0~2,000만 원</td>
+<td>구축은 도배·장판·욕실 등</td>
+</tr>
+<tr>
+<td><strong>가전·가구</strong></td>
+<td>0~500만 원</td>
+<td>신혼이면 필수</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td><strong>약 900~3,200만 원</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h3>Step 4: 최종 필요 자금 총정리</h3>
+<table class="comparison-table">
+<thead>
+<tr>
+<th>구분</th>
+<th>금액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매매가</td>
+<td>5억 원</td>
+</tr>
+<tr>
+<td>대출</td>
+<td>-3억 5,000만 원</td>
+</tr>
+<tr>
+<td><strong>집값 자기 자본</strong></td>
+<td><strong>1억 5,000만 원</strong></td>
+</tr>
+<tr>
+<td>취득 부대비용 (최소)</td>
+<td>약 900만 원</td>
+</tr>
+<tr>
+<td>수리/이사/가전 (적정)</td>
+<td>약 1,000만 원</td>
+</tr>
+<tr>
+<td><strong>총 필요 자기 자본</strong></td>
+<td><strong>약 1억 6,900만~1억 8,000만 원</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-box">
+<strong>"5억짜리 집을 사려면 약 1억 7,000만~1억 8,000만 원이 필요합니다."</strong>
+                단순히 "1억 5천이면 되겠지"가 아니라 <strong>최소 2,000~3,000만 원이 추가로 필요</strong>한 겁니다.
+            </div>
+
+<h3>Step 5: 월 상환액 계산 — 생활이 가능한가?</h3>
+<p>대출을 받는 것과 <strong>갚아나가며 사는 것</strong>은 완전히 다른 문제입니다.</p>
+<table class="comparison-table">
+<thead>
+<tr>
+<th>항목</th>
+<th>월 금액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주담대 상환 (3.5억, 4%/30년)</td>
+<td>약 167만 원</td>
+</tr>
+<tr>
+<td>관리비</td>
+<td>20~30만 원</td>
+</tr>
+<tr>
+<td>재산세 (월 환산)</td>
+<td>4~5만 원</td>
+</tr>
+<tr>
+<td>신용대출 상환</td>
+<td>약 20만 원</td>
+</tr>
+<tr>
+<td><strong>월 주거 고정비용</strong></td>
+<td><strong>약 210~220만 원</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="success-case">
+<h4>부부 합산 월 실수령 약 550만 원이라면</h4>
+<p>주거비 220만 원 + 생활비 200만 원 + 교육비/보험 등 = 빠듯하지만 가능 → 여유 자금: 월 약 100~130만 원</p>
+</div>
+<div class="failure-case">
+<h4>⚠️ 혼자 월 실수령 약 350만 원이라면</h4>
+<p>주거비 220만 원 + 생활비 100만 원 = 320만 원 → 여유 자금: 월 약 30만 원 → 매우 빠듯</p>
+</div>
+<div class="highlight-box">
+<strong>핵심:</strong> 대출을 "받을 수 있는 금액"과 "갚으며 살 수 있는 금액"은 다릅니다.
+                DSR 한도까지 풀로 대출받으면, 금리 인상이나 소득 변동에 취약해집니다.
+            </div>
+</section>
+<section id="alternatives">
+<h2>3. 자기 자본이 부족할 때 — 현실적인 방법</h2>
+<div class="success-case">
+<h4>① 정부 지원 대출 활용</h4>
+<p><strong>디딤돌대출:</strong> 무주택 실수요자 대상, 시중보다 낮은 금리</p>
+<p><strong>보금자리론:</strong> 고정금리 장기 대출</p>
+<p><strong>신생아 특례대출:</strong> 출산 가구 대상 특별 우대 금리</p>
+</div>
+<div class="success-case">
+<h4>② 전세 → 매매 전환 전략</h4>
+<p>현재 전세로 살면서 종잣돈을 모으고, 전세 보증금을 자기 자본으로 전환합니다.</p>
+</div>
+<div class="method-card">
+<h4>③ 부모 지원 (증여)</h4>
+<table class="comparison-table">
+<thead>
+<tr>
+<th>관계</th>
+<th>증여 공제 한도 (10년간)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>부모 → 성인 자녀</td>
+<td>5,000만 원</td>
+</tr>
+<tr>
+<td>부모 → 미성년 자녀</td>
+<td>2,000만 원</td>
+</tr>
+<tr>
+<td>배우자 → 배우자</td>
+<td>6억 원</td>
+</tr>
+</tbody>
+</table>
+<p>5,000만 원까지는 세금 없이 받을 수 있습니다. 초과분은 증여세(10~50% 누진세율)를 내야 합니다.</p>
+</div>
+<div class="success-case">
+<h4>④ 목표 금액을 낮추기</h4>
+<p>4억 &times; LTV 70% = 대출 2.8억 → 자기 자본 1.2억 + 부대비용 900만 원 = 약 <strong>1.3억</strong>. 5억 대비 약 4,000~5,000만 원이 줄어듭니다.</p>
+</div>
+</section>
+<section id="reference-table">
+<h2>4. 매매가별 필요 자금 조견표</h2>
+<p>한눈에 보는 매매가별 필요 자금 (LTV 70%, 무주택 1주택, 부대비용 포함):</p>
+<table class="comparison-table">
+<thead>
+<tr>
+<th>매매가</th>
+<th>대출 (70%)</th>
+<th>자기 자본</th>
+<th>부대비용 (약)</th>
+<th>총 필요 현금</th>
+<th>월 상환액 (4%/30년)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3억</td>
+<td>2.1억</td>
+<td>9,000만</td>
+<td>600만</td>
+<td>약 <strong>9,600만 원</strong></td>
+<td>약 100만 원</td>
+</tr>
+<tr>
+<td>4억</td>
+<td>2.8억</td>
+<td>1.2억</td>
+<td>750만</td>
+<td>약 <strong>1억 2,750만 원</strong></td>
+<td>약 134만 원</td>
+</tr>
+<tr>
+<td>5억</td>
+<td>3.5억</td>
+<td>1.5억</td>
+<td>900만</td>
+<td>약 <strong>1억 5,900만 원</strong></td>
+<td>약 167만 원</td>
+</tr>
+<tr>
+<td>6억</td>
+<td>4.2억</td>
+<td>1.8억</td>
+<td>1,300만</td>
+<td>약 <strong>1억 9,300만 원</strong></td>
+<td>약 200만 원</td>
+</tr>
+<tr>
+<td>7억</td>
+<td>4.9억</td>
+<td>2.1억</td>
+<td>1,500만</td>
+<td>약 <strong>2억 2,500만 원</strong></td>
+<td>약 234만 원</td>
+</tr>
+<tr>
+<td>8억</td>
+<td>5.6억</td>
+<td>2.4억</td>
+<td>1,700만</td>
+<td>약 <strong>2억 5,700만 원</strong></td>
+<td>약 267만 원</td>
+</tr>
+<tr>
+<td>10억</td>
+<td>7억</td>
+<td>3억</td>
+<td>2,200만</td>
+<td>약 <strong>3억 2,200만 원</strong></td>
+<td>약 334만 원</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-box">
+<strong>이 표를 캡처해두면 매물을 볼 때 "내 자금으로 어디까지 가능한지" 바로 판단할 수 있습니다.</strong>
+                주의: DSR 규제로 실제 대출 한도가 LTV보다 낮을 수 있습니다.
+            </div>
+</section>
+<section id="emergency-fund">
+<h2>5. 비상 자금 — 올인하면 안 되는 이유</h2>
+<p>자기 자본이 딱 1억 5,000만 원인데 전부 집에 넣으면? <strong>남은 현금: 0원.</strong></p>
+<div class="failure-case">
+<h4>⚠️ "하우스푸어"의 위험</h4>
+<p>집은 있지만 현금이 없어서 대출 이자도 못 내는 상황.</p>
+<ul>
+<li>갑자기 차 수리비 300만 원</li>
+<li>가전제품 고장 교체 200만 원</li>
+<li>경조사비, 의료비 등 예상치 못한 지출</li>
+<li>최악의 경우: 실직, 소득 감소</li>
+</ul>
+</div>
+<div class="highlight-box">
+<strong>비상 자금 최소 기준: 월 생활비의 3~6개월분</strong>은 현금으로 남겨두어야 합니다.
+                월 생활비 250만 원이면 → 최소 750~1,500만 원은 집에 안 넣고 남겨놓기.
+                이 돈까지 넣어야만 집을 살 수 있다면, <strong>아직 매수 타이밍이 아닙니다.</strong>
+            </div>
+</section>
+<section id="checklist">
+<h2>6. 내 집 마련 자금 계획 체크리스트</h2>
+<div class="success-case">
+<h4>자금 관련</h4>
+<ul>
+<li>현재 자기 자본(현금성 자산) 파악</li>
+<li>대출 한도 사전 심사 (은행 방문 또는 온라인)</li>
+<li>부대비용(취득세+중개+법무사+이사+수리) 계산</li>
+<li>비상 자금 3~6개월분 별도 확보</li>
+<li>증여 받을 경우 증여세 확인</li>
+</ul>
+</div>
+<div class="success-case">
+<h4>상환 능력 관련</h4>
+<ul>
+<li>월 대출 상환액 계산</li>
+<li>월 고정비(관리비+보험+교육비 등) 합산</li>
+<li>금리 1%p 상승 시 월 상환액 변동 확인</li>
+<li>외벌이 전환 시에도 감당 가능한지 확인</li>
+</ul>
+</div>
+<div class="success-case">
+<h4>매수 판단</h4>
+<ul>
+<li>총 필요 자금 대비 현재 자금의 충분성</li>
+<li>무리한 레버리지가 아닌지 (대출/자산 비율)</li>
+<li>3년 이상 거주 계획이 있는지</li>
+</ul>
+</div>
+</section>
+<section id="summary">
+<h2>7. 한눈에 정리</h2>
+<table class="comparison-table">
+<thead>
+<tr>
+<th>항목</th>
+<th>5억 아파트 기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대출 (LTV 70%)</td>
+<td>3.5억</td>
+</tr>
+<tr>
+<td>자기 자본 (집값)</td>
+<td>1.5억</td>
+</tr>
+<tr>
+<td>부대비용</td>
+<td>약 900~1,500만 원</td>
+</tr>
+<tr>
+<td><strong>총 필요 현금</strong></td>
+<td><strong>약 1.6~1.8억</strong></td>
+</tr>
+<tr>
+<td>월 상환액</td>
+<td>약 167만 원</td>
+</tr>
+<tr>
+<td>비상 자금 (별도)</td>
+<td>최소 750~1,500만 원</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-box">
+<strong>가장 중요한 한 문장:</strong>
+                집값에서 대출을 빼는 것만으로는 부족합니다. 부대비용 + 수리비 + 비상자금까지 계산해야 진짜 필요 자금이 나옵니다.
+            </div>
+</section>
+<section id="next">
+<h2>다음 편 예고</h2>
+<p>
+                필요 자금을 계산했습니다.
+                다음은 그 자금의 핵심, <strong>주택담보대출</strong>을 파고듭니다.
+            </p>
+<p>
+<strong>"고정금리? 변동금리? 원리금균등? 원금균등? 뭘 골라야 하지?"</strong>
+</p>
+<p>
+                같은 3.5억을 빌려도 금리 유형과 상환 방식에 따라 30년간 수천만 원의 차이가 납니다.
+                10편에서 주담대의 모든 선택지를 비교합니다.
+                다음 편에서 만나겠습니다. 💪
+            </p>
+</section>
+<div class="related-articles">
+<h3>관련 글 더 보기</h3>
+<ul>
+<li><a href="018_realestate.html">이전 편: 청약/가점/추첨/특별공급</a> <span class="tag">#8 기초편</span></li>
+<li><a href="020_realestate.html">다음 편: 주택담보대출 완전 정복</a> <span class="tag">#10 중급편</span></li>
+<li><a href="017_realestate.html">LTV/DTI/DSR — 대출 한도 계산의 기초</a> <span class="tag">#6 기초편</span></li>
+<li><a href="034_realestate.html">생애 첫 내 집 마련 — 자금부터 입주까지 로드맵</a> <span class="tag">#25 실전편</span></li>
+</ul>
+</div>
+<footer>
+<p class="disclaimer">위 아티클은 AI 모델을 활용하여 요약되어 사실과 다를 수 있습니다. 원문을 확인하시기 바랍니다.</p>
+<p>&copy; 2026 바이오대디. All rights reserved.</p>
+<p><a href="https://blog.naver.com/biodad" target="_blank">blog.naver.com/biodad</a> · kybmy0522@naver.com</p>
+</footer>
+</article>
+</main>
+</body>
+</html>
