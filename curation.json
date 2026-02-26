@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-02-26T07:47:36.449360+09:00",
-  "basis_date": "2026-02-26",
+  "generated_at": "2026-02-27T08:52:01.834442+09:00",
+  "basis_date": "2026-02-27",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 02월 26일",
-      "subtitle": "세액공제 축소·상속세 개편 필요",
-      "url": "tax_policy/tax_20260226_073645.html",
-      "published_at": "2026-02-26T07:36:45+09:00",
+      "title": "세금 브리핑 - 2026년 02월 27일",
+      "subtitle": "전자신고 세액공제·다주택자 주의",
+      "url": "tax_policy/tax_20260227_083905.html",
+      "published_at": "2026-02-27T08:39:05+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 02월 26일",
-      "subtitle": "케이뱅크·액스비스 청약 경쟁률",
-      "url": "ipo/ipo_20260226_074350.html",
-      "published_at": "2026-02-26T07:43:50+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 02월 27일",
+      "subtitle": "청약 경쟁률·액스비스·케이뱅크",
+      "url": "ipo/ipo_20260227_084753.html",
+      "published_at": "2026-02-27T08:47:53+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 02월 26일",
-      "subtitle": "레버리지 ETF·코스닥 변동성·순자산",
-      "url": "kospi_etf/kospi_etf_20260226_074550.html",
-      "published_at": "2026-02-26T07:45:50+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 02월 27일",
+      "subtitle": "레버리지 ETF·증권주 거래대금·순자",
+      "url": "kospi_etf/kospi_etf_20260227_085000.html",
+      "published_at": "2026-02-27T08:50:00+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 02월 26일",
-      "subtitle": "제약·AI·중소형주 반등 기대",
-      "url": "kosdaq/kosdaq_20260226_074509.html",
-      "published_at": "2026-02-26T07:45:09+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 02월 27일",
+      "subtitle": "제약·중소형주·상승 기류",
+      "url": "kosdaq/kosdaq_20260227_084914.html",
+      "published_at": "2026-02-27T08:49:14+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 02월 26일",
-      "subtitle": "현대차·반도체·주식 급등",
-      "url": "kospi/kospi_20260226_074435.html",
-      "published_at": "2026-02-26T07:44:35+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 02월 27일",
+      "subtitle": "대형주·증시 하락·AI 서비스",
+      "url": "kospi/kospi_20260227_084834.html",
+      "published_at": "2026-02-27T08:48:34+09:00",
       "score": 45,
       "tags": [
         "코스피"

@@ -1,0 +1,79 @@
+{
+  "updated": "2026-02-26 11:50 KST",
+  "indices": [
+    {
+      "symbol": "^GSPC",
+      "name": "S&P 500",
+      "region": "미국",
+      "price": 6946.13,
+      "change": 0.81,
+      "prev_close": 6890.07
+    },
+    {
+      "symbol": "^IXIC",
+      "name": "NASDAQ",
+      "region": "미국",
+      "price": 23152.08,
+      "change": 1.26,
+      "prev_close": 22863.68
+    },
+    {
+      "symbol": "^DJI",
+      "name": "Dow Jones",
+      "region": "미국",
+      "price": 49482.15,
+      "change": 0.63,
+      "prev_close": 49174.5
+    },
+    {
+      "symbol": "^KS11",
+      "name": "KOSPI",
+      "region": "한국",
+      "price": 6203.58,
+      "change": 2.11,
+      "prev_close": 6075.37
+    },
+    {
+      "symbol": "^KQ11",
+      "name": "KOSDAQ",
+      "region": "한국",
+      "price": 1177.03,
+      "change": 1.32,
+      "prev_close": 1161.65
+    },
+    {
+      "symbol": "^N225",
+      "name": "Nikkei 225",
+      "region": "일본",
+      "price": 58856.98,
+      "change": 0.3,
+      "prev_close": 58679.77
+    },
+    {
+      "symbol": "000001.SS",
+      "name": "Shanghai",
+      "region": "중국",
+      "price": 4132.03,
+      "change": -0.36,
+      "prev_close": 4147.17
+    },
+    {
+      "symbol": "^GDAXI",
+      "name": "DAX",
+      "region": "독일",
+      "price": 25175.94,
+      "change": 0.76,
+      "prev_close": 24986.25
+    }
+  ],
+  "commodities": [
+    {
+      "symbol": "CL=F",
+      "name": "WTI 원유",
+      "region": "원자재",
+      "price": 65.42,
+      "change": -0.92,
+      "prev_close": 66.03
+    }
+  ]
+}
