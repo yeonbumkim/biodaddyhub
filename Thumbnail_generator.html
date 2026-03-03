@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>썸네일 생성기</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Noto+Serif+KR:wght@400;500;600;700;900&family=Black+Han+Sans&family=Do+Hyeon&family=Jua&family=Gothic+A1:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Myeongjo:wght@400;700;800&family=Gmarket+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    background: #F0F0F0;
+    min-height: 100vh;
+    color: #111;
+  }
+
+  .layout {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    align-items: flex-start;
+  }
+
+  .controls {
+    flex: 1;
+    min-width: 0;
+    max-width: 480px;
+  }
+
+  h1 { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 4px; }
+  .sub { font-size: 12px; color: #888; margin-bottom: 28px; }
+
+  .line-block {
+    background: #FFF;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+
+  .line-header { display: flex; align-items: center; margin-bottom: 14px; }
+
+  .line-label {
+    font-size: 13px; font-weight: 700; color: #444;
+    background: #F3F4F6; padding: 4px 12px; border-radius: 8px;
+  }
+
+  .text-input {
+    width: 100%;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 15px; font-weight: 500;
+    padding: 10px 14px;
+    border: 1.5px solid #E0E0E0; border-radius: 10px;
+    background: #FAFAFA; color: #111; outline: none;
+    transition: border-color 0.2s; margin-bottom: 14px;
+  }
+  .text-input:focus { border-color: #333; }
+
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .opt { display: flex; flex-direction: column; gap: 4px; }
+  .opt-label { font-size: 11px; font-weight: 600; color: #999; letter-spacing: 0.3px; }
+
+  .opt select, .opt input[type="number"] {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px; font-weight: 500;
+    padding: 8px 10px;
+    border: 1.5px solid #E5E5E5; border-radius: 8px;
+    background: #FFF; color: #111; outline: none; cursor: pointer;
+  }
+  .opt select:focus, .opt input[type="number"]:focus { border-color: #333; }
+
+  .opt input[type="color"] {
+    width: 100%; height: 36px;
+    border: 1.5px solid #E5E5E5; border-radius: 8px;
+    padding: 2px; cursor: pointer; background: #FFF;
+  }
+
+  .toggles {
+    display: flex; gap: 6px;
+    grid-column: 1 / -1; margin-top: 2px;
+  }
+
+  .toggle-btn {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 12px; font-weight: 600;
+    padding: 6px 14px;
+    border: 1.5px solid #E0E0E0; border-radius: 8px;
+    background: #FFF; color: #999; cursor: pointer;
+    transition: all 0.15s; user-select: none;
+  }
+  .toggle-btn.active { background: #111; color: #FFF; border-color: #111; }
+  .toggle-btn:hover:not(.active) { border-color: #AAA; color: #555; }
+
+  .right-col {
+    position: sticky; top: 40px;
+    display: flex; flex-direction: column; align-items: center; gap: 20px;
+  }
+
+  .preview-label {
+    font-size: 11px; font-weight: 500; color: #aaa;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+
+  .preview {
+    width: 440px; height: 440px; border-radius: 32px;
+    background: #EDEEF0;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+
+  .preview-inner {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 60px; width: 100%; height: 100%;
+  }
+
+  .preview .pv-line { letter-spacing: -1px; transition: all 0.15s; }
+  .preview .pv1 { line-height: 1.15; }
+  .preview .pv2 { line-height: 1.15; margin-top: 20px; }
+  .preview .pv3 { line-height: 1.0; margin-top: 24px; }
+
+  .btn {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 15px; font-weight: 700; color: #FFF;
+    background: #111; border: none; border-radius: 14px;
+    padding: 16px 48px; cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: -0.3px; width: 100%; max-width: 440px;
+  }
+  .btn:hover { background: #333; }
+  .btn:active { transform: scale(0.97); }
+
+  .apply-btn {
+    background: #2563EB;
+    margin-top: 4px;
+  }
+  .apply-btn:hover { background: #1D4ED8; }
+
+  .size-note { font-size: 11px; color: #aaa; text-align: center; }
+  #renderCanvas { display: none; }
+
+  @media (max-width: 960px) {
+    .layout { flex-direction: column; align-items: center; }
+    .controls { max-width: 480px; width: 100%; }
+    .right-col { position: static; }
+  }
+  @media (max-width: 500px) {
+    .preview { width: 340px; height: 340px; border-radius: 24px; }
+    .preview-inner { padding: 40px; }
+    .opts { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+  <div class="controls">
+    <h1>썸네일 생성기</h1>
+    <p class="sub">줄별로 폰트, 크기, 색상, 스타일을 설정하세요</p>
+
+    <div class="line-block" id="block1">
+      <div class="line-header"><span class="line-label">1줄</span></div>
+      <input type="text" class="text-input" id="text1" value="이익은 나는데" placeholder="첫째 줄">
+      <div class="opts">
+        <div class="opt">
+          <span class="opt-label">폰트</span>
+          <select id="font1"><option value="Pretendard" selected>Pretendard</option><option value="Noto Sans KR">Noto Sans KR</option><option value="Noto Serif KR">Noto Serif KR</option><option value="Gothic A1">Gothic A1</option><option value="IBM Plex Sans KR">IBM Plex Sans KR</option><option value="Nanum Gothic">나눔고딕</option><option value="Nanum Myeongjo">나눔명조</option><option value="Black Han Sans">Black Han Sans</option><option value="Do Hyeon">Do Hyeon</option><option value="Jua">Jua</option><option value="Gmarket Sans">Gmarket Sans</option></select>
+        </div>
+        <div class="opt"><span class="opt-label">크기 (px)</span><input type="number" id="size1" value="48" min="12" max="120"></div>
+        <div class="opt">
+          <span class="opt-label">굵기</span>
+          <select id="weight1"><option value="400">Regular</option><option value="500">Medium</option><option value="600">SemiBold</option><option value="700">Bold</option><option value="800" selected>ExtraBold</option><option value="900">Black</option></select>
+        </div>
+        <div class="opt"><span class="opt-label">색상</span><input type="color" id="color1" value="#333333"></div>
+        <div class="toggles">
+          <button class="toggle-btn" data-line="1" data-style="italic"><i>I</i> 이탤릭</button>
+          <button class="toggle-btn" data-line="1" data-style="underline"><u>U</u> 밑줄</button>
+          <button class="toggle-btn" data-line="1" data-style="strikethrough"><s>S</s> 취소선</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="line-block" id="block2">
+      <div class="line-header"><span class="line-label">2줄</span></div>
+      <input type="text" class="text-input" id="text2" value="왜 현금은 없지?" placeholder="둘째 줄">
+      <div class="opts">
+        <div class="opt">
+          <span class="opt-label">폰트</span>
+          <select id="font2"><option value="Pretendard" selected>Pretendard</option><option value="Noto Sans KR">Noto Sans KR</option><option value="Noto Serif KR">Noto Serif KR</option><option value="Gothic A1">Gothic A1</option><option value="IBM Plex Sans KR">IBM Plex Sans KR</option><option value="Nanum Gothic">나눔고딕</option><option value="Nanum Myeongjo">나눔명조</option><option value="Black Han Sans">Black Han Sans</option><option value="Do Hyeon">Do Hyeon</option><option value="Jua">Jua</option><option value="Gmarket Sans">Gmarket Sans</option></select>
+        </div>
+        <div class="opt"><span class="opt-label">크기 (px)</span><input type="number" id="size2" value="48" min="12" max="120"></div>
+        <div class="opt">
+          <span class="opt-label">굵기</span>
+          <select id="weight2"><option value="400">Regular</option><option value="500">Medium</option><option value="600">SemiBold</option><option value="700">Bold</option><option value="800" selected>ExtraBold</option><option value="900">Black</option></select>
+        </div>
+        <div class="opt"><span class="opt-label">색상</span><input type="color" id="color2" value="#333333"></div>
+        <div class="toggles">
+          <button class="toggle-btn" data-line="2" data-style="italic"><i>I</i> 이탤릭</button>
+          <button class="toggle-btn" data-line="2" data-style="underline"><u>U</u> 밑줄</button>
+          <button class="toggle-btn" data-line="2" data-style="strikethrough"><s>S</s> 취소선</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="line-block" id="block3">
+      <div class="line-header"><span class="line-label">3줄 (강조)</span></div>
+      <input type="text" class="text-input" id="text3" value="FCF" placeholder="셋째 줄">
+      <div class="opts">
+        <div class="opt">
+          <span class="opt-label">폰트</span>
+          <select id="font3"><option value="Pretendard" selected>Pretendard</option><option value="Noto Sans KR">Noto Sans KR</option><option value="Noto Serif KR">Noto Serif KR</option><option value="Gothic A1">Gothic A1</option><option value="IBM Plex Sans KR">IBM Plex Sans KR</option><option value="Nanum Gothic">나눔고딕</option><option value="Nanum Myeongjo">나눔명조</option><option value="Black Han Sans">Black Han Sans</option><option value="Do Hyeon">Do Hyeon</option><option value="Jua">Jua</option><option value="Gmarket Sans">Gmarket Sans</option></select>
+        </div>
+        <div class="opt"><span class="opt-label">크기 (px)</span><input type="number" id="size3" value="48" min="12" max="120"></div>
+        <div class="opt">
+          <span class="opt-label">굵기</span>
+          <select id="weight3"><option value="400">Regular</option><option value="500">Medium</option><option value="600">SemiBold</option><option value="700">Bold</option><option value="800">ExtraBold</option><option value="900" selected>Black</option></select>
+        </div>
+        <div class="opt"><span class="opt-label">색상</span><input type="color" id="color3" value="#2B2B2B"></div>
+        <div class="toggles">
+          <button class="toggle-btn" data-line="3" data-style="italic"><i>I</i> 이탤릭</button>
+          <button class="toggle-btn" data-line="3" data-style="underline"><u>U</u> 밑줄</button>
+          <button class="toggle-btn" data-line="3" data-style="strikethrough"><s>S</s> 취소선</button>
+        </div>
+      </div>
+    </div>
+    <button class="btn apply-btn" id="applyBtn">적용하기</button>
+  </div>
+
+  <div class="right-col">
+    <span class="preview-label">미리보기</span>
+    <div class="preview" id="preview">
+      <div class="preview-inner">
+        <div class="pv-line pv1" id="pv1">이익은 나는데</div>
+        <div class="pv-line pv2" id="pv2">왜 현금은 없지?</div>
+        <div class="pv-line pv3" id="pv3">FCF</div>
+      </div>
+    </div>
+    <button class="btn" id="downloadBtn">PNG 다운로드 (1080×1080)</button>
+    <p class="size-note">라운드 모서리 · 바깥 투명 배경</p>
+  </div>
+</div>
+
+<canvas id="renderCanvas"></canvas>
+
+<script>
+const state = {
+  1: { italic: false, underline: false, strikethrough: false },
+  2: { italic: false, underline: false, strikethrough: false },
+  3: { italic: false, underline: false, strikethrough: false },
+};
+
+const $ = id => document.getElementById(id);
+
+// Toggle buttons
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const l = btn.dataset.line, s = btn.dataset.style;
+    state[l][s] = !state[l][s];
+    btn.classList.toggle('active', state[l][s]);
+    updatePreview();
+  });
+});
+
+function getConf(n) {
+  return {
+    text: $('text'+n).value || '',
+    font: $('font'+n).value,
+    size: parseInt($('size'+n).value) || 48,
+    weight: $('weight'+n).value,
+    color: $('color'+n).value,
+    italic: state[n].italic,
+    underline: state[n].underline,
+    strikethrough: state[n].strikethrough,
+  };
+}
+
+function applyStyle(el, c) {
+  el.textContent = c.text || '\u00A0';
+  el.style.fontFamily = `'${c.font}', sans-serif`;
+  el.style.fontSize = c.size + 'px';
+  el.style.fontWeight = c.weight;
+  el.style.color = c.color;
+  el.style.fontStyle = c.italic ? 'italic' : 'normal';
+  const d = [];
+  if (c.underline) d.push('underline');
+  if (c.strikethrough) d.push('line-through');
+  el.style.textDecoration = d.length ? d.join(' ') : 'none';
+}
+
+function updatePreview() {
+  applyStyle($('pv1'), getConf(1));
+  applyStyle($('pv2'), getConf(2));
+  applyStyle($('pv3'), getConf(3));
+}
+
+$('applyBtn').addEventListener('click', updatePreview);
+updatePreview();
+
+// ── Canvas render ──
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r); ctx.lineTo(x+w,y+h-r);
+  ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h); ctx.lineTo(x+r,y+h);
+  ctx.quadraticCurveTo(x,y+h,x,y+h-r); ctx.lineTo(x,y+r);
+  ctx.quadraticCurveTo(x,y,x+r,y); ctx.closePath();
+}
+
+function downloadPNG() {
+  const SIZE = 1080, RAD = 80, S = SIZE / 440;
+  const canvas = $('renderCanvas');
+  canvas.width = SIZE; canvas.height = SIZE;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, SIZE, SIZE);
+
+  roundRect(ctx, 0, 0, SIZE, SIZE, RAD);
+  ctx.fillStyle = '#EDEEF0'; ctx.fill();
+  ctx.save();
+  roundRect(ctx, 0, 0, SIZE, SIZE, RAD);
+  ctx.clip();
+
+  const cfgs = [getConf(1), getConf(2), getConf(3)];
+  const lh = [1.15, 1.15, 1.0];
+  const gaps = [0, 20*S, 24*S];
+  const sizes = cfgs.map(c => Math.round(c.size * S));
+  const heights = sizes.map((s,i) => s * lh[i]);
+  const totalH = heights[0] + gaps[1] + heights[1] + gaps[2] + heights[2];
+  let y = (SIZE - totalH) / 2;
+  const cx = SIZE / 2;
+
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'top';
+
+  cfgs.forEach((c, i) => {
+    if (i > 0) y += gaps[i];
+    const fs = sizes[i];
+    const it = c.italic ? 'italic ' : '';
+    ctx.font = `${it}${c.weight} ${fs}px '${c.font}', sans-serif`;
+    ctx.fillStyle = c.color;
+    ctx.fillText(c.text, cx, y);
+
+    const tw = ctx.measureText(c.text).width;
+    const tx = cx - tw / 2;
+    const thick = Math.max(2, Math.round(fs * 0.04));
+    ctx.strokeStyle = c.color;
+    ctx.lineWidth = thick;
+
+    if (c.underline) {
+      const ly = y + fs * lh[i] + 2*S;
+      ctx.beginPath(); ctx.moveTo(tx, ly); ctx.lineTo(tx+tw, ly); ctx.stroke();
+    }
+    if (c.strikethrough) {
+      const ly = y + fs * lh[i] * 0.45;
+      ctx.beginPath(); ctx.moveTo(tx, ly); ctx.lineTo(tx+tw, ly); ctx.stroke();
+    }
+    y += heights[i];
+  });
+
+  ctx.restore();
+
+  canvas.toBlob(blob => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'thumbnail.png';
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, 'image/png');
+}
+
+$('downloadBtn').addEventListener('click', downloadPNG);
+</script>
+</body>
+</html>
