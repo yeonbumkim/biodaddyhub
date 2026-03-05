@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-03-04T14:46:43.077873+09:00",
-  "basis_date": "2026-03-04",
+  "generated_at": "2026-03-05T10:25:17.411668+09:00",
+  "basis_date": "2026-03-05",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 03월 04일",
-      "subtitle": "근로장려금·자경농민 세제 혜택",
-      "url": "tax_policy/tax_20260304_105447.html",
-      "published_at": "2026-03-04T10:54:47+09:00",
+      "title": "세금 브리핑 - 2026년 03월 05일",
+      "subtitle": "세액공제·주택공급·소득세 감면",
+      "url": "tax_policy/tax_20260305_101510.html",
+      "published_at": "2026-03-05T10:15:10+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 03월 04일",
-      "subtitle": "IPO시장·청약경쟁률·상장예정",
-      "url": "ipo/ipo_20260304_110350.html",
-      "published_at": "2026-03-04T11:03:50+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 03월 05일",
+      "subtitle": "IPO시장 위축·케이뱅크 상승",
+      "url": "ipo/ipo_20260305_102231.html",
+      "published_at": "2026-03-05T10:22:31+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 03월 04일",
-      "subtitle": "레버리지·순매수·ETF 인기 상승",
-      "url": "kospi_etf/kospi_etf_20260304_110541.html",
-      "published_at": "2026-03-04T11:05:41+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 03월 05일",
+      "subtitle": "레버리지 매수·ETF 순자산 목표",
+      "url": "kospi_etf/kospi_etf_20260305_102404.html",
+      "published_at": "2026-03-05T10:24:04+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 03월 04일",
-      "subtitle": "코스닥150 편입·주가 급등",
-      "url": "kosdaq/kosdaq_20260304_110509.html",
-      "published_at": "2026-03-04T11:05:09+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 03월 05일",
+      "subtitle": "액면 병합·패닉셀·코스닥 급락",
+      "url": "kosdaq/kosdaq_20260305_102335.html",
+      "published_at": "2026-03-05T10:23:35+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 03월 04일",
-      "subtitle": "삼성전자 급락·유가 상승·코스닥150",
-      "url": "kospi/kospi_20260304_110433.html",
-      "published_at": "2026-03-04T11:04:33+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 03월 05일",
+      "subtitle": "현대차·기아 강세·반도체 우려",
+      "url": "kospi/kospi_20260305_102304.html",
+      "published_at": "2026-03-05T10:23:04+09:00",
       "score": 45,
       "tags": [
         "코스피"
