@@ -4,138 +4,152 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>공모주 IPO 수익 계산기 | 바이오대디</title>
-  <meta name="description" content="케이뱅크·에스팀·액스비스 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
+  <meta name="description" content="에스팀·액스비스·카나프테라퓨틱스 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="공모주 IPO 수익 계산기">
-  <meta property="og:description" content="케이뱅크·에스팀·액스비스 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
+  <meta property="og:description" content="에스팀·액스비스·카나프테라퓨틱스 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="공모주 IPO 수익 계산기">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 :root {
-  --bg: #0a0e1a;
-  --bg-card: #111827;
-  --bg-card-hover: #1a2332;
-  --bg-input: #0d1321;
-  --border: #1e293b;
-  --border-hover: #334155;
-  --text: #e2e8f0;
-  --text-dim: #94a3b8;
-  --text-muted: #64748b;
-  --accent: #3b82f6;
-  --accent-glow: rgba(59, 130, 246, 0.3);
-  --green: #22c55e;
-  --green-dim: rgba(34, 197, 94, 0.15);
-  --red: #ef4444;
-  --red-dim: rgba(239, 68, 68, 0.15);
-  --yellow: #eab308;
-  --yellow-dim: rgba(234, 179, 8, 0.15);
-  --blue: #3b82f6;
-  --blue-dim: rgba(59, 130, 246, 0.15);
-  --purple: #a855f7;
-  --radius: 12px;
-  --radius-sm: 8px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.3);
+  --bg: #faf9f6;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f7f6f3;
+  --bg-input: #f2f1ee;
+  --border: #d4d2cc;
+  --border-hover: #a8a69f;
+  --text: #121212;
+  --text-dim: #444444;
+  --text-muted: #727272;
+  --accent: #326891;
+  --accent-glow: rgba(50, 104, 145, 0.15);
+  --green: #0b6e4f;
+  --green-dim: rgba(11, 110, 79, 0.08);
+  --red: #c62828;
+  --red-dim: rgba(198, 40, 40, 0.06);
+  --yellow: #b8860b;
+  --yellow-dim: rgba(184, 134, 11, 0.06);
+  --blue: #326891;
+  --blue-dim: rgba(50, 104, 145, 0.08);
+  --purple: #6b4c9a;
+  --radius: 2px;
+  --radius-sm: 2px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --sans: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--sans);
   background: var(--bg);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
 }
 
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.container { max-width: 980px; margin: 0 auto; padding: 0 24px; }
 
 /* ---- Hero ---- */
 .hero {
-  padding: 80px 0 60px;
+  padding: 64px 0 48px;
   text-align: center;
-  background: linear-gradient(180deg, #0f172a 0%, var(--bg) 100%);
-  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  border-bottom: 3px double var(--border);
 }
 
 .hero-badge {
   display: inline-block;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 13px;
+  padding: 4px 14px;
+  border: 1px solid var(--text);
+  font-size: 11px;
   font-weight: 600;
-  color: var(--accent);
-  background: var(--blue-dim);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  margin-bottom: 24px;
-  letter-spacing: 1px;
+  color: var(--text);
+  background: transparent;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-family: var(--sans);
 }
 
 .hero h1 {
-  font-size: clamp(32px, 6vw, 52px);
-  font-weight: 800;
+  font-family: var(--sans);
+  font-size: clamp(30px, 5.5vw, 48px);
+  font-weight: 900;
   line-height: 1.2;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+  color: var(--text);
 }
 
 .highlight {
-  background: linear-gradient(135deg, var(--accent), var(--purple));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+  border-bottom: 3px solid var(--text);
+  padding-bottom: 2px;
 }
 
-.hero-sub { font-size: 17px; color: var(--text-dim); margin-bottom: 32px; }
+.hero-sub {
+  font-family: var(--sans);
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  line-height: 1.8;
+}
 
 /* IPO Selector */
 .ipo-selector {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 0;
   margin-bottom: 32px;
   flex-wrap: wrap;
+  border: 1px solid var(--border);
 }
 
 .ipo-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  padding: 16px 32px;
+  gap: 4px;
+  padding: 16px 28px;
   background: var(--bg-card);
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
+  border: none;
+  border-right: 1px solid var(--border);
   cursor: pointer;
-  transition: all 0.25s;
+  transition: all 0.2s;
   color: var(--text);
-  font-family: inherit;
-  min-width: 200px;
+  font-family: var(--sans);
+  flex: 1;
+  min-width: 180px;
 }
 
-.ipo-btn:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
+.ipo-btn:last-child { border-right: none; }
+.ipo-btn:hover { background: var(--bg-card-hover); }
 
 .ipo-btn.active {
-  border-color: var(--accent);
-  background: var(--blue-dim);
-  box-shadow: 0 0 24px var(--accent-glow);
+  background: var(--text);
+  color: #fff;
 }
 
-.ipo-btn-name { font-size: 20px; font-weight: 800; }
-.ipo-btn-desc { font-size: 12px; color: var(--text-muted); }
-.ipo-btn.active .ipo-btn-desc { color: var(--text-dim); }
+.ipo-btn-name { font-family: var(--sans); font-size: 18px; font-weight: 700; }
+.ipo-btn-desc { font-size: 11px; color: var(--text-muted); letter-spacing: 0.3px; }
+.ipo-btn.active .ipo-btn-desc { color: rgba(255,255,255,0.7); }
 
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 0;
   flex-wrap: wrap;
   margin-bottom: 36px;
 }
@@ -145,66 +159,84 @@ body {
   align-items: center;
   gap: 8px;
   padding: 10px 18px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 40px;
-  font-size: 14px;
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  position: relative;
 }
 
-.stat-label { color: var(--text-muted); }
-.stat-value { font-weight: 700; }
-.stat-value.accent { color: var(--yellow); }
-.stat-value.danger { color: var(--red); font-weight: 800; }
-.stat-value.good { color: var(--green); font-weight: 800; }
-.stat-pill.warning { border-color: rgba(239, 68, 68, 0.4); background: var(--red-dim); }
-.stat-pill.caution { border-color: rgba(234, 179, 8, 0.4); background: var(--yellow-dim); }
-.stat-pill.positive { border-color: rgba(34, 197, 94, 0.4); background: var(--green-dim); }
-.stat-value.warn { color: var(--yellow); font-weight: 800; }
+.stat-pill::after {
+  content: '|';
+  position: absolute;
+  right: -1px;
+  color: var(--border);
+  font-weight: 300;
+}
+
+.stat-pill:last-child::after { content: ''; }
+
+.stat-label { color: var(--text-muted); font-size: 12px; }
+.stat-value { font-weight: 700; font-family: var(--sans); }
+.stat-value.accent { color: var(--accent); }
+.stat-value.danger { color: var(--red); font-weight: 700; }
+.stat-value.good { color: var(--green); font-weight: 700; }
+.stat-pill.warning { background: var(--red-dim); }
+.stat-pill.caution { background: var(--yellow-dim); }
+.stat-pill.positive { background: var(--green-dim); }
+.stat-value.warn { color: var(--yellow); font-weight: 700; }
 
 .cta-btn {
   display: inline-block;
-  padding: 14px 36px;
-  background: linear-gradient(135deg, var(--accent), #2563eb);
+  padding: 12px 36px;
+  background: var(--text);
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  border-radius: 40px;
+  border: none;
   text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: var(--sans);
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s;
 }
 
-.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
+.cta-btn:hover { opacity: 0.85; }
 
 /* ---- Sections ---- */
-.section { padding: 72px 0; }
+.section { padding: 56px 0; }
 
 .section-title {
-  font-size: clamp(24px, 4vw, 32px);
-  font-weight: 800;
+  font-family: var(--sans);
+  font-size: clamp(22px, 3.5vw, 30px);
+  font-weight: 900;
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
 }
 
 .section-desc {
   text-align: center;
-  color: var(--text-dim);
-  font-size: 15px;
-  margin-bottom: 40px;
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 36px;
+  font-family: var(--sans);
+  font-style: italic;
 }
 
 /* ---- Risk Section ---- */
-.risk-section { background: linear-gradient(180deg, var(--bg) 0%, #0d1220 100%); }
+.risk-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
 
 .risk-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 24px;
 }
 
 .risk-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
   padding: 24px;
   transition: border-color 0.2s;
 }
@@ -214,40 +246,42 @@ body {
 .risk-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
 
-.risk-icon { font-size: 24px; }
-.risk-header h3 { font-size: 16px; font-weight: 700; }
+.risk-icon { font-size: 20px; }
+.risk-header h3 { font-family: var(--sans); font-size: 15px; font-weight: 700; }
 
 .risk-meter { margin-bottom: 12px; position: relative; }
 
 .meter-bar {
   display: flex;
-  height: 28px;
-  border-radius: 6px;
+  height: 24px;
   overflow: hidden;
   margin-bottom: 6px;
+  border: 1px solid var(--border);
 }
 
 .meter-zone {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   color: #fff;
 }
 
 .meter-zone.red { background: var(--red); }
-.meter-zone.yellow { background: var(--yellow); color: #000; }
+.meter-zone.yellow { background: var(--yellow); color: #fff; }
 .meter-zone.green { background: var(--green); }
 
 .meter-labels {
   display: flex;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: 10px;
   color: var(--text-muted);
 }
 
@@ -255,39 +289,40 @@ body {
   font-size: 13px;
   color: var(--text-dim);
   margin-top: 8px;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-family: var(--sans);
 }
 
 .risk-card.risk-alert {
-  border-color: rgba(239, 68, 68, 0.4);
-  background: linear-gradient(180deg, rgba(239, 68, 68, 0.06) 0%, var(--bg-card) 40%);
+  border-left: 3px solid var(--red);
 }
 
 .risk-card.risk-good {
-  border-color: rgba(34, 197, 94, 0.4);
-  background: linear-gradient(180deg, rgba(34, 197, 94, 0.06) 0%, var(--bg-card) 40%);
+  border-left: 3px solid var(--green);
 }
 
 .risk-badge-warn {
   margin-left: auto;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 10px;
+  padding: 2px 10px;
   background: var(--red-dim);
   color: var(--red);
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  border: 1px solid rgba(198, 40, 40, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .risk-badge-good {
   margin-left: auto;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 10px;
+  padding: 2px 10px;
   background: var(--green-dim);
   color: var(--green);
-  border: 1px solid rgba(34, 197, 94, 0.3);
+  border: 1px solid rgba(11, 110, 79, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .lockup-actual {
@@ -295,35 +330,32 @@ body {
   padding: 16px 0;
   margin-bottom: 12px;
   background: var(--bg-input);
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(239, 68, 68, 0.15);
+  border: 1px solid var(--border);
 }
 
-.lockup-actual.lockup-good { border-color: rgba(34, 197, 94, 0.15); }
+.lockup-actual.lockup-good { border-left: 3px solid var(--green); }
 
-.lockup-number { font-size: 42px; font-weight: 900; color: var(--red); line-height: 1; }
+.lockup-number { font-family: var(--sans); font-size: 40px; font-weight: 900; color: var(--red); line-height: 1; }
 .lockup-number.good-num { color: var(--green); }
-.lockup-unit { font-size: 20px; font-weight: 600; }
-.lockup-verdict { font-size: 13px; color: var(--red); font-weight: 600; margin-top: 4px; }
+.lockup-unit { font-size: 18px; font-weight: 600; }
+.lockup-verdict { font-size: 12px; color: var(--red); font-weight: 600; margin-top: 4px; letter-spacing: 0.5px; }
 .lockup-verdict.good-verdict { color: var(--green); }
 
 .meter-pointer { position: absolute; top: 0; transform: translateX(-50%); z-index: 2; }
 
 .pointer-line {
   width: 2px;
-  height: 28px;
-  background: #fff;
+  height: 24px;
+  background: var(--text);
   margin: 0 auto;
-  box-shadow: 0 0 4px rgba(255,255,255,0.5);
 }
 
 .pointer-label {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   color: #fff;
   background: var(--red);
   padding: 2px 6px;
-  border-radius: 4px;
   margin-top: 2px;
   white-space: nowrap;
 }
@@ -331,39 +363,38 @@ body {
 .pointer-label.pointer-label-green { background: var(--green); }
 
 .risk-card.risk-alert-yellow {
-  border-color: rgba(234, 179, 8, 0.4);
-  background: linear-gradient(180deg, rgba(234, 179, 8, 0.06) 0%, var(--bg-card) 40%);
+  border-left: 3px solid var(--yellow);
 }
 
 .risk-badge-caution {
   margin-left: auto;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 10px;
+  padding: 2px 10px;
   background: var(--yellow-dim);
   color: var(--yellow);
-  border: 1px solid rgba(234, 179, 8, 0.3);
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.float-actual { border-color: rgba(234, 179, 8, 0.15); }
+.float-actual { border-left: 3px solid var(--yellow); }
 .float-number { color: var(--yellow) !important; }
 .float-verdict { color: var(--yellow) !important; }
-.pointer-line-yellow { background: var(--yellow) !important; box-shadow: 0 0 4px rgba(234, 179, 8, 0.5) !important; }
-.pointer-label-yellow { background: var(--yellow) !important; color: #000 !important; }
+.pointer-line-yellow { background: var(--yellow) !important; }
+.pointer-label-yellow { background: var(--yellow) !important; color: #fff !important; }
 
 .risk-input-group { margin-top: 14px; }
-.risk-input-group label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+.risk-input-group label { display: block; font-size: 11px; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
 
 .risk-input-group input {
   width: 100%;
-  padding: 10px 14px;
-  background: var(--bg-input);
+  padding: 8px 12px;
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
   color: var(--text);
   font-size: 14px;
-  font-family: inherit;
+  font-family: var(--sans);
   outline: none;
   transition: border-color 0.2s;
 }
@@ -374,25 +405,24 @@ body {
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  gap: 24px;
+  margin-top: 24px;
 }
 
 .info-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
   padding: 24px;
 }
 
-.info-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+.info-card h3 { font-family: var(--sans); font-size: 15px; font-weight: 700; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
 
 .info-row {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 14px;
+  padding: 7px 0;
+  border-bottom: 1px dotted var(--border);
+  font-size: 13px;
 }
 
 .info-row:last-child { border-bottom: none; }
@@ -400,7 +430,10 @@ body {
 .info-row-value { font-weight: 600; }
 
 /* ---- Calculator ---- */
-.calc-section { background: var(--bg); }
+.calc-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
 
 .calc-wrapper {
   display: grid;
@@ -416,24 +449,22 @@ body {
 .calc-input-panel {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
   padding: 28px;
 }
 
 .input-group { margin-bottom: 16px; }
-.input-group label { display: block; font-size: 13px; font-weight: 500; color: var(--text-dim); margin-bottom: 6px; }
+.input-group label { display: block; font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
 .input-with-unit { position: relative; }
 
 .input-with-unit input {
   width: 100%;
-  padding: 12px 50px 12px 16px;
-  background: var(--bg-input);
+  padding: 10px 50px 10px 14px;
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
   color: var(--text);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  font-family: inherit;
+  font-family: var(--sans);
   outline: none;
   transition: border-color 0.2s;
 }
@@ -446,14 +477,15 @@ body {
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .main-input .input-with-unit input {
-  font-size: 24px;
-  padding: 16px 50px 16px 16px;
-  border-color: var(--accent);
-  background: rgba(59, 130, 246, 0.05);
+  font-size: 22px;
+  padding: 14px 50px 14px 14px;
+  border-color: var(--text);
+  border-width: 2px;
+  background: var(--bg-card);
 }
 
 .divider { height: 1px; background: var(--border); margin: 20px 0; }
@@ -463,15 +495,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 15px;
+  font-size: 14px;
 }
 
-.summary-value { font-weight: 700; font-size: 18px; color: var(--accent); }
-.subsection-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: var(--text-dim); }
+.summary-value { font-weight: 700; font-size: 17px; font-family: var(--sans); color: var(--accent); }
+.subsection-title { font-size: 11px; font-weight: 600; margin-bottom: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
 
 .scenario-selector {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   margin-bottom: 16px;
 }
@@ -480,11 +512,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: 12px 8px;
-  background: var(--bg-input);
+  gap: 2px;
+  padding: 10px 8px;
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.2s;
   color: var(--text);
@@ -492,33 +523,32 @@ body {
 }
 
 .scenario-btn:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
-.scenario-btn.active { border-color: var(--accent); background: var(--blue-dim); }
-.sc-label { font-size: 12px; }
-.sc-rate { font-size: 16px; font-weight: 700; }
+.scenario-btn.active { border-color: var(--text); background: var(--text); color: #fff; }
+.sc-label { font-size: 11px; }
+.sc-rate { font-size: 15px; font-weight: 700; font-family: var(--sans); }
 
 .calc-btn {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, var(--accent), #2563eb);
+  padding: 13px;
+  background: var(--text);
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   border: none;
-  border-radius: var(--radius-sm);
   cursor: pointer;
-  font-family: inherit;
-  transition: transform 0.15s, box-shadow 0.15s;
+  font-family: var(--sans);
+  transition: opacity 0.15s;
   margin-top: 8px;
+  letter-spacing: 0.5px;
 }
 
-.calc-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px var(--accent-glow); }
-.calc-btn:active { transform: translateY(0); }
+.calc-btn:hover { opacity: 0.85; }
+.calc-btn:active { opacity: 0.75; }
 
 /* Result Panel */
 .calc-result-panel {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
   padding: 28px;
   min-height: 400px;
   position: sticky;
@@ -536,7 +566,7 @@ body {
   gap: 12px;
 }
 
-.placeholder-icon { font-size: 48px; opacity: 0.4; }
+.placeholder-icon { font-size: 48px; opacity: 0.3; }
 
 .result-content { animation: fadeIn 0.3s ease; }
 
@@ -547,41 +577,44 @@ body {
 
 .result-tag {
   display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 12px;
   margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid;
 }
 
-.result-tag.positive { background: var(--green-dim); color: var(--green); }
-.result-tag.negative { background: var(--red-dim); color: var(--red); }
+.result-tag.positive { background: var(--green-dim); color: var(--green); border-color: rgba(11,110,79,0.2); }
+.result-tag.negative { background: var(--red-dim); color: var(--red); border-color: rgba(198,40,40,0.2); }
 
 .result-big-number {
-  font-size: clamp(28px, 5vw, 40px);
-  font-weight: 800;
+  font-family: var(--sans);
+  font-size: clamp(26px, 5vw, 38px);
+  font-weight: 900;
   margin-bottom: 4px;
   line-height: 1.2;
 }
 
 .result-big-number.positive { color: var(--green); }
 .result-big-number.negative { color: var(--red); }
-.result-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
-.result-details { display: flex; flex-direction: column; gap: 12px; }
+.result-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
+.result-details { display: flex; flex-direction: column; gap: 0; }
 
 .result-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 14px;
-  background: var(--bg-input);
-  border-radius: var(--radius-sm);
-  font-size: 14px;
+  padding: 9px 0;
+  border-bottom: 1px dotted var(--border);
+  font-size: 13px;
 }
 
+.result-row:last-child { border-bottom: none; }
 .result-row-label { color: var(--text-dim); }
 .result-row-value { font-weight: 600; }
-.result-divider { height: 1px; background: var(--border); margin: 8px 0; }
+.result-divider { height: 1px; background: var(--border); margin: 4px 0; }
 
 .roi-badge {
   display: flex;
@@ -589,88 +622,94 @@ body {
   justify-content: center;
   gap: 8px;
   padding: 14px;
-  border-radius: var(--radius-sm);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  margin-top: 8px;
+  font-family: var(--sans);
+  margin-top: 12px;
+  border: 2px solid;
 }
 
-.roi-badge.positive { background: var(--green-dim); color: var(--green); border: 1px solid rgba(34, 197, 94, 0.3); }
-.roi-badge.negative { background: var(--red-dim); color: var(--red); border: 1px solid rgba(239, 68, 68, 0.3); }
+.roi-badge.positive { background: var(--green-dim); color: var(--green); border-color: var(--green); }
+.roi-badge.negative { background: var(--red-dim); color: var(--red); border-color: var(--red); }
 
 /* ---- Scenario Table ---- */
-.scenario-section { background: linear-gradient(180deg, var(--bg) 0%, #0d1220 100%); }
-.scenario-table-wrap { overflow-x: auto; }
-.scenario-empty { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 14px; }
+.scenario-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
 
-.sc-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.sc-table th { padding: 12px 16px; background: var(--bg-card); border: 1px solid var(--border); font-weight: 600; text-align: center; color: var(--text-dim); font-size: 13px; }
-.sc-table td { padding: 14px 16px; border: 1px solid var(--border); text-align: center; background: var(--bg); }
-.sc-table tr.active-row td { background: var(--blue-dim); border-color: rgba(59, 130, 246, 0.3); }
+.scenario-table-wrap { overflow-x: auto; }
+.scenario-empty { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 13px; font-family: var(--sans); font-style: italic; }
+
+.sc-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.sc-table th { padding: 10px 14px; background: var(--bg-input); border: 1px solid var(--border); font-weight: 600; text-align: center; color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+.sc-table td { padding: 12px 14px; border: 1px solid var(--border); text-align: center; background: var(--bg-card); }
+.sc-table tr.active-row td { background: var(--blue-dim); border-color: rgba(50, 104, 145, 0.2); }
 .sc-table .profit-cell.positive { color: var(--green); font-weight: 700; }
 .sc-table .profit-cell.negative { color: var(--red); font-weight: 700; }
 
 /* ---- Strategy ---- */
-.strategy-section { background: var(--bg); }
+.strategy-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
 
 .strategy-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  gap: 24px;
   margin-bottom: 40px;
 }
 
 .strategy-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
   padding: 24px;
-  position: relative;
 }
 
-.strategy-card.recommended { border-color: var(--accent); box-shadow: 0 0 24px var(--accent-glow); }
+.strategy-card.recommended { border: 2px solid var(--text); }
 
 .strat-badge {
   display: inline-block;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 2px 10px;
   background: var(--bg-input);
   color: var(--text-muted);
   margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.recommended .strat-badge { background: var(--blue-dim); color: var(--accent); }
-.strategy-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 12px; }
-.strat-condition { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+.recommended .strat-badge { background: var(--text); color: #fff; }
+.strategy-card h3 { font-family: var(--sans); font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+.strat-condition { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; font-style: italic; }
 .strategy-card ul { list-style: none; margin-bottom: 16px; }
-.strategy-card li { font-size: 13px; padding: 4px 0; color: var(--text-dim); }
-.strategy-card li::before { content: '· '; color: var(--text-muted); }
+.strategy-card li { font-size: 13px; padding: 3px 0; color: var(--text-dim); }
+.strategy-card li::before { content: '- '; color: var(--text-muted); }
 
 .strat-verdict {
   font-size: 13px;
   font-weight: 600;
   padding: 10px 14px;
   background: var(--bg-input);
-  border-radius: var(--radius-sm);
   color: var(--text-dim);
-  border-left: 3px solid var(--text-muted);
+  border-left: 3px solid var(--border);
+  font-family: var(--sans);
 }
 
-.recommended .strat-verdict { border-left-color: var(--accent); color: var(--accent); background: var(--blue-dim); }
+.recommended .strat-verdict { border-left-color: var(--text); color: var(--text); background: var(--blue-dim); }
 
 /* Split Calculator */
 .split-calc {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
   padding: 28px;
   margin-bottom: 32px;
 }
 
-.split-calc h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-.split-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+.split-calc h3 { font-family: var(--sans); font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.split-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; font-style: italic; }
 
 .split-inputs {
   display: grid;
@@ -679,33 +718,35 @@ body {
   margin-bottom: 16px;
 }
 
-.split-group label { display: block; font-size: 13px; color: var(--text-dim); margin-bottom: 6px; }
-.split-group .input-with-unit input { font-size: 15px; padding: 10px 50px 10px 14px; }
+.split-group label { display: block; font-size: 11px; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+.split-group .input-with-unit input { font-size: 14px; padding: 8px 50px 8px 12px; }
 .range-wrap { padding: 0 4px; }
 
 .range-wrap input[type="range"] {
   width: 100%;
-  height: 6px;
+  height: 4px;
   -webkit-appearance: none;
   appearance: none;
   background: var(--border);
-  border-radius: 3px;
+  border-radius: 0;
   outline: none;
   margin: 8px 0;
 }
 
 .range-wrap input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--text);
   cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-.range-labels { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-dim); }
-.split-btn { background: linear-gradient(135deg, var(--green), #16a34a); margin-top: 4px; }
-.split-btn:hover { box-shadow: 0 6px 24px rgba(34, 197, 94, 0.3); }
+.range-labels { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-dim); }
+.split-btn { background: var(--green); margin-top: 4px; }
+.split-btn:hover { opacity: 0.85; }
 .split-result { margin-top: 16px; }
 
 .split-result-grid {
@@ -715,130 +756,123 @@ body {
   margin-bottom: 12px;
 }
 
-.split-box { background: var(--bg-input); border-radius: var(--radius-sm); padding: 14px; text-align: center; }
-.split-box-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
-.split-box-value { font-size: 18px; font-weight: 700; }
+.split-box { background: var(--bg-input); padding: 14px; text-align: center; border: 1px solid var(--border); }
+.split-box-label { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+.split-box-value { font-size: 17px; font-weight: 700; font-family: var(--sans); }
 
 .split-total {
   background: var(--blue-dim);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: var(--radius-sm);
+  border: 1px solid rgba(50, 104, 145, 0.2);
   padding: 14px;
   text-align: center;
 }
 
-.split-total-label { font-size: 13px; color: var(--text-dim); margin-bottom: 2px; }
-.split-total-value { font-size: 22px; font-weight: 800; }
+.split-total-label { font-size: 12px; color: var(--text-dim); margin-bottom: 2px; }
+.split-total-value { font-size: 20px; font-weight: 900; font-family: var(--sans); }
 .split-total-value.positive { color: var(--green); }
 .split-total-value.negative { color: var(--red); }
 
 /* ---- Summary ---- */
-.summary-section { background: linear-gradient(180deg, #0d1220 0%, var(--bg) 100%); padding-bottom: 40px; }
+.summary-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding-bottom: 40px;
+}
 
 .summary-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  gap: 24px;
 }
 
 .sum-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
   padding: 24px;
   text-align: center;
 }
 
-.sum-icon { font-size: 32px; margin-bottom: 12px; }
-.sum-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-.sum-range { font-size: 24px; font-weight: 800; color: var(--accent); margin-bottom: 8px; }
+.sum-icon { font-size: 28px; margin-bottom: 10px; }
+.sum-card h3 { font-family: var(--sans); font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.sum-range { font-family: var(--sans); font-size: 22px; font-weight: 900; color: var(--accent); margin-bottom: 8px; }
 .sum-card p { font-size: 13px; color: var(--text-dim); }
 .sum-list { list-style: none; text-align: left; display: inline-block; }
 .sum-list li { font-size: 13px; color: var(--text-dim); padding: 3px 0; }
 
 /* ---- Disclaimer ---- */
-.disclaimer { padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.disclaimer p { font-size: 13px; color: var(--text-dim); text-align: center; line-height: 1.8; margin-bottom: 12px; font-weight: 600; }
-.disclaimer-list { list-style: none; max-width: 760px; margin: 0 auto; text-align: left; }
-.disclaimer-list li { font-size: 12px; color: var(--text-muted); line-height: 1.8; padding: 2px 0; padding-left: 16px; position: relative; }
-.disclaimer-list li::before { content: '·'; position: absolute; left: 4px; color: var(--text-muted); }
+.disclaimer { padding: 24px 0; border-top: 3px double var(--border); }
+.disclaimer p { font-size: 12px; color: var(--text-dim); text-align: center; line-height: 1.8; margin-bottom: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.disclaimer-list { list-style: none; max-width: 720px; margin: 0 auto; text-align: left; }
+.disclaimer-list li { font-size: 11px; color: var(--text-muted); line-height: 1.8; padding: 2px 0; padding-left: 16px; position: relative; }
+.disclaimer-list li::before { content: '-'; position: absolute; left: 4px; color: var(--text-muted); }
 
 /* ---- Footer ---- */
-.footer { padding: 32px 0; text-align: center; }
-.footer-links { margin-bottom: 12px; }
-.footer-links a { color: var(--text-dim); text-decoration: none; font-size: 14px; transition: color 0.2s; }
-.footer-links a:hover { color: var(--accent); }
-.footer-dot { color: var(--text-muted); margin: 0 8px; }
-.copyright { font-size: 13px; color: var(--text-muted); }
+.footer { padding: 32px 0; text-align: center; border-top: 1px solid var(--border); }
+.footer-links { margin-bottom: 10px; }
+.footer-links a { color: var(--text-dim); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--accent); text-decoration: underline; }
+.footer-dot { color: var(--border); margin: 0 8px; }
+.copyright { font-size: 12px; color: var(--text-muted); }
 
 /* ---- Blog Banner ---- */
-.blog-banner-wrap { padding: 0 20px 32px; max-width: 1100px; margin: 0 auto; }
+.blog-banner-wrap { padding: 0 24px 32px; max-width: 980px; margin: 0 auto; }
 
 .blog-banner {
   display: block;
   background: var(--bg-card);
-  border-radius: var(--radius);
-  padding: 24px;
+  padding: 20px 24px;
   text-decoration: none;
   color: var(--text);
   border: 1px solid var(--border);
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   position: relative;
-  overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  border-left: 3px solid var(--accent);
 }
 
 .blog-banner:last-child { margin-bottom: 0; }
 
 .blog-banner:hover {
-  border-color: var(--accent);
-  box-shadow: 0 4px 20px var(--accent-glow);
-  transform: translateY(-2px);
+  border-left-color: var(--text);
+  background: var(--bg-card-hover);
 }
 
-.blog-banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, var(--accent), var(--purple));
-}
+.blog-banner::before { content: none; }
 
 .blog-banner-badge {
   display: inline-block;
-  background: var(--blue-dim);
+  background: transparent;
   color: var(--accent);
-  font-size: 0.7rem;
+  font-size: 10px;
   font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  letter-spacing: 0.5px;
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 1px 8px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  border: 1px solid var(--accent);
+  text-transform: uppercase;
 }
 
 .blog-banner-title {
+  font-family: var(--sans);
   font-size: 1rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   line-height: 1.4;
 }
 
 .blog-banner-desc {
-  font-size: 0.82rem;
-  color: var(--text-dim);
+  font-size: 0.8rem;
+  color: var(--text-muted);
   line-height: 1.5;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .blog-banner-cta {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--accent);
 }
@@ -848,10 +882,12 @@ body {
 
 /* ---- Responsive ---- */
 @media (max-width: 640px) {
-  .hero { padding: 56px 0 40px; }
+  .hero { padding: 48px 0 36px; }
   .hero-stats { flex-direction: column; align-items: center; }
-  .ipo-selector { flex-direction: column; align-items: center; }
-  .ipo-btn { min-width: 80%; }
+  .stat-pill::after { content: ''; }
+  .ipo-selector { flex-direction: column; }
+  .ipo-btn { min-width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
+  .ipo-btn:last-child { border-bottom: none; }
   .risk-grid { grid-template-columns: 1fr; }
   .info-grid { grid-template-columns: 1fr; }
   .scenario-selector { grid-template-columns: 1fr 1fr; }
@@ -861,7 +897,7 @@ body {
 }
 
 @media (min-width: 640px) {
-  .blog-banner-title { font-size: 1.1rem; }
+  .blog-banner-title { font-size: 1.05rem; }
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -871,9 +907,9 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
 </head>
 <body>
   <!-- Top Nav -->
-  <nav style="background:rgba(10,14,26,0.9);border-bottom:1px solid #1e293b;padding:0.6rem 1.5rem;position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);">
-    <div style="max-width:1060px;margin:0 auto;display:flex;align-items:center;gap:1rem;">
-      <a href="https://farmingdollar.com" style="font-size:0.95rem;font-weight:700;text-decoration:none;color:#e2e8f0;transition:color 0.2s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#e2e8f0'">&#x2190; BioDaddy Hub</a>
+  <nav style="background:rgba(250,249,246,0.95);border-bottom:1px solid #d4d2cc;padding:0.5rem 1.5rem;position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);">
+    <div style="max-width:980px;margin:0 auto;display:flex;align-items:center;gap:1rem;">
+      <a href="https://farmingdollar.com" style="font-family:'Pretendard',sans-serif;font-size:0.9rem;font-weight:700;text-decoration:none;color:#121212;transition:color 0.2s;" onmouseover="this.style.color='#326891'" onmouseout="this.style.color='#121212'">&#x2190; BioDaddy Hub</a>
     </div>
   </nav>
 
@@ -886,17 +922,17 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
 
       <!-- IPO Selector -->
       <div class="ipo-selector">
-        <button class="ipo-btn active" data-ipo="kbank">
-          <span class="ipo-btn-name">케이뱅크</span>
-          <span class="ipo-btn-desc">인터넷전문은행 · 3/3 상장</span>
-        </button>
-        <button class="ipo-btn" data-ipo="esteem">
+        <button class="ipo-btn active" data-ipo="esteem">
           <span class="ipo-btn-name">에스팀</span>
           <span class="ipo-btn-desc">브랜드 마케팅 콘텐츠 · 3/6 상장</span>
         </button>
         <button class="ipo-btn" data-ipo="axbis">
           <span class="ipo-btn-name">액스비스</span>
           <span class="ipo-btn-desc">AI 레이저 솔루션 · 3/9 상장</span>
+        </button>
+        <button class="ipo-btn" data-ipo="kanaph">
+          <span class="ipo-btn-name">카나프테라퓨틱스</span>
+          <span class="ipo-btn-desc">유전체 혁신신약 · 3/16 상장</span>
         </button>
       </div>
 
@@ -1044,12 +1080,24 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
               <span class="sc-label">🔴 과열</span>
               <span class="sc-rate">+50%</span>
             </button>
+            <button class="scenario-btn" data-rate="100" data-color="red">
+              <span class="sc-label">🚀 따블</span>
+              <span class="sc-rate">+100%</span>
+            </button>
+            <button class="scenario-btn" data-rate="160" data-color="red">
+              <span class="sc-label">🔥 따상</span>
+              <span class="sc-rate">+160%</span>
+            </button>
+            <button class="scenario-btn" data-rate="238" data-color="red">
+              <span class="sc-label">💥 따따상</span>
+              <span class="sc-rate">+238%</span>
+            </button>
           </div>
 
           <div class="input-group">
             <label for="customRate">직접 입력 (%)</label>
             <div class="input-with-unit">
-              <input type="number" id="customRate" placeholder="15" min="-30" max="100" step="1">
+              <input type="number" id="customRate" placeholder="15" min="-30" max="300" step="1">
               <span class="unit">%</span>
             </div>
           </div>
@@ -1137,19 +1185,6 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
     </div>
   </section>
 
-  <!-- Blog Banner -->
-  <div class="blog-banner-wrap">
-    <a href="https://blog.naver.com/biodad/224193182306" target="_blank" rel="noopener" class="blog-banner">
-      <span class="blog-banner-badge">BLOG</span>
-      <div class="blog-banner-title">케이뱅크 IPO 상장일 분석｜공모가 8,300원, 시초가 어디까지 갈까?</div>
-      <div class="blog-banner-desc">공모가·기관 확약·유통물량 분석과 시초가 시나리오, 이 계산기 활용법까지 한 번에 정리했습니다.</div>
-      <span class="blog-banner-cta">
-        자세히 보기
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </span>
-    </a>
-  </div>
-
   <!-- Disclaimer -->
   <div class="disclaimer">
     <div class="container">
@@ -1185,42 +1220,6 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
   // IPO 데이터 정의
   // =============================================
   const IPO_DATA = {
-    kbank: {
-      name: '케이뱅크',
-      nameEn: 'K bank',
-      sector: '인터넷전문은행',
-      listingDate: '2026.03.03 (월)',
-      listingMarket: '코스피',
-      ipoPrice: 8300,
-      priceBand: '8,300원 ~ 10,000원',
-      bandPosition: '하단 확정',
-      bandPositionType: 'caution',
-      marketCap: '약 3.37조원',
-      lockupRate: 12.4,
-      lockupLabel: '매물 압력 구간',
-      lockupSeverity: 'danger',
-      floatRate: 36.35,
-      floatLabel: '매물 부담 ~ 변동성 큰 구간',
-      competitionRatio: '약 35 : 1',
-      institutions: '-',
-      totalShares: '82,192,000주',
-      publicShares: '약 20,548,000주 (25%)',
-      totalAmount: '약 6,822억원',
-      underwriter: 'NH투자증권·KB증권',
-      minShares: '10주',
-      minDeposit: '41,500원',
-      lockupNote: '기관들이 장기 투자로 베팅할 만큼의 <strong>확신을 갖지 못한 것</strong>으로 해석됩니다. 상장일 기관 매물 출회 압력이 크며, IPO 초반 가격은 실적보다 <strong>수급</strong>이 더 중요합니다.',
-      floatNote: '상장 당일 유통가능 비율 <strong>36.35%</strong>로, 30~40% 구간에 해당합니다. 매물 부담이 상당하며 장중 변동성이 클 수 있습니다.',
-      summaryRange: '+10% ~ +20%',
-      summaryPriceRange: '8,700원 ~ 10,300원',
-      summaryRisks: [
-        '기관 확약 12.4% (매물 압력)',
-        '유통물량 36.35%',
-        '플랫폼 프리미엄 약함',
-        '금융주 섹터 영향 큼',
-      ],
-      strategyNote: '기관 확약 12.4%로 취약',
-    },
     esteem: {
       name: '에스팀',
       nameEn: 'ESTEEM',
@@ -1290,6 +1289,41 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
         'AI/로봇 테마 변동성',
       ],
       strategyNote: '기관 확약 78.1%로 매우 우수',
+    },
+    kanaph: {
+      name: '카나프테라퓨틱스',
+      nameEn: 'Kanaph Therapeutics',
+      sector: '유전체 기반 혁신신약 (바이오)',
+      listingDate: '2026.03.16 (월)',
+      listingMarket: '코스닥 (기술특례)',
+      ipoPrice: 20000,
+      priceBand: '16,000원 ~ 20,000원',
+      bandPosition: '상단 확정',
+      bandPositionType: 'good',
+      marketCap: '약 2,591억원',
+      lockupRate: 76.1,
+      lockupLabel: '수급 매우 안정',
+      lockupSeverity: 'good',
+      floatRate: 40.7,
+      floatLabel: '매물 부담 ~ 변동성 큰 구간',
+      competitionRatio: '962.1 : 1',
+      institutions: '2,327개',
+      totalShares: '2,000,000주',
+      publicShares: '약 500,000주 (25%)',
+      totalAmount: '약 400억원',
+      underwriter: '한국투자증권',
+      minShares: '10주',
+      minDeposit: '100,000원',
+      lockupNote: '기관 확약 <strong>76.1%</strong>로 역대 최고 수준입니다. 15일 이상 의무보유 확약 비율이 매우 높아 상장 초기 매물 압력이 극히 적고, 수급이 매우 안정적입니다.',
+      floatNote: '상장 당일 유통가능 비율 <strong>40.7%</strong>로, 40% 이상 구간에 해당합니다. 유통물량이 다소 많으나, 높은 기관 확약률(76.1%)이 실질 유통물량을 크게 줄여주는 효과가 있습니다.',
+      summaryRange: '+20% ~ +50%',
+      summaryPriceRange: '24,000원 ~ 30,000원',
+      summaryRisks: [
+        '바이오 섹터 높은 변동성',
+        '유통물량 40.7%',
+        '기술특례 상장 (매출 미확보 리스크)',
+      ],
+      strategyNote: '기관 확약 76.1%로 매우 우수',
     },
   };
 
@@ -1435,7 +1469,7 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
       verdict.className = 'lockup-verdict good-verdict';
       pointerLine.className = 'pointer-line';
       pointerLine.style.background = 'var(--green)';
-      pointerLine.style.boxShadow = '0 0 4px rgba(34,197,94,0.5)';
+      pointerLine.style.boxShadow = 'none';
       pointerLabel.className = 'pointer-label pointer-label-green';
     } else if (data.lockupSeverity === 'danger') {
       card.className = 'risk-card risk-alert';
@@ -1728,8 +1762,8 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
             </span>
           </div>
         </div>
-        ${lockupLabel ? '<div class="result-row" style="margin-top:12px;background:' + (parseFloat($lockupRate.value) >= 40 ? 'var(--green-dim);border:1px solid rgba(34,197,94,0.2)' : 'var(--red-dim);border:1px solid rgba(239,68,68,0.2)') + '"><span class="result-row-label">🏛️ ' + lockupLabel + '</span><span class="result-row-value" style="color:' + (parseFloat($lockupRate.value) >= 40 ? 'var(--green)' : 'var(--red)') + '">' + (parseFloat($lockupRate.value) >= 40 ? '수급 안정' : '매물 압력') + '</span></div>' : ''}
-        ${floatLabel ? '<div class="result-row" style="background:var(--yellow-dim);border:1px solid rgba(234,179,8,0.2)"><span class="result-row-label">📊 ' + floatLabel + '</span><span class="result-row-value" style="color:var(--yellow)">변동성 주의</span></div>' : ''}
+        ${lockupLabel ? '<div class="result-row" style="margin-top:12px;background:' + (parseFloat($lockupRate.value) >= 40 ? 'var(--green-dim);border:1px solid rgba(11,110,79,0.15)' : 'var(--red-dim);border:1px solid rgba(198,40,40,0.15)') + '"><span class="result-row-label">🏛️ ' + lockupLabel + '</span><span class="result-row-value" style="color:' + (parseFloat($lockupRate.value) >= 40 ? 'var(--green)' : 'var(--red)') + '">' + (parseFloat($lockupRate.value) >= 40 ? '수급 안정' : '매물 압력') + '</span></div>' : ''}
+        ${floatLabel ? '<div class="result-row" style="background:var(--yellow-dim);border:1px solid rgba(184,134,11,0.15)"><span class="result-row-label">📊 ' + floatLabel + '</span><span class="result-row-value" style="color:var(--yellow)">변동성 주의</span></div>' : ''}
         <div class="roi-badge ${isPositive ? 'positive' : 'negative'}">
           수익률 ${rate >= 0 ? '+' : ''}${rate}%${riskNote ? ' · ' + riskNote : ''}
         </div>
@@ -1744,6 +1778,9 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
       { label: '🟢 기본', rate: 15 },
       { label: '🟡 강한 수급', rate: 30 },
       { label: '🔴 과열', rate: 50 },
+      { label: '🚀 따블', rate: 100 },
+      { label: '🔥 따상', rate: 160 },
+      { label: '💥 따따상', rate: 238 },
     ];
     const currentRate = parseFloat($customRate.value) || selectedRate;
 
@@ -1811,7 +1848,7 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
   // =============================================
   // 초기화
   // =============================================
-  selectIPO('kbank');
+  selectIPO('esteem');
   $customRate.value = selectedRate;
 })();
 </script>
