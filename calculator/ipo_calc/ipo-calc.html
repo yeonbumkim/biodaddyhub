@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>공모주 IPO 수익 계산기 | 바이오대디</title>
-  <meta name="description" content="에스팀·액스비스·카나프테라퓨틱스 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
+  <meta name="description" content="아이엠바이오로직스·카나프테라퓨틱스·메쥬·한패스 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="공모주 IPO 수익 계산기">
-  <meta property="og:description" content="에스팀·액스비스·카나프테라퓨틱스 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
+  <meta property="og:description" content="아이엠바이오로직스·카나프테라퓨틱스·메쥬·한패스 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
@@ -922,17 +922,21 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
 
       <!-- IPO Selector -->
       <div class="ipo-selector">
-        <button class="ipo-btn active" data-ipo="esteem">
-          <span class="ipo-btn-name">에스팀</span>
-          <span class="ipo-btn-desc">브랜드 마케팅 콘텐츠 · 3/6 상장</span>
-        </button>
-        <button class="ipo-btn" data-ipo="axbis">
-          <span class="ipo-btn-name">액스비스</span>
-          <span class="ipo-btn-desc">AI 레이저 솔루션 · 3/9 상장</span>
+        <button class="ipo-btn active" data-ipo="imbio">
+          <span class="ipo-btn-name">아이엠바이오로직스</span>
+          <span class="ipo-btn-desc">항체 바이오 · 3/20 상장</span>
         </button>
         <button class="ipo-btn" data-ipo="kanaph">
           <span class="ipo-btn-name">카나프테라퓨틱스</span>
           <span class="ipo-btn-desc">유전체 혁신신약 · 3/16 상장</span>
+        </button>
+        <button class="ipo-btn" data-ipo="meju">
+          <span class="ipo-btn-name">메쥬</span>
+          <span class="ipo-btn-desc">디지털 헬스케어 · 3/26 상장</span>
+        </button>
+        <button class="ipo-btn" data-ipo="hanpass">
+          <span class="ipo-btn-name">한패스</span>
+          <span class="ipo-btn-desc">외국인 금융서비스 · 상장일 미정</span>
         </button>
       </div>
 
@@ -1224,75 +1228,40 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
   // IPO 데이터 정의
   // =============================================
   const IPO_DATA = {
-    esteem: {
-      name: '에스팀',
-      nameEn: 'ESTEEM',
-      sector: '브랜드 마케팅 콘텐츠',
-      listingDate: '2026.03.06 (금)',
+    imbio: {
+      name: '아이엠바이오로직스',
+      nameEn: 'IM Biologics',
+      sector: '항체 바이오의약품 (CDMO)',
+      listingDate: '2026.03.20 (목)',
       listingMarket: '코스닥',
-      ipoPrice: 8500,
-      priceBand: '7,000원 ~ 8,500원',
-      bandPosition: '상단 확정',
-      bandPositionType: 'good',   // good | caution | warning
-      marketCap: '약 738억원',
-      lockupRate: 42.45,
-      lockupLabel: '수급 안정 구간',
-      lockupSeverity: 'good',     // good | caution | danger
-      floatRate: 34.69,
-      floatLabel: '매물 부담 구간',
-      competitionRatio: '1,334.91 : 1',
-      institutions: '2,263개',
-      totalShares: '1,800,000주',
-      publicShares: '450,000주 (25%)',
-      totalAmount: '약 153억원',
-      underwriter: '한국투자증권',
-      minShares: '20주',
-      minDeposit: '85,000원',
-      lockupNote: '기관 확약 <strong>42.45%</strong>로 양호한 수준입니다. 의무보유 확약 비율이 높아 상장 초기 매물 부담이 적고, 수급 안정을 기대할 수 있습니다.',
-      floatNote: '상장 당일 유통가능 비율 <strong>34.69%</strong>로, 30~40% 구간에 해당합니다. 유통물량이 다소 있어 장중 변동성이 있을 수 있습니다.',
-      summaryRange: '+15% ~ +40%',
-      summaryPriceRange: '9,800원 ~ 11,900원',
-      summaryRisks: [
-        '소형 IPO (공모금액 153억)',
-        '유통물량 34.69%',
-        '콘텐츠/마케팅 업종 변동성',
-      ],
-      strategyNote: '기관 확약 42.45%로 양호',
-    },
-    axbis: {
-      name: '액스비스',
-      nameEn: 'AXBIS',
-      sector: 'AI 레이저 솔루션 (2차전지)',
-      listingDate: '2026.03.09 (월)',
-      listingMarket: '코스닥',
-      ipoPrice: 11500,
-      priceBand: '10,100원 ~ 11,500원',
+      ipoPrice: 26000,
+      priceBand: '19,000원 ~ 26,000원',
       bandPosition: '상단 확정',
       bandPositionType: 'good',
-      marketCap: '약 1,073억원',
-      lockupRate: 78.1,
+      marketCap: '약 3,842억원',
+      lockupRate: 76,
       lockupLabel: '수급 매우 안정',
       lockupSeverity: 'good',
-      floatRate: 33.05,
-      floatLabel: '매물 부담 구간',
-      competitionRatio: '1,124.21 : 1',
-      institutions: '2,411개',
-      totalShares: '2,300,000주',
-      publicShares: '575,000주 (25%)',
-      totalAmount: '약 265억원',
-      underwriter: '미래에셋증권',
-      minShares: '20주',
-      minDeposit: '115,000원',
-      lockupNote: '기관 확약 <strong>78.1%</strong>로 매우 높은 수준입니다. 2026년 최고 수준의 기관 확약률로, 상장 후 매물 압력이 적고 수급이 매우 안정적입니다. 3개월 이상 장기 확약 기관이 41.68%에 달합니다.',
-      floatNote: '상장 당일 유통가능 비율 <strong>33.05%</strong>로, 30~40% 구간에 해당합니다. 다만 높은 기관 확약률(78.1%)이 실질 유통물량을 줄여주는 효과가 있습니다.',
+      floatRate: 23.82,
+      floatLabel: '수급 유리 구간',
+      competitionRatio: '839.23 : 1',
+      institutions: '2,333개',
+      totalShares: '2,000,000주',
+      publicShares: '약 500,000주 (25%)',
+      totalAmount: '약 520억원',
+      underwriter: '-',
+      minShares: '10주',
+      minDeposit: '130,000원',
+      lockupNote: '기관 확약 <strong>76%</strong>(신청물량 기준)로 매우 높은 수준입니다. 전체 기관 수 기준 약 80%가 의무보유 확약을 제시했으며, 3개월 이상 장기 확약이 약 60%에 달합니다.',
+      floatNote: '상장 당일 유통가능 비율 <strong>23.82%</strong>로, 20~30% 구간에 해당합니다. 유통물량이 적어 수급이 유리하며, 기존 주주 즉시 유통 가능 물량은 약 10.3%에 불과합니다.',
       summaryRange: '+20% ~ +50%',
-      summaryPriceRange: '13,800원 ~ 17,250원',
+      summaryPriceRange: '31,200원 ~ 39,000원',
       summaryRisks: [
-        '2차전지 섹터 의존도',
-        '유통물량 33.05%',
-        'AI/로봇 테마 변동성',
+        '바이오 섹터 높은 변동성',
+        '기술특례 상장 리스크',
+        '상장 3개월 후 유통물량 57%로 확대',
       ],
-      strategyNote: '기관 확약 78.1%로 매우 우수',
+      strategyNote: '기관 확약 76%로 매우 우수',
     },
     kanaph: {
       name: '카나프테라퓨틱스',
@@ -1329,6 +1298,76 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
       ],
       strategyNote: '기관 확약 76.1%로 매우 우수',
     },
+    meju: {
+      name: '메쥬',
+      nameEn: 'MEJU',
+      sector: '디지털 헬스케어 (의료기기)',
+      listingDate: '2026.03.26 (수)',
+      listingMarket: '코스닥 (기술특례)',
+      ipoPrice: 0,
+      priceBand: '16,700원 ~ 21,600원',
+      bandPosition: '수요예측 진행중',
+      bandPositionType: 'caution',
+      marketCap: '약 1,623~2,099억원',
+      lockupRate: 0,
+      lockupLabel: '알 수 없음',
+      lockupSeverity: 'caution',
+      floatRate: 0,
+      floatLabel: '알 수 없음',
+      competitionRatio: '알 수 없음',
+      institutions: '알 수 없음',
+      totalShares: '1,345,000주',
+      publicShares: '알 수 없음',
+      totalAmount: '약 225~291억원',
+      underwriter: '신한투자증권',
+      minShares: '-',
+      minDeposit: '-',
+      lockupNote: '수요예측이 진행 중(3/5~3/11)이므로 기관 확약 비율이 아직 확정되지 않았습니다. 수요예측 결과 발표 후 업데이트 예정입니다.',
+      floatNote: '유통가능 비율은 아직 공개되지 않았습니다. 상장 전 공시자료를 통해 확인하시기 바랍니다.',
+      summaryRange: '알 수 없음',
+      summaryPriceRange: '알 수 없음',
+      summaryRisks: [
+        '기술특례 상장 (적자 기업)',
+        '매출처 편중 리스크',
+        '수요예측 결과 미확정',
+      ],
+      strategyNote: '수요예측 결과 확인 필요',
+    },
+    hanpass: {
+      name: '한패스',
+      nameEn: 'HANPASS',
+      sector: '외국인 금융·생활편의 서비스',
+      listingDate: '미정',
+      listingMarket: '코스닥',
+      ipoPrice: 0,
+      priceBand: '17,000원 ~ 19,000원',
+      bandPosition: '수요예측 진행중',
+      bandPositionType: 'caution',
+      marketCap: '알 수 없음',
+      lockupRate: 0,
+      lockupLabel: '알 수 없음',
+      lockupSeverity: 'caution',
+      floatRate: 0,
+      floatLabel: '알 수 없음',
+      competitionRatio: '알 수 없음',
+      institutions: '알 수 없음',
+      totalShares: '1,100,000주',
+      publicShares: '알 수 없음',
+      totalAmount: '약 187~209억원',
+      underwriter: '한국투자증권·대신증권',
+      minShares: '-',
+      minDeposit: '-',
+      lockupNote: '수요예측이 진행 중(3/6~3/12)이므로 기관 확약 비율이 아직 확정되지 않았습니다. 수요예측 결과 발표 후 업데이트 예정입니다.',
+      floatNote: '유통가능 비율은 아직 공개되지 않았습니다. 상장 전 공시자료를 통해 확인하시기 바랍니다.',
+      summaryRange: '알 수 없음',
+      summaryPriceRange: '알 수 없음',
+      summaryRisks: [
+        '수요예측 결과 미확정',
+        '공모가 미확정',
+        '상장일 미정',
+      ],
+      strategyNote: '수요예측 결과 확인 필요',
+    },
   };
 
   // =============================================
@@ -1358,7 +1397,7 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
   const ipoBtns = document.querySelectorAll('.ipo-btn');
   const scenarioBtns = document.querySelectorAll('.scenario-btn');
   let selectedRate = 15;
-  let currentIPO = 'esteem';
+  let currentIPO = 'imbio';
 
   // =============================================
   // 유틸
@@ -1366,8 +1405,14 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
   function fmt(n) { return n.toLocaleString('ko-KR'); }
 
   function fmtWon(n) {
-    if (Math.abs(n) >= 100000000) return (n / 100000000).toFixed(2) + '억원';
-    if (Math.abs(n) >= 10000) return fmt(Math.round(n / 10000)) + '만원';
+    const abs = Math.abs(n);
+    if (abs >= 100000000) return (n / 100000000).toFixed(2) + '억원';
+    if (abs >= 10000) {
+      const man = Math.floor(n / 10000);
+      const rest = Math.round(n % 10000);
+      if (rest === 0) return fmt(man) + '만원';
+      return fmt(man) + '만' + fmt(rest) + '원';
+    }
     return fmt(Math.round(n)) + '원';
   }
 
@@ -1853,7 +1898,7 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
   // =============================================
   // 초기화
   // =============================================
-  selectIPO('esteem');
+  selectIPO('imbio');
   $customRate.value = selectedRate;
 })();
 </script>
