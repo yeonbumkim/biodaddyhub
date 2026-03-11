@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-03-11T10:35:50.357386+09:00",
-  "basis_date": "2026-03-11",
+  "generated_at": "2026-03-12T08:42:58.999192+09:00",
+  "basis_date": "2026-03-12",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 03월 11일",
-      "subtitle": "유류세 확대·종합과세 확대",
-      "url": "tax_policy/tax_20260311_102409.html",
-      "published_at": "2026-03-11T10:24:09+09:00",
+      "title": "세금 브리핑 - 2026년 03월 12일",
+      "subtitle": "종합소득세·환급신청 시작",
+      "url": "tax_policy/tax_20260312_083052.html",
+      "published_at": "2026-03-12T08:30:52+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 03월 11일",
-      "subtitle": "공모가 변동·상장 성적 분석",
-      "url": "ipo/ipo_20260311_103218.html",
-      "published_at": "2026-03-11T10:32:18+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 03월 12일",
+      "subtitle": "공모주 청약·상장 성적표",
+      "url": "ipo/ipo_20260312_083900.html",
+      "published_at": "2026-03-12T08:39:00+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 03월 11일",
-      "subtitle": "코스피200 수익률·미국 ETF 자금",
-      "url": "kospi_etf/kospi_etf_20260311_103413.html",
-      "published_at": "2026-03-11T10:34:13+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 03월 12일",
+      "subtitle": "레버리지 ETF 중독·수익률 상승",
+      "url": "kospi_etf/kospi_etf_20260312_084113.html",
+      "published_at": "2026-03-12T08:41:13+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 03월 11일",
-      "subtitle": "백신 수주·배터리 발표·게임주 상승",
-      "url": "kosdaq/kosdaq_20260311_103338.html",
-      "published_at": "2026-03-11T10:33:38+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 03월 12일",
+      "subtitle": "바이오주 저가 매수·게임주 반등",
+      "url": "kosdaq/kosdaq_20260312_084025.html",
+      "published_at": "2026-03-12T08:40:25+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 03월 11일",
-      "subtitle": "아이에스동서 급등·반도체 수급 우호적",
-      "url": "kospi/kospi_20260311_103301.html",
-      "published_at": "2026-03-11T10:33:01+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 03월 12일",
+      "subtitle": "코스피200·반도체·바이오",
+      "url": "kospi/kospi_20260312_083945.html",
+      "published_at": "2026-03-12T08:39:45+09:00",
       "score": 45,
       "tags": [
         "코스피"
