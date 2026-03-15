@@ -1,0 +1,14 @@
+🤖 3/16(월) AI 모닝브리핑
+
+📌 오늘의 키워드: #AI뉴스
+
+💡 OpenAI·ChatGPT 기업들, 챗GPT 대체 경쟁 중
+🔍 Google·Gemini 제미나이, 챗GPT 대안으로 주목
+💬 Anthropic·Claude 미국 국방부, 구글 AI 전환
+🧠 LLM·언어모델 ETRI, 계층적 AI 에이전트 개발
+🎨 이미지 생성 전자상거래 AI 시스템 공개
+
+💡 한줄해석: AI 기술 발전이 빠르게 진행되고 있음.
+🤖 AI팁: 복잡한 작업은 계층적 AI로 해결 가능함.
+
+🔗 자세히 보기: https://farmingdollar.com/ai/ai_20260316_060923.html
