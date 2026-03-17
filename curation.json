@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-03-16T06:16:14.008237+09:00",
-  "basis_date": "2026-03-16",
+  "generated_at": "2026-03-17T10:37:09.573351+09:00",
+  "basis_date": "2026-03-17",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 03월 16일",
-      "subtitle": "세금 감면·추징·부동산 영향",
-      "url": "tax_policy/tax_20260316_060358.html",
-      "published_at": "2026-03-16T06:03:58+09:00",
+      "title": "세금 브리핑 - 2026년 03월 17일",
+      "subtitle": "기부금 허위발급·가산세 강화",
+      "url": "tax_policy/tax_20260317_102409.html",
+      "published_at": "2026-03-17T10:24:09+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 03월 16일",
-      "subtitle": "공모가·청약일정·상장소식",
-      "url": "ipo/ipo_20260316_061101.html",
-      "published_at": "2026-03-16T06:11:01+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 03월 17일",
+      "subtitle": "청약 경쟁률·상장 성적 분석",
+      "url": "ipo/ipo_20260317_103147.html",
+      "published_at": "2026-03-17T10:31:47+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 03월 16일",
-      "subtitle": "ETF 거래·수익률·투자 유의",
-      "url": "kospi_etf/kospi_etf_20260316_061242.html",
-      "published_at": "2026-03-16T06:12:42+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 03월 17일",
+      "subtitle": "ETF 상장·수익률 상승·투자 집중",
+      "url": "kospi_etf/kospi_etf_20260317_103334.html",
+      "published_at": "2026-03-17T10:33:34+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 03월 16일",
-      "subtitle": "기관 순매수·게임주 상승·소형주 수급",
-      "url": "kosdaq/kosdaq_20260316_061211.html",
-      "published_at": "2026-03-16T06:12:11+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 03월 17일",
+      "subtitle": "바이오 ETF·게임주 상승·외국인 매",
+      "url": "kosdaq/kosdaq_20260317_103302.html",
+      "published_at": "2026-03-17T10:33:02+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 03월 16일",
-      "subtitle": "외국인 투자·코스피 유망·2차전지 약",
-      "url": "kospi/kospi_20260316_061137.html",
-      "published_at": "2026-03-16T06:11:37+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 03월 17일",
+      "subtitle": "현대차·엔비디아·코스피 상승",
+      "url": "kospi/kospi_20260317_103223.html",
+      "published_at": "2026-03-17T10:32:23+09:00",
       "score": 45,
       "tags": [
         "코스피"

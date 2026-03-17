@@ -45,3 +45,6 @@ backup/
 
 # Temp
 tmp/
+
+# Subject
+subject/
