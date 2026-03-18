@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-03-17T10:37:09.573351+09:00",
-  "basis_date": "2026-03-17",
+  "generated_at": "2026-03-18T11:03:34.852093+09:00",
+  "basis_date": "2026-03-18",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 03월 17일",
-      "subtitle": "기부금 허위발급·가산세 강화",
-      "url": "tax_policy/tax_20260317_102409.html",
-      "published_at": "2026-03-17T10:24:09+09:00",
+      "title": "세금 브리핑 - 2026년 03월 18일",
+      "subtitle": "세금 신고·부동산 대출·절세 전략",
+      "url": "tax_policy/tax_20260318_105006.html",
+      "published_at": "2026-03-18T10:50:06+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 03월 17일",
-      "subtitle": "청약 경쟁률·상장 성적 분석",
-      "url": "ipo/ipo_20260317_103147.html",
-      "published_at": "2026-03-17T10:31:47+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 03월 18일",
+      "subtitle": "IPO 일정·청약 경쟁률·주목 기업",
+      "url": "ipo/ipo_20260318_105746.html",
+      "published_at": "2026-03-18T10:57:46+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 03월 17일",
-      "subtitle": "ETF 상장·수익률 상승·투자 집중",
-      "url": "kospi_etf/kospi_etf_20260317_103334.html",
-      "published_at": "2026-03-17T10:33:34+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 03월 18일",
+      "subtitle": "커버드콜 ETF·안정적 수익·자금 흡",
+      "url": "kospi_etf/kospi_etf_20260318_105931.html",
+      "published_at": "2026-03-18T10:59:31+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 03월 17일",
-      "subtitle": "바이오 ETF·게임주 상승·외국인 매",
-      "url": "kosdaq/kosdaq_20260317_103302.html",
-      "published_at": "2026-03-17T10:33:02+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 03월 18일",
+      "subtitle": "지투지바이오·AI 솔루션·게임주 상승",
+      "url": "kosdaq/kosdaq_20260318_105856.html",
+      "published_at": "2026-03-18T10:58:56+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 03월 17일",
-      "subtitle": "현대차·엔비디아·코스피 상승",
-      "url": "kospi/kospi_20260317_103223.html",
-      "published_at": "2026-03-17T10:32:23+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 03월 18일",
+      "subtitle": "삼성전자·코스피 상승세·자동차주",
+      "url": "kospi/kospi_20260318_105822.html",
+      "published_at": "2026-03-18T10:58:22+09:00",
       "score": 45,
       "tags": [
         "코스피"
