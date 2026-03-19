@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>공모주 IPO 수익 계산기 | 바이오대디</title>
-  <meta name="description" content="아이엠바이오로직스·카나프테라퓨틱스·메쥬·한패스 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
+  <meta name="description" content="아이엠바이오로직스·카나프테라퓨틱스·메쥬·한패스·NH스팩33호·리센스메디컬·신한17호스팩 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="공모주 IPO 수익 계산기">
-  <meta property="og:description" content="아이엠바이오로직스·카나프테라퓨틱스·메쥬·한패스 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
+  <meta property="og:description" content="아이엠바이오로직스·카나프테라퓨틱스·메쥬·한패스·NH스팩33호·리센스메디컬·신한17호스팩 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
@@ -109,40 +109,37 @@ body {
 
 /* IPO Selector */
 .ipo-selector {
-  display: flex;
-  justify-content: center;
-  gap: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
   margin-bottom: 32px;
-  flex-wrap: wrap;
-  border: 1px solid var(--border);
 }
 
 .ipo-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 4px;
-  padding: 16px 28px;
+  padding: 14px 12px;
   background: var(--bg-card);
-  border: none;
-  border-right: 1px solid var(--border);
+  border: 1px solid var(--border);
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s;
   color: var(--text);
   font-family: var(--sans);
-  flex: 1;
-  min-width: 180px;
 }
 
-.ipo-btn:last-child { border-right: none; }
-.ipo-btn:hover { background: var(--bg-card-hover); }
+.ipo-btn:hover { background: var(--bg-card-hover); border-color: var(--text-muted); }
 
 .ipo-btn.active {
   background: var(--text);
   color: #fff;
+  border-color: var(--text);
 }
 
-.ipo-btn-name { font-family: var(--sans); font-size: 18px; font-weight: 700; }
+.ipo-btn-name { font-family: var(--sans); font-size: 15px; font-weight: 700; text-align: center; line-height: 1.3; }
 .ipo-btn-desc { font-size: 11px; color: var(--text-muted); letter-spacing: 0.3px; }
 .ipo-btn.active .ipo-btn-desc { color: rgba(255,255,255,0.7); }
 
@@ -885,9 +882,9 @@ body {
   .hero { padding: 48px 0 36px; }
   .hero-stats { flex-direction: column; align-items: center; }
   .stat-pill::after { content: ''; }
-  .ipo-selector { flex-direction: column; }
-  .ipo-btn { min-width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
-  .ipo-btn:last-child { border-bottom: none; }
+  .ipo-selector { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .ipo-btn { padding: 12px 8px; }
+  .ipo-btn-name { font-size: 13px; }
   .risk-grid { grid-template-columns: 1fr; }
   .info-grid { grid-template-columns: 1fr; }
   .scenario-selector { grid-template-columns: 1fr 1fr; }
@@ -936,7 +933,19 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
         </button>
         <button class="ipo-btn" data-ipo="hanpass">
           <span class="ipo-btn-name">한패스</span>
-          <span class="ipo-btn-desc">외국인 금융서비스 · 상장일 미정</span>
+          <span class="ipo-btn-desc">외국인 금융서비스 · 3/25 상장</span>
+        </button>
+        <button class="ipo-btn" data-ipo="nhspac33">
+          <span class="ipo-btn-name">NH스팩33호</span>
+          <span class="ipo-btn-desc">SPAC · 3/27 상장</span>
+        </button>
+        <button class="ipo-btn" data-ipo="recens">
+          <span class="ipo-btn-name">리센스메디컬</span>
+          <span class="ipo-btn-desc">의료기기 · 3/31 상장</span>
+        </button>
+        <button class="ipo-btn" data-ipo="shinhan17">
+          <span class="ipo-btn-name">신한17호스팩</span>
+          <span class="ipo-btn-desc">SPAC · 4/1 상장</span>
         </button>
       </div>
 
@@ -1367,6 +1376,111 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
         '기관 확약률 68.37%로 양호',
       ],
       strategyNote: '경쟁률 1,172:1, 99% 상단 이상 제시. 청약 3/16~17, 상장 3/25.',
+    },
+    nhspac33: {
+      name: 'NH스팩33호',
+      nameEn: 'NH SPAC 33',
+      sector: '기업인수목적회사 (SPAC)',
+      listingDate: '2026.03.27 (목)',
+      listingMarket: '코스닥',
+      ipoPrice: 2000,
+      priceBand: '2,000원 (단일가)',
+      bandPosition: '단일가 확정',
+      bandPositionType: 'neutral',
+      marketCap: '약 127억원',
+      lockupRate: 0,
+      lockupLabel: '확약 없음',
+      lockupSeverity: 'bad',
+      floatRate: 93.6,
+      floatLabel: '약 93.6% (스팩 특성)',
+      competitionRatio: '1,228.71 : 1',
+      institutions: '-',
+      totalShares: '6,350,000주',
+      publicShares: '약 1,587,500주 (25%)',
+      totalAmount: '약 127억원',
+      underwriter: 'NH투자증권',
+      minShares: '10주',
+      minDeposit: '20,000원',
+      lockupNote: '기관 의무보유확약 비율 <strong>0%</strong>입니다. 스팩 특성상 확약이 없는 경우가 많으나, 상장 직후 기관 물량 전량 유통 가능하므로 주의가 필요합니다.',
+      floatNote: '스팩 특성상 유통가능 비율이 <strong>약 93.6%</strong>로 매우 높습니다. 공모주 전량이 상장 후 유통 가능하며, 발기인 지분만 보호예수 대상입니다.',
+      summaryRange: '단일가 2,000원',
+      summaryPriceRange: '2,000원',
+      summaryRisks: [
+        '의무보유확약 0% (기관 전량 유통 가능)',
+        'SPAC 특성상 합병 불확실성',
+        '유통가능 비율 약 93.6%로 매우 높음',
+      ],
+      strategyNote: '기관 경쟁률 1,228.71:1. 청약 3/17~18, 상장 3/27.',
+    },
+    recens: {
+      name: '리센스메디컬',
+      nameEn: 'RecensMedical',
+      sector: '의료기기 (정밀냉각 기술)',
+      listingDate: '2026.03.31 (월)',
+      listingMarket: '코스닥 (기술특례)',
+      ipoPrice: 11000,
+      priceBand: '9,000원 ~ 11,000원',
+      bandPosition: '상단 확정',
+      bandPositionType: 'good',
+      marketCap: '약 1,194억원',
+      lockupRate: 63.9,
+      lockupLabel: '63.9% (15일 이상)',
+      lockupSeverity: 'positive',
+      floatRate: 29.87,
+      floatLabel: '약 29.87%',
+      competitionRatio: '1,352.63 : 1',
+      institutions: '2,261개',
+      totalShares: '1,400,000주',
+      publicShares: '약 350,000주 (25%)',
+      totalAmount: '약 154억원',
+      underwriter: 'KB증권',
+      minShares: '10주',
+      minDeposit: '55,000원',
+      lockupNote: '2,261개 기관 참여, 의무보유확약 비율 <strong>63.9%</strong>(15일 이상). 기술특례(기술평가 A/A) 상장으로 기관 관심도가 높습니다.',
+      floatNote: '상장 직후 유통가능 비율은 <strong>29.87%</strong>로, 상장예정주식 약 1,085만주 중 약 235만주가 유통 가능합니다.',
+      summaryRange: '+20% ~ +40%',
+      summaryPriceRange: '13,200원 ~ 15,400원',
+      summaryRisks: [
+        '기술특례 상장 (적자 기업 가능성)',
+        '의료기기 섹터 규제 리스크',
+        '기관 확약률 63.9%로 양호',
+      ],
+      strategyNote: '경쟁률 1,352.63:1 (2026년 최고). 청약 3/19~20, 상장 3/31.',
+    },
+    shinhan17: {
+      name: '신한17호스팩',
+      nameEn: 'Shinhan SPAC 17',
+      sector: '기업인수목적회사 (SPAC)',
+      listingDate: '2026.04.01 (화)',
+      listingMarket: '코스닥',
+      ipoPrice: 2000,
+      priceBand: '2,000원 (단일가)',
+      bandPosition: '단일가 확정',
+      bandPositionType: 'neutral',
+      marketCap: '약 107억원',
+      lockupRate: 0,
+      lockupLabel: '미확인',
+      lockupSeverity: 'neutral',
+      floatRate: 93.6,
+      floatLabel: '약 93.6% (스팩 특성)',
+      competitionRatio: '1,343.8 : 1',
+      institutions: '-',
+      totalShares: '5,000,000주',
+      publicShares: '약 1,250,000주 (25%)',
+      totalAmount: '약 100억원',
+      underwriter: '신한투자증권',
+      minShares: '10주',
+      minDeposit: '20,000원',
+      lockupNote: '기관 의무보유확약 비율은 <strong>미확인</strong>입니다. 스팩 특성상 확약률이 낮거나 없는 경우가 일반적이며, 상장 직후 기관 물량 유통에 유의해야 합니다.',
+      floatNote: '스팩 특성상 유통가능 비율이 <strong>약 93.6%</strong>로 매우 높습니다. 총 상장예정주식 534만주 중 공모물량 500만주가 즉시 유통 가능합니다.',
+      summaryRange: '단일가 2,000원',
+      summaryPriceRange: '2,000원',
+      summaryRisks: [
+        'SPAC 특성상 합병 불확실성',
+        '유통가능 비율 약 93.6%로 매우 높음',
+        '의무보유확약 비율 미확인',
+      ],
+      strategyNote: '기관 경쟁률 1,343.8:1. 청약 3/19~20, 상장 4/1.',
     },
   };
 
