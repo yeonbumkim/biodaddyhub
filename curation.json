@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-03-20T20:08:10.547675+09:00",
-  "basis_date": "2026-03-20",
+  "generated_at": "2026-03-23T10:53:52.237836+09:00",
+  "basis_date": "2026-03-23",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 03월 20일",
-      "subtitle": "가상자산 소득세·탈세 조사·주택구입",
-      "url": "tax_policy/tax_20260320_194755.html",
-      "published_at": "2026-03-20T19:47:55+09:00",
+      "title": "세금 브리핑 - 2026년 03월 23일",
+      "subtitle": "상용근로자 연봉·부동산 소득 신고",
+      "url": "tax_policy/tax_20260323_104025.html",
+      "published_at": "2026-03-23T10:40:25+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 03월 20일",
-      "subtitle": "리센스메디컬·청약경쟁률·IPO",
-      "url": "ipo/ipo_20260320_195704.html",
-      "published_at": "2026-03-20T19:57:04+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 03월 23일",
+      "subtitle": "청약 경쟁률·상장 일정·IPO 분석",
+      "url": "ipo/ipo_20260323_104816.html",
+      "published_at": "2026-03-23T10:48:16+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 03월 20일",
-      "subtitle": "레버리지 ETF·바이오 ETF·거래대",
-      "url": "kospi_etf/kospi_etf_20260320_200427.html",
-      "published_at": "2026-03-20T20:04:27+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 03월 23일",
+      "subtitle": "레버리지 ETF·투자 전략·신규 상장",
+      "url": "kospi_etf/kospi_etf_20260323_105010.html",
+      "published_at": "2026-03-23T10:50:10+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 03월 20일",
-      "subtitle": "제약 업종·코스닥 주목·신재생에너지",
-      "url": "kosdaq/kosdaq_20260320_200353.html",
-      "published_at": "2026-03-20T20:03:53+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 03월 23일",
+      "subtitle": "바이오 ETF·해상풍력 기대",
+      "url": "kosdaq/kosdaq_20260323_104937.html",
+      "published_at": "2026-03-23T10:49:37+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 03월 20일",
-      "subtitle": "반도체 투자·삼천당제약 부상",
-      "url": "kospi/kospi_20260320_195738.html",
-      "published_at": "2026-03-20T19:57:38+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 03월 23일",
+      "subtitle": "포스코인터·삼성SDI·코스피 상승",
+      "url": "kospi/kospi_20260323_104851.html",
+      "published_at": "2026-03-23T10:48:51+09:00",
       "score": 45,
       "tags": [
         "코스피"
