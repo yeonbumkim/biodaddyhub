@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-03-23T10:53:52.237836+09:00",
-  "basis_date": "2026-03-23",
+  "generated_at": "2026-03-24T11:58:19.602159+09:00",
+  "basis_date": "2026-03-24",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 03월 23일",
-      "subtitle": "상용근로자 연봉·부동산 소득 신고",
-      "url": "tax_policy/tax_20260323_104025.html",
-      "published_at": "2026-03-23T10:40:25+09:00",
+      "title": "세금 브리핑 - 2026년 03월 24일",
+      "subtitle": "세액공제·보유세·가상자산",
+      "url": "tax_policy/tax_20260324_114548.html",
+      "published_at": "2026-03-24T11:45:48+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 03월 23일",
-      "subtitle": "청약 경쟁률·상장 일정·IPO 분석",
-      "url": "ipo/ipo_20260323_104816.html",
-      "published_at": "2026-03-23T10:48:16+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 03월 24일",
+      "subtitle": "인벤테라 청약·경쟁률·상장예고",
+      "url": "ipo/ipo_20260324_115317.html",
+      "published_at": "2026-03-24T11:53:17+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 03월 23일",
-      "subtitle": "레버리지 ETF·투자 전략·신규 상장",
-      "url": "kospi_etf/kospi_etf_20260323_105010.html",
-      "published_at": "2026-03-23T10:50:10+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 03월 24일",
+      "subtitle": "레버리지 ETF·투자 전략·거래대금",
+      "url": "kospi_etf/kospi_etf_20260324_115501.html",
+      "published_at": "2026-03-24T11:55:01+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 03월 23일",
-      "subtitle": "바이오 ETF·해상풍력 기대",
-      "url": "kosdaq/kosdaq_20260323_104937.html",
-      "published_at": "2026-03-23T10:49:37+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 03월 24일",
+      "subtitle": "삼천당제약·LS마린솔루션·BTS 효과",
+      "url": "kosdaq/kosdaq_20260324_115433.html",
+      "published_at": "2026-03-24T11:54:33+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 03월 23일",
-      "subtitle": "포스코인터·삼성SDI·코스피 상승",
-      "url": "kospi/kospi_20260323_104851.html",
-      "published_at": "2026-03-23T10:48:51+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 03월 24일",
+      "subtitle": "AI 플랫폼·반도체 투자·주주환원",
+      "url": "kospi/kospi_20260324_115356.html",
+      "published_at": "2026-03-24T11:53:56+09:00",
       "score": 45,
       "tags": [
         "코스피"
