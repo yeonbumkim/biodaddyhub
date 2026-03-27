@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-03-26T11:33:42.185869+09:00",
-  "basis_date": "2026-03-26",
+  "generated_at": "2026-03-27T10:40:20.789413+09:00",
+  "basis_date": "2026-03-27",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 03월 26일",
-      "subtitle": "청년 고용·세액공제 확대",
-      "url": "tax_policy/tax_20260326_112001.html",
-      "published_at": "2026-03-26T11:20:01+09:00",
+      "title": "세금 브리핑 - 2026년 03월 27일",
+      "subtitle": "유류세 인하·주택 대출 검증",
+      "url": "tax_policy/tax_20260327_102803.html",
+      "published_at": "2026-03-27T10:28:03+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 03월 26일",
-      "subtitle": "IPO·청약·상장 소식",
-      "url": "ipo/ipo_20260326_112737.html",
-      "published_at": "2026-03-26T11:27:37+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 03월 27일",
+      "subtitle": "IPO 절차·공모가 상승·청약 경쟁률",
+      "url": "ipo/ipo_20260327_103507.html",
+      "published_at": "2026-03-27T10:35:07+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 03월 26일",
-      "subtitle": "원유 ETF·반도체 수혜·AI 테크",
-      "url": "kospi_etf/kospi_etf_20260326_112932.html",
-      "published_at": "2026-03-26T11:29:32+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 03월 27일",
+      "subtitle": "ETF 투자 전략·수익률 차별화",
+      "url": "kospi_etf/kospi_etf_20260327_103645.html",
+      "published_at": "2026-03-27T10:36:45+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 03월 26일",
-      "subtitle": "코스닥 매출 전망·글로벌 공략·투자",
-      "url": "kosdaq/kosdaq_20260326_112849.html",
-      "published_at": "2026-03-26T11:28:49+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 03월 27일",
+      "subtitle": "바이오 ETF·한패스 상장·코스피 상",
+      "url": "kosdaq/kosdaq_20260327_103617.html",
+      "published_at": "2026-03-27T10:36:17+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 03월 26일",
-      "subtitle": "ETF 강세·SK하이닉스 재평가",
-      "url": "kospi/kospi_20260326_112815.html",
-      "published_at": "2026-03-26T11:28:15+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 03월 27일",
+      "subtitle": "삼성전자·환경 보호·코스피 하락",
+      "url": "kospi/kospi_20260327_103542.html",
+      "published_at": "2026-03-27T10:35:42+09:00",
       "score": 45,
       "tags": [
         "코스피"
