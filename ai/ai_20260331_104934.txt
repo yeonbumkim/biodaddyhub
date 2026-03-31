@@ -1,0 +1,14 @@
+🤖 3/31(화) AI 모닝브리핑
+
+📌 오늘의 키워드: #LLM비용하락
+
+💡 OpenAI·ChatGPT 애플, 시리 개방 발표
+🔍 Google·Gemini 변호사 97%, AI 효율성 인정
+💬 Anthropic·Claude Anthropic 성공, 서버 수요 증가
+🧠 LLM·언어모델 가트너, 2030년 LLM 비용 급감
+🎨 이미지 생성 Midjourney, 수익성 확보 중
+
+💡 한줄해석: LLM 비용 하락과 AI 스타트업 투자 활발함
+🤖 AI팁: 비용 절감이 예상되는 LLM 활용법 고민해야 함
+
+🔗 자세히 보기: https://farmingdollar.com/ai/ai_20260331_104934.html
