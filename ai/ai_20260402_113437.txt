@@ -1,0 +1,14 @@
+🤖 4/02(목) AI 모닝브리핑
+
+📌 오늘의 키워드: #AI업계동향
+
+💡 OpenAI·ChatGPT 챗GPT 광고로 1500억 매출
+🔍 Google·Gemini Gemini, 챗봇 정보 전이 지원
+💬 Anthropic·Claude Anthropic, GitHub 리포 삭제
+🧠 LLM·언어모델 서초 AI전트 LLM 확대 적용
+🎨 이미지 생성 Midjourney, 하드웨어 개발 도전
+
+💡 한줄해석: AI 업계의 변화와 도전이 더욱 심화됨.
+🤖 AI팁: LLM 활용해 맞춤형 고객 서비스 제공할 수 있음.
+
+🔗 자세히 보기: https://farmingdollar.com/ai/ai_20260402_113437.html
