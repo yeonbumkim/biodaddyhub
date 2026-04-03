@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-02T11:41:56.579755+09:00",
-  "basis_date": "2026-04-02",
+  "generated_at": "2026-04-03T11:26:03.513452+09:00",
+  "basis_date": "2026-04-03",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 04월 02일",
-      "subtitle": "연봉 인출·임대인 고민·세법 개정",
-      "url": "tax_policy/tax_20260402_112855.html",
-      "published_at": "2026-04-02T11:28:55+09:00",
+      "title": "세금 브리핑 - 2026년 04월 03일",
+      "subtitle": "소득세 신고·세금 환급 전략",
+      "url": "tax_policy/tax_20260403_111213.html",
+      "published_at": "2026-04-03T11:12:13+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 04월 02일",
-      "subtitle": "공모주 청약·상장 동향 분석",
-      "url": "ipo/ipo_20260402_113626.html",
-      "published_at": "2026-04-02T11:36:26+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 04월 03일",
+      "subtitle": "공모 청약 대장주·상장 첫날 상승",
+      "url": "ipo/ipo_20260403_112009.html",
+      "published_at": "2026-04-03T11:20:09+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 04월 02일",
-      "subtitle": "원유·ETF 수익률·상장 소식",
-      "url": "kospi_etf/kospi_etf_20260402_113823.html",
-      "published_at": "2026-04-02T11:38:23+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 04월 03일",
+      "subtitle": "레버리지 ETF·상장·수익률",
+      "url": "kospi_etf/kospi_etf_20260403_112206.html",
+      "published_at": "2026-04-03T11:22:06+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 04월 02일",
-      "subtitle": "삼천당제약 논란·게임업계 변화",
-      "url": "kosdaq/kosdaq_20260402_113741.html",
-      "published_at": "2026-04-02T11:37:41+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 04월 03일",
+      "subtitle": "삼천당제약·주가 급락·기관 매도",
+      "url": "kosdaq/kosdaq_20260403_112128.html",
+      "published_at": "2026-04-03T11:21:28+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 04월 02일",
-      "subtitle": "코스피 하락·삼성 ETN 강세",
-      "url": "kospi/kospi_20260402_113700.html",
-      "published_at": "2026-04-02T11:37:00+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 04월 03일",
+      "subtitle": "코스피 실적 안정·반도체 성장 기대",
+      "url": "kospi/kospi_20260403_112047.html",
+      "published_at": "2026-04-03T11:20:47+09:00",
       "score": 45,
       "tags": [
         "코스피"
