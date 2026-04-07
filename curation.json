@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-06T11:09:53.988180+09:00",
-  "basis_date": "2026-04-06",
+  "generated_at": "2026-04-07T10:35:32.653222+09:00",
+  "basis_date": "2026-04-07",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 04월 06일",
-      "subtitle": "연말정산·환급금 조회법",
-      "url": "tax_policy/tax_20260406_105602.html",
-      "published_at": "2026-04-06T10:56:02+09:00",
+      "title": "세금 브리핑 - 2026년 04월 07일",
+      "subtitle": "세금 특례·다주택 규제·연말정산 안내",
+      "url": "tax_policy/tax_20260407_102034.html",
+      "published_at": "2026-04-07T10:20:34+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 04월 06일",
-      "subtitle": "전기차 충전·IPO 동향·공모시장 분",
-      "url": "ipo/ipo_20260406_110353.html",
-      "published_at": "2026-04-06T11:03:53+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 04월 07일",
+      "subtitle": "전기차·공모가·수요예측",
+      "url": "ipo/ipo_20260407_102859.html",
+      "published_at": "2026-04-07T10:28:59+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 04월 06일",
-      "subtitle": "레버리지 ETF·투자 대회·상장 소식",
-      "url": "kospi_etf/kospi_etf_20260406_110549.html",
-      "published_at": "2026-04-06T11:05:49+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 04월 07일",
+      "subtitle": "레버리지 ETF·신규상장·시장 동향",
+      "url": "kospi_etf/kospi_etf_20260407_103121.html",
+      "published_at": "2026-04-07T10:31:21+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 04월 06일",
-      "subtitle": "삼천당제약·주가 변동·외국인 매매",
-      "url": "kosdaq/kosdaq_20260406_110512.html",
-      "published_at": "2026-04-06T11:05:12+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 04월 07일",
+      "subtitle": "주가 급락·AI 헬스케어·중소형주 반",
+      "url": "kosdaq/kosdaq_20260407_103041.html",
+      "published_at": "2026-04-07T10:30:41+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 04월 06일",
-      "subtitle": "삼성전자·K바이오·주가 변동",
-      "url": "kospi/kospi_20260406_110435.html",
-      "published_at": "2026-04-06T11:04:35+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 04월 07일",
+      "subtitle": "삼성전자 실적·코스피 상승",
+      "url": "kospi/kospi_20260407_102943.html",
+      "published_at": "2026-04-07T10:29:43+09:00",
       "score": 45,
       "tags": [
         "코스피"
