@@ -360,9 +360,39 @@
       .preview-section { display: block !important; }
       .page { box-shadow: none; margin: 0; }
     }
+    .bd-nav {
+      background: rgba(90,74,48,0.95);
+      border-bottom: 1px solid #8b6b3d;
+      padding: 0.6rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+    }
+    .bd-nav-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .bd-nav a {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #faf7f2;
+      transition: color 0.2s;
+    }
+    .bd-nav a:hover { color: #d4b896; }
   </style>
 </head>
 <body>
+
+  <nav class="bd-nav">
+    <div class="bd-nav-inner">
+      <a href="https://farmingdollar.com">&#x2190; BioDaddy Hub</a>
+    </div>
+  </nav>
 
   <!-- Input Form -->
   <div class="form-section">
