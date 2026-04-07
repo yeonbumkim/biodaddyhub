@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>영수증 생성기</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #f0ebe3;
+      font-family: 'Noto Sans KR', sans-serif;
+      color: #333;
+    }
+
+    /* ── Form Section ── */
+    .form-section {
+      max-width: 640px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 36px 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .form-section h1 {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 24px;
+      margin-bottom: 28px;
+      text-align: center;
+      letter-spacing: 0.15em;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #666;
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #d0c8bc;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf8f5;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #8b6b3d;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-hint {
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      transition: background 0.2s;
+    }
+    .btn-preview {
+      background: #e8dfd4;
+      color: #5a4a30;
+    }
+    .btn-preview:hover { background: #ddd2c3; }
+    .btn-download {
+      background: #8b6b3d;
+      color: #fff;
+    }
+    .btn-download:hover { background: #7a5c32; }
+
+    /* ── Preview Section ── */
+    .preview-section {
+      display: none;
+      margin: 40px auto;
+      max-width: 860px;
+    }
+    .preview-section.active { display: block; }
+    .preview-label {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      letter-spacing: 0.2em;
+      margin-bottom: 16px;
+    }
+
+    /* ── Receipt Styles (shared with receipt.html) ── */
+    :root {
+      --ink: #1a1a1a;
+      --ink-light: #444;
+      --ink-faint: #888;
+      --border: #b0926a;
+      --border-light: #d4b896;
+      --bg: #faf7f2;
+      --accent: #8b6b3d;
+      --red: #8b2020;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--bg);
+      position: relative;
+      padding: 22mm 20mm 20mm;
+      margin: 0 auto;
+      box-shadow:
+        0 4px 6px rgba(0,0,0,0.07),
+        0 10px 40px rgba(0,0,0,0.12),
+        0 0 0 1px rgba(0,0,0,0.04);
+      font-family: 'Noto Serif KR', serif;
+    }
+    .page::before, .page::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+    }
+    .page::before {
+      top: 14mm; left: 14mm;
+      border-top: 2px solid var(--border);
+      border-left: 2px solid var(--border);
+    }
+    .page::after {
+      bottom: 14mm; right: 14mm;
+      border-bottom: 2px solid var(--border);
+      border-right: 2px solid var(--border);
+    }
+    .corner-tr, .corner-bl {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+    }
+    .corner-tr {
+      top: 14mm; right: 14mm;
+      border-top: 2px solid var(--border);
+      border-right: 2px solid var(--border);
+    }
+    .corner-bl {
+      bottom: 14mm; left: 14mm;
+      border-bottom: 2px solid var(--border);
+      border-left: 2px solid var(--border);
+    }
+    .label-top {
+      text-align: center;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      color: var(--ink-faint);
+      margin-bottom: 10px;
+    }
+    .title {
+      text-align: center;
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: 0.6em;
+      color: var(--ink);
+      margin-bottom: 6px;
+      text-indent: 0.6em;
+    }
+    .title-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 auto 26px;
+      max-width: 200px;
+    }
+    .title-divider::before, .title-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .title-divider-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--border);
+      transform: rotate(45deg);
+    }
+    .recipient-block {
+      border: 1px solid var(--border-light);
+      background: rgba(180,140,80,0.04);
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .recipient-label {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 11px;
+      color: var(--ink-faint);
+      letter-spacing: 0.15em;
+      white-space: nowrap;
+    }
+    .recipient-name {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--ink);
+    }
+    .recipient-honorific {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ink-light);
+      margin-left: 2px;
+    }
+    .amount-wrapper { margin-bottom: 28px; }
+    .amount-label {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .amount-box {
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      padding: 14px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .amount-korean {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+    .amount-number {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ink-light);
+      letter-spacing: 0.05em;
+    }
+    .section { margin-bottom: 22px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .section-header-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border-light);
+    }
+    .section-title {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .property-address {
+      font-size: 14.5px;
+      line-height: 2;
+      color: var(--ink);
+      padding: 10px 16px;
+      background: rgba(180,140,80,0.04);
+      border-left: 3px solid var(--border);
+      letter-spacing: 0.02em;
+    }
+    .statement {
+      font-size: 14px;
+      line-height: 1.95;
+      color: var(--ink-light);
+      padding: 14px 0;
+      border-top: 1px dashed var(--border-light);
+      border-bottom: 1px dashed var(--border-light);
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+    .statement em {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .issuer-block {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 30px;
+    }
+    .issuer-info {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .issuer-row {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+    }
+    .issuer-key {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 10.5px;
+      font-weight: 500;
+      color: var(--ink-faint);
+      letter-spacing: 0.15em;
+      white-space: nowrap;
+      min-width: 60px;
+    }
+    .issuer-val {
+      font-size: 13.5px;
+      color: var(--ink);
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+    }
+    .date-footer {
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-light);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 11px;
+      color: var(--ink-faint);
+      letter-spacing: 0.3em;
+    }
+
+    @media print {
+      body { background: white; }
+      .form-section, .preview-label, .btn-group { display: none !important; }
+      .preview-section { display: block !important; }
+      .page { box-shadow: none; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Input Form -->
+  <div class="form-section">
+    <h1>영수증 생성기</h1>
+
+    <div class="form-group">
+      <label>수신인 (받는 사람)</label>
+      <input type="text" id="recipientName" placeholder="홍길동" />
+    </div>
+
+    <div class="form-group">
+      <label>금액 (숫자)</label>
+      <input type="number" id="amountNumber" placeholder="30000000" />
+      <div class="form-hint">숫자만 입력하면 한글 금액과 포맷이 자동 생성됩니다.</div>
+    </div>
+
+    <div class="form-group">
+      <label>부동산 주소</label>
+      <textarea id="propertyAddress" placeholder="서울특별시 강남구 역삼동 123-45&#10;역삼파크아파트 제201동 제10층 제1003호"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>영수 목적</label>
+      <input type="text" id="purpose" placeholder="전세 보증금 잔금" value="전세 보증금 잔금" />
+    </div>
+
+    <div class="form-group">
+      <label>발행인 주소</label>
+      <textarea id="issuerAddress" placeholder="서울특별시 서초구 반포대로 58&#10;반포래미안 3동 801호"></textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>발행인 이름</label>
+        <input type="text" id="issuerName" placeholder="김철수" />
+      </div>
+      <div class="form-group">
+        <label>발행일</label>
+        <input type="date" id="issueDate" />
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-preview" onclick="generatePreview()">미리보기</button>
+      <button class="btn btn-download" onclick="downloadReceipt()">HTML 다운로드</button>
+    </div>
+  </div>
+
+  <!-- Preview -->
+  <div class="preview-section" id="previewSection">
+    <div class="preview-label">미 리 보 기</div>
+    <div id="receiptPreview"></div>
+  </div>
+
+<script>
+  // Set default date to today
+  document.getElementById('issueDate').valueAsDate = new Date();
+
+  const KOREAN_DIGITS = ['', '일', '이', '삼', '사', '오', '육', '칠', '팔', '구'];
+  const KOREAN_UNITS_SMALL = ['', '십', '백', '천'];
+  const KOREAN_UNITS_BIG = ['', '만', '억', '조'];
+
+  function numberToKorean(num) {
+    if (num === 0) return '영';
+    const str = String(num);
+    const len = str.length;
+    let result = '';
+    const groups = [];
+
+    // Split into groups of 4 from right
+    for (let i = len; i > 0; i -= 4) {
+      groups.unshift(str.substring(Math.max(0, i - 4), i));
+    }
+
+    for (let gi = 0; gi < groups.length; gi++) {
+      const group = groups[gi];
+      const bigUnit = KOREAN_UNITS_BIG[groups.length - 1 - gi];
+      let groupStr = '';
+      const gLen = group.length;
+
+      for (let i = 0; i < gLen; i++) {
+        const digit = parseInt(group[i]);
+        const smallUnit = KOREAN_UNITS_SMALL[gLen - 1 - i];
+        if (digit === 0) continue;
+        if (digit === 1 && smallUnit !== '') {
+          groupStr += smallUnit;
+        } else {
+          groupStr += KOREAN_DIGITS[digit] + smallUnit;
+        }
+      }
+
+      if (groupStr) {
+        result += groupStr + bigUnit;
+      }
+    }
+
+    return result;
+  }
+
+  function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  function formatDateKorean(dateStr) {
+    const d = new Date(dateStr);
+    return `${d.getFullYear()}년 ${d.getMonth() + 1}월 ${d.getDate()}일`;
+  }
+
+  function formatDateDot(dateStr) {
+    const d = new Date(dateStr);
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}. ${m}. ${day}`;
+  }
+
+  function spaceName(name) {
+    return name.split('').join(' ');
+  }
+
+  function getFormData() {
+    const amount = parseInt(document.getElementById('amountNumber').value) || 0;
+    const dateVal = document.getElementById('issueDate').value;
+    return {
+      recipientName: document.getElementById('recipientName').value.trim(),
+      amount,
+      amountKorean: numberToKorean(amount) + '원정',
+      amountFormatted: '₩ ' + formatNumber(amount),
+      propertyAddress: document.getElementById('propertyAddress').value.trim(),
+      purpose: document.getElementById('purpose').value.trim(),
+      issuerAddress: document.getElementById('issuerAddress').value.trim(),
+      issuerName: document.getElementById('issuerName').value.trim(),
+      issueDate: dateVal,
+      issueDateKorean: formatDateKorean(dateVal),
+      issueDateDot: formatDateDot(dateVal),
+    };
+  }
+
+  function buildReceiptHTML(data) {
+    const propLines = data.propertyAddress.split('\n').join('<br>\n        ');
+    const issuerAddrLines = data.issuerAddress.split('\n').join('<br>');
+
+    return `<div class="page">
+    <div class="corner-tr"></div>
+    <div class="corner-bl"></div>
+
+    <div class="label-top">지 급 인 용</div>
+
+    <div class="title">영수증</div>
+    <div class="title-divider">
+      <div class="title-divider-dot"></div>
+    </div>
+
+    <div class="recipient-block">
+      <span class="recipient-label">수&nbsp;&nbsp;신</span>
+      <div>
+        <span class="recipient-name">${spaceName(data.recipientName)}</span>
+        <span class="recipient-honorific">귀하</span>
+      </div>
+    </div>
+
+    <div class="amount-wrapper">
+      <div class="amount-label">금&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;액</div>
+      <div class="amount-box">
+        <div class="amount-korean">${data.amountKorean}</div>
+        <div class="amount-number">${data.amountFormatted}</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title">부 동 산 의 표 시</div>
+        <div class="section-header-line"></div>
+      </div>
+      <div class="property-address">
+        ${propLines}
+      </div>
+    </div>
+
+    <div class="statement">
+      상기 금액을 위 표시 부동산에 대한 <em>${data.purpose}</em>으로<br>
+      정히 영수하고 본 영수증을 발행합니다.
+    </div>
+
+    <div class="issuer-block">
+      <div class="issuer-info">
+        <div class="section-header" style="margin-bottom:14px;">
+          <div class="section-title">발 행 인 정 보</div>
+          <div class="section-header-line"></div>
+        </div>
+        <div class="issuer-row">
+          <span class="issuer-key">주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</span>
+          <span class="issuer-val">${issuerAddrLines}</span>
+        </div>
+        <div class="issuer-row">
+          <span class="issuer-key">발&nbsp;행&nbsp;인</span>
+          <span class="issuer-val">${spaceName(data.issuerName)}</span>
+        </div>
+        <div class="issuer-row">
+          <span class="issuer-key">발&nbsp;행&nbsp;일</span>
+          <span class="issuer-val">${data.issueDateKorean}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="date-footer">${data.issueDateDot}</div>
+  </div>`;
+  }
+
+  function generatePreview() {
+    const data = getFormData();
+    if (!data.recipientName || !data.amount) {
+      alert('수신인과 금액을 입력해주세요.');
+      return;
+    }
+    const preview = document.getElementById('receiptPreview');
+    preview.innerHTML = buildReceiptHTML(data);
+    document.getElementById('previewSection').classList.add('active');
+    preview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function buildFullHTML(data) {
+    const receiptBody = buildReceiptHTML(data);
+    return `<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>영수증</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #444; --ink-faint: #888;
+      --border: #b0926a; --border-light: #d4b896;
+      --bg: #faf7f2; --accent: #8b6b3d; --red: #8b2020;
+    }
+    body {
+      background: #e8e0d4;
+      display: flex; justify-content: center; align-items: flex-start;
+      min-height: 100vh; padding: 40px 20px;
+      font-family: 'Noto Serif KR', serif;
+    }
+    .page {
+      width: 210mm; min-height: 297mm; background: var(--bg);
+      position: relative; padding: 22mm 20mm 20mm;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07), 0 10px 40px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04);
+    }
+    .page::before, .page::after { content: ''; position: absolute; width: 60px; height: 60px; }
+    .page::before { top: 14mm; left: 14mm; border-top: 2px solid var(--border); border-left: 2px solid var(--border); }
+    .page::after { bottom: 14mm; right: 14mm; border-bottom: 2px solid var(--border); border-right: 2px solid var(--border); }
+    .corner-tr, .corner-bl { position: absolute; width: 60px; height: 60px; }
+    .corner-tr { top: 14mm; right: 14mm; border-top: 2px solid var(--border); border-right: 2px solid var(--border); }
+    .corner-bl { bottom: 14mm; left: 14mm; border-bottom: 2px solid var(--border); border-left: 2px solid var(--border); }
+    .label-top { text-align: center; font-family: 'Noto Sans KR', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.35em; color: var(--ink-faint); margin-bottom: 10px; }
+    .title { text-align: center; font-size: 42px; font-weight: 700; letter-spacing: 0.6em; color: var(--ink); margin-bottom: 6px; text-indent: 0.6em; }
+    .title-divider { display: flex; align-items: center; gap: 12px; margin: 0 auto 26px; max-width: 200px; }
+    .title-divider::before, .title-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .title-divider-dot { width: 5px; height: 5px; background: var(--border); transform: rotate(45deg); }
+    .recipient-block { border: 1px solid var(--border-light); background: rgba(180,140,80,0.04); padding: 14px 20px; margin-bottom: 24px; display: flex; align-items: baseline; gap: 16px; }
+    .recipient-label { font-family: 'Noto Sans KR', sans-serif; font-size: 11px; color: var(--ink-faint); letter-spacing: 0.15em; white-space: nowrap; }
+    .recipient-name { font-size: 20px; font-weight: 600; letter-spacing: 0.1em; color: var(--ink); }
+    .recipient-honorific { font-size: 15px; font-weight: 400; color: var(--ink-light); margin-left: 2px; }
+    .amount-wrapper { margin-bottom: 28px; }
+    .amount-label { font-family: 'Noto Sans KR', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.3em; color: var(--accent); margin-bottom: 8px; }
+    .amount-box { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 14px 0; display: flex; flex-direction: column; gap: 6px; }
+    .amount-korean { font-size: 22px; font-weight: 600; letter-spacing: 0.04em; color: var(--ink); }
+    .amount-number { font-family: 'Noto Sans KR', sans-serif; font-size: 15px; font-weight: 400; color: var(--ink-light); letter-spacing: 0.05em; }
+    .section { margin-bottom: 22px; }
+    .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .section-header-line { flex: 1; height: 1px; background: var(--border-light); }
+    .section-title { font-family: 'Noto Sans KR', sans-serif; font-size: 10.5px; font-weight: 500; letter-spacing: 0.25em; color: var(--accent); white-space: nowrap; }
+    .property-address { font-size: 14.5px; line-height: 2; color: var(--ink); padding: 10px 16px; background: rgba(180,140,80,0.04); border-left: 3px solid var(--border); letter-spacing: 0.02em; }
+    .statement { font-size: 14px; line-height: 1.95; color: var(--ink-light); padding: 14px 0; border-top: 1px dashed var(--border-light); border-bottom: 1px dashed var(--border-light); margin-bottom: 28px; letter-spacing: 0.02em; }
+    .statement em { font-style: normal; font-weight: 600; color: var(--ink); }
+    .issuer-block { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 30px; }
+    .issuer-info { display: flex; flex-direction: column; gap: 9px; }
+    .issuer-row { display: flex; align-items: baseline; gap: 14px; }
+    .issuer-key { font-family: 'Noto Sans KR', sans-serif; font-size: 10.5px; font-weight: 500; color: var(--ink-faint); letter-spacing: 0.15em; white-space: nowrap; min-width: 60px; }
+    .issuer-val { font-size: 13.5px; color: var(--ink); line-height: 1.6; letter-spacing: 0.02em; }
+    .date-footer { text-align: center; margin-top: 32px; padding-top: 18px; border-top: 1px solid var(--border-light); font-family: 'Noto Sans KR', sans-serif; font-size: 11px; color: var(--ink-faint); letter-spacing: 0.3em; }
+    @media print { body { background: white; padding: 0; } .page { box-shadow: none; margin: 0; } }
+  </style>
+</head>
+<body>
+  ${receiptBody}
+</body>
+</html>`;
+  }
+
+  function downloadReceipt() {
+    const data = getFormData();
+    if (!data.recipientName || !data.amount) {
+      alert('수신인과 금액을 입력해주세요.');
+      return;
+    }
+    const html = buildFullHTML(data);
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `영수증_${data.recipientName}_${data.issueDateDot.replace(/\. /g, '')}.html`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+</script>
+
+</body>
+</html>
