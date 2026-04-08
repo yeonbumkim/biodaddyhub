@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-07T10:35:32.653222+09:00",
-  "basis_date": "2026-04-07",
+  "generated_at": "2026-04-08T10:31:45.352619+09:00",
+  "basis_date": "2026-04-08",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 04월 07일",
-      "subtitle": "세금 특례·다주택 규제·연말정산 안내",
-      "url": "tax_policy/tax_20260407_102034.html",
-      "published_at": "2026-04-07T10:20:34+09:00",
+      "title": "세금 브리핑 - 2026년 04월 08일",
+      "subtitle": "트럼프 소득세·상속세 공제 필요",
+      "url": "tax_policy/tax_20260408_101749.html",
+      "published_at": "2026-04-08T10:17:49+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 04월 07일",
-      "subtitle": "전기차·공모가·수요예측",
-      "url": "ipo/ipo_20260407_102859.html",
-      "published_at": "2026-04-07T10:28:59+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 04월 08일",
+      "subtitle": "공모주 청약·IPO 동향 분석",
+      "url": "ipo/ipo_20260408_102533.html",
+      "published_at": "2026-04-08T10:25:33+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 04월 07일",
-      "subtitle": "레버리지 ETF·신규상장·시장 동향",
-      "url": "kospi_etf/kospi_etf_20260407_103121.html",
-      "published_at": "2026-04-07T10:31:21+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 04월 08일",
+      "subtitle": "레버리지 ETF·개인 자금·손실 베팅",
+      "url": "kospi_etf/kospi_etf_20260408_102723.html",
+      "published_at": "2026-04-08T10:27:23+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 04월 07일",
-      "subtitle": "주가 급락·AI 헬스케어·중소형주 반",
-      "url": "kosdaq/kosdaq_20260407_103041.html",
-      "published_at": "2026-04-07T10:30:41+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 04월 08일",
+      "subtitle": "기관 매도세·에이비엘바이오 하락",
+      "url": "kosdaq/kosdaq_20260408_102644.html",
+      "published_at": "2026-04-08T10:26:44+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 04월 07일",
-      "subtitle": "삼성전자 실적·코스피 상승",
-      "url": "kospi/kospi_20260407_102943.html",
-      "published_at": "2026-04-07T10:29:43+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 04월 08일",
+      "subtitle": "삼성전자·반도체株·상승세",
+      "url": "kospi/kospi_20260408_102611.html",
+      "published_at": "2026-04-08T10:26:11+09:00",
       "score": 45,
       "tags": [
         "코스피"
