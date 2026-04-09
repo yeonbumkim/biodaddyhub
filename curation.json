@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-08T10:31:45.352619+09:00",
-  "basis_date": "2026-04-08",
+  "generated_at": "2026-04-09T10:27:14.547322+09:00",
+  "basis_date": "2026-04-09",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 04월 08일",
-      "subtitle": "트럼프 소득세·상속세 공제 필요",
-      "url": "tax_policy/tax_20260408_101749.html",
-      "published_at": "2026-04-08T10:17:49+09:00",
+      "title": "세금 브리핑 - 2026년 04월 09일",
+      "subtitle": "해외주식 세금 신고·부동산 컨설팅",
+      "url": "tax_policy/tax_20260409_101544.html",
+      "published_at": "2026-04-09T10:15:44+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 04월 08일",
-      "subtitle": "공모주 청약·IPO 동향 분석",
-      "url": "ipo/ipo_20260408_102533.html",
-      "published_at": "2026-04-08T10:25:33+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 04월 09일",
+      "subtitle": "공모주 청약·IPO 시장 동향",
+      "url": "ipo/ipo_20260409_102229.html",
+      "published_at": "2026-04-09T10:22:29+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 04월 08일",
-      "subtitle": "레버리지 ETF·개인 자금·손실 베팅",
-      "url": "kospi_etf/kospi_etf_20260408_102723.html",
-      "published_at": "2026-04-08T10:27:23+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 04월 09일",
+      "subtitle": "레버리지 ETF·프리덤 TDF·월배당",
+      "url": "kospi_etf/kospi_etf_20260409_102402.html",
+      "published_at": "2026-04-09T10:24:02+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 04월 08일",
-      "subtitle": "기관 매도세·에이비엘바이오 하락",
-      "url": "kosdaq/kosdaq_20260408_102644.html",
-      "published_at": "2026-04-08T10:26:44+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 04월 09일",
+      "subtitle": "피플바이오·삼진제약·삼천당제약",
+      "url": "kosdaq/kosdaq_20260409_102335.html",
+      "published_at": "2026-04-09T10:23:35+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 04월 08일",
-      "subtitle": "삼성전자·반도체株·상승세",
-      "url": "kospi/kospi_20260408_102611.html",
-      "published_at": "2026-04-08T10:26:11+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 04월 09일",
+      "subtitle": "삼성전자·하락세·2차전지",
+      "url": "kospi/kospi_20260409_102305.html",
+      "published_at": "2026-04-09T10:23:05+09:00",
       "score": 45,
       "tags": [
         "코스피"
