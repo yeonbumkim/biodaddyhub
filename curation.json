@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-10T11:02:52.337484+09:00",
-  "basis_date": "2026-04-10",
+  "generated_at": "2026-04-13T10:37:44.185886+09:00",
+  "basis_date": "2026-04-13",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 04월 10일",
-      "subtitle": "부동산 세금·탈세 제보·상속세 영향",
-      "url": "tax_policy/tax_20260410_105021.html",
-      "published_at": "2026-04-10T10:50:21+09:00",
+      "title": "세금 브리핑 - 2026년 04월 13일",
+      "subtitle": "세제 정상화·부동산 투기 근절",
+      "url": "tax_policy/tax_20260413_102458.html",
+      "published_at": "2026-04-13T10:24:58+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 04월 10일",
-      "subtitle": "공모주 청약·리스크 체크·IPO 일정",
-      "url": "ipo/ipo_20260410_105700.html",
-      "published_at": "2026-04-10T10:57:00+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 04월 13일",
+      "subtitle": "공모주 청약·수요예측 정리",
+      "url": "ipo/ipo_20260413_103214.html",
+      "published_at": "2026-04-13T10:32:14+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 04월 10일",
-      "subtitle": "KODEX200·ETF·순자산 20조",
-      "url": "kospi_etf/kospi_etf_20260410_105841.html",
-      "published_at": "2026-04-10T10:58:41+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 04월 13일",
+      "subtitle": "KODEX200·우주 ETF·배당 주",
+      "url": "kospi_etf/kospi_etf_20260413_103357.html",
+      "published_at": "2026-04-13T10:33:57+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 04월 10일",
-      "subtitle": "삼천당제약·외국인 매매·피플바이오 급",
-      "url": "kosdaq/kosdaq_20260410_105806.html",
-      "published_at": "2026-04-10T10:58:06+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 04월 13일",
+      "subtitle": "바이오 공시·주가 급등락·K뷰티 상승",
+      "url": "kosdaq/kosdaq_20260413_103326.html",
+      "published_at": "2026-04-13T10:33:26+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 04월 10일",
-      "subtitle": "주가 상승·실적 개선·반등 기대",
-      "url": "kospi/kospi_20260410_105733.html",
-      "published_at": "2026-04-10T10:57:33+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 04월 13일",
+      "subtitle": "삼성전자 하락·반도체 주목",
+      "url": "kospi/kospi_20260413_103250.html",
+      "published_at": "2026-04-13T10:32:50+09:00",
       "score": 45,
       "tags": [
         "코스피"
