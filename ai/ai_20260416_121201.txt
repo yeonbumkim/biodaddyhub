@@ -1,0 +1,14 @@
+🤖 4/16(목) AI 모닝브리핑
+
+📌 오늘의 키워드: #금융특화LLM
+
+💡 OpenAI·ChatGPT 오픈AI, 보안 모델 공개
+🔍 Google·Gemini CFO들, '클로드+챗GPT' 사용
+💬 Anthropic·Claude 앤트로픽, 오픈AI 역전 예상
+🧠 LLM·언어모델 딥서치, 금융 LLM 구축 시작
+🎬 영상·음성 AI Microsoft, Copilot 보안 패치
+
+💡 한줄해석: 금융 분야 AI 모델과 스타트업의 성장세가 두드러짐
+🤖 AI팁: 금융 특화 LLM을 활용해 데이터 분석과 의사결정을 지원할 수 있음
+
+🔗 자세히 보기: https://farmingdollar.com/ai/ai_20260416_121201.html
