@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>공모주 IPO 수익 계산기 | 바이오대디</title>
-  <meta name="description" content="한패스·메쥬·NH스팩33호·리센스메디컬·신한17호스팩·인벤테라·채비·코스모로보틱스·하나오피스리츠 등 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
+  <meta name="description" content="채비·한패스·메쥬·NH스팩33호·리센스메디컬·신한17호스팩·인벤테라·코스모로보틱스·하나오피스리츠 등 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="공모주 IPO 수익 계산기">
-  <meta property="og:description" content="한패스·메쥬·NH스팩33호·리센스메디컬·인벤테라·채비·코스모로보틱스·하나오피스리츠 등 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
+  <meta property="og:description" content="채비·한패스·메쥬·NH스팩33호·리센스메디컬·인벤테라·코스모로보틱스·하나오피스리츠 등 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
@@ -919,7 +919,11 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
 
       <!-- IPO Selector -->
       <div class="ipo-selector">
-        <button class="ipo-btn active" data-ipo="hanpass">
+        <button class="ipo-btn active" data-ipo="chaevi">
+          <span class="ipo-btn-name">채비</span>
+          <span class="ipo-btn-desc">전기차 충전 인프라 · 청약 4/20~21 · 4/29 상장</span>
+        </button>
+        <button class="ipo-btn" data-ipo="hanpass">
           <span class="ipo-btn-name">한패스</span>
           <span class="ipo-btn-desc">외국인 금융서비스 · 3/25 상장</span>
         </button>
@@ -942,10 +946,6 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
         <button class="ipo-btn" data-ipo="inventera">
           <span class="ipo-btn-name">인벤테라</span>
           <span class="ipo-btn-desc">나노의약품 바이오 · 4/2 상장</span>
-        </button>
-        <button class="ipo-btn" data-ipo="chaevi">
-          <span class="ipo-btn-name">채비</span>
-          <span class="ipo-btn-desc">전기차 충전 인프라 · 청약 4/1~2</span>
         </button>
         <button class="ipo-btn" data-ipo="cosmorobot">
           <span class="ipo-btn-name">코스모로보틱스</span>
@@ -1467,36 +1467,38 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
       name: '채비',
       nameEn: 'Chaevi',
       sector: '전기차 충전 인프라 (CPO)',
-      listingDate: '미정 (4월 중순 추정)',
-      listingMarket: '코스닥',
-      ipoPrice: 15300,
+      listingDate: '2026.04.29 (수)',
+      listingMarket: '코스닥 (테슬라 요건 특례)',
+      ipoPrice: 12300,
       priceBand: '12,300원 ~ 15,300원',
-      bandPosition: '수요예측 진행중 (3/23~27)',
+      bandPosition: '하단 확정',
       bandPositionType: 'neutral',
-      marketCap: '약 1,230~1,530억원',
+      marketCap: '공모가 기준 공모금액 약 1,107억원 (총 시총 공식 미확인)',
       lockupRate: 0,
-      lockupLabel: '수요예측 진행중',
+      lockupLabel: '공식 미확인',
       lockupSeverity: 'neutral',
       floatRate: 0,
-      floatLabel: '미정',
-      competitionRatio: '수요예측 진행중',
-      institutions: '미정',
-      totalShares: '10,000,000주',
-      publicShares: '약 2,500,000주 (25%)',
-      totalAmount: '약 1,230~1,530억원',
+      floatLabel: '공식 미확인',
+      competitionRatio: '약 55 : 1',
+      institutions: '751개',
+      totalShares: '9,000,000주',
+      publicShares: '2,250,000주 (25%)',
+      totalAmount: '약 1,107억원',
       underwriter: 'KB증권·삼성증권 (공동: 대신·하나증권)',
-      minShares: '10주',
-      minDeposit: '76,500원',
-      lockupNote: '수요예측 진행중(3/23~27)으로 기관 확약 비율은 아직 확정되지 않았습니다.',
-      floatNote: '수요예측 진행중으로 유통가능 비율은 아직 확정되지 않았습니다.',
-      summaryRange: '수요예측 결과 대기',
-      summaryPriceRange: '12,300원 ~ 15,300원',
+      minShares: '500주',
+      minDeposit: '3,075,000원',
+      lockupNote: '기관 의무보유확약 비율은 1차 언론·38커뮤니케이션 공개분에서 구체 수치가 확인되지 않습니다. 정확한 값은 DART 증권신고서·투자설명서 확인이 필요합니다. 경쟁률 약 55:1로 수요 자체는 약세입니다.',
+      floatNote: '상장일 유통가능 주식수·비율은 공식 수치 미확인입니다. 총 상장주식수는 약 4,661만주 수준(공모 감축 전 기준)으로 보도되었습니다.',
+      summaryRange: '밴드 하단 확정',
+      summaryPriceRange: '12,300원 확정',
       summaryRisks: [
-        '수요예측 결과 미확정',
-        '전기차 충전 인프라 수익성 리스크',
-        '공모금액 1,200억원 이상 대형 IPO',
+        '수요예측 경쟁률 약 55:1로 기관 수요 약세',
+        '공모가 하단·공모 주식수 10% 감축 확정',
+        '2025년 영업손실 296억원, 누적결손금 1,891억원',
+        '부채비율 109.5% → 200.3% 급등',
+        '최대주주 풋옵션 약 2,800~3,300억원 부담',
       ],
-      strategyNote: '민간 급속충전 국내 1위(약 5,900면). 수요예측 3/23~27, 청약 4/1~2.',
+      strategyNote: '민간 급속충전 국내 1위 CPO(약 5,900면). 기관 수요 약세로 공모가 하단·공모 규모 감축 확정. 확약률·유통물량 공식 수치 미확인. 청약 4/20~21, 상장 4/29.',
     },
     cosmorobot: {
       name: '코스모로보틱스',
@@ -1667,7 +1669,7 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
   const ipoBtns = document.querySelectorAll('.ipo-btn');
   const scenarioBtns = document.querySelectorAll('.scenario-btn');
   let selectedRate = 15;
-  let currentIPO = 'hanpass';
+  let currentIPO = 'chaevi';
 
   // =============================================
   // 유틸
