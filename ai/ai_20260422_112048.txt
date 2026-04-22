@@ -1,0 +1,14 @@
+🤖 4/22(수) AI 모닝브리핑
+
+📌 오늘의 키워드: #AI에이전트
+
+💡 OpenAI·ChatGPT AI 채용공고 800% 급증
+🔍 Google·Gemini Google Gemini 성능 분석
+💬 Anthropic·Claude OpenAI, 보안 모델 공개
+🧠 LLM·언어모델 우리은행, AI GPU 클러스터 구축
+🎬 영상·음성 AI Microsoft, Copilot 보안 강화
+
+💡 한줄해석: AI 기술 발전이 빠르게 진행됨
+🤖 AI팁: 자신만의 AI 에이전트를 구축해볼 수 있음
+
+🔗 자세히 보기: https://farmingdollar.com/ai/ai_20260422_112048.html
