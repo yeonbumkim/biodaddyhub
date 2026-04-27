@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-24T10:35:01.822008+09:00",
-  "basis_date": "2026-04-24",
+  "generated_at": "2026-04-27T10:42:53.125489+09:00",
+  "basis_date": "2026-04-27",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
-      "title": "세금 브리핑 - 2026년 04월 24일",
-      "subtitle": "근로장려금·부동산세·AI 상담",
-      "url": "tax_policy/tax_20260424_102157.html",
-      "published_at": "2026-04-24T10:21:57+09:00",
+      "title": "세금 브리핑 - 2026년 04월 27일",
+      "subtitle": "지지율 하락·고물가 영향",
+      "url": "tax_policy/tax_20260427_103226.html",
+      "published_at": "2026-04-27T10:32:26+09:00",
       "score": 65,
       "tags": [
         "세금"
@@ -18,10 +18,10 @@
     {
       "rank": 2,
       "category": "ipo",
-      "title": "공모주·IPO 브리핑 - 2026년 04월 24일",
-      "subtitle": "채비 공모가·IPO 일정·투심 변화",
-      "url": "ipo/ipo_20260424_102956.html",
-      "published_at": "2026-04-24T10:29:56+09:00",
+      "title": "공모주·IPO 브리핑 - 2026년 04월 27일",
+      "subtitle": "IPO 일정·공모가·상장일 변화",
+      "url": "ipo/ipo_20260427_103830.html",
+      "published_at": "2026-04-27T10:38:30+09:00",
       "score": 55,
       "tags": [
         "공모주"
@@ -31,10 +31,10 @@
     {
       "rank": 3,
       "category": "kospi_etf",
-      "title": "코스피 ETF 브리핑 - 2026년 04월 24일",
-      "subtitle": "ETF 상승·수익률 돌파·신규상장",
-      "url": "kospi_etf/kospi_etf_20260424_103150.html",
-      "published_at": "2026-04-24T10:31:50+09:00",
+      "title": "코스피 ETF 브리핑 - 2026년 04월 27일",
+      "subtitle": "반도체 ETF·순자산 증가·수익률 상",
+      "url": "kospi_etf/kospi_etf_20260427_103954.html",
+      "published_at": "2026-04-27T10:39:54+09:00",
       "score": 45,
       "tags": [
         "코스피"
@@ -44,10 +44,10 @@
     {
       "rank": 4,
       "category": "kosdaq",
-      "title": "코스닥 종목 브리핑 - 2026년 04월 24일",
-      "subtitle": "바이오주 반등 기대·2차전지 약세",
-      "url": "kosdaq/kosdaq_20260424_103113.html",
-      "published_at": "2026-04-24T10:31:13+09:00",
+      "title": "코스닥 종목 브리핑 - 2026년 04월 27일",
+      "subtitle": "코스닥 상승세·외국인 순매수",
+      "url": "kosdaq/kosdaq_20260427_103930.html",
+      "published_at": "2026-04-27T10:39:30+09:00",
       "score": 45,
       "tags": [
         "코스닥"
@@ -57,10 +57,10 @@
     {
       "rank": 5,
       "category": "kospi",
-      "title": "코스피 종목 브리핑 - 2026년 04월 24일",
-      "subtitle": "현대차 목표가↑·SK하이닉스 상승세",
-      "url": "kospi/kospi_20260424_103035.html",
-      "published_at": "2026-04-24T10:30:35+09:00",
+      "title": "코스피 종목 브리핑 - 2026년 04월 27일",
+      "subtitle": "미래 모빌리티·반도체 소재·바이오주",
+      "url": "kospi/kospi_20260427_103859.html",
+      "published_at": "2026-04-27T10:38:59+09:00",
       "score": 45,
       "tags": [
         "코스피"
