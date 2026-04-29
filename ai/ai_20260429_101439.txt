@@ -1,0 +1,14 @@
+🤖 4/29(수) AI 모닝브리핑
+
+📌 오늘의 키워드: #AI에이전트확산
+
+💡 OpenAI·ChatGPT 제타체인, AnumaAI 출시
+🔍 Google·Gemini Gemini AI, 프롬프트 아이디어 공개
+💬 Anthropic·Claude 텐센트, Anthropic 효과 확인
+🧠 LLM·언어모델 NHN두레이, AI 에이전트 도입
+🏢 빅테크 AI 구글, 분산 학습법 공개
+
+💡 한줄해석: AI 기술이 다양한 산업에 확산되고 있음.
+🤖 AI팁: AI에이전트를 활용해 업무 효율성을 높일 수 있음.
+
+🔗 자세히 보기: https://farmingdollar.com/ai/ai_20260429_101439.html
