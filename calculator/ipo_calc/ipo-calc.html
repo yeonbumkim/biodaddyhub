@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>공모주 IPO 수익 계산기 | 바이오대디</title>
-  <meta name="description" content="채비·한패스·메쥬·NH스팩33호·리센스메디컬·신한17호스팩·인벤테라·코스모로보틱스·하나오피스리츠·폴레드·마키나락스·스트라드비젼·레몬헬스케어·빅웨이브로보틱스 등 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
+  <meta name="description" content="폴레드·신한18호스팩·마키나락스·피스피스스튜디오·져스텍·레몬헬스케어·매드업·스트라드비젼·빅웨이브로보틱스 등 5월 이후 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="공모주 IPO 수익 계산기">
-  <meta property="og:description" content="채비·한패스·메쥬·NH스팩33호·리센스메디컬·인벤테라·코스모로보틱스·하나오피스리츠·폴레드·마키나락스·스트라드비젼·레몬헬스케어·빅웨이브로보틱스 등 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
+  <meta property="og:description" content="폴레드·신한18호스팩·마키나락스·피스피스스튜디오·져스텍·레몬헬스케어·매드업·스트라드비젼·빅웨이브로보틱스 등 5월 이후 상장 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
@@ -919,53 +919,13 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
 
       <!-- IPO Selector -->
       <div class="ipo-selector">
-        <button class="ipo-btn active" data-ipo="chaevi">
-          <span class="ipo-btn-name">채비</span>
-          <span class="ipo-btn-desc">전기차 충전 인프라 · 청약 4/20~21 · 4/29 상장</span>
-        </button>
-        <button class="ipo-btn" data-ipo="hanpass">
-          <span class="ipo-btn-name">한패스</span>
-          <span class="ipo-btn-desc">외국인 금융서비스 · 3/25 상장</span>
-        </button>
-        <button class="ipo-btn" data-ipo="meju">
-          <span class="ipo-btn-name">메쥬</span>
-          <span class="ipo-btn-desc">디지털 헬스케어 · 3/26 상장</span>
-        </button>
-        <button class="ipo-btn" data-ipo="nhspac33">
-          <span class="ipo-btn-name">NH스팩33호</span>
-          <span class="ipo-btn-desc">SPAC · 3/27 상장</span>
-        </button>
-        <button class="ipo-btn" data-ipo="recens">
-          <span class="ipo-btn-name">리센스메디컬</span>
-          <span class="ipo-btn-desc">의료기기 · 3/31 상장</span>
-        </button>
-        <button class="ipo-btn" data-ipo="shinhan17">
-          <span class="ipo-btn-name">신한17호스팩</span>
-          <span class="ipo-btn-desc">SPAC · 4/1 상장</span>
-        </button>
-        <button class="ipo-btn" data-ipo="inventera">
-          <span class="ipo-btn-name">인벤테라</span>
-          <span class="ipo-btn-desc">나노의약품 바이오 · 4/2 상장</span>
-        </button>
-        <button class="ipo-btn" data-ipo="cosmorobot">
-          <span class="ipo-btn-name">코스모로보틱스</span>
-          <span class="ipo-btn-desc">재활 로봇 · 청약 4/9~10</span>
-        </button>
-        <button class="ipo-btn" data-ipo="kiwoomspac2">
-          <span class="ipo-btn-name">키움히어로2호스팩</span>
-          <span class="ipo-btn-desc">SPAC · 청약 4/14~</span>
-        </button>
-        <button class="ipo-btn" data-ipo="hanaofficereit">
-          <span class="ipo-btn-name">하나오피스리츠</span>
-          <span class="ipo-btn-desc">오피스 리츠 · 4/17 상장</span>
+        <button class="ipo-btn active" data-ipo="polled">
+          <span class="ipo-btn-name">폴레드</span>
+          <span class="ipo-btn-desc">육아가전 · 청약 5/4~6 · 5/14 상장</span>
         </button>
         <button class="ipo-btn" data-ipo="shinhan18">
           <span class="ipo-btn-name">신한18호스팩</span>
-          <span class="ipo-btn-desc">SPAC · 청약 4/20~</span>
-        </button>
-        <button class="ipo-btn" data-ipo="polled">
-          <span class="ipo-btn-name">폴레드</span>
-          <span class="ipo-btn-desc">코스닥 상반기 상장 추진</span>
+          <span class="ipo-btn-desc">SPAC · 5월 초 상장 추정</span>
         </button>
         <button class="ipo-btn" data-ipo="makinarocks">
           <span class="ipo-btn-name">마키나락스</span>
@@ -1285,358 +1245,6 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
   // IPO 데이터 정의
   // =============================================
   const IPO_DATA = {
-    hanpass: {
-      name: '한패스',
-      nameEn: 'HANPASS',
-      sector: '외국인 금융·생활편의 서비스',
-      listingDate: '2026.03.25 (화)',
-      listingMarket: '코스닥',
-      ipoPrice: 19000,
-      priceBand: '17,000원 ~ 19,000원',
-      bandPosition: '상단 확정',
-      bandPositionType: 'positive',
-      marketCap: '약 2,009억원',
-      lockupRate: 68.37,
-      lockupLabel: '약 68.37%',
-      lockupSeverity: 'positive',
-      floatRate: 31.63,
-      floatLabel: '31.63% (334만주)',
-      competitionRatio: '1,172.59 : 1',
-      institutions: '2,229개',
-      totalShares: '1,100,000주',
-      publicShares: '1,100,000주',
-      totalAmount: '약 209억원',
-      underwriter: '한국투자증권·대신증권',
-      minShares: '10주',
-      minDeposit: '95,000원',
-      lockupNote: '2,229개 기관 참여, 99%가 밴드 상단 이상 가격 제시. 의무보유 확약 비율 약 68.37%.',
-      floatNote: '상장 직후 유통가능 물량은 31.63%(334만4,062주)로 다소 높은 편입니다.',
-      summaryRange: '밴드 상단 확정 (19,000원)',
-      summaryPriceRange: '17,000원 ~ 19,000원',
-      summaryRisks: [
-        '유통가능 비율 31.63%로 다소 높음',
-        '외국인 대상 니치마켓 의존도',
-        '기관 확약률 68.37%로 양호',
-      ],
-      strategyNote: '경쟁률 1,172:1, 99% 상단 이상 제시. 청약 3/16~17, 상장 3/25.',
-    },
-    meju: {
-      name: '메쥬',
-      nameEn: 'MEJU',
-      sector: '디지털 헬스케어 (의료기기)',
-      listingDate: '2026.03.26 (수)',
-      listingMarket: '코스닥 (기술특례)',
-      ipoPrice: 21600,
-      priceBand: '16,700원 ~ 21,600원',
-      bandPosition: '상단 확정',
-      bandPositionType: 'positive',
-      marketCap: '약 2,099억원',
-      lockupRate: 76.5,
-      lockupLabel: '76.5% (1,775개 기관)',
-      lockupSeverity: 'positive',
-      floatRate: 23.5,
-      floatLabel: '약 23.5%',
-      competitionRatio: '1,108.93 : 1',
-      institutions: '2,320개',
-      totalShares: '1,345,000주',
-      publicShares: '1,345,000주',
-      totalAmount: '약 291억원',
-      underwriter: '신한투자증권',
-      minShares: '10주',
-      minDeposit: '108,000원',
-      lockupNote: '2,320개 기관 참여, 1,775개(76.5%) 의무보유 확약. 3개월 이상 장기 확약 1,209개(52.1%), 6개월 확약 556개(24.0%)로 기관 신뢰도 높음.',
-      floatNote: '상장 직후 유통가능 비율은 약 23.5%로 추정됩니다.',
-      summaryRange: '밴드 상단 확정 (21,600원)',
-      summaryPriceRange: '16,700원 ~ 21,600원',
-      summaryRisks: [
-        '기술특례 상장 (적자 기업)',
-        '매출처 편중 리스크',
-        '기관 확약률 76.5%로 양호',
-      ],
-      strategyNote: '경쟁률 1,108:1, 기관 확약 76.5%로 수요예측 흥행. 청약 3/16~17.',
-    },
-    nhspac33: {
-      name: 'NH스팩33호',
-      nameEn: 'NH SPAC 33',
-      sector: '기업인수목적회사 (SPAC)',
-      listingDate: '2026.03.27 (목)',
-      listingMarket: '코스닥',
-      ipoPrice: 2000,
-      priceBand: '2,000원 (단일가)',
-      bandPosition: '단일가 확정',
-      bandPositionType: 'neutral',
-      marketCap: '약 127억원',
-      lockupRate: 0,
-      lockupLabel: '확약 없음',
-      lockupSeverity: 'bad',
-      floatRate: 93.6,
-      floatLabel: '약 93.6% (스팩 특성)',
-      competitionRatio: '1,228.71 : 1',
-      institutions: '-',
-      totalShares: '6,350,000주',
-      publicShares: '약 1,587,500주 (25%)',
-      totalAmount: '약 127억원',
-      underwriter: 'NH투자증권',
-      minShares: '10주',
-      minDeposit: '20,000원',
-      lockupNote: '기관 의무보유확약 비율 <strong>0%</strong>입니다. 스팩 특성상 확약이 없는 경우가 많으나, 상장 직후 기관 물량 전량 유통 가능하므로 주의가 필요합니다.',
-      floatNote: '스팩 특성상 유통가능 비율이 <strong>약 93.6%</strong>로 매우 높습니다. 공모주 전량이 상장 후 유통 가능하며, 발기인 지분만 보호예수 대상입니다.',
-      summaryRange: '단일가 2,000원',
-      summaryPriceRange: '2,000원',
-      summaryRisks: [
-        '의무보유확약 0% (기관 전량 유통 가능)',
-        'SPAC 특성상 합병 불확실성',
-        '유통가능 비율 약 93.6%로 매우 높음',
-      ],
-      strategyNote: '기관 경쟁률 1,228.71:1. 청약 3/17~18, 상장 3/27.',
-    },
-    recens: {
-      name: '리센스메디컬',
-      nameEn: 'RecensMedical',
-      sector: '의료기기 (정밀냉각 기술)',
-      listingDate: '2026.03.31 (월)',
-      listingMarket: '코스닥 (기술특례)',
-      ipoPrice: 11000,
-      priceBand: '9,000원 ~ 11,000원',
-      bandPosition: '상단 확정',
-      bandPositionType: 'good',
-      marketCap: '약 1,194억원',
-      lockupRate: 63.9,
-      lockupLabel: '63.9% (15일 이상)',
-      lockupSeverity: 'positive',
-      floatRate: 29.87,
-      floatLabel: '약 29.87%',
-      competitionRatio: '1,352.63 : 1',
-      institutions: '2,261개',
-      totalShares: '1,400,000주',
-      publicShares: '약 350,000주 (25%)',
-      totalAmount: '약 154억원',
-      underwriter: 'KB증권',
-      minShares: '10주',
-      minDeposit: '55,000원',
-      lockupNote: '2,261개 기관 참여, 의무보유확약 비율 <strong>63.9%</strong>(15일 이상). 기술특례(기술평가 A/A) 상장으로 기관 관심도가 높습니다.',
-      floatNote: '상장 직후 유통가능 비율은 <strong>29.87%</strong>로, 상장예정주식 약 1,085만주 중 약 235만주가 유통 가능합니다.',
-      summaryRange: '+20% ~ +40%',
-      summaryPriceRange: '13,200원 ~ 15,400원',
-      summaryRisks: [
-        '기술특례 상장 (적자 기업 가능성)',
-        '의료기기 섹터 규제 리스크',
-        '기관 확약률 63.9%로 양호',
-      ],
-      strategyNote: '경쟁률 1,352.63:1 (2026년 최고). 청약 3/19~20, 상장 3/31.',
-    },
-    shinhan17: {
-      name: '신한17호스팩',
-      nameEn: 'Shinhan SPAC 17',
-      sector: '기업인수목적회사 (SPAC)',
-      listingDate: '2026.04.01 (화)',
-      listingMarket: '코스닥',
-      ipoPrice: 2000,
-      priceBand: '2,000원 (단일가)',
-      bandPosition: '단일가 확정',
-      bandPositionType: 'neutral',
-      marketCap: '약 107억원',
-      lockupRate: 0,
-      lockupLabel: '미확인',
-      lockupSeverity: 'neutral',
-      floatRate: 93.6,
-      floatLabel: '약 93.6% (스팩 특성)',
-      competitionRatio: '1,343.8 : 1',
-      institutions: '-',
-      totalShares: '5,000,000주',
-      publicShares: '약 1,250,000주 (25%)',
-      totalAmount: '약 100억원',
-      underwriter: '신한투자증권',
-      minShares: '10주',
-      minDeposit: '20,000원',
-      lockupNote: '기관 의무보유확약 비율은 <strong>미확인</strong>입니다. 스팩 특성상 확약률이 낮거나 없는 경우가 일반적이며, 상장 직후 기관 물량 유통에 유의해야 합니다.',
-      floatNote: '스팩 특성상 유통가능 비율이 <strong>약 93.6%</strong>로 매우 높습니다. 총 상장예정주식 534만주 중 공모물량 500만주가 즉시 유통 가능합니다.',
-      summaryRange: '단일가 2,000원',
-      summaryPriceRange: '2,000원',
-      summaryRisks: [
-        'SPAC 특성상 합병 불확실성',
-        '유통가능 비율 약 93.6%로 매우 높음',
-        '의무보유확약 비율 미확인',
-      ],
-      strategyNote: '기관 경쟁률 1,343.8:1. 청약 3/19~20, 상장 4/1.',
-    },
-    inventera: {
-      name: '인벤테라',
-      nameEn: 'Inventera',
-      sector: '나노의약품 / MRI 조영제 신약 (바이오)',
-      listingDate: '2026.04.02 (수)',
-      listingMarket: '코스닥 (기술특례)',
-      ipoPrice: 16600,
-      priceBand: '12,100원 ~ 16,600원',
-      bandPosition: '최상단 확정',
-      bandPositionType: 'good',
-      marketCap: '약 1,306억원',
-      lockupRate: 43.06,
-      lockupLabel: '43.06%',
-      lockupSeverity: 'neutral',
-      floatRate: 29.87,
-      floatLabel: '약 29.87%',
-      competitionRatio: '1,328.82 : 1',
-      institutions: '2,309개',
-      totalShares: '1,180,000주',
-      publicShares: '약 295,000주 (25%)',
-      totalAmount: '약 196억원',
-      underwriter: 'NH투자증권 (공동: 유진투자증권)',
-      minShares: '10주',
-      minDeposit: '83,000원',
-      lockupNote: '2,309개 기관 참여, 의무보유확약 비율 <strong>43.06%</strong>. 희망공모가 대부분 최상단 이상 신청으로 수요예측 흥행. 다만 확약률 43%는 보통 수준입니다.',
-      floatNote: '상장 직후 유통가능 비율은 <strong>29.87%</strong>로, 상장예정주식 약 787만주 중 약 235만주가 유통 가능합니다.',
-      summaryRange: '+15% ~ +40%',
-      summaryPriceRange: '19,090원 ~ 23,240원',
-      summaryRisks: [
-        '기술특례 상장 (매출 없는 신약개발 기업)',
-        '의무보유확약 43.06%로 보통 수준',
-        '바이오 섹터 높은 변동성',
-      ],
-      strategyNote: '경쟁률 1,328.82:1, 최상단 확정. 청약 3/23~24, 상장 4/2.',
-    },
-    chaevi: {
-      name: '채비',
-      nameEn: 'Chaevi',
-      sector: '전기차 충전 인프라 (CPO)',
-      listingDate: '2026.04.29 (수)',
-      listingMarket: '코스닥 (테슬라 요건 특례)',
-      ipoPrice: 12300,
-      priceBand: '12,300원 ~ 15,300원',
-      bandPosition: '하단 확정',
-      bandPositionType: 'neutral',
-      marketCap: '공모가 기준 공모금액 약 1,107억원 (총 시총 공식 미확인)',
-      lockupRate: 0,
-      lockupLabel: '공식 미확인',
-      lockupSeverity: 'neutral',
-      floatRate: 0,
-      floatLabel: '공식 미확인',
-      competitionRatio: '약 55 : 1',
-      institutions: '751개',
-      totalShares: '9,000,000주',
-      publicShares: '2,250,000주 (25%)',
-      totalAmount: '약 1,107억원',
-      underwriter: 'KB증권·삼성증권 (공동: 대신·하나증권)',
-      minShares: '500주',
-      minDeposit: '3,075,000원',
-      lockupNote: '기관 의무보유확약 비율은 1차 언론·38커뮤니케이션 공개분에서 구체 수치가 확인되지 않습니다. 정확한 값은 DART 증권신고서·투자설명서 확인이 필요합니다. 경쟁률 약 55:1로 수요 자체는 약세입니다.',
-      floatNote: '상장일 유통가능 주식수·비율은 공식 수치 미확인입니다. 총 상장주식수는 약 4,661만주 수준(공모 감축 전 기준)으로 보도되었습니다.',
-      summaryRange: '밴드 하단 확정',
-      summaryPriceRange: '12,300원 확정',
-      summaryRisks: [
-        '수요예측 경쟁률 약 55:1로 기관 수요 약세',
-        '공모가 하단·공모 주식수 10% 감축 확정',
-        '2025년 영업손실 296억원, 누적결손금 1,891억원',
-        '부채비율 109.5% → 200.3% 급등',
-        '최대주주 풋옵션 약 2,800~3,300억원 부담',
-      ],
-      strategyNote: '민간 급속충전 국내 1위 CPO(약 5,900면). 기관 수요 약세로 공모가 하단·공모 규모 감축 확정. 확약률·유통물량 공식 수치 미확인. 청약 4/20~21, 상장 4/29.',
-    },
-    cosmorobot: {
-      name: '코스모로보틱스',
-      nameEn: 'Cosmo Robotics',
-      sector: '의료·재활 웨어러블 로봇',
-      listingDate: '미정 (4월 중 추정)',
-      listingMarket: '코스닥 (기술특례)',
-      ipoPrice: 6000,
-      priceBand: '5,300원 ~ 6,000원',
-      bandPosition: '미확정',
-      bandPositionType: 'neutral',
-      marketCap: '미정',
-      lockupRate: 0,
-      lockupLabel: '미확인',
-      lockupSeverity: 'neutral',
-      floatRate: 0,
-      floatLabel: '미정',
-      competitionRatio: '미확인',
-      institutions: '미정',
-      totalShares: '4,170,000주',
-      publicShares: '약 1,042,500주 (25%)',
-      totalAmount: '약 221~250억원',
-      underwriter: '유진투자증권·NH투자증권',
-      minShares: '10주',
-      minDeposit: '30,000원',
-      lockupNote: '수요예측 결과가 아직 확정되지 않아 기관 확약 비율은 미확인 상태입니다.',
-      floatNote: '유통가능 비율은 아직 확정되지 않았습니다.',
-      summaryRange: '수요예측 결과 대기',
-      summaryPriceRange: '5,300원 ~ 6,000원',
-      summaryRisks: [
-        '기술특례 상장 (적자 기업)',
-        '수요예측 결과 미확정',
-        '보호예수 해제 물량 이슈',
-      ],
-      strategyNote: '구 엑소아틀레트아시아. 청약 4/9~10 예정.',
-    },
-    kiwoomspac2: {
-      name: '키움히어로2호스팩',
-      nameEn: 'Kiwoom Hero 2nd SPAC',
-      sector: '기업인수목적회사 (SPAC)',
-      listingDate: '미정 (4월 말 추정)',
-      listingMarket: '코스닥',
-      ipoPrice: 2000,
-      priceBand: '2,000원 (단일가)',
-      bandPosition: '단일가 확정',
-      bandPositionType: 'neutral',
-      marketCap: '미정',
-      lockupRate: 0,
-      lockupLabel: '미확인',
-      lockupSeverity: 'neutral',
-      floatRate: 0,
-      floatLabel: '미정',
-      competitionRatio: '미확인',
-      institutions: '미정',
-      totalShares: '미정',
-      publicShares: '미정',
-      totalAmount: '미정',
-      underwriter: '키움증권',
-      minShares: '10주',
-      minDeposit: '20,000원',
-      lockupNote: 'SPAC으로 수요예측 및 기관 확약 정보가 아직 공개되지 않았습니다.',
-      floatNote: 'SPAC 특성상 유통가능 비율이 높을 수 있습니다. 상세 정보 미공개.',
-      summaryRange: '단일가 2,000원',
-      summaryPriceRange: '2,000원',
-      summaryRisks: [
-        'SPAC 특성상 합병 불확실성',
-        '상세 공모 정보 미공개',
-        '유통가능 비율 높을 가능성',
-      ],
-      strategyNote: '청약 4/14~ 예정. 상세 정보 추후 공개.',
-    },
-    hanaofficereit: {
-      name: '하나오피스리츠',
-      nameEn: 'Hana Office REIT',
-      sector: '부동산 리츠 (오피스)',
-      listingDate: '2026.04.17 (목)',
-      listingMarket: '코스피',
-      ipoPrice: 5000,
-      priceBand: '5,000원 (확정)',
-      bandPosition: '확정',
-      bandPositionType: 'positive',
-      marketCap: '약 1,260억원',
-      lockupRate: 0,
-      lockupLabel: '미확인',
-      lockupSeverity: 'neutral',
-      floatRate: 0,
-      floatLabel: '미정',
-      competitionRatio: '미확인',
-      institutions: '미정',
-      totalShares: '25,200,000주',
-      publicShares: '미정',
-      totalAmount: '약 1,260억원',
-      underwriter: '하나증권·한국투자증권',
-      minShares: '10주',
-      minDeposit: '25,000원',
-      lockupNote: '하나금융그룹 최초 공모 상장 리츠입니다. 기관 확약 정보는 아직 공개되지 않았습니다.',
-      floatNote: '유통가능 비율은 아직 확정되지 않았습니다.',
-      summaryRange: '공모가 5,000원',
-      summaryPriceRange: '5,000원',
-      summaryRisks: [
-        '리츠 특성상 금리 변동 리스크',
-        '오피스 공실률 리스크',
-        '연환산 배당 8% 목표',
-      ],
-      strategyNote: '강남사옥·태광타워 기반 오피스 리츠. 청약 3/31~4/1, 상장 4/17.',
-    },
     shinhan18: {
       name: '신한18호스팩',
       nameEn: 'Shinhan SPAC 18',
@@ -1674,38 +1282,38 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
     },
     polled: {
       name: '폴레드',
-      nameEn: 'Polled',
-      sector: '미정',
-      listingDate: '미정 (2026 상반기 추진)',
+      nameEn: 'POLED',
+      sector: '카시트 기반 육아가전 (자동차용 의자 제조업)',
+      listingDate: '2026.05.14 (목)',
       listingMarket: '코스닥',
-      ipoPrice: 0,
-      priceBand: '미정',
-      bandPosition: '미정',
-      bandPositionType: 'neutral',
-      marketCap: '미정',
-      lockupRate: 0,
-      lockupLabel: '미확인',
-      lockupSeverity: 'neutral',
-      floatRate: 0,
-      floatLabel: '미정',
-      competitionRatio: '미확인',
-      institutions: '미정',
-      totalShares: '미정',
-      publicShares: '미정',
-      totalAmount: '미정',
-      underwriter: '미정',
-      minShares: '미정',
-      minDeposit: '미정',
-      lockupNote: '수요예측 및 기관 의무보유확약 정보가 아직 공개되지 않았습니다.',
-      floatNote: '유통가능 비율 등 상세 정보 미공개. 증권신고서 제출 이후 확인 필요.',
-      summaryRange: '공모가 미정',
-      summaryPriceRange: '미정',
+      ipoPrice: 5000,
+      priceBand: '4,100원 ~ 5,000원',
+      bandPosition: '상단 초과 / 상단 확정',
+      bandPositionType: 'caution',
+      marketCap: '약 1,259억원',
+      lockupRate: 66.1,
+      lockupLabel: '66.1% (양호)',
+      lockupSeverity: 'good',
+      floatRate: 33.9,
+      floatLabel: '약 33.9%',
+      competitionRatio: '1,486.66 : 1',
+      institutions: '수요예측 흥행',
+      totalShares: '미정 (공모 후 약 2,517만주 추정)',
+      publicShares: '2,600,000주 (신주 100%)',
+      totalAmount: '약 130억원',
+      underwriter: 'NH투자증권 (단독)',
+      minShares: '10주',
+      minDeposit: '25,000원',
+      lockupNote: '기관 의무보유확약 비율이 <strong>66.1%</strong>로 양호한 수준입니다. 수요예측 경쟁률은 <strong>1,486.66:1</strong>로 흥행에 성공했고, 공모가도 희망밴드 상단(5,000원)에서 확정되었습니다.',
+      floatNote: '상장 직후 유통가능 비율은 <strong>약 33.9%</strong>로 비교적 안정적인 수준입니다. 공모물량 260만주(신주 100%)와 일부 기존 주주 물량이 즉시 유통 가능합니다.',
+      summaryRange: '공모가 5,000원 (상단 확정)',
+      summaryPriceRange: '4,100원 ~ 5,000원',
       summaryRisks: [
-        '공모 일정·가격 등 상세 정보 미공개',
-        '증권신고서 제출 전 단계',
-        '시장 환경에 따른 상장 일정 변동 가능성',
+        '해외 매출의 약 84%가 일본 시장에 집중',
+        '저출산 추세 속 육아가전 시장 성장성',
+        '카시트 기반 사업 다각화 진행 중',
       ],
-      strategyNote: '2026 상반기 코스닥 상장 추진 단계. 증권신고서·수요예측 결과 공개 시 정보 업데이트 예정.',
+      strategyNote: '현대차 사내벤처 출발(2019 분사), 카시트 기반 육아가전 플랫폼(에어러브·유팡·아이브이지). 2025년 매출 799억원(+51.4%), 영업이익 104억원(+68.1%). 청약 5/4~6, 상장 5/14.',
     },
     makinarocks: {
       name: '마키나락스',
