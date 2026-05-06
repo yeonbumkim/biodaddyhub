@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>공모주 IPO 수익 계산기 | 바이오대디</title>
-  <meta name="description" content="채비·한패스·메쥬·NH스팩33호·리센스메디컬·신한17호스팩·인벤테라·코스모로보틱스·하나오피스리츠 등 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
+  <meta name="description" content="채비·한패스·메쥬·NH스팩33호·리센스메디컬·신한17호스팩·인벤테라·코스모로보틱스·하나오피스리츠·폴레드 등 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="공모주 IPO 수익 계산기">
-  <meta property="og:description" content="채비·한패스·메쥬·NH스팩33호·리센스메디컬·인벤테라·코스모로보틱스·하나오피스리츠 등 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
+  <meta property="og:description" content="채비·한패스·메쥬·NH스팩33호·리센스메디컬·인벤테라·코스모로보틱스·하나오피스리츠·폴레드 등 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
@@ -963,6 +963,10 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
           <span class="ipo-btn-name">신한18호스팩</span>
           <span class="ipo-btn-desc">SPAC · 청약 4/20~</span>
         </button>
+        <button class="ipo-btn" data-ipo="polled">
+          <span class="ipo-btn-name">폴레드</span>
+          <span class="ipo-btn-desc">코스닥 상반기 상장 추진</span>
+        </button>
       </div>
 
       <div class="hero-stats" id="heroStats">
@@ -1639,6 +1643,41 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
         '유통가능 비율 높을 가능성',
       ],
       strategyNote: '청약 4/20~ 예정. 상세 정보 추후 공개.',
+    },
+    polled: {
+      name: '폴레드',
+      nameEn: 'Polled',
+      sector: '미정',
+      listingDate: '미정 (2026 상반기 추진)',
+      listingMarket: '코스닥',
+      ipoPrice: 0,
+      priceBand: '미정',
+      bandPosition: '미정',
+      bandPositionType: 'neutral',
+      marketCap: '미정',
+      lockupRate: 0,
+      lockupLabel: '미확인',
+      lockupSeverity: 'neutral',
+      floatRate: 0,
+      floatLabel: '미정',
+      competitionRatio: '미확인',
+      institutions: '미정',
+      totalShares: '미정',
+      publicShares: '미정',
+      totalAmount: '미정',
+      underwriter: '미정',
+      minShares: '미정',
+      minDeposit: '미정',
+      lockupNote: '수요예측 및 기관 의무보유확약 정보가 아직 공개되지 않았습니다.',
+      floatNote: '유통가능 비율 등 상세 정보 미공개. 증권신고서 제출 이후 확인 필요.',
+      summaryRange: '공모가 미정',
+      summaryPriceRange: '미정',
+      summaryRisks: [
+        '공모 일정·가격 등 상세 정보 미공개',
+        '증권신고서 제출 전 단계',
+        '시장 환경에 따른 상장 일정 변동 가능성',
+      ],
+      strategyNote: '2026 상반기 코스닥 상장 추진 단계. 증권신고서·수요예측 결과 공개 시 정보 업데이트 예정.',
     },
   };
 

@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-04-29T10:21:08.305108+09:00",
-  "basis_date": "2026-04-29",
+  "generated_at": "2026-05-06T12:32:28.058074+09:00",
+  "basis_date": "2026-05-06",
   "items": [
     {
       "rank": 1,
       "category": "tax_policy",
       "title": "세금 브리핑 - 2026년 04월 29일",
-      "subtitle": "소득세·양도세·세금 부담",
+      "subtitle": "",
       "url": "tax_policy/tax_20260429_100731.html",
       "published_at": "2026-04-29T10:07:31+09:00",
-      "score": 65,
+      "score": 55,
       "tags": [
         "세금"
       ],
@@ -19,10 +19,10 @@
       "rank": 2,
       "category": "ipo",
       "title": "공모주·IPO 브리핑 - 2026년 04월 29일",
-      "subtitle": "공모주 청약·IPO 일정 정리",
+      "subtitle": "",
       "url": "ipo/ipo_20260429_101621.html",
       "published_at": "2026-04-29T10:16:21+09:00",
-      "score": 55,
+      "score": 45,
       "tags": [
         "공모주"
       ],
@@ -32,10 +32,10 @@
       "rank": 3,
       "category": "kospi_etf",
       "title": "코스피 ETF 브리핑 - 2026년 04월 29일",
-      "subtitle": "우주항공 ETF·변동성 확대",
+      "subtitle": "",
       "url": "kospi_etf/kospi_etf_20260429_101804.html",
       "published_at": "2026-04-29T10:18:04+09:00",
-      "score": 45,
+      "score": 35,
       "tags": [
         "코스피"
       ],
@@ -45,10 +45,10 @@
       "rank": 4,
       "category": "kosdaq",
       "title": "코스닥 종목 브리핑 - 2026년 04월 29일",
-      "subtitle": "외국인 매도·HLB제약 개발·코스닥",
+      "subtitle": "",
       "url": "kosdaq/kosdaq_20260429_101736.html",
       "published_at": "2026-04-29T10:17:36+09:00",
-      "score": 45,
+      "score": 35,
       "tags": [
         "코스닥"
       ],
@@ -58,10 +58,10 @@
       "rank": 5,
       "category": "kospi",
       "title": "코스피 종목 브리핑 - 2026년 04월 29일",
-      "subtitle": "반도체·외국인 매수·주가 상승",
+      "subtitle": "",
       "url": "kospi/kospi_20260429_101652.html",
       "published_at": "2026-04-29T10:16:52+09:00",
-      "score": 45,
+      "score": 35,
       "tags": [
         "코스피"
       ],
