@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>공모주 IPO 수익 계산기 | 바이오대디</title>
-  <meta name="description" content="폴레드·신한18호스팩·마키나락스·피스피스스튜디오·져스텍·레몬헬스케어·매드업·스트라드비젼·빅웨이브로보틱스 등 5월 이후 공모주 수익 계산기. 배정 주식수 기반 시나리오별 수익 분석과 리스크 체크리스트.">
+  <meta name="description" content="피스피스스튜디오(마르디메크르디)·대신20호스팩·매드업·레몬헬스케어·스트라드비젼·마키나락스·폴레드 등 5~6월 공모주 수익 계산기. 확정 공모가·수요예측 경쟁률·의무보유확약 기반 시나리오별 수익 분석.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="공모주 IPO 수익 계산기">
-  <meta property="og:description" content="폴레드·신한18호스팩·마키나락스·피스피스스튜디오·져스텍·레몬헬스케어·매드업·스트라드비젼·빅웨이브로보틱스 등 5월 이후 상장 공모주를 선택하면 자동으로 데이터가 채워집니다. 시나리오별 수익과 리스크를 한눈에.">
+  <meta property="og:description" content="피스피스스튜디오·대신20호스팩·매드업·레몬헬스케어·스트라드비젼·마키나락스·폴레드 등 5~6월 상장 공모주를 선택하면 확정 공모가·수요예측·의무보유확약 데이터가 자동으로 채워집니다.">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
@@ -919,37 +919,37 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
 
       <!-- IPO Selector -->
       <div class="ipo-selector">
-        <button class="ipo-btn active" data-ipo="polled">
-          <span class="ipo-btn-name">폴레드</span>
-          <span class="ipo-btn-desc">육아가전 · 청약 5/4~6 · 5/14 상장</span>
+        <button class="ipo-btn active" data-ipo="piecepiece">
+          <span class="ipo-btn-name">피스피스스튜디오</span>
+          <span class="ipo-btn-desc">마르디메크르디 · 청약 5/26~27 · 6/8 상장</span>
         </button>
-        <button class="ipo-btn" data-ipo="shinhan18">
-          <span class="ipo-btn-name">신한18호스팩</span>
-          <span class="ipo-btn-desc">SPAC · 5월 초 상장 추정</span>
+        <button class="ipo-btn" data-ipo="daishinspac20">
+          <span class="ipo-btn-name">대신밸런스20호스팩</span>
+          <span class="ipo-btn-desc">SPAC · 청약 5/22~26 마감</span>
+        </button>
+        <button class="ipo-btn" data-ipo="madup">
+          <span class="ipo-btn-name">매드업</span>
+          <span class="ipo-btn-desc">AI 마케팅 · 청약 6/1~2</span>
+        </button>
+        <button class="ipo-btn" data-ipo="lemonhc">
+          <span class="ipo-btn-name">레몬헬스케어</span>
+          <span class="ipo-btn-desc">의료 솔루션 · 청약 6/9~10</span>
+        </button>
+        <button class="ipo-btn" data-ipo="stradvision">
+          <span class="ipo-btn-name">스트라드비젼</span>
+          <span class="ipo-btn-desc">자율주행 AI · 청약 6/17~18</span>
         </button>
         <button class="ipo-btn" data-ipo="makinarocks">
           <span class="ipo-btn-name">마키나락스</span>
-          <span class="ipo-btn-desc">AI · 수요예측 진행</span>
+          <span class="ipo-btn-desc">산업 AI · 5/20 상장 완료</span>
         </button>
-        <button class="ipo-btn" data-ipo="piecepiece">
-          <span class="ipo-btn-name">피스피스스튜디오</span>
-          <span class="ipo-btn-desc">코스닥 상장 추진</span>
+        <button class="ipo-btn" data-ipo="polled">
+          <span class="ipo-btn-name">폴레드</span>
+          <span class="ipo-btn-desc">육아가전 · 5/14 상장 완료</span>
         </button>
         <button class="ipo-btn" data-ipo="justek">
           <span class="ipo-btn-name">져스텍</span>
           <span class="ipo-btn-desc">코스닥 상장 절차 착수</span>
-        </button>
-        <button class="ipo-btn" data-ipo="lemonhc">
-          <span class="ipo-btn-name">레몬헬스케어</span>
-          <span class="ipo-btn-desc">코스닥 상반기 상장 목표</span>
-        </button>
-        <button class="ipo-btn" data-ipo="madup">
-          <span class="ipo-btn-name">매드업</span>
-          <span class="ipo-btn-desc">코스닥 상장 추진</span>
-        </button>
-        <button class="ipo-btn" data-ipo="stradvision">
-          <span class="ipo-btn-name">스트라드비젼</span>
-          <span class="ipo-btn-desc">IPO 일정 6월 연기</span>
         </button>
         <button class="ipo-btn" data-ipo="bigwaverobot">
           <span class="ipo-btn-name">빅웨이브로보틱스</span>
@@ -1245,41 +1245,6 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
   // IPO 데이터 정의
   // =============================================
   const IPO_DATA = {
-    shinhan18: {
-      name: '신한18호스팩',
-      nameEn: 'Shinhan SPAC 18',
-      sector: '기업인수목적회사 (SPAC)',
-      listingDate: '미정 (5월 초 추정)',
-      listingMarket: '코스닥',
-      ipoPrice: 2000,
-      priceBand: '2,000원 (단일가)',
-      bandPosition: '단일가 확정',
-      bandPositionType: 'neutral',
-      marketCap: '미정',
-      lockupRate: 0,
-      lockupLabel: '미확인',
-      lockupSeverity: 'neutral',
-      floatRate: 0,
-      floatLabel: '미정',
-      competitionRatio: '미확인',
-      institutions: '미정',
-      totalShares: '미정',
-      publicShares: '미정',
-      totalAmount: '미정',
-      underwriter: '신한투자증권',
-      minShares: '10주',
-      minDeposit: '20,000원',
-      lockupNote: 'SPAC으로 수요예측 및 기관 확약 정보가 아직 공개되지 않았습니다.',
-      floatNote: 'SPAC 특성상 유통가능 비율이 높을 수 있습니다. 상세 정보 미공개.',
-      summaryRange: '단일가 2,000원',
-      summaryPriceRange: '2,000원',
-      summaryRisks: [
-        'SPAC 특성상 합병 불확실성',
-        '상세 공모 정보 미공개',
-        '유통가능 비율 높을 가능성',
-      ],
-      strategyNote: '청약 4/20~ 예정. 상세 정보 추후 공개.',
-    },
     polled: {
       name: '폴레드',
       nameEn: 'POLED',
@@ -1318,72 +1283,108 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
     makinarocks: {
       name: '마키나락스',
       nameEn: 'MakinaRocks',
-      sector: '인공지능 (AI/MLOps)',
-      listingDate: '미정 (수요예측 진행 중)',
+      sector: '산업 특화 AI (Physical AI / MLOps)',
+      listingDate: '2026.05.20 (수) — 상장 완료',
       listingMarket: '코스닥',
-      ipoPrice: 0,
-      priceBand: '미정',
-      bandPosition: '미정',
-      bandPositionType: 'neutral',
+      ipoPrice: 15000,
+      priceBand: '12,500원 ~ 15,000원',
+      bandPosition: '상단 초과 / 상단 확정',
+      bandPositionType: 'good',
       marketCap: '미정',
-      lockupRate: 0,
-      lockupLabel: '미확인',
-      lockupSeverity: 'neutral',
+      lockupRate: 78.2,
+      lockupLabel: '78.17% (역대 코스닥 최고)',
+      lockupSeverity: 'good',
       floatRate: 0,
       floatLabel: '미정',
-      competitionRatio: '미확인',
-      institutions: '미정',
+      competitionRatio: '1,196.1 : 1',
+      institutions: '2,427개 기관 참여 / 99.96% 상단 이상 제시',
       totalShares: '미정',
       publicShares: '미정',
       totalAmount: '미정',
-      underwriter: '미정',
-      minShares: '미정',
-      minDeposit: '미정',
-      lockupNote: '수요예측 진행 단계로 기관 의무보유확약 정보가 아직 확정되지 않았습니다.',
-      floatNote: '유통가능 비율 등 상세 정보 미공개. 수요예측 결과 발표 후 업데이트 필요.',
-      summaryRange: '공모가 미정',
-      summaryPriceRange: '미정',
+      underwriter: '미래에셋증권, 현대차증권',
+      minShares: '10주',
+      minDeposit: '75,000원',
+      lockupNote: '기관 의무보유확약 비율 <strong>78.17%</strong>(15일+)로 코스닥 IPO 역대 최고 수준입니다. 3개월+ 51.6%, 6개월+ 20.5%로 장기 확약도 견조합니다.',
+      floatNote: '의무보유확약 비율이 매우 높아 상장 초기 오버행 부담은 제한적입니다. 청약증거금 13~14조원 몰림.',
+      summaryRange: '공모가 15,000원 (상단 확정)',
+      summaryPriceRange: '12,500원 ~ 15,000원',
       summaryRisks: [
-        'AI/MLOps 사업 수익화 가시성',
-        '수요예측 결과에 따른 공모가 변동',
-        '상세 일정 미공개',
+        '상장 초기 단기 차익 실현 매물 가능성',
+        'AI 섹터 변동성',
+        '확약 해제 시점(15일/3개월/6개월) 오버행',
       ],
-      strategyNote: 'AI/MLOps 기업으로 코스닥 상장 추진. 수요예측 결과 공개 시 정보 업데이트 예정.',
+      strategyNote: '산업 특화 AI(Physical AI) 솔루션 기업. 청약 5/11~12, 상장 5/20. 수요예측 경쟁률 1,196:1, 의무보유확약 78.17%(역대 최고). 청약증거금 13~14조원 흥행.',
+    },
+    daishinspac20: {
+      name: '대신밸런스20호스팩',
+      nameEn: 'Daishin Balance SPAC 20',
+      sector: '기업인수목적회사 (SPAC)',
+      listingDate: '미정 (6월 초 추정)',
+      listingMarket: '코스닥',
+      ipoPrice: 2000,
+      priceBand: '2,000원 (단일가)',
+      bandPosition: '단일가 확정',
+      bandPositionType: 'neutral',
+      marketCap: '미정',
+      lockupRate: 0,
+      lockupLabel: 'SPAC 특성상 미확인',
+      lockupSeverity: 'neutral',
+      floatRate: 0,
+      floatLabel: '높음 (SPAC 특성)',
+      competitionRatio: '442 : 1 (청약, 마감일 오전 기준)',
+      institutions: '2,329개 기관 / 기관 경쟁률 1,327.13 : 1',
+      totalShares: '미정',
+      publicShares: '6,500,000주',
+      totalAmount: '약 130억원',
+      underwriter: '대신증권',
+      minShares: '10주',
+      minDeposit: '20,000원',
+      lockupNote: 'SPAC 특성상 기관 의무보유확약이 낮거나 없는 경우가 일반적입니다. 기관 수요예측(5/18~19) 경쟁률은 <strong>1,327.13:1</strong>로 높은 흥행을 기록했습니다.',
+      floatNote: 'SPAC 특성상 유통가능 비율이 높습니다. 발기인 지분 외 공모 물량 대부분 즉시 유통 가능. 일반 청약 경쟁률은 442:1 수준.',
+      summaryRange: '단일가 2,000원',
+      summaryPriceRange: '2,000원',
+      summaryRisks: [
+        'SPAC 특성상 합병 불확실성',
+        '합병 대상 기업 미정',
+        '유통가능 비율 높을 가능성',
+      ],
+      strategyNote: '대신증권 주관 SPAC. 청약 5/22~26 마감, 공모 650만주 / 약 130억원. 기관 경쟁률 1,327:1 흥행. 6월 초 상장 예정.',
     },
     piecepiece: {
       name: '피스피스스튜디오',
       nameEn: 'Piece Piece Studio',
-      sector: '미정',
-      listingDate: '미정',
+      sector: '패션/라이프스타일 (마르디메크르디 브랜드)',
+      listingDate: '2026.06.08 (월)',
       listingMarket: '코스닥',
-      ipoPrice: 0,
-      priceBand: '미정',
-      bandPosition: '미정',
-      bandPositionType: 'neutral',
-      marketCap: '미정',
-      lockupRate: 0,
-      lockupLabel: '미확인',
-      lockupSeverity: 'neutral',
-      floatRate: 0,
-      floatLabel: '미정',
-      competitionRatio: '미확인',
-      institutions: '미정',
+      ipoPrice: 21500,
+      priceBand: '19,000원 ~ 21,500원',
+      bandPosition: '상단 확정',
+      bandPositionType: 'good',
+      marketCap: '약 3,046억원',
+      lockupRate: 5.6,
+      lockupLabel: '5.6% (매우 낮음 — 오버행 경고)',
+      lockupSeverity: 'danger',
+      floatRate: 40.63,
+      floatLabel: '약 40.63%',
+      competitionRatio: '1,194.94 : 1 (일반 청약)',
+      institutions: '2,329개 기관 / 수요예측 847.76:1 / 97.7% 상단 이상 제시',
       totalShares: '미정',
-      publicShares: '미정',
-      totalAmount: '미정',
-      underwriter: '미정',
-      minShares: '미정',
-      minDeposit: '미정',
-      lockupNote: '수요예측 및 기관 의무보유확약 정보가 아직 공개되지 않았습니다.',
-      floatNote: '유통가능 비율 등 상세 정보 미공개.',
-      summaryRange: '공모가 미정',
-      summaryPriceRange: '미정',
+      publicShares: '2,272,637주',
+      totalAmount: '약 489억원',
+      underwriter: 'NH투자증권, 미래에셋증권 (공동 대표주관)',
+      minShares: '10주',
+      minDeposit: '107,500원',
+      lockupNote: '기관 의무보유확약 비율이 <strong>5.6%</strong>로 매우 낮습니다. 수요예측 경쟁률은 847.76:1로 흥행했지만, 확약 부진은 상장 직후 기관 매물 출회 가능성을 시사합니다.',
+      floatNote: '상장 직후 유통가능 비율이 <strong>약 40.63%</strong>로 적지 않은 수준입니다. 시가총액 약 3,046억원 / 공모금액 489억원 규모. 일반 청약 증거금은 약 <strong>7조 2,800억원</strong> 몰림.',
+      summaryRange: '공모가 21,500원 (상단 확정)',
+      summaryPriceRange: '19,000원 ~ 21,500원',
       summaryRisks: [
-        '공모 일정·가격 등 상세 정보 미공개',
-        '증권신고서 제출 전 단계',
-        '시장 환경에 따른 상장 일정 변동 가능성',
+        '<strong>의무보유확약 5.6%로 매우 낮음</strong> — 상장 직후 기관 매물 출회 가능성',
+        '유통가능 비율 40.63%로 오버행 부담 존재',
+        '오너 지분 논란 (정면돌파 IPO)',
+        '마르디메크르디 브랜드 단일 의존도',
       ],
-      strategyNote: '코스닥 상장 추진 단계. 상세 정보 추후 공개.',
+      strategyNote: '마르디메크르디 운영사. 수요예측 5/14~20 → 847.76:1로 상단 확정. 청약 5/26~27 마감(증거금 7.28조원, 경쟁률 1,194.94:1). 상장 6/8. 의무보유확약 5.6%는 IPO 흥행 대비 매우 낮아 단기 차익 실현 매물 주의.',
     },
     justek: {
       name: '져스텍',
@@ -1423,107 +1424,107 @@ input[type="number"]::-webkit-outer-spin-button { opacity: 0.3; }
     lemonhc: {
       name: '레몬헬스케어',
       nameEn: 'Lemon Healthcare',
-      sector: '헬스케어',
-      listingDate: '미정 (2026 상반기 목표)',
+      sector: '의료 솔루션 (헬스케어)',
+      listingDate: '미정 (6월 중 추정)',
       listingMarket: '코스닥',
-      ipoPrice: 0,
-      priceBand: '미정',
-      bandPosition: '미정',
+      ipoPrice: 10000,
+      priceBand: '7,500원 ~ 10,000원',
+      bandPosition: '수요예측 진행 / 추후 확정',
       bandPositionType: 'neutral',
       marketCap: '미정',
       lockupRate: 0,
-      lockupLabel: '미확인',
+      lockupLabel: '미확인 (수요예측 후 공개)',
       lockupSeverity: 'neutral',
       floatRate: 0,
       floatLabel: '미정',
       competitionRatio: '미확인',
-      institutions: '미정',
-      totalShares: '미정',
-      publicShares: '미정',
-      totalAmount: '미정',
-      underwriter: '미정',
-      minShares: '미정',
-      minDeposit: '미정',
-      lockupNote: '수요예측 및 기관 의무보유확약 정보가 아직 공개되지 않았습니다.',
-      floatNote: '유통가능 비율 등 상세 정보 미공개.',
-      summaryRange: '공모가 미정',
-      summaryPriceRange: '미정',
+      institutions: '수요예측 진행 예정',
+      totalShares: '13,351,559주 (상장 후)',
+      publicShares: '2,000,000주',
+      totalAmount: '약 150억원 ~ 200억원',
+      underwriter: 'KB증권',
+      minShares: '10주',
+      minDeposit: '50,000원 (균등 청약 기준)',
+      lockupNote: '수요예측 후 기관 의무보유확약 비율 공개 예정. 흑자전환 여부 등 사업성 검증이 변수.',
+      floatNote: '상장 후 총 13,351,559주 기준 유통가능 비율은 수요예측 결과 공개 시 확정.',
+      summaryRange: '공모가 7,500원 ~ 10,000원',
+      summaryPriceRange: '7,500원 ~ 10,000원',
       summaryRisks: [
-        '헬스케어 섹터 투자심리 변동성',
-        '공모 일정·가격 미확정',
-        '증권신고서 검토 결과에 따른 변동',
+        '과거 완전자본잠식 이력 (재수 IPO)',
+        '흑자전환 지속성 입증 필요',
+        '의료 솔루션 시장 경쟁 심화',
       ],
-      strategyNote: '2026 상반기 코스닥 상장 목표로 증권신고서 제출. 일정·가격 추후 공개.',
+      strategyNote: '의료 솔루션 기업. 청약 6/9~10, 주관사 KB증권. 공모 200만주 / 상장 후 총 1,335만주. 과거 자본잠식 후 흑자전환 IPO 재도전.',
     },
     madup: {
       name: '매드업',
       nameEn: 'Madup',
-      sector: '미정',
-      listingDate: '미정',
+      sector: 'AI 마케팅 솔루션',
+      listingDate: '미정 (6월 중 추정)',
       listingMarket: '코스닥',
-      ipoPrice: 0,
-      priceBand: '미정',
-      bandPosition: '미정',
+      ipoPrice: 8000,
+      priceBand: '7,000원 ~ 8,000원',
+      bandPosition: '수요예측 진행 / 추후 확정',
       bandPositionType: 'neutral',
       marketCap: '미정',
       lockupRate: 0,
-      lockupLabel: '미확인',
+      lockupLabel: '미확인 (수요예측 후 공개)',
       lockupSeverity: 'neutral',
       floatRate: 0,
       floatLabel: '미정',
       competitionRatio: '미확인',
-      institutions: '미정',
+      institutions: '수요예측 5/20~27',
       totalShares: '미정',
-      publicShares: '미정',
-      totalAmount: '미정',
-      underwriter: '미정',
-      minShares: '미정',
-      minDeposit: '미정',
-      lockupNote: '수요예측 및 기관 의무보유확약 정보가 아직 공개되지 않았습니다.',
-      floatNote: '유통가능 비율 등 상세 정보 미공개.',
-      summaryRange: '공모가 미정',
-      summaryPriceRange: '미정',
+      publicShares: '2,000,000주',
+      totalAmount: '약 140억원 ~ 160억원',
+      underwriter: '미래에셋증권',
+      minShares: '10주',
+      minDeposit: '40,000원 (밴드 상단 기준)',
+      lockupNote: '수요예측 진행 중(5/20~27)으로 기관 의무보유확약 정보가 아직 확정되지 않았습니다.',
+      floatNote: '유통가능 비율 등 상세 정보는 수요예측 결과 공개 시 확인 가능.',
+      summaryRange: '공모가 7,000원 ~ 8,000원',
+      summaryPriceRange: '7,000원 ~ 8,000원',
       summaryRisks: [
-        '공모 일정·가격 등 상세 정보 미공개',
-        '시장 환경에 따른 상장 일정 변동',
-        '증권신고서 검토 단계',
+        'AI 마케팅 시장 경쟁 심화',
+        '광고 시장 경기 민감도',
+        '대형 플랫폼 정책 변화 리스크',
       ],
-      strategyNote: '코스닥 상장 추진. 상세 정보 추후 공개.',
+      strategyNote: 'AI 마케팅 솔루션 기업. 수요예측 5/20~27, 청약 6/1~2, 주관사 미래에셋증권. 공모 200만주 / 140~160억원 규모.',
     },
     stradvision: {
       name: '스트라드비젼',
       nameEn: 'StradVision',
-      sector: '자율주행 비전 AI',
-      listingDate: '미정 (6월 연기)',
+      sector: '자율주행 비전 AI (SVNet 객체 인식 SW)',
+      listingDate: '미정 (6월 말 추정)',
       listingMarket: '코스닥',
-      ipoPrice: 0,
-      priceBand: '미정',
-      bandPosition: '미정',
+      ipoPrice: 14800,
+      priceBand: '12,400원 ~ 14,800원',
+      bandPosition: '수요예측 진행 예정 / 추후 확정',
       bandPositionType: 'neutral',
-      marketCap: '미정',
+      marketCap: '약 6,602억원 ~ 7,880억원',
       lockupRate: 0,
-      lockupLabel: '미확인',
+      lockupLabel: '미확인 (수요예측 후 공개)',
       lockupSeverity: 'neutral',
       floatRate: 0,
       floatLabel: '미정',
       competitionRatio: '미확인',
-      institutions: '미정',
+      institutions: '수요예측 6/8~ (4일간)',
       totalShares: '미정',
-      publicShares: '미정',
-      totalAmount: '미정',
-      underwriter: '미정',
-      minShares: '미정',
-      minDeposit: '미정',
-      lockupNote: '금감원 정정요구로 IPO 일정이 6월로 연기되어 수요예측 일정 재공시 필요.',
-      floatNote: '유통가능 비율 등 상세 정보는 증권신고서 정정 이후 확인 필요.',
-      summaryRange: '공모가 미정',
-      summaryPriceRange: '미정',
+      publicShares: '7,000,000주',
+      totalAmount: '약 868억원 ~ 1,036억원',
+      underwriter: 'KB증권',
+      minShares: '10주',
+      minDeposit: '74,000원 (밴드 상단 기준)',
+      lockupNote: '금감원 정정요구 대응 후 수요예측은 6/8부터 4일간 진행 예정. 기관 의무보유확약 정보는 추후 공개.',
+      floatNote: '유통가능 비율 등 상세 정보는 수요예측 결과 공개 시 확인 가능.',
+      summaryRange: '공모가 12,400원 ~ 14,800원',
+      summaryPriceRange: '12,400원 ~ 14,800원',
       summaryRisks: [
-        '금감원 정정요구 대응 중 (6월 연기)',
-        '재무·사업 관련 정정 사항 검토 필요',
-        '연기 일정 추가 변동 가능성',
+        '대형 시가총액 부담 (6,602~7,880억원)',
+        '자율주행 시장 BEP 달성 시점 불확실성',
+        '글로벌 완성차 의존도 및 지배구조 이슈',
       ],
-      strategyNote: '금감원 정정요구로 IPO 6월 연기. 정정 증권신고서 제출 후 일정·가격 재확인 필요.',
+      strategyNote: '자율주행 비전 AI(SVNet) 기업, 현대차그룹 투자. 수요예측 6/8~, 청약 6/17~18, 주관사 KB증권. 공모 700만주 / 시총 6,602~7,880억원.',
     },
     bigwaverobot: {
       name: '빅웨이브로보틱스',
